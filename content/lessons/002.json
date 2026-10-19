@@ -1,0 +1,44 @@
+{
+  "day": 2,
+  "title": "단위와 차원 해석",
+  "title_en": "Units and Dimensional Analysis",
+  "level": 1,
+  "minutes": 20,
+  "summary": "SI 단위와 항공 분야의 특이한 단위(피트·노트·파운드힘)를 자유롭게 환산하고, 차원 해석으로 식을 검산하며 양력 공식의 모양까지 추측해 봅니다.",
+  "objectives": [
+    "N, Pa, J, W를 SI 기본 단위(kg, m, s)로 나타낼 수 있다.",
+    "환산 계수를 이용해 ft, kt, lbf를 SI 단위로 바꿀 수 있다.",
+    "차원 동차성으로 식을 검산하고, 차원 해석으로 물리 법칙의 형태를 유도할 수 있다."
+  ],
+  "vocab": [
+    {"en": "unit", "pron": "ˈjuːnɪt", "pos": "n.", "ko": "단위", "def": "A standard amount used to measure a quantity, such as the meter or the second.", "ex": "Always write the unit next to the number in your answer.", "ex_ko": "답에는 항상 숫자 옆에 단위를 함께 써라."},
+    {"en": "dimension", "pron": "dɪˈmɛnʃən", "pos": "n.", "ko": "차원", "def": "The basic physical nature of a quantity, such as length, mass, or time.", "ex": "Velocity has the dimensions of length divided by time.", "ex_ko": "속도는 길이를 시간으로 나눈 차원을 갖는다."},
+    {"en": "conversion factor", "pron": "kənˈvɜːrʒən ˈfæktər", "pos": "n.", "ko": "환산 계수", "def": "A ratio equal to one that changes a value from one unit to another.", "ex": "The conversion factor from feet to meters is 0.3048.", "ex_ko": "피트를 미터로 바꾸는 환산 계수는 0.3048이다."},
+    {"en": "dimensionless", "pron": "dɪˈmɛnʃənləs", "pos": "adj.", "ko": "무차원의", "def": "Having no physical units; expressed as a pure number.", "ex": "The Mach number is a dimensionless quantity.", "ex_ko": "마하 수는 무차원 양이다."},
+    {"en": "knot", "pron": "nɑːt", "pos": "n.", "ko": "노트 (속력 단위)", "def": "A unit of speed equal to one nautical mile per hour.", "ex": "The airliner climbed at 250 knots below 10,000 feet.", "ex_ko": "그 여객기는 고도 1만 피트 아래에서 250노트로 상승했다."},
+    {"en": "nautical mile", "pron": "ˈnɔːtɪkəl maɪl", "pos": "n.", "ko": "해리", "def": "A unit of distance equal to 1,852 meters, used in air and sea navigation.", "ex": "The two airports are about 300 nautical miles apart.", "ex_ko": "두 공항은 약 300해리 떨어져 있다."},
+    {"en": "altitude", "pron": "ˈæltɪtuːd", "pos": "n.", "ko": "고도", "def": "The height of an object above sea level or above the ground.", "ex": "Most airliners cruise at an altitude of about 35,000 feet.", "ex_ko": "대부분의 여객기는 약 35,000피트 고도에서 순항한다."},
+    {"en": "consistent", "pron": "kənˈsɪstənt", "pos": "adj.", "ko": "일관된", "def": "Following the same system or rules throughout.", "ex": "Engineers must use consistent units in every calculation.", "ex_ko": "엔지니어는 모든 계산에서 일관된 단위를 써야 한다."}
+  ],
+  "reading": {
+    "title": "A Costly Mix-up",
+    "en": "In September 1999, NASA's Mars Climate Orbiter arrived at Mars after a journey of more than nine months. Instead of entering a safe orbit, it flew far too deep into the Martian atmosphere and was lost. Investigators soon found the cause. One team's software reported thruster data in pound-force seconds, an English unit, while the navigation team's software expected the values in newton-seconds, the SI unit. Because one pound-force equals about 4.45 newtons, the effect of every small thruster firing was misjudged by the same factor. Over several months, these small errors added up to a fatal mistake.\n\nThe lesson is simple but powerful: a number without a unit is meaningless, and units must be consistent across every team and every program. Today, aerospace engineers check units at each interface between systems, and many projects require SI units throughout. Dimensional analysis offers another safety net. If the dimensions on both sides of an equation do not match, the equation must be wrong, no matter how reasonable the numbers look.",
+    "ko": "1999년 9월, NASA의 화성 기후 궤도선은 9개월이 넘는 여행 끝에 화성에 도착했다. 그러나 안전한 궤도에 들어가는 대신 화성 대기 속으로 너무 깊이 들어가 버려 사라졌다. 조사관들은 곧 원인을 찾아냈다. 한 팀의 소프트웨어는 추력기 데이터를 영국식 단위인 파운드힘·초로 보고했는데, 항법팀의 소프트웨어는 그 값을 SI 단위인 뉴턴·초로 받을 것이라 기대했던 것이다. 1파운드힘은 약 4.45뉴턴이므로, 작은 추력기 분사 하나하나의 효과가 모두 같은 배율만큼 잘못 판단되었다. 몇 달에 걸쳐 이 작은 오차들이 쌓여 치명적인 실수가 되었다.\n\n교훈은 단순하지만 강력하다. 단위 없는 숫자는 의미가 없으며, 단위는 모든 팀과 모든 프로그램에서 일관되어야 한다. 오늘날 항공우주 엔지니어들은 시스템 사이의 모든 접점에서 단위를 확인하고, 많은 프로젝트가 처음부터 끝까지 SI 단위를 쓰도록 요구한다. 차원 해석은 또 하나의 안전망이 된다. 식의 양변의 차원이 맞지 않는다면, 숫자가 아무리 그럴듯해 보여도 그 식은 틀린 것이다."
+  },
+  "quiz": [
+    {"type": "num", "q": "어떤 여객기의 순항 고도가 37,000 ft예요. 몇 km일까요? (1 ft = 0.3048 m)", "answer": 11.28, "tol": 0.02, "unit": "km", "explain": "$37{,}000 \\times 0.3048 = 11{,}277.6\\ \\text{m} \\approx 11.28\\ \\text{km}$예요."},
+    {"type": "mc", "q": "압력의 단위 파스칼(Pa)을 SI 기본 단위로 바르게 나타낸 것은?", "choices": ["kg·m/s²", "kg/(m·s²)", "kg·m²/s²", "kg·m²/s³"], "answer": 1, "explain": "Pa = N/m² 이고 N = kg·m/s² 이므로 Pa = kg·m/s² ÷ m² = kg/(m·s²)예요. 나머지는 차례로 힘(N), 에너지(J), 일률(W)의 단위예요."},
+    {"type": "ox", "q": "1노트(kt)는 1시간에 1해리(1,852 m)를 가는 속력이다.", "answer": true, "explain": "노트는 '해리/시간'이에요. 그래서 1 kt = 1.852 km/h ≈ 0.5144 m/s예요."},
+    {"type": "mc", "q": "According to the passage, what caused the loss of the Mars Climate Orbiter?", "choices": ["An engine failure during orbit insertion", "Two software systems used inconsistent units", "A collision with a small asteroid", "A navigation team forgot to send commands"], "answer": 1, "explain": "한 팀은 pound-force seconds로, 다른 팀은 newton-seconds로 값을 다뤘어요. 지문의 핵심 문장은 *units must be consistent across every team* 이에요."}
+  ],
+  "test": [
+    {"type": "num", "q": "250 kt는 몇 m/s일까요? (1 kt ≈ 0.5144 m/s)", "answer": 128.6, "tol": 0.02, "unit": "m/s", "explain": "$250 \\times 0.5144 \\approx 128.6\\ \\text{m/s}$예요. 약 463 km/h죠."},
+    {"type": "mc", "q": "날개가 받는 힘이 $F \\propto \\rho^a V^b S^c$ (밀도 $\\rho$, 속도 $V$, 면적 $S$) 꼴이라고 할 때, 차원 해석으로 구한 $(a, b, c)$는?", "choices": ["(1, 2, 1)", "(1, 1, 2)", "(2, 1, 1)", "(1, 2, 2)"], "answer": 0, "explain": "$[MLT^{-2}] = [ML^{-3}]^a[LT^{-1}]^b[L^2]^c$에서 M: $a=1$, T: $b=2$, L: $1 = -3+2+2c$ → $c=1$. 그래서 $F \\propto \\rho V^2 S$, 양력 공식의 모양이에요."},
+    {"type": "mc", "q": "다음 중 **차원이 맞지 않아** 틀렸다고 바로 알 수 있는 식은? ($v$: 속도, $a$: 가속도, $t$: 시간, $x$: 거리, $\\rho$: 밀도, $g$: 중력가속도, $h$: 높이, $p$: 압력)", "choices": ["$v = v_0 + at$", "$x = v_0 t + \\tfrac{1}{2}at^2$", "$p = \\rho g h$", "$v = a t^2$"], "answer": 3, "explain": "$at^2$의 차원은 $[LT^{-2}][T^2] = [L]$로 길이인데, 좌변 $v$는 $[LT^{-1}]$이에요. 차원이 다르므로 틀린 식이에요. $p = \\rho g h$는 $[ML^{-3}][LT^{-2}][L] = [ML^{-1}T^{-2}]$로 압력과 같아요."}
+  ],
+  "further": [
+    {"title": "NASA — Mars Climate Orbiter mission page", "url": "https://science.nasa.gov/mission/mars-climate-orbiter/", "lang": "en"},
+    {"title": "NIST — SI Units", "url": "https://www.nist.gov/pml/owm/metric-si/si-units", "lang": "en"},
+    {"title": "한국표준과학연구원 — 국제단위계(SI) 안내", "url": "https://www.kriss.re.kr", "lang": "ko"}
+  ]
+}

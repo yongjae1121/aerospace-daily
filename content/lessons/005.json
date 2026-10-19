@@ -1,0 +1,43 @@
+{
+  "day": 5,
+  "title": "운동량과 충격량",
+  "title_en": "Momentum and Impulse",
+  "level": 2,
+  "minutes": 20,
+  "summary": "운동량과 충격량, 운동량 보존 법칙으로 '로켓은 무엇을 밀어서 나아가는가'라는 질문에 답하고, 추력의 기본식 F = ṁvₑ를 이끌어 냅니다.",
+  "objectives": [
+    "충격량이 힘-시간 그래프의 넓이이며 운동량 변화와 같음을 설명할 수 있다.",
+    "운동량 보존 법칙으로 우주에서의 반동 문제를 풀 수 있다.",
+    "로켓이 공기 없이 추력을 얻는 원리를 설명하고 F = ṁvₑ로 추력을 계산할 수 있다."
+  ],
+  "vocab": [
+    {"en": "momentum", "pron": "moʊˈmɛntəm", "pos": "n.", "ko": "운동량", "def": "The product of an object's mass and its velocity.", "ex": "The exhaust carries momentum backward, so the rocket gains momentum forward.", "ex_ko": "배기가스가 운동량을 뒤로 가져가므로 로켓은 앞쪽으로 운동량을 얻는다."},
+    {"en": "impulse", "pron": "ˈɪmpʌls", "pos": "n.", "ko": "충격량", "def": "The change in momentum produced by a force acting over a period of time.", "ex": "A C-class model rocket motor delivers between five and ten newton-seconds of impulse.", "ex_ko": "C 등급 모형 로켓 엔진은 5~10 N·s의 충격량을 낸다."},
+    {"en": "conservation", "pron": "ˌkɑːnsərˈveɪʃən", "pos": "n.", "ko": "보존", "def": "The principle that a quantity stays constant in an isolated system.", "ex": "The conservation of momentum explains how rockets work in space.", "ex_ko": "운동량 보존은 로켓이 우주에서 작동하는 원리를 설명한다."},
+    {"en": "exhaust", "pron": "ɪɡˈzɔːst", "pos": "n. / v.", "ko": "배기가스; 배출하다", "def": "The hot gas that leaves an engine after combustion.", "ex": "The exhaust leaves the nozzle at about three kilometers per second.", "ex_ko": "배기가스는 초속 약 3킬로미터로 노즐을 빠져나간다."},
+    {"en": "exhaust velocity", "pron": "ɪɡˈzɔːst vəˈlɑːsəti", "pos": "n.", "ko": "배기 속도", "def": "The speed of the exhaust gas relative to the rocket.", "ex": "A higher exhaust velocity means less propellant is needed for the same thrust.", "ex_ko": "배기 속도가 높을수록 같은 추력을 내는 데 필요한 추진제가 줄어든다."},
+    {"en": "mass flow rate", "pron": "mæs floʊ reɪt", "pos": "n.", "ko": "질량 유량", "def": "The mass of fluid passing a point each second, in kilograms per second.", "ex": "The engine burns propellant at a mass flow rate of 250 kilograms per second.", "ex_ko": "그 엔진은 초당 250킬로그램의 질량 유량으로 추진제를 태운다."},
+    {"en": "recoil", "pron": "rɪˈkɔɪl", "pos": "n. / v.", "ko": "반동; 되튀다", "def": "The backward movement of an object when it pushes something else forward.", "ex": "When the astronaut threw the wrench, she recoiled in the opposite direction.", "ex_ko": "우주비행사가 렌치를 던지자 그녀는 반대 방향으로 밀려났다."},
+    {"en": "vacuum", "pron": "ˈvækjuːm", "pos": "n.", "ko": "진공", "def": "A space that contains almost no matter, including air.", "ex": "Rocket engines produce slightly more thrust in a vacuum than at sea level.", "ex_ko": "로켓 엔진은 해수면보다 진공에서 추력을 약간 더 낸다."}
+  ],
+  "reading": {
+    "title": "Pushing on Nothing",
+    "en": "In 1920, a newspaper editorial mocked the American physicist Robert Goddard for suggesting that a rocket could fly in space. A rocket, the writer claimed, would have nothing to push against in a vacuum, so it could not possibly move. The argument sounded reasonable, but it was completely wrong.\n\nA rocket does not need to push against air or the ground. Instead, it pushes against its own exhaust. Inside the engine, burning propellant creates hot gas that is forced out of the nozzle at very high speed. By the conservation of momentum, the momentum carried backward by the exhaust must be balanced by an equal momentum gained forward by the rocket. In fact, the absence of air actually helps, because there is no surrounding pressure pushing back on the nozzle.\n\nForty-nine years later, as Apollo 11 traveled toward the Moon, the same newspaper printed a short correction. It admitted that a rocket can indeed function in a vacuum and said that it regretted the error.",
+    "ko": "1920년, 한 신문 사설은 로켓이 우주에서 날 수 있다고 주장한 미국의 물리학자 로버트 고다드를 조롱했다. 사설의 필자는 진공에서는 로켓이 밀어낼 대상이 없으므로 결코 움직일 수 없다고 주장했다. 이 주장은 그럴듯하게 들렸지만 완전히 틀렸다.\n\n로켓은 공기나 땅을 밀 필요가 없다. 대신 로켓은 자신의 배기가스를 민다. 엔진 안에서 추진제가 타면서 만들어진 뜨거운 가스는 매우 빠른 속도로 노즐 밖으로 밀려 나간다. 운동량 보존에 따라, 배기가스가 뒤로 가져간 운동량은 로켓이 앞으로 얻는 같은 크기의 운동량과 균형을 이뤄야 한다. 실제로 공기가 없는 것은 오히려 도움이 되는데, 노즐을 되밀어 내는 주변 압력이 없기 때문이다.\n\n49년 뒤, 아폴로 11호가 달을 향해 가던 때에 같은 신문은 짧은 정정 기사를 실었다. 신문은 로켓이 진공에서도 정말로 작동할 수 있음을 인정하고 그 오류를 유감으로 여긴다고 밝혔다."
+  },
+  "quiz": [
+    {"type": "num", "q": "우주 유영 중인 우주비행사(우주복 포함 90 kg)가 정지 상태에서 3 kg짜리 공구 상자를 4 m/s로 던졌어요. 우주비행사가 반대 방향으로 밀려나는 속력은 몇 m/s일까요?", "answer": 0.1333, "tol": 0.02, "unit": "m/s", "explain": "운동량 보존: $0 = 3 \\times 4 - 90 \\times v$이므로 $v = 12/90 \\approx 0.133\\ \\text{m/s}$예요."},
+    {"type": "num", "q": "어떤 로켓 엔진이 매초 200 kg의 가스를 2,800 m/s로 뿜어내요. 추력은 몇 kN일까요? (압력 효과는 무시)", "answer": 560, "tol": 0.01, "unit": "kN", "explain": "$F = \\dot{m}v_e = 200 \\times 2800 = 560{,}000\\ \\text{N} = 560\\ \\text{kN}$이에요."},
+    {"type": "ox", "q": "로켓은 진공에서는 밀어낼 공기가 없으므로 추력을 낼 수 없다.", "answer": false, "explain": "로켓은 자신이 내뿜는 배기가스를 밀어서 나아가요. 운동량 보존 덕분에 공기가 없어도 되고, 오히려 진공에서 추력이 조금 더 커져요."},
+    {"type": "mc", "q": "According to the passage, what does a rocket actually push against?", "choices": ["The air behind it", "The launch pad", "Its own exhaust", "The Earth's magnetic field"], "answer": 2, "explain": "*Instead, it pushes against its own exhaust.* 로켓은 자신의 배기가스를 밀어요."}
+  ],
+  "test": [
+    {"type": "mc", "q": "힘-시간($F$-$t$) 그래프 아래의 넓이가 나타내는 물리량은?", "choices": ["일(에너지)", "충격량(운동량의 변화)", "일률", "가속도"], "answer": 1, "explain": "$J = \\int F\\,dt$이므로 그래프 아래 넓이가 충격량이고, 이는 운동량의 변화량과 같아요. 일(에너지)은 힘-**거리** 그래프의 넓이예요."},
+    {"type": "num", "q": "추력 900 kN을 내는 로켓 엔진의 배기 속도가 3,000 m/s예요. 이 엔진은 매초 몇 kg의 추진제를 소모할까요?", "answer": 300, "tol": 0.01, "unit": "kg/s", "explain": "$\\dot{m} = F / v_e = 900{,}000 / 3000 = 300\\ \\text{kg/s}$예요. 1분이면 18톤이에요!"},
+    {"type": "mc", "q": "모형 로켓 엔진 등급에서 B 등급의 총충격량은 2.5–5 N·s예요. C 등급의 범위로 옳은 것은?", "choices": ["5–7.5 N·s", "5–10 N·s", "3–6 N·s", "10–20 N·s"], "answer": 1, "explain": "알파벳이 하나 올라갈 때마다 최대 총충격량이 두 배가 돼요. 그래서 C는 5–10 N·s, D는 10–20 N·s예요."}
+  ],
+  "further": [
+    {"title": "NASA Glenn — Rocket Thrust", "url": "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/rocket-thrust/", "lang": "en"},
+    {"title": "Wikipedia — Model rocket motor classification", "url": "https://en.wikipedia.org/wiki/Model_rocket_motor_classification", "lang": "en"}
+  ]
+}

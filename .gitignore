@@ -1,0 +1,9 @@
+# 생성물 (scripts/build.py가 만듦)
+data/course.js
+_site/
+
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+desktop.ini

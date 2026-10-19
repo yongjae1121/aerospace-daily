@@ -1,0 +1,43 @@
+{
+  "day": 6,
+  "title": "일, 에너지, 일률",
+  "title_en": "Work, Energy, and Power",
+  "level": 2,
+  "minutes": 20,
+  "summary": "일·운동에너지·위치에너지·일률을 항공우주의 눈으로 다시 보고, 비에너지와 에너지 고도, 그리고 '궤도에 오르는 에너지는 대부분 속도에 쓰인다'는 핵심 통찰을 얻습니다.",
+  "objectives": [
+    "일이 힘과 변위의 내적임을 이용해, 수평 비행에서 양력이 일을 하지 않는 이유를 설명할 수 있다.",
+    "비에너지와 에너지 고도를 계산할 수 있다.",
+    "저궤도에 오르는 데 필요한 위치에너지와 운동에너지를 비교하고, 일률 P = Fv를 계산할 수 있다."
+  ],
+  "vocab": [
+    {"en": "work", "pron": "wɜːrk", "pos": "n.", "ko": "일 (물리)", "def": "The energy transferred when a force moves an object through a distance.", "ex": "Lift does no work in level flight because it is perpendicular to the motion.", "ex_ko": "수평 비행에서 양력은 운동 방향에 수직이므로 일을 하지 않는다."},
+    {"en": "kinetic energy", "pron": "kɪˈnɛtɪk ˈɛnərdʒi", "pos": "n.", "ko": "운동에너지", "def": "The energy an object has because of its motion, equal to one half m v squared.", "ex": "Most of the energy needed to reach orbit is kinetic energy.", "ex_ko": "궤도에 오르는 데 필요한 에너지의 대부분은 운동에너지다."},
+    {"en": "potential energy", "pron": "pəˈtɛnʃəl ˈɛnərdʒi", "pos": "n.", "ko": "위치에너지", "def": "Stored energy that an object has because of its position, such as its height.", "ex": "A glider trades potential energy for speed as it descends.", "ex_ko": "글라이더는 내려가면서 위치에너지를 속도로 바꾼다."},
+    {"en": "specific energy", "pron": "spəˈsɪfɪk ˈɛnərdʒi", "pos": "n.", "ko": "비에너지 (단위 질량당 에너지)", "def": "Energy per unit mass, usually measured in joules per kilogram.", "ex": "Pilots think of altitude and airspeed as two forms of specific energy.", "ex_ko": "조종사들은 고도와 대기 속도를 비에너지의 두 가지 형태로 생각한다."},
+    {"en": "power", "pron": "ˈpaʊər", "pos": "n.", "ko": "일률, 출력", "def": "The rate at which work is done, measured in watts.", "ex": "The faster the airplane flies, the more power its engines must deliver.", "ex_ko": "비행기가 빠르게 날수록 엔진이 내야 하는 출력은 커진다."},
+    {"en": "joule", "pron": "dʒuːl", "pos": "n.", "ko": "줄 (에너지 단위)", "def": "The SI unit of energy, equal to one newton-meter.", "ex": "Placing one kilogram in low Earth orbit takes about 33 million joules.", "ex_ko": "1킬로그램을 지구 저궤도에 올리는 데는 약 3,300만 줄이 든다."},
+    {"en": "trade", "pron": "treɪd", "pos": "v.", "ko": "맞바꾸다", "def": "To exchange one thing for another.", "ex": "A fighter pilot can trade speed for altitude by pulling up.", "ex_ko": "전투기 조종사는 기수를 들어 속도를 고도와 맞바꿀 수 있다."},
+    {"en": "efficiency", "pron": "ɪˈfɪʃənsi", "pos": "n.", "ko": "효율", "def": "The ratio of useful output to total input, often given as a percentage.", "ex": "Rockets have a low overall efficiency because the exhaust carries away so much energy.", "ex_ko": "배기가스가 매우 많은 에너지를 가져가기 때문에 로켓의 전체 효율은 낮다."}
+  ],
+  "reading": {
+    "title": "Space Is Close, Orbit Is Far",
+    "en": "The edge of space is only about one hundred kilometers above our heads, closer than many cities are to each other. If you could drive a car straight up, you would reach it in about an hour. Why, then, is spaceflight so difficult?\n\nThe answer is that reaching space and staying in space are two very different things. A rocket that simply climbs to one hundred kilometers will fall straight back down. To stay up, a spacecraft must travel sideways fast enough that, as it falls, the curved surface of Earth drops away beneath it. In low Earth orbit, that speed is close to eight kilometers per second.\n\nWhen engineers compare the energy involved, the result is striking. For each kilogram of payload, the kinetic energy needed for orbital speed is roughly eight times larger than the potential energy needed to lift it to the station's altitude. In other words, the real challenge of spaceflight is not height but speed.",
+    "ko": "우주의 경계는 우리 머리 위로 겨우 100킬로미터 정도 떨어져 있어서, 많은 도시들 사이의 거리보다도 가깝다. 차를 몰고 곧장 위로 갈 수 있다면 한 시간쯤이면 닿을 것이다. 그렇다면 왜 우주 비행은 그토록 어려울까?\n\n답은 우주에 닿는 것과 우주에 머무는 것이 전혀 다른 일이라는 데 있다. 그저 100킬로미터까지 올라가기만 한 로켓은 곧바로 다시 떨어진다. 위에 머물기 위해서는 우주선이 옆으로 충분히 빠르게 움직여서, 떨어지는 동안 둥근 지구 표면이 그 아래로 계속 멀어지게 해야 한다. 지구 저궤도에서 그 속도는 초속 8킬로미터에 가깝다.\n\n엔지니어들이 관련된 에너지를 비교해 보면 결과는 놀랍다. 탑재체 1킬로그램당, 궤도 속도에 필요한 운동에너지는 우주정거장 고도까지 들어 올리는 데 필요한 위치에너지보다 약 8배 크다. 다시 말해, 우주 비행의 진짜 어려움은 높이가 아니라 속도다."
+  },
+  "quiz": [
+    {"type": "num", "q": "질량 1 kg인 물체가 7.8 km/s로 움직일 때 운동에너지는 몇 MJ일까요?", "answer": 30.42, "tol": 0.02, "unit": "MJ", "explain": "$E_k = \\tfrac{1}{2}(1)(7800)^2 = 30{,}420{,}000\\ \\text{J} \\approx 30.4\\ \\text{MJ}$예요."},
+    {"type": "num", "q": "고도 10,000 m에서 200 m/s로 날고 있는 비행기의 에너지 고도는 몇 km일까요? ($g = 9.81\\ \\text{m/s}^2$)", "answer": 12.04, "tol": 0.01, "unit": "km", "explain": "$h_e = 10{,}000 + \\dfrac{200^2}{2\\times 9.81} = 10{,}000 + 2{,}039 \\approx 12{,}039\\ \\text{m} \\approx 12.04\\ \\text{km}$예요."},
+    {"type": "ox", "q": "지구 저궤도에 오르는 데 필요한 에너지의 대부분은 높은 곳까지 올라가는 데(위치에너지) 쓰인다.", "answer": false, "explain": "고도 400 km 기준으로 1 kg당 위치에너지는 약 3.7 MJ, 궤도 속도의 운동에너지는 약 29.4 MJ예요. 대부분이 속도(운동에너지)에 쓰여요."},
+    {"type": "mc", "q": "According to the passage, what must a spacecraft do to stay in orbit?", "choices": ["Climb higher than 100 kilometers and stop", "Travel sideways fast enough that Earth's surface curves away beneath it", "Keep its engines running at all times", "Escape from Earth's gravity completely"], "answer": 1, "explain": "*a spacecraft must travel sideways fast enough that, as it falls, the curved surface of Earth drops away beneath it.* 궤도는 '계속 떨어지지만 땅에 닿지 않는' 운동이에요."}
+  ],
+  "test": [
+    {"type": "num", "q": "추력 50 kN을 내는 엔진이 비행기를 240 m/s로 밀고 있어요. 엔진이 비행기에 전달하는 일률은 몇 MW일까요?", "answer": 12, "tol": 0.01, "unit": "MW", "explain": "$P = Fv = 50{,}000 \\times 240 = 12{,}000{,}000\\ \\text{W} = 12\\ \\text{MW}$예요."},
+    {"type": "mc", "q": "수평 등속 비행 중인 비행기에서 **일을 하지 않는** 힘은?", "choices": ["양력 — 운동 방향에 수직이므로", "추력 — 엔진이 내는 힘이므로", "항력 — 운동 방향과 반대이므로", "모든 힘이 일을 하지 않는다"], "answer": 0, "explain": "$W = Fd\\cos\\theta$에서 양력은 $\\theta = 90^\\circ$라 일이 0이에요. 추력은 양(+)의 일, 항력은 음(−)의 일을 해요. 등속이니 둘의 합은 0이고요."},
+    {"type": "num", "q": "1 kg을 고도 400 km까지 올리는 데 약 3.7 MJ, 그 고도의 궤도 속도로 가속하는 데 약 29.4 MJ가 필요해요. 운동에너지는 위치에너지의 약 몇 배일까요?", "answer": 7.95, "tol": 0.05, "unit": "배", "explain": "$29.4 / 3.7 \\approx 7.9$배예요. 궤도의 진짜 비용은 속도예요."}
+  ],
+  "further": [
+    {"title": "NASA — Basics of Space Flight", "url": "https://science.nasa.gov/learn/basics-of-space-flight/", "lang": "en"},
+    {"title": "Wikipedia — Energy–maneuverability theory (존 보이드의 에너지 기동성 이론)", "url": "https://en.wikipedia.org/wiki/Energy%E2%80%93maneuverability_theory", "lang": "en"}
+  ]
+}

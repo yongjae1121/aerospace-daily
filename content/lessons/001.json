@@ -1,0 +1,44 @@
+{
+  "day": 1,
+  "title": "항공우주공학이란?",
+  "title_en": "What Is Aerospace Engineering?",
+  "level": 1,
+  "minutes": 15,
+  "summary": "하늘(항공)과 우주(우주공학)라는 두 무대, 항공우주공학을 떠받치는 다섯 기둥, 그리고 모든 설계를 관통하는 '트레이드오프'와 '무게와의 전쟁'을 살펴봅니다.",
+  "objectives": [
+    "항공공학과 우주공학의 차이를 '공기의 유무'로 설명할 수 있다.",
+    "항공우주공학의 다섯 핵심 분야와 각 분야의 핵심 질문을 말할 수 있다.",
+    "트레이드오프의 의미를 예를 들어 설명하고, 로켓의 탑재 비율을 계산할 수 있다."
+  ],
+  "vocab": [
+    {"en": "aeronautics", "pron": "ˌɛərəˈnɔːtɪks", "pos": "n.", "ko": "항공학", "def": "The science and engineering of flight within Earth's atmosphere.", "ex": "Aeronautics deals with aircraft that rely on air to generate lift.", "ex_ko": "항공학은 양력을 얻기 위해 공기에 의존하는 항공기를 다룬다."},
+    {"en": "astronautics", "pron": "ˌæstrəˈnɔːtɪks", "pos": "n.", "ko": "우주공학, 우주 항행학", "def": "The science and engineering of travel beyond Earth's atmosphere.", "ex": "Astronautics includes the design of rockets, satellites, and space probes.", "ex_ko": "우주공학에는 로켓, 인공위성, 우주 탐사선의 설계가 포함된다."},
+    {"en": "aerodynamics", "pron": "ˌɛəroʊdaɪˈnæmɪks", "pos": "n.", "ko": "공기역학", "def": "The study of how air moves around objects and the forces it creates.", "ex": "Better aerodynamics can greatly reduce an airliner's fuel consumption.", "ex_ko": "공기역학을 개선하면 여객기의 연료 소비를 크게 줄일 수 있다."},
+    {"en": "propulsion", "pron": "prəˈpʌlʃən", "pos": "n.", "ko": "추진", "def": "The process or system that pushes a vehicle forward.", "ex": "Rocket propulsion works even in the vacuum of space.", "ex_ko": "로켓 추진은 우주의 진공 속에서도 작동한다."},
+    {"en": "payload", "pron": "ˈpeɪloʊd", "pos": "n.", "ko": "탑재체, 유상 하중", "def": "The useful cargo a vehicle carries, such as a satellite, passengers, or freight.", "ex": "Only about four percent of the rocket's liftoff mass was payload.", "ex_ko": "그 로켓의 이륙 질량 중 탑재체는 약 4%에 불과했다."},
+    {"en": "trade-off", "pron": "ˈtreɪd ɔːf", "pos": "n.", "ko": "트레이드오프, 상충 관계", "def": "A balance between two desirable features that cannot both be maximized at once.", "ex": "A longer wing involves a trade-off between lower drag and higher structural weight.", "ex_ko": "더 긴 날개에는 항력 감소와 구조 무게 증가 사이의 트레이드오프가 따른다."},
+    {"en": "orbit", "pron": "ˈɔːrbɪt", "pos": "n. / v.", "ko": "궤도; 궤도를 돌다", "def": "The curved path of an object around a planet or star; to move along such a path.", "ex": "The International Space Station orbits Earth about every 90 minutes.", "ex_ko": "국제우주정거장은 약 90분마다 지구를 한 바퀴 돈다."},
+    {"en": "spacecraft", "pron": "ˈspeɪskræft", "pos": "n.", "ko": "우주선, 우주 비행체", "def": "A vehicle designed to travel or operate in outer space.", "ex": "A spacecraft must survive extreme temperatures and radiation.", "ex_ko": "우주선은 극한의 온도와 방사선을 견뎌야 한다."}
+  ],
+  "reading": {
+    "title": "Two Skies, One Discipline",
+    "en": "Aerospace engineering is the branch of engineering that designs vehicles for flight, both inside and beyond Earth's atmosphere. It combines two older fields. Aeronautics focuses on aircraft such as airliners, helicopters, and drones, which depend on the surrounding air to produce lift and to burn their fuel. Astronautics focuses on spacecraft and the rockets that launch them. Because there is almost no air in space, a rocket must carry its own oxidizer as well as its fuel.\n\nAlthough the two environments are very different, aerospace engineers share a common toolkit. They use aerodynamics to predict the forces of moving air, propulsion to generate thrust, structural analysis to keep vehicles light but strong, and control theory to keep them stable. Above all, they learn to make trade-offs. Every extra kilogram of structure is a kilogram that cannot be used for fuel or payload. For this reason, engineers keep asking the same question on every project: what is the best compromise for this mission?",
+    "ko": "항공우주공학은 지구 대기 안과 밖에서 비행하는 비행체를 설계하는 공학 분야다. 이 분야는 더 오래된 두 분야를 합친 것이다. 항공학은 여객기, 헬리콥터, 드론처럼 양력을 만들고 연료를 태우기 위해 주변 공기에 의존하는 항공기에 집중한다. 우주공학은 우주선과 그것을 쏘아 올리는 로켓에 집중한다. 우주에는 공기가 거의 없기 때문에, 로켓은 연료뿐 아니라 산화제도 직접 싣고 가야 한다.\n\n두 환경은 매우 다르지만, 항공우주 엔지니어들은 공통된 도구 상자를 함께 쓴다. 공기역학으로 움직이는 공기가 만드는 힘을 예측하고, 추진으로 추력을 만들고, 구조 해석으로 비행체를 가볍지만 튼튼하게 유지하며, 제어 이론으로 안정성을 유지한다. 무엇보다 그들은 트레이드오프를 하는 법을 배운다. 구조에 1킬로그램이 더해질 때마다 그만큼을 연료나 탑재체에 쓸 수 없게 된다. 이 때문에 엔지니어들은 모든 프로젝트에서 같은 질문을 계속 던진다. 이 임무를 위한 최선의 절충안은 무엇인가?"
+  },
+  "quiz": [
+    {"type": "mc", "q": "다음 중 **우주공학(astronautics)**이 주로 다루는 대상이 *아닌* 것은?", "choices": ["인공위성", "우주 탐사선", "헬리콥터", "발사체(로켓)"], "answer": 2, "explain": "헬리콥터는 대기 안에서 회전 날개로 공기를 밀어 내려 양력을 얻는 항공기이므로 항공공학(aeronautics)의 영역이에요."},
+    {"type": "ox", "q": "카르만 선(고도 100 km)은 지구 대기가 완전히 끝나는 고도를 뜻한다.", "answer": false, "explain": "대기는 위로 갈수록 서서히 옅어질 뿐 뚜렷한 끝이 없어요. 카르만 선은 '날개로 나는 것이 의미를 잃는' 높이를 기준으로 정한 관례적인 경계예요."},
+    {"type": "num", "q": "누리호의 이륙 질량은 약 200 t이고, 고도 600–800 km의 태양동기궤도에 약 1.5 t을 올릴 수 있어요. 탑재 비율은 몇 %일까요? (숫자만 입력)", "answer": 0.75, "tol": 0.03, "unit": "%", "explain": "$1.5 \\div 200 = 0.0075 = 0.75\\%$예요. 팰컨 9의 저궤도 탑재 비율(약 4.2%)보다 낮은 이유 중 하나는 목표 궤도가 더 높고, 태양동기궤도는 궤도 경사각도 커서 더 많은 에너지가 필요하기 때문이에요."},
+    {"type": "mc", "q": "According to the reading passage, why must a rocket carry its own oxidizer?", "choices": ["Because oxidizer makes the rocket lighter", "Because there is almost no air in space", "Because rockets cannot burn ordinary fuel", "Because it improves the rocket's aerodynamics"], "answer": 1, "explain": "지문에서 *Because there is almost no air in space, a rocket must carry its own oxidizer as well as its fuel.* 이라고 했어요. 우주에는 연료를 태울 산소가 없기 때문이에요."}
+  ],
+  "test": [
+    {"type": "mc", "q": "여객기 날개를 더 길게 만들 때 생기는 트레이드오프로 가장 알맞은 것은?", "choices": ["유도 항력은 줄지만 구조 무게가 늘어난다", "양력은 줄지만 최고 속도가 늘어난다", "엔진 추력은 늘지만 연료 소비가 늘어난다", "무게는 줄지만 안정성이 떨어진다"], "answer": 0, "explain": "긴 날개는 날개 끝 소용돌이로 인한 유도 항력을 줄여 효율을 높이지만, 날개 뿌리의 굽힘 힘이 커져 구조가 무거워지고 공항 탑승구에도 들어가기 어려워져요."},
+    {"type": "mc", "q": "'비행체를 안정적으로, 원하는 방향으로 움직이게 하는 방법'을 핵심 질문으로 삼는 분야는?", "choices": ["공기역학", "추진", "비행역학과 제어", "궤도역학"], "answer": 2, "explain": "비행역학과 제어(flight dynamics & control)는 비행체의 자세와 움직임, 그리고 이를 원하는 대로 바꾸는 조종·제어 방법을 연구해요."},
+    {"type": "ox", "q": "비행기와 로켓은 모두 연료를 태우기 위해 주변 공기 속 산소를 사용한다.", "answer": false, "explain": "제트 엔진은 공기 속 산소를 쓰지만, 로켓은 우주에서도 작동해야 하므로 산화제를 직접 싣고 다녀요."}
+  ],
+  "further": [
+    {"title": "NASA Glenn — Beginner's Guide to Aeronautics", "url": "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/", "lang": "en"},
+    {"title": "한국항공우주연구원(KARI)", "url": "https://www.kari.re.kr", "lang": "ko"},
+    {"title": "우주항공청(KASA)", "url": "https://www.kasa.go.kr", "lang": "ko"}
+  ]
+}

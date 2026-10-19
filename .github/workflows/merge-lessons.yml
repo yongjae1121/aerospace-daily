@@ -1,0 +1,57 @@
+name: Merge lesson branches
+
+# 예약 루틴(클라우드 Claude)이 main에 직접 푸시하지 못하고 claude/... 브랜치에 강좌를 올린 경우,
+# content/ 안의 변경만 있는지 확인하고 검사를 통과하면 main에 병합한 뒤 배포를 실행한다.
+on:
+  push:
+    branches: ['claude/**']
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: merge-main
+  cancel-in-progress: false
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Only content/ may change
+        env:
+          BRANCH: ${{ github.ref_name }}
+        run: |
+          changed=$(git diff --name-only "origin/main...origin/$BRANCH")
+          echo "$changed"
+          outside=$(echo "$changed" | grep -v '^content/' | grep -v '^$' || true)
+          if [ -n "$outside" ]; then
+            echo "::error::content/ 밖의 파일이 바뀌어 자동 병합하지 않습니다. 직접 검토 후 병합하세요:"
+            echo "$outside"
+            exit 1
+          fi
+
+      - name: Validate
+        run: python3 scripts/build.py --check
+
+      - name: Merge into main
+        env:
+          BRANCH: ${{ github.ref_name }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout main
+          git pull --ff-only origin main
+          git merge --no-ff --no-edit "origin/$BRANCH" -m "Merge $BRANCH (daily lesson)"
+          python3 scripts/build.py --check
+          git push origin main
+          git push origin --delete "$BRANCH" || true
+
+      - name: Deploy
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy.yml --ref main

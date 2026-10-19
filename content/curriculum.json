@@ -1,0 +1,287 @@
+{
+  "title": "Aerospace Daily",
+  "subtitle": "매일 한 걸음, 항공우주공학",
+  "start": "2026-10-20",
+  "units": [
+    {
+      "id": "U01", "icon": "🧭",
+      "title": "기초 다지기: 물리와 수학 도구",
+      "title_en": "Foundations: The Physics & Math Toolkit",
+      "desc": "항공우주공학의 모든 내용을 떠받치는 역학·단위·벡터·미적분 도구를 정리합니다.",
+      "lessons": [
+        {"day": 1, "title": "항공우주공학이란?", "title_en": "What Is Aerospace Engineering?", "topics": ["항공공학(aeronautics)과 우주공학(astronautics)", "4대 핵심 분야: 공기역학·추진·구조·비행역학/제어 + 궤도역학", "트레이드오프(trade-off)로서의 설계", "이 코스의 지도"]},
+        {"day": 2, "title": "단위와 차원 해석", "title_en": "Units and Dimensional Analysis", "topics": ["SI 기본·유도 단위(N, Pa, J, W)", "항공 단위(ft, kt, lbf, nmi)와 환산", "차원 동차성(dimensional homogeneity)", "화성 기후 궤도선(Mars Climate Orbiter) 사고"]},
+        {"day": 3, "title": "벡터와 좌표계", "title_en": "Vectors and Coordinate Frames", "topics": ["성분 분해", "내적과 외적", "관성 좌표계 vs 동체 좌표계", "받음각·비행경로각 미리보기"]},
+        {"day": 4, "title": "뉴턴의 법칙과 자유물체도", "title_en": "Newton's Laws and Free-Body Diagrams", "topics": ["F = ma와 작용·반작용", "수평 비행하는 비행기의 자유물체도", "이륙하는 로켓의 자유물체도", "추력 대 중량비(thrust-to-weight ratio)"]},
+        {"day": 5, "title": "운동량과 충격량", "title_en": "Momentum and Impulse", "topics": ["운동량 보존", "충격량 = 힘의 시간 적분", "로켓은 공기를 미는 것이 아니다", "우주 공간에서의 추진"]},
+        {"day": 6, "title": "일, 에너지, 일률", "title_en": "Work, Energy, and Power", "topics": ["운동에너지와 위치에너지", "비에너지(specific energy)", "일률 P = Fv", "궤도에 오르려면 얼마나 많은 에너지가 필요한가"]},
+        {"day": 7, "title": "만유인력과 무게", "title_en": "Gravitation and Weight", "topics": ["만유인력 법칙과 GM", "고도에 따른 g의 변화", "무게와 질량", "무중력의 진짜 의미: 자유낙하"]},
+        {"day": 8, "title": "원운동과 궤도 속도", "title_en": "Circular Motion and Orbital Speed", "topics": ["구심 가속도", "뉴턴의 대포", "원궤도 속도 7.9 km/s 유도", "궤도 주기"]},
+        {"day": 9, "title": "미적분으로 운동 읽기", "title_en": "Calculus for Motion", "topics": ["미분 = 변화율", "적분 = 누적", "질량이 변하는 계", "오일러 수치 적분의 아이디어"]},
+        {"day": 10, "title": "공학적 추정과 페르미 문제", "title_en": "Engineering Estimation and Fermi Problems", "topics": ["자릿수(order of magnitude) 추정", "가정 세우기", "유효숫자", "예: 여객기 한 번 비행의 연료량"]}
+      ]
+    },
+    {
+      "id": "U02", "icon": "🚀",
+      "title": "로켓의 기본 원리",
+      "title_en": "Rocket Fundamentals",
+      "desc": "로켓이 나아가는 원리, 추력과 비추력, 로켓 방정식과 다단화를 배웁니다.",
+      "lessons": [
+        {"day": 11, "title": "로켓은 어떻게 나아가는가", "title_en": "How Rockets Work", "topics": ["배기가스의 운동량", "로켓의 기본 구성: 추진제·연소실·노즐·구조", "로켓 vs 제트 엔진", "산화제를 싣고 다니는 이유"]},
+        {"day": 12, "title": "추력 방정식", "title_en": "The Thrust Equation", "topics": ["운동량 추력 ṁv_e", "압력 추력 (p_e − p_a)A_e", "해면 추력 vs 진공 추력", "유효 배기 속도"]},
+        {"day": 13, "title": "비추력", "title_en": "Specific Impulse", "topics": ["Isp의 정의", "단위가 '초'인 이유", "추진제별 Isp 비교", "자동차 연비와의 비유"]},
+        {"day": 14, "title": "치올콥스키 로켓 방정식", "title_en": "The Tsiolkovsky Rocket Equation", "topics": ["운동량 보존에서 유도", "Δv = v_e ln(m0/mf)", "로켓 방정식의 횡포(tyranny)", "예제 계산"]},
+        {"day": 15, "title": "질량비와 구조 효율", "title_en": "Mass Ratio and Structural Efficiency", "topics": ["추진제 질량 분율", "구조 계수", "탑재 비율(payload fraction)", "로켓 무게의 90%가 추진제인 이유"]},
+        {"day": 16, "title": "다단 로켓", "title_en": "Staging", "topics": ["다단화의 원리", "직렬 단과 병렬 부스터", "단 분리", "최적 단 수"]},
+        {"day": 17, "title": "델타-v 예산", "title_en": "Delta-v Budgets", "topics": ["지구에서 LEO까지 약 9.4 km/s", "중력·항력 손실", "델타-v 지도", "달과 화성까지"]},
+        {"day": 18, "title": "로켓의 개척자들", "title_en": "Pioneers of Rocketry", "topics": ["치올콥스키, 고다드, 오베르트", "폰 브라운과 코롤료프", "조선의 신기전", "이론에서 공학으로"]}
+      ]
+    },
+    {
+      "id": "U03", "icon": "🌤️",
+      "title": "대기와 유체의 성질",
+      "title_en": "The Atmosphere and Fluid Properties",
+      "desc": "비행기가 헤엄치는 바다, 대기와 유체의 기본 성질과 방정식을 익힙니다.",
+      "lessons": [
+        {"day": 19, "title": "대기의 구조", "title_en": "Structure of the Atmosphere", "topics": ["대류권·성층권·중간권·열권", "고도별 온도 분포", "카르만 선(100 km)", "비행기와 로켓이 지나는 층"]},
+        {"day": 20, "title": "압력, 밀도, 온도와 이상기체", "title_en": "Pressure, Density, Temperature, and the Ideal Gas Law", "topics": ["p = ρRT", "공기의 기체상수 R = 287 J/(kg·K)", "압력의 미시적 의미", "밀도가 비행에 중요한 이유"]},
+        {"day": 21, "title": "국제 표준 대기", "title_en": "The International Standard Atmosphere", "topics": ["ISA 해면 기준값", "기온 감률(lapse rate)", "기압 고도와 밀도 고도", "고도에 따른 지수적 감소"]},
+        {"day": 22, "title": "유체 정역학과 부력", "title_en": "Hydrostatics and Buoyancy", "topics": ["dp/dz = −ρg", "아르키메데스의 원리", "기구와 비행선", "성층권 풍선"]},
+        {"day": 23, "title": "연속 방정식", "title_en": "The Continuity Equation", "topics": ["질량 보존", "ρAV = 일정", "유선과 유관", "비압축성 가정"]},
+        {"day": 24, "title": "베르누이 방정식", "title_en": "Bernoulli's Equation", "topics": ["정압·동압·전압", "피토관과 대기속도", "적용 조건", "흔한 오해"]},
+        {"day": 25, "title": "점성과 레이놀즈 수", "title_en": "Viscosity and Reynolds Number", "topics": ["점성의 의미", "무차원수 Re = ρVL/μ", "층류 vs 난류", "상사 법칙(similarity)"]},
+        {"day": 26, "title": "경계층과 유동 박리", "title_en": "Boundary Layers and Flow Separation", "topics": ["점착 조건(no-slip)", "경계층 두께", "역압력 구배와 박리", "골프공 딤플"]},
+        {"day": 27, "title": "음속과 마하 수", "title_en": "Speed of Sound and Mach Number", "topics": ["a = √(γRT)", "아음속·천음속·초음속·극초음속", "압축성 효과", "마하 원뿔"]}
+      ]
+    },
+    {
+      "id": "U04", "icon": "✈️",
+      "title": "공기역학: 양력과 항력",
+      "title_en": "Aerodynamics: Lift and Drag",
+      "desc": "날개가 양력을 만드는 원리와 항력을 줄이는 설계를 깊이 있게 다룹니다.",
+      "lessons": [
+        {"day": 28, "title": "에어포일의 해부학", "title_en": "Anatomy of an Airfoil", "topics": ["시위선, 캠버, 두께", "앞전과 뒷전", "받음각", "NACA 4자리 에어포일"]},
+        {"day": 29, "title": "양력은 어떻게 생기는가", "title_en": "How Lift Really Works", "topics": ["'동일 통과 시간' 설명의 오류", "유동의 방향 전환(뉴턴)", "압력 차", "쿠타 조건과 순환"]},
+        {"day": 30, "title": "양력 계수와 받음각", "title_en": "Lift Coefficient and Angle of Attack", "topics": ["L = ½ρV²SC_L", "양력 곡선 기울기 ≈ 2π", "무차원화의 힘", "받음각과 C_L의 관계"]},
+        {"day": 31, "title": "실속", "title_en": "Stall", "topics": ["임계 받음각", "실속과 유동 박리", "실속 속도 공식", "스핀과 사고 사례"]},
+        {"day": 32, "title": "항력의 종류", "title_en": "Types of Drag", "topics": ["마찰 항력", "형상(압력) 항력", "유도 항력", "조파 항력과 기생 항력"]},
+        {"day": 33, "title": "날개 끝 와류와 유도 항력", "title_en": "Wingtip Vortices and Induced Drag", "topics": ["내리흐름(downwash)", "C_Di = C_L²/(πeAR)", "윙렛", "철새의 V자 비행"]},
+        {"day": 34, "title": "날개 평면형과 가로세로비", "title_en": "Wing Planform and Aspect Ratio", "topics": ["AR = b²/S", "테이퍼와 타원 날개", "글라이더 vs 전투기", "평면형의 트레이드오프"]},
+        {"day": 35, "title": "양항비와 항력 극곡선", "title_en": "Lift-to-Drag Ratio and the Drag Polar", "topics": ["C_D = C_D0 + KC_L²", "최대 L/D 조건", "L/D가 의미하는 것", "비행기별 L/D 비교"]},
+        {"day": 36, "title": "압력 계수와 압력 분포", "title_en": "Pressure Coefficient and Distribution", "topics": ["C_p의 정의", "윗면 흡입과 아랫면 압력", "압력 중심", "압력 분포 그래프 읽기"]},
+        {"day": 37, "title": "고양력 장치", "title_en": "High-Lift Devices", "topics": ["플랩", "슬랫", "와류 발생기", "이착륙과 고양력 장치"]},
+        {"day": 38, "title": "풍동과 전산유체역학", "title_en": "Wind Tunnels and CFD", "topics": ["풍동의 종류", "축소 모형과 상사", "CFD의 기본 아이디어", "검증(validation)"]},
+        {"day": 39, "title": "천음속 비행과 후퇴익", "title_en": "Transonic Flight and Swept Wings", "topics": ["임계 마하수", "항력 발산", "후퇴각의 효과", "초임계 에어포일"]},
+        {"day": 40, "title": "충격파와 초음속 비행", "title_en": "Shock Waves and Supersonic Flight", "topics": ["수직·경사 충격파", "소닉붐", "콩코드", "면적 법칙(area rule)"]}
+      ]
+    },
+    {
+      "id": "U05", "icon": "🪐",
+      "title": "궤도역학",
+      "title_en": "Orbital Mechanics",
+      "desc": "케플러부터 호만 전이, 중력 도움, 라그랑주 점까지 우주 비행의 길을 계산합니다.",
+      "lessons": [
+        {"day": 41, "title": "케플러의 법칙", "title_en": "Kepler's Laws", "topics": ["타원 궤도", "면적 속도 일정", "조화의 법칙 T² ∝ a³", "뉴턴 역학과의 연결"]},
+        {"day": 42, "title": "이체 문제", "title_en": "The Two-Body Problem", "topics": ["중심력", "각운동량 보존", "중력 상수 μ = GM", "궤도 방정식"]},
+        {"day": 43, "title": "원뿔 곡선 궤도", "title_en": "Conic Section Orbits", "topics": ["원·타원·포물선·쌍곡선", "이심률", "근지점과 원지점", "궤도 모양 읽기"]},
+        {"day": 44, "title": "활력 방정식", "title_en": "The Vis-Viva Equation", "topics": ["에너지 보존", "v² = μ(2/r − 1/a)", "비궤도에너지", "예제: 근지점 속도"]},
+        {"day": 45, "title": "탈출 속도", "title_en": "Escape Velocity", "topics": ["11.2 km/s 유도", "쌍곡선 초과 속도 v∞", "C3 에너지", "행성별 탈출 속도"]},
+        {"day": 46, "title": "궤도 6요소", "title_en": "The Six Orbital Elements", "topics": ["a, e, i", "승교점 적경 Ω, 근지점 인수 ω", "진근점 이각 ν", "TLE 읽기"]},
+        {"day": 47, "title": "궤도의 종류", "title_en": "Types of Orbits", "topics": ["LEO, MEO, GEO", "태양동기궤도(SSO)", "몰니야 궤도", "궤도별 용도"]},
+        {"day": 48, "title": "호만 전이", "title_en": "The Hohmann Transfer", "topics": ["두 번의 분사", "전이 궤도", "Δv 계산", "예제: LEO에서 GEO로"]},
+        {"day": 49, "title": "궤도면 변경", "title_en": "Plane Changes", "topics": ["Δv = 2v sin(Δi/2)", "궤도면 변경이 비싼 이유", "결합 기동", "발사장 위도와 경사각"]},
+        {"day": 50, "title": "랑데부와 도킹", "title_en": "Rendezvous and Docking", "topics": ["위상각", "상대 운동의 직관: 따라잡으려면 감속", "접근 절차", "ISS 도킹"]},
+        {"day": 51, "title": "행성 간 전이와 발사 창", "title_en": "Interplanetary Transfers and Launch Windows", "topics": ["패치드 코닉 근사", "회합 주기", "화성 발사 창 26개월", "포크찹 플롯"]},
+        {"day": 52, "title": "중력 도움", "title_en": "Gravity Assists", "topics": ["좌표계 변환으로 이해하기", "보이저의 그랜드 투어", "오베르트 효과", "감속을 위한 플라이바이"]},
+        {"day": 53, "title": "라그랑주 점", "title_en": "Lagrange Points", "topics": ["L1–L5", "제한 삼체 문제", "JWST와 L2", "안정성과 헤일로 궤도"]},
+        {"day": 54, "title": "궤도 섭동과 우주 쓰레기", "title_en": "Perturbations and Space Debris", "topics": ["J2 섭동", "대기 항력과 궤도 감쇠", "케슬러 증후군", "우주 쓰레기 대책"]},
+        {"day": 55, "title": "케이스 스터디: 다누리의 달 여행", "title_en": "Case Study: Danuri's Ballistic Lunar Transfer", "topics": ["탄도형 달 전이(BLT)", "연료 절약의 원리", "달 궤도 진입", "다누리의 성과"]}
+      ]
+    },
+    {
+      "id": "U06", "icon": "🔥",
+      "title": "로켓 엔진과 추진제",
+      "title_en": "Rocket Engines and Propellants",
+      "desc": "노즐, 엔진 사이클, 추진제, 냉각까지 로켓 엔진의 내부를 해부합니다.",
+      "lessons": [
+        {"day": 56, "title": "노즐과 초음속 흐름", "title_en": "Nozzles and Supersonic Flow", "topics": ["드 라발 노즐", "목(throat)에서의 초킹", "면적-마하 관계", "왜 넓어지면 빨라지는가"]},
+        {"day": 57, "title": "팽창비와 고도", "title_en": "Expansion Ratio and Altitude", "topics": ["과팽창과 부족팽창", "노즐 유동 박리", "진공용 노즐", "에어로스파이크"]},
+        {"day": 58, "title": "특성 속도와 추력 계수", "title_en": "Characteristic Velocity and Thrust Coefficient", "topics": ["c*의 의미", "추력 계수 C_F", "F = C_F p_c A_t", "엔진 성능 분석"]},
+        {"day": 59, "title": "고체 로켓 모터", "title_en": "Solid Rocket Motors", "topics": ["추진제 그레인", "연소 속도 법칙", "그레인 형상과 추력 곡선", "하이브리드 로켓"]},
+        {"day": 60, "title": "액체 로켓 엔진의 구성", "title_en": "Anatomy of a Liquid Rocket Engine", "topics": ["탱크와 배관, 밸브", "인젝터", "연소실과 노즐", "점화 방식"]},
+        {"day": 61, "title": "추진제 조합", "title_en": "Propellant Combinations", "topics": ["LOX/케로신", "LOX/액체수소", "LOX/메탄", "하이퍼골릭과 O/F 비"]},
+        {"day": 62, "title": "극저온 추진제", "title_en": "Cryogenic Propellants", "topics": ["끓는점과 보일오프", "단열", "칠다운", "과냉각(densified) 추진제"]},
+        {"day": 63, "title": "가압식 엔진과 터보펌프", "title_en": "Pressure-Fed Engines and Turbopumps", "topics": ["가압 방식", "탱크 무게 문제", "터보펌프 원리", "캐비테이션"]},
+        {"day": 64, "title": "가스 발생기 사이클", "title_en": "The Gas-Generator Cycle", "topics": ["오픈 사이클", "멀린(Merlin)과 F-1", "누리호 75톤 엔진", "장단점"]},
+        {"day": 65, "title": "다단 연소 사이클", "title_en": "The Staged-Combustion Cycle", "topics": ["클로즈드 사이클", "산화제 과잉 vs 연료 과잉", "RD-180", "RS-25"]},
+        {"day": 66, "title": "전유량 다단 연소와 익스팬더 사이클", "title_en": "Full-Flow and Expander Cycles", "topics": ["전유량 다단 연소", "랩터(Raptor)", "익스팬더 사이클", "RL10"]},
+        {"day": 67, "title": "연소실 냉각", "title_en": "Cooling the Combustion Chamber", "topics": ["재생 냉각", "막 냉각", "삭마 냉각", "복사 냉각"]},
+        {"day": 68, "title": "추력 벡터 제어와 스로틀링", "title_en": "Thrust Vector Control and Throttling", "topics": ["짐벌", "제트 베인과 2차 분사", "스로틀링의 어려움", "착륙에 필요한 깊은 스로틀"]},
+        {"day": 69, "title": "케이스 스터디: 누리호", "title_en": "Case Study: Nuri (KSLV-II)", "topics": ["3단 구성", "75톤 엔진 4기 클러스터링", "발사 이력", "한국형 발사체의 의미"]},
+        {"day": 70, "title": "전기 추진과 미래 추진", "title_en": "Electric and Advanced Propulsion", "topics": ["이온 엔진", "홀 추력기", "높은 Isp vs 낮은 추력", "핵열 추진과 태양돛"]}
+      ]
+    },
+    {
+      "id": "U07", "icon": "📈",
+      "title": "비행 성능",
+      "title_en": "Aircraft Performance",
+      "desc": "얼마나 빨리, 높이, 멀리 날 수 있는지 계산하는 방법을 배웁니다.",
+      "lessons": [
+        {"day": 71, "title": "네 가지 힘과 정상 수평 비행", "title_en": "The Four Forces and Steady Level Flight", "topics": ["양력·중량·추력·항력", "평형 조건", "수평 비행 속도", "날개 하중"]},
+        {"day": 72, "title": "필요 추력과 필요 동력", "title_en": "Thrust and Power Required", "topics": ["필요 추력 곡선", "필요 동력 곡선", "최소 항력 속도", "제트기 vs 프로펠러기"]},
+        {"day": 73, "title": "상승 성능", "title_en": "Climb Performance", "topics": ["잉여 동력", "상승률", "상승각", "상승 한계"]},
+        {"day": 74, "title": "활공 비행", "title_en": "Gliding Flight", "topics": ["활공비 = L/D", "최대 활공 거리", "글라이더", "허드슨 강의 기적"]},
+        {"day": 75, "title": "항속 거리와 브레게 방정식", "title_en": "Range and the Breguet Equation", "topics": ["연료 소비율", "브레게 항속 방정식", "로켓 방정식과의 비교", "장거리 여객기 설계"]},
+        {"day": 76, "title": "체공 시간", "title_en": "Endurance", "topics": ["최대 체공 조건", "정찰 무인기", "프로펠러기의 체공", "항속 vs 체공"]},
+        {"day": 77, "title": "선회 비행과 하중 배수", "title_en": "Turning Flight and Load Factor", "topics": ["경사각과 n = 1/cosφ", "선회 반경과 선회율", "G의 의미", "조종사의 G 내성"]},
+        {"day": 78, "title": "V-n 선도와 비행 포락선", "title_en": "The V-n Diagram and Flight Envelope", "topics": ["구조 한계", "실속 한계", "기동 속도", "비행 포락선"]},
+        {"day": 79, "title": "이륙과 착륙", "title_en": "Takeoff and Landing", "topics": ["활주 거리", "V1, VR, V2", "지면 효과", "역추진과 브레이크"]}
+      ]
+    },
+    {
+      "id": "U08", "icon": "☄️",
+      "title": "발사, 재진입과 착륙",
+      "title_en": "Launch, Reentry, and Landing",
+      "desc": "땅에서 궤도로, 그리고 다시 땅으로 돌아오는 여정의 물리를 다룹니다.",
+      "lessons": [
+        {"day": 80, "title": "발사장과 지구 자전", "title_en": "Launch Sites and Earth's Rotation", "topics": ["적도 발사의 이점", "발사 방위각", "나로우주센터", "안전 구역"]},
+        {"day": 81, "title": "중력 선회와 상승 궤적", "title_en": "The Gravity Turn and Ascent Trajectory", "topics": ["수직 상승과 피치 오버", "중력 선회", "궤도 투입", "궤적 최적화"]},
+        {"day": 82, "title": "중력 손실과 항력 손실", "title_en": "Gravity and Drag Losses", "topics": ["중력 손실의 의미", "추력 대 중량비와 손실", "항력 손실", "조향 손실"]},
+        {"day": 83, "title": "Max-Q와 공력 하중", "title_en": "Max-Q and Aerodynamic Loads", "topics": ["동압 q = ½ρV²", "Max-Q가 생기는 이유", "스로틀 다운", "페어링"]},
+        {"day": 84, "title": "재진입의 물리", "title_en": "The Physics of Reentry", "topics": ["운동에너지가 열로", "무딘 물체(blunt body)", "재진입 각과 회랑", "통신 두절(블랙아웃)"]},
+        {"day": 85, "title": "열 차폐 시스템", "title_en": "Thermal Protection Systems", "topics": ["삭마 열차폐", "세라믹 타일", "PICA", "재사용 열차폐"]},
+        {"day": 86, "title": "낙하산과 감속 장치", "title_en": "Parachutes and Decelerators", "topics": ["드로그와 메인 낙하산", "화성 EDL", "공포의 7분", "팽창식 감속기"]},
+        {"day": 87, "title": "추진 착륙과 재사용 발사체", "title_en": "Propulsive Landing and Reusability", "topics": ["팰컨 9 1단 회수", "호버슬램", "그리드 핀", "재사용의 경제학"]},
+        {"day": 88, "title": "케이스 스터디: 우주왕복선", "title_en": "Case Study: The Space Shuttle", "topics": ["궤도선·외부 탱크·고체 부스터", "재사용의 꿈과 현실", "열차폐 타일", "남긴 교훈"]}
+      ]
+    },
+    {
+      "id": "U09", "icon": "🎛️",
+      "title": "안정성과 조종",
+      "title_en": "Stability and Control",
+      "desc": "비행기가 스스로 균형을 잡는 원리와 조종면으로 자세를 바꾸는 방법을 배웁니다.",
+      "lessons": [
+        {"day": 89, "title": "세 축과 자세", "title_en": "The Three Axes: Roll, Pitch, and Yaw", "topics": ["롤·피치·요", "오일러 각", "동체 좌표계", "자세 표시 계기"]},
+        {"day": 90, "title": "조종면", "title_en": "Control Surfaces", "topics": ["에일러론", "엘리베이터", "러더", "스포일러와 엘레본"]},
+        {"day": 91, "title": "무게 중심과 공력 중심", "title_en": "Center of Gravity and Aerodynamic Center", "topics": ["무게 중심(CG)", "공력 중심(AC)", "압력 중심과의 차이", "무게 배분"]},
+        {"day": 92, "title": "세로 정안정성", "title_en": "Longitudinal Static Stability", "topics": ["복원 모멘트", "중립점", "정적 여유", "수평 꼬리날개의 역할"]},
+        {"day": 93, "title": "방향 안정성과 가로 안정성", "title_en": "Directional and Lateral Stability", "topics": ["수직 꼬리날개", "웨더콕 안정성", "상반각", "후퇴각의 효과"]},
+        {"day": 94, "title": "동안정성과 운동 모드", "title_en": "Dynamic Stability and Motion Modes", "topics": ["단주기 모드", "장주기(퓨고이드) 모드", "더치 롤", "나선 모드"]},
+        {"day": 95, "title": "트림", "title_en": "Trim", "topics": ["트림의 의미", "트림 탭", "트림 항력", "속도 변화와 트림"]},
+        {"day": 96, "title": "플라이 바이 와이어", "title_en": "Fly-by-Wire", "topics": ["기계식 조종 vs 전자식 조종", "이완 정안정성", "비행 제어 법칙", "전투기의 불안정 설계"]},
+        {"day": 97, "title": "헬리콥터와 회전익", "title_en": "Helicopters and Rotorcraft", "topics": ["로터의 양력", "사이클릭과 컬렉티브", "꼬리 로터와 토크", "오토로테이션"]}
+      ]
+    },
+    {
+      "id": "U10", "icon": "🌀",
+      "title": "항공기 추진",
+      "title_en": "Aircraft Propulsion",
+      "desc": "프로펠러에서 터보팬, 스크램제트까지 공기를 들이마시는 엔진을 배웁니다.",
+      "lessons": [
+        {"day": 98, "title": "추진의 기본 원리", "title_en": "Propulsion Fundamentals", "topics": ["추진 효율", "많은 공기를 느리게 vs 적은 공기를 빠르게", "열효율", "전체 효율"]},
+        {"day": 99, "title": "프로펠러", "title_en": "Propellers", "topics": ["회전하는 날개", "피치와 가변 피치", "프로펠러 효율", "끝단 마하 한계"]},
+        {"day": 100, "title": "왕복 엔진", "title_en": "Piston Engines", "topics": ["4행정 사이클", "오토 사이클", "고도에 따른 출력 저하", "과급기"]},
+        {"day": 101, "title": "브레이턴 사이클", "title_en": "The Brayton Cycle", "topics": ["압축·연소·팽창·배기", "압력비와 열효율", "T-s 선도", "이상 사이클 vs 실제 사이클"]},
+        {"day": 102, "title": "터보제트", "title_en": "The Turbojet", "topics": ["구성 요소", "추력 발생", "애프터버너", "역사"]},
+        {"day": 103, "title": "압축기", "title_en": "Compressors", "topics": ["원심식 vs 축류식", "단 압력비", "서지와 실속", "다축 구조"]},
+        {"day": 104, "title": "연소기와 터빈", "title_en": "Combustors and Turbines", "topics": ["연소기의 역할", "터빈 입구 온도", "블레이드 냉각", "단결정 초합금"]},
+        {"day": 105, "title": "터보팬과 바이패스비", "title_en": "Turbofans and Bypass Ratio", "topics": ["바이패스비", "고바이패스 vs 저바이패스", "기어드 터보팬", "소음 감소"]},
+        {"day": 106, "title": "램제트와 스크램제트", "title_en": "Ramjets and Scramjets", "topics": ["램 압축", "램제트 작동 범위", "초음속 연소", "X-43과 X-51"]},
+        {"day": 107, "title": "전기 항공기와 지속 가능한 항공", "title_en": "Electric Aviation and Sustainable Flight", "topics": ["배터리 에너지 밀도", "하이브리드 전기 추진", "지속가능항공유(SAF)", "수소 항공기"]}
+      ]
+    },
+    {
+      "id": "U11", "icon": "🏗️",
+      "title": "구조와 재료",
+      "title_en": "Structures and Materials",
+      "desc": "가볍지만 튼튼해야 하는 항공우주 구조물의 역학과 재료를 공부합니다.",
+      "lessons": [
+        {"day": 108, "title": "응력과 변형률", "title_en": "Stress and Strain", "topics": ["수직 응력과 전단 응력", "변형률", "후크의 법칙", "푸아송 비"]},
+        {"day": 109, "title": "재료의 기계적 성질", "title_en": "Mechanical Properties of Materials", "topics": ["응력-변형률 곡선", "탄성 계수와 항복 강도", "연성과 취성", "비강도와 비강성"]},
+        {"day": 110, "title": "보의 굽힘", "title_en": "Beam Bending", "topics": ["굽힘 모멘트", "단면 2차 모멘트", "σ = My/I", "날개를 보로 보기"]},
+        {"day": 111, "title": "비틀림과 전단", "title_en": "Torsion and Shear", "topics": ["비틀림 모멘트", "닫힌 단면의 전단 흐름", "날개의 비틀림", "토크 박스"]},
+        {"day": 112, "title": "좌굴", "title_en": "Buckling", "topics": ["오일러 좌굴 하중", "얇은 판의 좌굴", "보강재", "로켓 동체의 좌굴"]},
+        {"day": 113, "title": "모노코크와 세미모노코크", "title_en": "Monocoque and Semi-Monocoque Structures", "topics": ["트러스 구조", "모노코크", "세미모노코크", "스트링어와 프레임"]},
+        {"day": 114, "title": "날개 구조", "title_en": "Wing Structure", "topics": ["스파", "리브", "스킨과 스트링어", "연료 탱크로서의 날개"]},
+        {"day": 115, "title": "항공우주 금속", "title_en": "Aerospace Metals", "topics": ["알루미늄 합금(2024, 7075)", "알루미늄-리튬", "티타늄", "니켈 초합금과 스테인리스강"]},
+        {"day": 116, "title": "복합재료", "title_en": "Composite Materials", "topics": ["섬유와 기지", "CFRP", "적층 설계", "보잉 787"]},
+        {"day": 117, "title": "피로와 파괴", "title_en": "Fatigue and Fracture", "topics": ["피로 균열", "S-N 곡선", "코멧 여객기 사고", "손상 허용 설계"]},
+        {"day": 118, "title": "로켓 구조와 추진제 탱크", "title_en": "Rocket Structures and Propellant Tanks", "topics": ["압력 용기 σ = pr/t", "공통 격벽", "아틀라스의 풍선 탱크", "스테인리스 스타십"]},
+        {"day": 119, "title": "진동과 공진", "title_en": "Vibration and Resonance", "topics": ["고유 진동수", "공진", "포고 진동", "플러터"]},
+        {"day": 120, "title": "안전 계수와 설계 여유", "title_en": "Factor of Safety and Design Margins", "topics": ["항공기 1.5, 로켓 1.25", "제한 하중과 극한 하중", "안전 여유(MS)", "무게와 안전의 균형"]}
+      ]
+    },
+    {
+      "id": "U12", "icon": "🛰️",
+      "title": "우주선 시스템",
+      "title_en": "Spacecraft Systems",
+      "desc": "위성과 탐사선을 이루는 전력·열·자세·통신 등 하위 시스템을 배웁니다.",
+      "lessons": [
+        {"day": 121, "title": "우주 환경", "title_en": "The Space Environment", "topics": ["진공과 극한 온도", "방사선", "원자 산소", "미소 운석"]},
+        {"day": 122, "title": "우주선의 구성: 버스와 탑재체", "title_en": "Spacecraft Anatomy: Bus and Payload", "topics": ["버스와 탑재체", "하위 시스템 목록", "질량·전력 예산", "미션 요구사항"]},
+        {"day": 123, "title": "전력 시스템", "title_en": "Power Systems", "topics": ["태양 전지", "배터리와 식(eclipse)", "RTG", "전력 예산"]},
+        {"day": 124, "title": "열 제어", "title_en": "Thermal Control", "topics": ["복사 평형", "다층 단열재(MLI)", "라디에이터", "히터와 히트 파이프"]},
+        {"day": 125, "title": "자세 결정과 제어", "title_en": "Attitude Determination and Control", "topics": ["반작용 휠", "자이로", "스핀 안정화", "자기 토커"]},
+        {"day": 126, "title": "통신과 링크 예산", "title_en": "Communications and Link Budgets", "topics": ["데시벨", "안테나 이득", "자유 공간 손실", "심우주 통신망(DSN)"]},
+        {"day": 127, "title": "명령 및 데이터 처리", "title_en": "Command and Data Handling", "topics": ["비행 컴퓨터", "비행 소프트웨어", "방사선 내성", "텔레메트리"]},
+        {"day": 128, "title": "우주선 추진 장치", "title_en": "Spacecraft Propulsion Systems", "topics": ["단일 추진제 하이드라진", "이원 추진제", "냉가스 추력기", "궤도 유지"]},
+        {"day": 129, "title": "생명 유지 장치", "title_en": "Life Support Systems", "topics": ["ECLSS", "산소 생성", "물 재생", "이산화탄소 제거"]},
+        {"day": 130, "title": "큐브샛", "title_en": "CubeSats", "topics": ["1U 규격", "대학 위성", "상용 부품(COTS)", "한국의 큐브샛 경연대회"]},
+        {"day": 131, "title": "케이스 스터디: 제임스 웹 우주망원경", "title_en": "Case Study: The James Webb Space Telescope", "topics": ["접이식 거울", "선실드", "L2 궤도", "344개의 단일 실패 지점"]}
+      ]
+    },
+    {
+      "id": "U13", "icon": "🧠",
+      "title": "항법·유도·제어",
+      "title_en": "Guidance, Navigation, and Control",
+      "desc": "어디에 있는지 알고(항법), 어디로 갈지 정하고(유도), 그대로 움직이는(제어) 기술입니다.",
+      "lessons": [
+        {"day": 132, "title": "GNC란 무엇인가", "title_en": "What Is GNC?", "topics": ["항법·유도·제어의 구분", "피드백 루프", "센서와 구동기", "예: 로켓의 자세 제어"]},
+        {"day": 133, "title": "관성 항법", "title_en": "Inertial Navigation", "topics": ["가속도계", "자이로스코프", "적분과 드리프트", "링 레이저 자이로"]},
+        {"day": 134, "title": "위성 항법 GNSS", "title_en": "Satellite Navigation (GNSS)", "topics": ["삼변 측량", "원자 시계", "상대성 이론 보정", "한국형 위성항법 KPS"]},
+        {"day": 135, "title": "자세 센서", "title_en": "Attitude Sensors", "topics": ["별 추적기", "태양 센서", "지구 센서", "자력계"]},
+        {"day": 136, "title": "피드백 제어와 PID", "title_en": "Feedback Control and PID", "topics": ["오차와 피드백", "비례·적분·미분", "오버슈트와 정착 시간", "튜닝"]},
+        {"day": 137, "title": "칼만 필터의 직관", "title_en": "The Intuition Behind the Kalman Filter", "topics": ["예측과 갱신", "불확실성의 표현", "센서 융합", "아폴로와 칼만 필터"]},
+        {"day": 138, "title": "오토파일럿과 자율 비행", "title_en": "Autopilots and Autonomous Flight", "topics": ["오토파일럿 모드", "자동 착륙", "드론의 자율 비행", "인간과 자동화"]},
+        {"day": 139, "title": "케이스 스터디: 아폴로 유도 컴퓨터", "title_en": "Case Study: The Apollo Guidance Computer", "topics": ["하드웨어 사양", "소프트웨어 공학의 탄생", "1202 알람", "마거릿 해밀턴"]}
+      ]
+    },
+    {
+      "id": "U14", "icon": "📜",
+      "title": "역사와 미션",
+      "title_en": "History and Missions",
+      "desc": "인류가 하늘과 우주로 나아간 이야기와 오늘날의 미션을 살펴봅니다.",
+      "lessons": [
+        {"day": 140, "title": "라이트 형제와 비행의 시작", "title_en": "The Wright Brothers and the Dawn of Flight", "topics": ["릴리엔탈과 글라이더", "라이트 형제의 풍동 실험", "3축 조종", "1903년 첫 비행"]},
+        {"day": 141, "title": "제트 시대와 음속 돌파", "title_en": "The Jet Age and the Sound Barrier", "topics": ["휘틀과 폰 오하인", "벨 X-1", "제트 여객기", "SR-71"]},
+        {"day": 142, "title": "V-2에서 스푸트니크까지", "title_en": "From the V-2 to Sputnik", "topics": ["V-2 로켓", "냉전과 미사일", "R-7과 스푸트니크", "우주 경쟁의 시작"]},
+        {"day": 143, "title": "아폴로 계획", "title_en": "Project Apollo", "topics": ["머큐리·제미니·아폴로", "달 궤도 랑데부 방식", "아폴로 11호", "아폴로 13호"]},
+        {"day": 144, "title": "새턴 V 해부", "title_en": "Anatomy of the Saturn V", "topics": ["S-IC, S-II, S-IVB", "F-1과 J-2 엔진", "제작과 시험", "역대 최강 로켓의 숫자들"]},
+        {"day": 145, "title": "국제우주정거장", "title_en": "The International Space Station", "topics": ["모듈 구성", "국제 협력", "궤도 유지", "미세중력 연구"]},
+        {"day": 146, "title": "한국의 우주 개발", "title_en": "Korea's Space Program", "topics": ["우리별 1호", "나로호", "누리호", "다누리와 우주항공청"]},
+        {"day": 147, "title": "뉴 스페이스", "title_en": "The New Space Era", "topics": ["민간 우주 기업", "상업 수송", "소형 발사체", "위성 군집(constellation)"]},
+        {"day": 148, "title": "스타십과 초대형 발사체", "title_en": "Starship and Super Heavy-Lift Launchers", "topics": ["완전 재사용", "궤도상 급유", "SLS와의 비교", "시험 비행"]},
+        {"day": 149, "title": "아르테미스와 달 귀환", "title_en": "Artemis and the Return to the Moon", "topics": ["오리온 우주선", "게이트웨이", "달 남극", "국제 협력"]},
+        {"day": 150, "title": "화성 탐사", "title_en": "Exploring Mars", "topics": ["바이킹부터 퍼서비어런스까지", "인저뉴어티 헬리콥터", "샘플 귀환", "유인 화성 탐사의 과제"]},
+        {"day": 151, "title": "도심 항공 모빌리티와 드론", "title_en": "Urban Air Mobility and Drones", "topics": ["eVTOL", "분산 전기 추진", "K-UAM", "드론의 공기역학"]}
+      ]
+    },
+    {
+      "id": "U15", "icon": "🎓",
+      "title": "공학자로 가는 길",
+      "title_en": "Becoming an Aerospace Engineer",
+      "desc": "배운 것을 종합해 직접 설계해 보고, 전공과 진로를 구체적으로 그려 봅니다.",
+      "lessons": [
+        {"day": 152, "title": "항공기 개념 설계 I: 무게 추정", "title_en": "Aircraft Conceptual Design I: Weight Estimation", "topics": ["설계 요구조건", "이륙 중량 추정", "빈 무게 비율", "연료 비율"]},
+        {"day": 153, "title": "항공기 개념 설계 II: 날개 하중과 추력 대 중량비", "title_en": "Aircraft Conceptual Design II: Wing Loading and T/W", "topics": ["날개 하중 W/S", "추력 대 중량비 T/W", "제약 선도(constraint diagram)", "설계점 선택"]},
+        {"day": 154, "title": "로켓 개념 설계: 소형 발사체", "title_en": "Rocket Conceptual Design: A Small Launcher", "topics": ["목표 궤도와 Δv", "단별 Δv 배분", "엔진 선택", "질량 추정"]},
+        {"day": 155, "title": "시스템 엔지니어링", "title_en": "Systems Engineering", "topics": ["요구사항", "V-모델", "기술 성숙도(TRL)", "트레이드 스터디"]},
+        {"day": 156, "title": "신뢰성과 리스크", "title_en": "Reliability and Risk", "topics": ["신뢰도 계산", "중복 설계", "FMEA", "시험 철학"]},
+        {"day": 157, "title": "실패에서 배우기: 챌린저와 컬럼비아", "title_en": "Learning from Failure: Challenger and Columbia", "topics": ["O-링과 저온", "단열재 충돌", "조직 문화", "공학 윤리"]},
+        {"day": 158, "title": "항공우주 엔지니어의 도구", "title_en": "Tools of the Trade", "topics": ["Python과 MATLAB", "CAD", "시뮬레이션", "영어 논문 읽는 법"]},
+        {"day": 159, "title": "진로 지도: 전공과 커리어", "title_en": "Career Map: Majors and Careers", "topics": ["항공우주공학과 커리큘럼", "연구소·기업·기관", "대학원과 연구", "지금 할 수 있는 준비"]},
+        {"day": 160, "title": "최종 프로젝트: 나만의 미션 설계", "title_en": "Capstone: Design Your Own Mission", "topics": ["미션 목표 설정", "궤도와 발사체 선택", "우주선 설계", "발표 자료 만들기"]}
+      ]
+    }
+  ]
+}

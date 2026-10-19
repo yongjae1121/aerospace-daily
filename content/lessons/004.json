@@ -1,0 +1,43 @@
+{
+  "day": 4,
+  "title": "뉴턴의 법칙과 자유물체도",
+  "title_en": "Newton's Laws and Free-Body Diagrams",
+  "level": 2,
+  "minutes": 20,
+  "summary": "뉴턴의 세 법칙을 비행기와 로켓에 적용하고, 자유물체도로 수평 비행(L = W, T = D)과 로켓 이륙(T/W > 1)을 분석합니다.",
+  "objectives": [
+    "비행기와 로켓에 작용하는 힘을 자유물체도로 빠짐없이 그릴 수 있다.",
+    "수평 등속 비행의 평형 조건과 양항비를 이용해 필요한 추력을 구할 수 있다.",
+    "추력 대 중량비로 로켓의 이륙 가능 여부와 가속도를 계산할 수 있다."
+  ],
+  "vocab": [
+    {"en": "force", "pron": "fɔːrs", "pos": "n.", "ko": "힘", "def": "A push or pull that can change the motion of an object, measured in newtons.", "ex": "The net force on an airliner in steady flight is zero.", "ex_ko": "정상 비행 중인 여객기에 작용하는 알짜힘은 0이다."},
+    {"en": "free-body diagram", "pron": "ˌfriː ˈbɑːdi ˈdaɪəɡræm", "pos": "n.", "ko": "자유물체도", "def": "A sketch that shows one object and all the external forces acting on it.", "ex": "Start every mechanics problem by drawing a free-body diagram.", "ex_ko": "모든 역학 문제는 자유물체도를 그리는 것으로 시작하라."},
+    {"en": "net force", "pron": "nɛt fɔːrs", "pos": "n.", "ko": "알짜힘", "def": "The vector sum of all the forces acting on an object.", "ex": "At liftoff, the net force on the rocket is thrust minus weight.", "ex_ko": "이륙 순간 로켓에 작용하는 알짜힘은 추력에서 무게를 뺀 값이다."},
+    {"en": "lift", "pron": "lɪft", "pos": "n.", "ko": "양력", "def": "The aerodynamic force that acts perpendicular to the oncoming airflow, usually upward.", "ex": "In level flight, the wings produce enough lift to support the aircraft's weight.", "ex_ko": "수평 비행에서 날개는 항공기의 무게를 지탱할 만큼의 양력을 만든다."},
+    {"en": "drag", "pron": "dræɡ", "pos": "n.", "ko": "항력", "def": "The aerodynamic force that resists an object's motion through the air.", "ex": "Engineers reshape the fuselage to reduce drag.", "ex_ko": "엔지니어들은 항력을 줄이기 위해 동체 모양을 다듬는다."},
+    {"en": "thrust", "pron": "θrʌst", "pos": "n.", "ko": "추력", "def": "The forward force produced by an engine or propeller.", "ex": "The nine engines together produce about 7,600 kilonewtons of thrust.", "ex_ko": "엔진 9기가 함께 약 7,600킬로뉴턴의 추력을 낸다."},
+    {"en": "thrust-to-weight ratio", "pron": "θrʌst tə weɪt ˈreɪʃioʊ", "pos": "n.", "ko": "추력 대 중량비", "def": "The thrust of a vehicle divided by its weight; it must exceed one for a rocket to lift off.", "ex": "A thrust-to-weight ratio of 1.4 gives the rocket a brisk liftoff.", "ex_ko": "추력 대 중량비가 1.4이면 로켓은 경쾌하게 이륙한다."},
+    {"en": "equilibrium", "pron": "ˌiːkwɪˈlɪbriəm", "pos": "n.", "ko": "평형", "def": "A state in which all forces balance, so there is no acceleration.", "ex": "An aircraft cruising at constant speed and altitude is in equilibrium.", "ex_ko": "일정한 속도와 고도로 순항하는 항공기는 평형 상태에 있다."}
+  ],
+  "reading": {
+    "title": "Four Forces in Balance",
+    "en": "Every aircraft in flight is acted on by four forces. Weight pulls it toward the ground, and lift, produced mainly by the wings, pushes it upward. Thrust from the engines drives it forward, while drag from the surrounding air holds it back. When an airliner cruises at a constant speed and altitude, these forces are in equilibrium: lift equals weight, and thrust equals drag.\n\nThis balance reveals something surprising. A modern airliner does not need engines as powerful as its own weight. Because its wings can produce about seventeen times more lift than drag, its engines only need to overcome a thrust roughly one-seventeenth of its weight. A rocket has no such advantage. With no wings to carry it, a rocket must produce more thrust than it weighs just to leave the launch pad. That is why the thrust-to-weight ratio is one of the first numbers engineers check when they design a launch vehicle.",
+    "ko": "비행 중인 모든 항공기에는 네 가지 힘이 작용한다. 중량은 항공기를 땅 쪽으로 끌어당기고, 주로 날개가 만드는 양력은 항공기를 위로 밀어 올린다. 엔진의 추력은 항공기를 앞으로 밀고, 주변 공기의 항력은 항공기를 뒤로 붙잡는다. 여객기가 일정한 속도와 고도로 순항할 때 이 힘들은 평형을 이룬다. 양력은 중량과 같고, 추력은 항력과 같다.\n\n이 균형은 놀라운 사실을 보여 준다. 현대 여객기에는 자기 무게만큼 강력한 엔진이 필요하지 않다. 날개가 항력보다 약 17배 큰 양력을 만들 수 있기 때문에, 엔진은 무게의 약 17분의 1 정도의 추력만 이겨 내면 된다. 로켓에는 그런 이점이 없다. 자신을 실어 줄 날개가 없으므로, 로켓은 발사대를 떠나기 위해서만도 자기 무게보다 큰 추력을 내야 한다. 그래서 추력 대 중량비는 엔지니어가 발사체를 설계할 때 가장 먼저 확인하는 숫자 중 하나다."
+  },
+  "quiz": [
+    {"type": "mc", "q": "일정한 속도와 고도로 수평 비행 중인 비행기에서 성립하는 관계는? ($L$: 양력, $W$: 중량, $T$: 추력, $D$: 항력)", "choices": ["$L = W$, $T = D$", "$L = T$, $W = D$", "$L > W$, $T > D$", "$L = W + D$, $T = 0$"], "answer": 0, "explain": "가속도가 0이므로 수직 방향 힘의 합($L - W$)도, 수평 방향 힘의 합($T - D$)도 0이에요."},
+    {"type": "num", "q": "질량 20 t인 로켓이 260 kN의 추력으로 수직 이륙해요. 이륙 순간의 가속도는 몇 m/s²일까요? (공기 저항 무시, $g = 9.81\\ \\text{m/s}^2$)", "answer": 3.19, "tol": 0.03, "unit": "m/s²", "explain": "$W = 20{,}000 \\times 9.81 = 196.2\\ \\text{kN}$, 알짜힘 $= 260 - 196.2 = 63.8\\ \\text{kN}$이므로 $a = 63{,}800 / 20{,}000 \\approx 3.19\\ \\text{m/s}^2$예요."},
+    {"type": "ox", "q": "로켓이 발사대를 떠나려면 추력 대 중량비(T/W)가 1보다 커야 한다.", "answer": true, "explain": "날개가 없는 로켓은 추력만으로 무게를 이겨야 하므로 $T > W$, 즉 $T/W > 1$이어야 위로 가속할 수 있어요."},
+    {"type": "mc", "q": "According to the passage, why doesn't an airliner need engines as powerful as its weight?", "choices": ["Because airliners fly too high for gravity to matter", "Because its wings produce much more lift than drag", "Because its engines use oxygen from the air", "Because drag pushes it forward during cruise"], "answer": 1, "explain": "*Because its wings can produce about seventeen times more lift than drag* — 날개가 무게를 지탱해 주므로 엔진은 항력만 이기면 돼요."}
+  ],
+  "test": [
+    {"type": "num", "q": "질량 60 t인 여객기가 양항비 15로 수평 등속 비행하고 있어요. 필요한 추력은 몇 kN일까요? ($g = 9.81\\ \\text{m/s}^2$)", "answer": 39.24, "tol": 0.02, "unit": "kN", "explain": "$W = 60{,}000 \\times 9.81 = 588.6\\ \\text{kN}$, $T = D = W/(L/D) = 588.6/15 \\approx 39.2\\ \\text{kN}$이에요. 무게의 약 6.7%예요."},
+    {"type": "mc", "q": "날개가 위로 양력을 받는 이유를 뉴턴의 제3법칙으로 가장 잘 설명한 것은?", "choices": ["날개가 공기를 아래로 밀어 내리고, 그 반작용으로 공기가 날개를 위로 민다", "날개 위쪽에는 중력이 작용하지 않는다", "엔진의 추력이 날개를 위로 들어 올린다", "공기가 날개보다 가벼워서 날개가 뜬다"], "answer": 0, "explain": "날개는 지나가는 공기의 흐름을 아래쪽으로 꺾어요(작용). 그 반작용으로 공기는 날개를 위로 밀어요. 압력 차로 보는 설명과 함께 Day 29에서 자세히 다뤄요."},
+    {"type": "ox", "q": "자유물체도에는 그 물체가 다른 물체에 가하는 힘도 함께 그려야 한다.", "answer": false, "explain": "자유물체도에는 그 물체가 **받는** 외력만 그려요. 로켓의 FBD에는 '배기가스가 로켓을 미는 힘(추력)'이 들어가고, '로켓이 배기가스를 미는 힘'은 들어가지 않아요."}
+  ],
+  "further": [
+    {"title": "NASA Glenn — Four Forces on an Airplane", "url": "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/four-forces-on-an-airplane/", "lang": "en"},
+    {"title": "NASA Glenn — Newton's Laws of Motion", "url": "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/newtons-laws-of-motion/", "lang": "en"}
+  ]
+}

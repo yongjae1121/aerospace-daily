@@ -1,0 +1,43 @@
+{
+  "day": 3,
+  "title": "벡터와 좌표계",
+  "title_en": "Vectors and Coordinate Frames",
+  "level": 2,
+  "minutes": 20,
+  "summary": "추력·속도·바람처럼 방향이 중요한 양을 벡터로 다루는 법, 내적과 외적의 의미, 그리고 항공우주에서 쓰는 여러 좌표계와 받음각·비행경로각·피치각의 관계를 배웁니다.",
+  "objectives": [
+    "벡터를 성분으로 분해하고 성분끼리 더해 합성할 수 있다.",
+    "내적과 외적이 항공우주에서 어떤 물리량(일, 토크, 각운동량)에 쓰이는지 설명할 수 있다.",
+    "관성·동체 좌표계의 차이를 알고, θ = α + γ 관계를 이용할 수 있다."
+  ],
+  "vocab": [
+    {"en": "scalar", "pron": "ˈskeɪlər", "pos": "n. / adj.", "ko": "스칼라 (크기만 있는 양)", "def": "A quantity that has magnitude but no direction, such as mass or temperature.", "ex": "Speed is a scalar, but velocity is a vector.", "ex_ko": "속력은 스칼라지만 속도는 벡터다."},
+    {"en": "vector", "pron": "ˈvɛktər", "pos": "n.", "ko": "벡터", "def": "A quantity that has both magnitude and direction, such as force or velocity.", "ex": "Thrust is a vector, so its direction matters as much as its size.", "ex_ko": "추력은 벡터이므로 크기만큼 방향도 중요하다."},
+    {"en": "component", "pron": "kəmˈpoʊnənt", "pos": "n.", "ko": "성분; 구성 요소", "def": "The part of a vector that acts along a particular axis.", "ex": "The vertical component of the thrust must exceed the rocket's weight.", "ex_ko": "추력의 수직 성분은 로켓의 무게보다 커야 한다."},
+    {"en": "magnitude", "pron": "ˈmæɡnɪtuːd", "pos": "n.", "ko": "크기", "def": "The size or length of a vector, without regard to its direction.", "ex": "The magnitude of the ground velocity was 231 meters per second.", "ex_ko": "대지 속도의 크기는 초속 231미터였다."},
+    {"en": "perpendicular", "pron": "ˌpɜːrpənˈdɪkjələr", "pos": "adj.", "ko": "수직인", "def": "At an angle of 90 degrees to a given line or surface.", "ex": "Lift acts perpendicular to the direction of the oncoming air.", "ex_ko": "양력은 다가오는 공기의 방향에 수직으로 작용한다."},
+    {"en": "reference frame", "pron": "ˈrɛfərəns freɪm", "pos": "n.", "ko": "기준 좌표계", "def": "A set of axes used to describe the position and motion of objects.", "ex": "The velocity of a satellite depends on the reference frame you choose.", "ex_ko": "위성의 속도는 어떤 기준 좌표계를 고르느냐에 따라 달라진다."},
+    {"en": "inertial", "pron": "ɪˈnɜːrʃəl", "pos": "adj.", "ko": "관성의", "def": "Describing a frame of reference that is not accelerating or rotating.", "ex": "Newton's laws take their simplest form in an inertial frame.", "ex_ko": "뉴턴의 법칙은 관성 좌표계에서 가장 단순한 형태가 된다."},
+    {"en": "angle of attack", "pron": "ˈæŋɡəl əv əˈtæk", "pos": "n.", "ko": "받음각", "def": "The angle between a wing or body and the direction of the oncoming air.", "ex": "Increasing the angle of attack increases lift until the wing stalls.", "ex_ko": "받음각을 키우면 날개가 실속할 때까지 양력이 증가한다."}
+  ],
+  "reading": {
+    "title": "Choosing the Right Frame",
+    "en": "When engineers describe the motion of an aircraft or a spacecraft, the first question they ask is: relative to what? A vector such as velocity only has meaning once a reference frame is chosen. Newton's laws take their simplest form in an inertial frame, one that is neither accelerating nor rotating. For satellites, engineers often use an Earth-centered inertial frame whose axes point toward distant stars instead of spinning with the planet.\n\nPilots and flight-control computers, however, care about how the vehicle itself is oriented. For this purpose, engineers attach a body frame to the aircraft. Its x-axis points out of the nose, its y-axis points along the right wing, and its z-axis points downward through the floor. In this frame, the angle between the nose and the oncoming air is called the angle of attack, one of the most important quantities in all of flight. Switching between frames, using vector components and rotations, is a daily task for every aerospace engineer.",
+    "ko": "엔지니어가 항공기나 우주선의 운동을 설명할 때 가장 먼저 던지는 질문은 '무엇에 대해서?'이다. 속도 같은 벡터는 기준 좌표계를 정해야 비로소 의미를 갖는다. 뉴턴의 법칙은 가속하지도 회전하지도 않는 관성 좌표계에서 가장 단순한 형태가 된다. 위성을 다룰 때 엔지니어들은 흔히 지구 중심 관성 좌표계를 쓰는데, 이 좌표계의 축은 지구와 함께 돌지 않고 먼 별들을 향해 고정되어 있다.\n\n그러나 조종사와 비행 제어 컴퓨터는 비행체 자체가 어떤 자세로 놓여 있는지에 관심이 있다. 이를 위해 엔지니어들은 항공기에 동체 좌표계를 붙인다. 이 좌표계의 x축은 기수 밖을 향하고, y축은 오른쪽 날개를 따라 뻗으며, z축은 바닥을 뚫고 아래쪽을 향한다. 이 좌표계에서 기수와 다가오는 공기 사이의 각을 받음각이라고 하는데, 이는 비행 전체에서 가장 중요한 양 가운데 하나다. 벡터 성분과 회전을 이용해 좌표계 사이를 오가는 것은 모든 항공우주 엔지니어의 일상 업무다."
+  },
+  "quiz": [
+    {"type": "num", "q": "로켓이 **수직에서** 30° 기울어진 방향으로 500 kN의 추력을 내요. 추력의 위쪽(수직) 성분은 몇 kN일까요?", "answer": 433.0, "tol": 0.01, "unit": "kN", "explain": "각을 수직에서 쟀으므로 수직 성분은 $500\\cos 30^\\circ \\approx 433.0\\ \\text{kN}$이에요. 수평 성분은 $500\\sin 30^\\circ = 250\\ \\text{kN}$이고요."},
+    {"type": "mc", "q": "$\\vec{A} = (3, 4, 0)$, $\\vec{B} = (4, -3, 5)$일 때 $\\vec{A}\\cdot\\vec{B}$의 값과 그 의미로 옳은 것은?", "choices": ["0 — 두 벡터는 서로 수직이다", "25 — 두 벡터는 평행하다", "7 — 두 벡터 사이의 각은 45°이다", "−1 — 두 벡터는 반대 방향이다"], "answer": 0, "explain": "$3\\times4 + 4\\times(-3) + 0\\times5 = 12 - 12 + 0 = 0$이에요. 내적이 0이면 $\\cos\\theta = 0$, 즉 두 벡터는 수직이에요."},
+    {"type": "ox", "q": "항공기 동체 좌표계에서 $z$축은 보통 기체의 아래쪽(바닥 방향)을 향한다.", "answer": true, "explain": "$x$축(기수)·$y$축(오른쪽 날개)과 함께 오른손 좌표계를 이루려면 $z$축은 아래를 향해야 해요. 항법용 NED(북-동-아래) 좌표계와도 잘 맞아요."},
+    {"type": "mc", "q": "According to the passage, what is the angle of attack?", "choices": ["The angle between the right wing and the horizon", "The angle between the nose and the oncoming air", "The angle between two satellites in orbit", "The angle between the z-axis and the floor"], "answer": 1, "explain": "지문에서 *the angle between the nose and the oncoming air is called the angle of attack* 이라고 했어요."}
+  ],
+  "test": [
+    {"type": "num", "q": "비행기가 공기에 대해 동쪽으로 200 m/s로 날고, 바람이 북쪽으로 30 m/s로 불어요. 대지 속도의 크기는 몇 m/s일까요?", "answer": 202.2, "tol": 0.01, "unit": "m/s", "explain": "성분으로 더하면 $(200, 30)$이므로 $\\sqrt{200^2 + 30^2} = \\sqrt{40900} \\approx 202.2\\ \\text{m/s}$예요."},
+    {"type": "mc", "q": "바람이 없는 수평 날개 비행에서 피치각이 8°, 받음각이 5°라면 비행경로각은?", "choices": ["3° (상승 중)", "13° (상승 중)", "−3° (하강 중)", "5° (상승 중)"], "answer": 0, "explain": "$\\theta = \\alpha + \\gamma$이므로 $\\gamma = \\theta - \\alpha = 8^\\circ - 5^\\circ = 3^\\circ$예요. 양수이니 상승 중이에요."},
+    {"type": "mc", "q": "토크나 각운동량처럼 **회전**과 관련된 물리량을 계산할 때 쓰는 벡터 연산은?", "choices": ["내적", "외적", "스칼라 곱", "성분 분해"], "answer": 1, "explain": "토크 $\\vec{\\tau} = \\vec{r}\\times\\vec{F}$, 각운동량 $\\vec{h} = \\vec{r}\\times\\vec{v}$처럼 회전 관련 양은 외적으로 계산해요. 외적의 방향은 오른손 법칙으로 정해요."}
+  ],
+  "further": [
+    {"title": "NASA Glenn — Vectors (Beginner's Guide to Aeronautics)", "url": "https://www.grc.nasa.gov/www/k-12/airplane/vectors.html", "lang": "en"},
+    {"title": "Khan Academy — 벡터와 공간", "url": "https://ko.khanacademy.org/math/linear-algebra/vectors-and-spaces", "lang": "ko"}
+  ]
+}

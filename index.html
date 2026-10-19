@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Aerospace Daily</title>
+  <meta name="description" content="매일 새 강좌가 자동으로 추가되는 항공우주공학 학습 사이트. 이론·구조·엔진·궤도역학과 영어 전공 어휘를 함께 배웁니다.">
+  <meta name="theme-color" content="#2156d9">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232156d9'/%3E%3Cpath d='M16 5c3.2 3 4.8 7 4.8 11.6L19.4 21h-6.8l-1.4-4.4C11.2 12 12.8 8 16 5z' fill='%23fff'/%3E%3Cpath d='M13 21l-2.6 4.6 3.8-1.6zm6 0l2.6 4.6-3.8-1.6z' fill='%23ff9a5c'/%3E%3C/svg%3E">
+  <script>
+    try {
+      var t = (JSON.parse(localStorage.getItem('aerodaily.v1') || '{}').settings || {}).theme;
+      if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  </script>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+  <link rel="stylesheet" href="assets/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+  <script defer src="data/course.js"></script>
+  <script defer src="assets/app.js"></script>
+</head>
+<body>
+  <div class="read-progress" id="readProgress" hidden></div>
+  <header class="top">
+    <div class="wrap top-inner">
+      <a class="brand" href="#/">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="var(--accent)"/><path d="M16 5c3.2 3 4.8 7 4.8 11.6L19.4 21h-6.8l-1.4-4.4C11.2 12 12.8 8 16 5z" fill="#fff"/><circle cx="16" cy="12.5" r="2" fill="var(--accent)"/><path d="M13 21l-2.6 4.6 3.8-1.6zm6 0l2.6 4.6-3.8-1.6z" fill="#ff9a5c"/></svg>
+        <span>Aerospace <b>Daily</b></span>
+      </a>
+      <nav class="tabs" aria-label="주요 메뉴">
+        <a href="#/" data-tab="home"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg><span>오늘</span></a>
+        <a href="#/roadmap" data-tab="roadmap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2zM9 4v14M15 6v14"/></svg><span>로드맵</span></a>
+        <a href="#/vocab" data-tab="vocab"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2zM4 20a2 2 0 0 0 2 2h13v-4M8 7h7M8 11h5"/></svg><span>단어장</span></a>
+        <a href="#/tests" data-tab="tests"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4h6v3H9zM7 5H5v16h14V5h-2M8.5 13l2.5 2.5 5-5"/></svg><span>테스트</span></a>
+      </nav>
+      <a class="icon-btn" href="#/settings" data-tab="settings" aria-label="설정">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <main class="wrap" id="app" tabindex="-1">
+    <p class="loading">불러오는 중…</p>
+  </main>
+
+  <footer class="wrap foot" id="foot"></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>
