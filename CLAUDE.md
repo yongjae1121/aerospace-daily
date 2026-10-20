@@ -28,6 +28,8 @@ python scripts/build.py --todo    # 오늘(KST) + 2일까지 작성해야 할 Da
 python -m http.server 8000        # http://localhost:8000 에서 미리 보기
 ```
 
+`python` 명령이 없는 환경(리눅스 클라우드 등)에서는 `python3`로 바꿔 실행합니다.
+
 ---
 
 ## 매일 강좌 작성 절차 (예약 루틴이 따르는 절차)
