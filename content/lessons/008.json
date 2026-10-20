@@ -1,0 +1,174 @@
+{
+ "day": 8,
+ "title": "원운동과 궤도 속도",
+ "title_en": "Circular Motion and Orbital Speed",
+ "level": 2,
+ "minutes": 20,
+ "summary": "구심 가속도와 뉴턴의 대포를 통해 위성이 '떨어지면서 도는' 원리를 이해하고, 원궤도 속도 √(μ/r)와 궤도 주기를 직접 유도해 계산합니다.",
+ "objectives": [
+  "구심 가속도 식을 이용해 원운동을 설명할 수 있다.",
+  "중력을 구심력으로 놓아 원궤도 속도 $v=\\sqrt{\\mu/r}$를 유도할 수 있다.",
+  "궤도 반지름으로부터 속도와 궤도 주기를 계산할 수 있다."
+ ],
+ "vocab": [
+  {
+   "en": "centripetal acceleration",
+   "pron": "sɛnˈtrɪpɪtəl ækˌsɛləˈreɪʃən",
+   "pos": "n.",
+   "ko": "구심 가속도",
+   "def": "The acceleration toward the center of a circle that keeps an object moving along a curved path.",
+   "ex": "A satellite's centripetal acceleration is provided entirely by gravity.",
+   "ex_ko": "위성의 구심 가속도는 전적으로 중력이 제공한다."
+  },
+  {
+   "en": "tangent",
+   "pron": "ˈtændʒənt",
+   "pos": "n. / adj.",
+   "ko": "접선(의)",
+   "def": "A straight line that touches a curve at one point without crossing it.",
+   "ex": "If gravity vanished, a satellite would fly off along the tangent to its orbit.",
+   "ex_ko": "중력이 사라진다면 위성은 궤도의 접선 방향으로 날아가 버릴 것이다."
+  },
+  {
+   "en": "trajectory",
+   "pron": "trəˈdʒɛktəri",
+   "pos": "n.",
+   "ko": "궤적, 비행 경로",
+   "def": "The path that a moving object follows through space.",
+   "ex": "Mission controllers adjusted the probe's trajectory to reach Mars.",
+   "ex_ko": "임무 관제팀은 탐사선이 화성에 도달하도록 궤적을 조정했다."
+  },
+  {
+   "en": "circular orbit",
+   "pron": "ˈsɜːrkjələr ˈɔːrbɪt",
+   "pos": "n.",
+   "ko": "원궤도",
+   "def": "An orbit in which the distance from the central body stays constant.",
+   "ex": "Many Earth-observing satellites use a nearly circular orbit.",
+   "ex_ko": "많은 지구 관측 위성은 거의 원에 가까운 궤도를 사용한다."
+  },
+  {
+   "en": "orbital period",
+   "pron": "ˈɔːrbɪtəl ˈpɪriəd",
+   "pos": "n.",
+   "ko": "궤도 주기",
+   "def": "The time an object needs to complete one full trip around its orbit.",
+   "ex": "The orbital period of the space station is about ninety-two minutes.",
+   "ex_ko": "우주정거장의 궤도 주기는 약 92분이다."
+  },
+  {
+   "en": "horizontal",
+   "pron": "ˌhɔːrəˈzɑːntəl",
+   "pos": "adj.",
+   "ko": "수평의",
+   "def": "Parallel to the ground; level rather than upward or downward.",
+   "ex": "A rocket gains horizontal speed gradually as it climbs.",
+   "ex_ko": "로켓은 상승하면서 점차 수평 속도를 얻는다."
+  },
+  {
+   "en": "revolution",
+   "pron": "ˌrɛvəˈluːʃən",
+   "pos": "n.",
+   "ko": "공전, 한 바퀴 회전",
+   "def": "One complete trip of an object around another object or a central point.",
+   "ex": "The station completes about fifteen revolutions around Earth each day.",
+   "ex_ko": "정거장은 하루에 지구를 약 15바퀴 공전한다."
+  },
+  {
+   "en": "low Earth orbit",
+   "pron": "loʊ ɜːrθ ˈɔːrbɪt",
+   "pos": "n.",
+   "ko": "저궤도 (LEO)",
+   "def": "An orbit at an altitude of roughly 200 to 2,000 kilometers above Earth.",
+   "ex": "Most crewed missions have flown in low Earth orbit.",
+   "ex_ko": "대부분의 유인 임무는 저궤도에서 비행했다."
+  }
+ ],
+ "reading": {
+  "title": "The Cannonball That Never Lands",
+  "en": "More than three hundred years ago, Isaac Newton imagined a cannon on top of a very tall mountain. If the cannon fires a ball in a horizontal direction, the ball follows a curved trajectory and lands some distance away. A faster shot travels farther before it hits the ground.\n\nNow imagine a shot so fast that the ground curves away beneath the ball as quickly as the ball falls. The ball never lands. It keeps falling around the planet, and its path becomes a circular orbit. Gravity supplies the centripetal acceleration that bends the path into a circle, and without it the ball would fly away along a straight tangent.\n\nFor low Earth orbit, the required speed is close to eight kilometers per second. At that speed, one revolution takes roughly ninety minutes, so the orbital period of a satellite near Earth is only a little longer than a movie. Newton could not build such a cannon, but his idea describes every satellite flying today.",
+  "ko": "300여 년 전, 아이작 뉴턴은 아주 높은 산꼭대기에 놓인 대포를 상상했습니다. 대포가 공을 수평 방향으로 쏘면 공은 휘어진 궤적을 그리며 어느 정도 떨어진 곳에 떨어집니다. 더 빠른 발사는 땅에 닿기 전에 더 멀리 날아갑니다.\n\n이제 공이 떨어지는 것만큼 빠르게 지면이 공 아래에서 휘어 사라질 정도로 빠른 발사를 상상해 보세요. 공은 결코 땅에 닿지 않습니다. 행성 주위를 계속 떨어지며, 그 경로는 원궤도가 됩니다. 중력이 경로를 원으로 휘게 하는 구심 가속도를 제공하며, 중력이 없다면 공은 직선인 접선을 따라 날아가 버릴 것입니다.\n\n저궤도에 필요한 속도는 초속 8킬로미터에 가깝습니다. 그 속도에서는 한 바퀴를 도는 데 약 90분이 걸리므로, 지구 가까이 있는 위성의 궤도 주기는 영화 한 편보다 조금 길 뿐입니다. 뉴턴은 그런 대포를 만들 수 없었지만, 그의 아이디어는 오늘날 날고 있는 모든 위성을 설명합니다."
+ },
+ "quiz": [
+  {
+   "type": "num",
+   "q": "지구 반지름 6,371 km, $\\mu = 3.986\\times10^{14}\\ \\text{m}^3/\\text{s}^2$일 때, 고도 400 km 원궤도의 속도는 몇 km/s일까요?",
+   "answer": 7.67,
+   "tol": 0.02,
+   "unit": "km/s",
+   "explain": "$r = 6.771\\times10^{6}$ m이므로 $v=\\sqrt{\\mu/r}=\\sqrt{3.986\\times10^{14}/6.771\\times10^{6}}\\approx 7.67\\times10^{3}$ m/s $= 7.67$ km/s예요."
+  },
+  {
+   "type": "ox",
+   "q": "원궤도를 도는 위성의 속도는 위성의 질량이 클수록 빨라야 한다.",
+   "answer": false,
+   "explain": "$\\mu m/r^2 = mv^2/r$에서 $m$이 약분되어 $v=\\sqrt{\\mu/r}$가 돼요. 속도는 질량과 무관해요."
+  },
+  {
+   "type": "mc",
+   "q": "원궤도를 도는 위성의 궤도 반지름이 커지면 속도와 주기는 어떻게 될까요?",
+   "choices": [
+    "속도는 느려지고 주기는 길어진다",
+    "속도는 빨라지고 주기는 짧아진다",
+    "속도는 느려지고 주기는 짧아진다",
+    "속도는 빨라지고 주기는 길어진다"
+   ],
+   "answer": 0,
+   "explain": "$v=\\sqrt{\\mu/r}$이므로 $r$이 커지면 속도는 느려져요. 가는 거리($2\\pi r$)는 늘고 속도는 줄어 $T=2\\pi\\sqrt{r^3/\\mu}$는 길어져요."
+  },
+  {
+   "type": "mc",
+   "q": "According to the passage, why does the cannonball never land when it is fired fast enough?",
+   "choices": [
+    "Because gravity stops acting on it at high speed",
+    "Because the ground curves away as fast as the ball falls",
+    "Because the ball becomes lighter as it speeds up",
+    "Because the cannon pushes it continuously"
+   ],
+   "answer": 1,
+   "explain": "*the ground curves away beneath the ball as quickly as the ball falls. The ball never lands.* 공은 계속 떨어지지만 지면이 휘어 멀어지는 거예요."
+  }
+ ],
+ "test": [
+  {
+   "type": "num",
+   "q": "지구 중심에서 $r = 7000$ km인 원궤도의 주기는 몇 분일까요? ($\\mu = 3.986\\times10^{14}\\ \\text{m}^3/\\text{s}^2$, 분 단위 숫자만 입력)",
+   "answer": 97.1,
+   "tol": 0.02,
+   "unit": "분",
+   "explain": "$T=2\\pi\\sqrt{r^3/\\mu}=2\\pi\\sqrt{(7\\times10^{6})^3/3.986\\times10^{14}}\\approx 5828$ s $\\approx 97.1$분이에요."
+  },
+  {
+   "type": "mc",
+   "q": "정지궤도 위성(반지름 약 42,164 km)의 속도가 저궤도(약 7.7 km/s)보다 훨씬 느린 이유로 가장 알맞은 것은?",
+   "choices": [
+    "궤도 반지름이 커지면 필요한 원궤도 속도 $\\sqrt{\\mu/r}$가 작아지기 때문에",
+    "정지궤도에서는 중력이 완전히 사라지기 때문에",
+    "정지궤도 위성은 질량이 작기 때문에",
+    "정지궤도에서는 지구 자전이 위성을 감속시키기 때문에"
+   ],
+   "answer": 0,
+   "explain": "정지궤도에서도 중력은 존재하고(약 0.22 m/s²), 반지름이 커서 $v=\\sqrt{\\mu/r}\\approx 3.07$ km/s로 느려져요. 질량과는 무관해요."
+  },
+  {
+   "type": "num",
+   "q": "지구 중심에서 반지름의 4배($r = 4R = 25{,}484$ km)인 원궤도의 속도는 몇 km/s일까요? ($\\mu = 3.986\\times10^{14}\\ \\text{m}^3/\\text{s}^2$)",
+   "answer": 3.95,
+   "tol": 0.02,
+   "unit": "km/s",
+   "explain": "$v=\\sqrt{\\mu/r}=\\sqrt{3.986\\times10^{14}/2.5484\\times10^{7}}\\approx 3.955\\times10^{3}$ m/s예요. 반지름이 4배가 되면 속도는 1/2배(7.91 → 약 3.95 km/s)가 돼요."
+  }
+ ],
+ "further": [
+  {
+   "title": "NASA — Orbits and Kepler's Laws",
+   "url": "https://science.nasa.gov/resource/orbits-and-keplers-laws/",
+   "lang": "en"
+  },
+  {
+   "title": "Wikipedia — Newton's cannonball",
+   "url": "https://en.wikipedia.org/wiki/Newton%27s_cannonball",
+   "lang": "en"
+  }
+ ]
+}
