@@ -8,4 +8,5 @@ window.FIREBASE_CONFIG = {
   storageBucket: "aerospace-daily.firebasestorage.app",
   messagingSenderId: "625363765205",
   appId: "1:625363765205:web:74ffc65168271401d75f5c",
+  databaseId: "default", // Firestore 데이터베이스 ID (콘솔에서 '(default)'가 아닌 'default'라는 이름으로 만들어짐)
 };

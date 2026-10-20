@@ -11,7 +11,7 @@ content/lessons/NNN.md                         강좌 본문 (마크다운 + 수
 content/lessons/NNN.json                       메타·영단어·영어 지문·문제
 scripts/build.py                               검사 + data/course.js 생성 (표준 라이브러리만)
 data/course.js                                 생성물 — 커밋하지 않음 (.gitignore)
-assets/firebase-config.js                      기기 간 동기화용 Firebase 웹 설정 (null이면 동기화 꺼짐)
+assets/firebase-config.js                      기기 간 동기화용 Firebase 웹 설정 (null이면 동기화 꺼짐, Firestore DB ID는 "default")
 firestore.rules                                Firestore 보안 규칙 (Firebase 콘솔에 붙여 넣은 것과 같게 유지)
 .github/workflows/deploy.yml                   main에 push되면 검사 → GitHub Pages 배포
 .github/workflows/merge-lessons.yml            claude/** 브랜치의 강좌를 main에 자동 병합

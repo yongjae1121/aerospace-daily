@@ -102,33 +102,32 @@
 
   /* ------------------------------------------------------------ cloud sync (Firebase)
    * assets/firebase-config.js에 설정이 있으면 Google 로그인 + Firestore users/{uid} 문서로 기기 간 동기화.
-   * 문서 형식: { data: JSON 문자열(settings 제외한 S), updatedAt }. 쓰기는 항상 트랜잭션으로 원격과 병합한다. */
+   * 문서 형식: { data: JSON 문자열(settings 제외한 S), updatedAt }. 쓰기는 항상 트랜잭션으로 원격과 병합한다.
+   * SDK는 gstatic의 ES 모듈을 동적 import (설정의 databaseId로 이름 있는 Firestore 데이터베이스 사용). */
   const FB_VERSION = '10.12.2';
   const Cloud = {
     enabled: !!(window.FIREBASE_CONFIG && window.FIREBASE_CONFIG.apiKey),
-    ready: false, user: null, busy: false, again: false, last: null, error: '', timer: null, auth: null, db: null,
+    ready: false, user: null, busy: false, again: false, last: null, error: '', timer: null,
+    au: null, fs: null, auth: null, db: null,
   };
   const INAPP = /KAKAOTALK|NAVER\(inapp|Instagram|FBAN|FBAV|Line\/|everytimeApp|DaumApps/i.test(navigator.userAgent);
   const cloudState = s => { const { settings, ...rest } = s; return rest; };
-  const loadScript = src => new Promise((res, rej) => {
-    const el = document.createElement('script');
-    el.src = src;
-    el.onload = res;
-    el.onerror = () => rej(new Error(src));
-    document.head.appendChild(el);
-  });
 
   async function cloudInit() {
     if (!Cloud.enabled) return;
     const base = `https://www.gstatic.com/firebasejs/${FB_VERSION}/`;
     try {
-      await loadScript(base + 'firebase-app-compat.js');
-      await Promise.all([loadScript(base + 'firebase-auth-compat.js'), loadScript(base + 'firebase-firestore-compat.js')]);
-      firebase.initializeApp(window.FIREBASE_CONFIG);
-      Cloud.auth = firebase.auth();
-      Cloud.db = firebase.firestore();
-      Cloud.auth.getRedirectResult().catch(e => { Cloud.error = authMessage(e); cloudChanged(); });
-      Cloud.auth.onAuthStateChanged(u => {
+      const [fa, au, fs] = await Promise.all([
+        import(base + 'firebase-app.js'), import(base + 'firebase-auth.js'), import(base + 'firebase-firestore.js'),
+      ]);
+      const { databaseId, ...config } = window.FIREBASE_CONFIG;
+      const fbApp = fa.initializeApp(config);
+      Cloud.au = au;
+      Cloud.fs = fs;
+      Cloud.auth = au.getAuth(fbApp);
+      Cloud.db = databaseId ? fs.getFirestore(fbApp, databaseId) : fs.getFirestore(fbApp);
+      au.getRedirectResult(Cloud.auth).catch(e => { Cloud.error = authMessage(e); cloudChanged(); });
+      au.onAuthStateChanged(Cloud.auth, u => {
         Cloud.user = u;
         Cloud.ready = true;
         cloudChanged();
@@ -157,17 +156,18 @@
     Cloud.busy = true;
     Cloud.error = '';
     cloudChanged();
-    const ref = Cloud.db.collection('users').doc(Cloud.user.uid);
+    const { doc, runTransaction, serverTimestamp } = Cloud.fs;
+    const ref = doc(Cloud.db, 'users', Cloud.user.uid);
     const before = JSON.stringify(cloudState(S));
     try {
-      const merged = await Cloud.db.runTransaction(async tx => {
+      const merged = await runTransaction(Cloud.db, async tx => {
         const snap = await tx.get(ref);
         let remote = null;
-        if (!overwrite && snap.exists) {
+        if (!overwrite && snap.exists()) {
           try { remote = JSON.parse(snap.data().data); } catch (e) { remote = null; }
         }
         const m = remote ? mergeState(S, remote) : normalize(S);
-        tx.set(ref, { data: JSON.stringify(cloudState(m)), updatedAt: firebase.firestore.FieldValue.serverTimestamp() });
+        tx.set(ref, { data: JSON.stringify(cloudState(m)), updatedAt: serverTimestamp() });
         return m;
       });
       S = overwrite ? normalize(S) : mergeState(S, merged); // 동기화 중에 생긴 이 기기의 변경도 살린다
@@ -201,14 +201,15 @@
       toast('카카오톡 같은 앱 안의 브라우저에서는 Google 로그인이 막혀 있어요. 크롬이나 사파리로 열어 주세요.');
       return;
     }
-    const provider = new firebase.auth.GoogleAuthProvider();
+    const { GoogleAuthProvider, signInWithPopup, signInWithRedirect } = Cloud.au;
+    const provider = new GoogleAuthProvider();
     provider.setCustomParameters({ prompt: 'select_account' });
     try {
-      await Cloud.auth.signInWithPopup(provider);
+      await signInWithPopup(Cloud.auth, provider);
       toast('로그인했어요. 기록을 맞추는 중이에요…');
     } catch (e) {
       if (['auth/popup-blocked', 'auth/operation-not-supported-in-this-environment'].includes(e.code)) {
-        try { await Cloud.auth.signInWithRedirect(provider); } catch (e2) { Cloud.error = authMessage(e2); cloudChanged(); }
+        try { await signInWithRedirect(Cloud.auth, provider); } catch (e2) { Cloud.error = authMessage(e2); cloudChanged(); }
       } else if (!['auth/popup-closed-by-user', 'auth/cancelled-popup-request'].includes(e.code)) {
         Cloud.error = authMessage(e);
         cloudChanged();
@@ -218,7 +219,7 @@
 
   async function cloudLogout() {
     if (!Cloud.auth) return;
-    await Cloud.auth.signOut();
+    await Cloud.au.signOut(Cloud.auth);
     toast('로그아웃했어요. 이 기기의 기록은 그대로 남아 있어요.');
   }
 
