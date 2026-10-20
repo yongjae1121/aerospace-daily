@@ -11,13 +11,15 @@ content/lessons/NNN.md                         강좌 본문 (마크다운 + 수
 content/lessons/NNN.json                       메타·영단어·영어 지문·문제
 scripts/build.py                               검사 + data/course.js 생성 (표준 라이브러리만)
 data/course.js                                 생성물 — 커밋하지 않음 (.gitignore)
+assets/firebase-config.js                      기기 간 동기화용 Firebase 웹 설정 (null이면 동기화 꺼짐)
+firestore.rules                                Firestore 보안 규칙 (Firebase 콘솔에 붙여 넣은 것과 같게 유지)
 .github/workflows/deploy.yml                   main에 push되면 검사 → GitHub Pages 배포
 .github/workflows/merge-lessons.yml            claude/** 브랜치의 강좌를 main에 자동 병합
 ```
 
 - Day N은 `curriculum.json`의 `start` 날짜 + (N−1)일에 사이트에서 열립니다(학습자 브라우저의 현지 날짜 기준).
 - 7일마다 주간 테스트, 단원이 끝나면 단원 평가가 자동으로 생깁니다. 문제는 강좌 JSON의 `test`(+ `quiz`)와 `vocab`에서 뽑습니다.
-- 진도·점수·단어 암기 상태는 학습자 브라우저의 localStorage에만 저장됩니다.
+- 진도·점수·단어 암기 상태는 브라우저 localStorage(`aerodaily.v1`)에 저장되고, Google 로그인 시 Firestore `users/{uid}` 문서(`data` = settings를 뺀 상태의 JSON 문자열)와 동기화됩니다. 쓰기는 항상 트랜잭션 안에서 원격과 `mergeState`로 병합합니다(완료는 최근 동작 우선, 테스트·학습일은 합집합, 단어는 복습 횟수가 많은 쪽). 상태 구조를 바꿀 때는 `mergeState`도 함께 고칩니다.
 
 명령어:
 

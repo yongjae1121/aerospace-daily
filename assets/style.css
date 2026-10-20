@@ -601,6 +601,13 @@ a.lrow:hover { background: var(--surface-2); text-decoration: none; }
 .result .big { font-family: var(--mono); font-size: 44px; font-weight: 600; letter-spacing: -0.03em; }
 .result .big small { font-size: 18px; color: var(--muted); }
 
+/* ============================================================ cloud sync */
+.sync-banner { margin-top: 18px; padding: 16px 18px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; }
+.sync-banner .sb-ico { font-size: 26px; }
+.sync-banner .sb-text { flex: 1; min-width: 200px; }
+.sync-banner .sb-text p { margin: 2px 0 0; color: var(--muted); font-size: 14px; }
+.sync-err { color: var(--bad) !important; }
+
 /* ============================================================ settings */
 .set-list { display: grid; gap: 12px; max-width: 680px; }
 .set { padding: 18px 20px; display: grid; gap: 10px; }

@@ -34,21 +34,63 @@
 
   /* ------------------------------------------------------------ store */
   const KEY = 'aerodaily.v1';
-  const blank = () => ({ done: {}, quiz: {}, tests: [], vocab: {}, active: [], settings: { theme: 'system', rate: 0.9 } });
-  function load() {
+  // done: Day→완료 날짜, doneTs/undone: 완료·완료취소 시각(기기 간 병합용), settings는 기기별로만 저장
+  const blank = () => ({ done: {}, doneTs: {}, undone: {}, quiz: {}, tests: [], vocab: {}, active: [], settings: { theme: 'system', rate: 0.9 } });
+  const normalize = raw => {
     const base = blank();
+    return { ...base, ...raw, settings: { ...base.settings, ...(raw.settings || {}) } };
+  };
+  function load() {
     try {
       const raw = JSON.parse(localStorage.getItem(KEY) || 'null');
-      if (raw && typeof raw === 'object') return { ...base, ...raw, settings: { ...base.settings, ...(raw.settings || {}) } };
+      if (raw && typeof raw === 'object') return normalize(raw);
     } catch (e) { /* 저장소를 쓸 수 없는 환경: 메모리에서만 동작 */ }
-    return base;
+    return blank();
   }
   let S = load();
-  const save = () => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) { /* 무시 */ } };
+  const saveLocal = () => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) { /* 무시 */ } };
+  const save = () => { saveLocal(); cloudSchedule(); };
   function touch() {
     const t = todayStr();
     if (!S.active.includes(t)) S.active.push(t);
     save();
+  }
+  // 두 기기의 기록 합치기: 완료는 더 최근 동작(완료/취소)을, 퀴즈는 최근 기록을, 테스트·학습일은 합집합을,
+  // 단어는 복습을 더 많이 한 쪽을 따른다. settings는 a(이 기기) 것을 유지한다.
+  function mergeState(a, b) {
+    a = normalize(a);
+    b = normalize(b);
+    const out = blank();
+    out.settings = a.settings;
+    const days = new Set([a.done, b.done, a.undone, b.undone].flatMap(Object.keys));
+    for (const d of days) {
+      const doneAt = s => (s.done[d] ? s.doneTs[d] || 1 : 0);
+      const lastDone = Math.max(doneAt(a), doneAt(b));
+      const lastUndo = Math.max(a.undone[d] || 0, b.undone[d] || 0);
+      if (lastDone > lastUndo) {
+        out.done[d] = [a.done[d], b.done[d]].filter(Boolean).sort()[0];
+        out.doneTs[d] = lastDone;
+      } else if (lastUndo) {
+        out.undone[d] = lastUndo;
+      }
+    }
+    for (const d of new Set([a.quiz, b.quiz].flatMap(Object.keys))) {
+      const x = a.quiz[d], y = b.quiz[d];
+      out.quiz[d] = !x ? y : !y ? x : x.date > y.date || (x.date === y.date && x.score >= y.score) ? x : y;
+    }
+    const seen = new Set();
+    out.tests = [...a.tests, ...b.tests].filter(t => {
+      const k = `${t.id}|${t.date}|${t.score}|${t.total}|${t.ts || ''}`;
+      if (seen.has(k)) return false;
+      seen.add(k);
+      return true;
+    }).sort((p, q) => (p.date < q.date ? -1 : p.date > q.date ? 1 : (p.ts || 0) - (q.ts || 0)));
+    for (const k of new Set([a.vocab, b.vocab].flatMap(Object.keys))) {
+      const x = a.vocab[k], y = b.vocab[k];
+      out.vocab[k] = !x ? y : !y ? x : (x.seen || 0) > (y.seen || 0) || ((x.seen || 0) === (y.seen || 0) && x.due >= y.due) ? x : y;
+    }
+    out.active = [...new Set([...a.active, ...b.active])].sort();
+    return out;
   }
   function streak() {
     const set = new Set(S.active);
@@ -56,6 +98,169 @@
     if (!set.has(d)) d = addDays(d, -1);
     while (set.has(d)) { n++; d = addDays(d, -1); }
     return n;
+  }
+
+  /* ------------------------------------------------------------ cloud sync (Firebase)
+   * assets/firebase-config.js에 설정이 있으면 Google 로그인 + Firestore users/{uid} 문서로 기기 간 동기화.
+   * 문서 형식: { data: JSON 문자열(settings 제외한 S), updatedAt }. 쓰기는 항상 트랜잭션으로 원격과 병합한다. */
+  const FB_VERSION = '10.12.2';
+  const Cloud = {
+    enabled: !!(window.FIREBASE_CONFIG && window.FIREBASE_CONFIG.apiKey),
+    ready: false, user: null, busy: false, again: false, last: null, error: '', timer: null, auth: null, db: null,
+  };
+  const INAPP = /KAKAOTALK|NAVER\(inapp|Instagram|FBAN|FBAV|Line\/|everytimeApp|DaumApps/i.test(navigator.userAgent);
+  const cloudState = s => { const { settings, ...rest } = s; return rest; };
+  const loadScript = src => new Promise((res, rej) => {
+    const el = document.createElement('script');
+    el.src = src;
+    el.onload = res;
+    el.onerror = () => rej(new Error(src));
+    document.head.appendChild(el);
+  });
+
+  async function cloudInit() {
+    if (!Cloud.enabled) return;
+    const base = `https://www.gstatic.com/firebasejs/${FB_VERSION}/`;
+    try {
+      await loadScript(base + 'firebase-app-compat.js');
+      await Promise.all([loadScript(base + 'firebase-auth-compat.js'), loadScript(base + 'firebase-firestore-compat.js')]);
+      firebase.initializeApp(window.FIREBASE_CONFIG);
+      Cloud.auth = firebase.auth();
+      Cloud.db = firebase.firestore();
+      Cloud.auth.getRedirectResult().catch(e => { Cloud.error = authMessage(e); cloudChanged(); });
+      Cloud.auth.onAuthStateChanged(u => {
+        Cloud.user = u;
+        Cloud.ready = true;
+        cloudChanged();
+        if (u) cloudSync();
+      });
+      document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'visible' && Cloud.user) cloudSync();
+      });
+      addEventListener('online', () => { if (Cloud.user) cloudSync(); });
+    } catch (e) {
+      Cloud.ready = true;
+      Cloud.error = '동기화 기능을 불러오지 못했어요. 인터넷 연결을 확인해 주세요.';
+      cloudChanged();
+    }
+  }
+
+  function cloudSchedule() {
+    if (!Cloud.user) return;
+    clearTimeout(Cloud.timer);
+    Cloud.timer = setTimeout(() => cloudSync(), 1500);
+  }
+
+  async function cloudSync({ overwrite = false } = {}) {
+    if (!Cloud.user || !Cloud.db) return;
+    if (Cloud.busy) { Cloud.again = true; return; }
+    Cloud.busy = true;
+    Cloud.error = '';
+    cloudChanged();
+    const ref = Cloud.db.collection('users').doc(Cloud.user.uid);
+    const before = JSON.stringify(cloudState(S));
+    try {
+      const merged = await Cloud.db.runTransaction(async tx => {
+        const snap = await tx.get(ref);
+        let remote = null;
+        if (!overwrite && snap.exists) {
+          try { remote = JSON.parse(snap.data().data); } catch (e) { remote = null; }
+        }
+        const m = remote ? mergeState(S, remote) : normalize(S);
+        tx.set(ref, { data: JSON.stringify(cloudState(m)), updatedAt: firebase.firestore.FieldValue.serverTimestamp() });
+        return m;
+      });
+      S = overwrite ? normalize(S) : mergeState(S, merged); // 동기화 중에 생긴 이 기기의 변경도 살린다
+      saveLocal();
+      Cloud.last = new Date();
+      if (JSON.stringify(cloudState(S)) !== before) refreshView();
+    } catch (e) {
+      Cloud.error = navigator.onLine === false ? '오프라인이에요. 인터넷에 연결되면 다시 동기화해요.'
+        : e && e.code === 'permission-denied' ? '클라우드 저장소 권한이 없어요 (Firestore 규칙 확인 필요).'
+          : `동기화하지 못했어요 (${(e && (e.code || e.message)) || '알 수 없는 오류'}).`;
+    } finally {
+      Cloud.busy = false;
+      cloudChanged();
+      if (Cloud.again) { Cloud.again = false; cloudSync(); }
+    }
+  }
+
+  function authMessage(e) {
+    const m = {
+      'auth/unauthorized-domain': '이 사이트 주소가 Firebase의 승인된 도메인에 없어요.',
+      'auth/network-request-failed': '인터넷 연결을 확인해 주세요.',
+      'auth/operation-not-allowed': 'Firebase에서 Google 로그인이 아직 켜져 있지 않아요.',
+      'auth/popup-blocked': '팝업이 막혔어요. 브라우저에서 팝업을 허용해 주세요.',
+    };
+    return m[e && e.code] || `로그인하지 못했어요 (${(e && (e.code || e.message)) || '알 수 없는 오류'}).`;
+  }
+
+  async function cloudLogin() {
+    if (!Cloud.auth) return;
+    if (INAPP) {
+      toast('카카오톡 같은 앱 안의 브라우저에서는 Google 로그인이 막혀 있어요. 크롬이나 사파리로 열어 주세요.');
+      return;
+    }
+    const provider = new firebase.auth.GoogleAuthProvider();
+    provider.setCustomParameters({ prompt: 'select_account' });
+    try {
+      await Cloud.auth.signInWithPopup(provider);
+      toast('로그인했어요. 기록을 맞추는 중이에요…');
+    } catch (e) {
+      if (['auth/popup-blocked', 'auth/operation-not-supported-in-this-environment'].includes(e.code)) {
+        try { await Cloud.auth.signInWithRedirect(provider); } catch (e2) { Cloud.error = authMessage(e2); cloudChanged(); }
+      } else if (!['auth/popup-closed-by-user', 'auth/cancelled-popup-request'].includes(e.code)) {
+        Cloud.error = authMessage(e);
+        cloudChanged();
+      }
+    }
+  }
+
+  async function cloudLogout() {
+    if (!Cloud.auth) return;
+    await Cloud.auth.signOut();
+    toast('로그아웃했어요. 이 기기의 기록은 그대로 남아 있어요.');
+  }
+
+  const fmtTime = d => `${pad(d.getHours())}:${pad(d.getMinutes())}`;
+
+  function syncBoxHTML() {
+    if (!Cloud.ready) return '<h2>☁️ 기기 간 동기화</h2><p>동기화 기능을 불러오는 중…</p>';
+    const err = Cloud.error ? `<p class="sync-err">${esc(Cloud.error)}</p>` : '';
+    if (Cloud.user) {
+      const when = Cloud.busy ? '동기화 중…' : Cloud.last ? `마지막 동기화 ${fmtTime(Cloud.last)}` : '';
+      return `<h2>☁️ 기기 간 동기화 <span class="chip ok">켜짐</span></h2>
+        <p><b>${esc(Cloud.user.email || Cloud.user.displayName || 'Google 계정')}</b>으로 로그인했어요. 같은 계정으로 로그인한 모든 기기에서 진도·점수·단어 기록이 자동으로 이어져요. ${when}</p>${err}
+        <div class="btn-row"><button type="button" class="btn small" data-cloud-sync>지금 동기화</button><button type="button" class="btn small ghost" data-cloud-logout>로그아웃</button></div>`;
+    }
+    return `<h2>☁️ 기기 간 동기화</h2>
+      <p>Google 계정으로 로그인하면 폰·태블릿·컴퓨터 어디서 공부해도 기록이 자동으로 합쳐져요. 기기마다 같은 계정으로 한 번씩 로그인하면 돼요.</p>${err}
+      ${INAPP ? '<p class="sync-err">지금은 앱 안의 브라우저라서 Google 로그인이 막혀 있어요. 메뉴에서 <b>다른 브라우저로 열기</b>를 눌러 크롬·사파리로 열어 주세요.</p>' : ''}
+      <div><button type="button" class="btn small primary" data-cloud-login>Google로 로그인</button></div>`;
+  }
+
+  function cloudChanged() {
+    const box = document.getElementById('syncBox');
+    if (box) box.innerHTML = syncBoxHTML();
+    const banner = document.getElementById('syncBanner');
+    if (banner) {
+      const show = Cloud.enabled && Cloud.ready && !Cloud.user && !S.settings.hideSync;
+      banner.innerHTML = show ? `<div class="card sync-banner"><span class="sb-ico">☁️</span>
+        <div class="sb-text"><b>폰과 컴퓨터의 기록을 이어 보세요</b><p>Google 계정으로 로그인하면 어느 기기에서든 진도가 자동으로 맞춰져요.</p></div>
+        <div class="btn-row"><button type="button" class="btn small primary" data-cloud-login>Google로 로그인</button><button type="button" class="btn small ghost" data-hide-sync>닫기</button></div></div>` : '';
+    }
+    const st = document.getElementById('syncStatus');
+    if (st) st.textContent = Cloud.user ? `☁️ 동기화 켜짐${Cloud.last ? ` · 마지막 동기화 ${fmtTime(Cloud.last)}` : ''}` : '';
+  }
+
+  // 다른 기기의 기록이 합쳐졌을 때 화면 갱신 (강좌·테스트·복습 중에는 풀던 내용이 날아가지 않게 건드리지 않음)
+  function refreshView() {
+    const h = location.hash || '#/';
+    if (/^#\/?$|^#\/(roadmap|vocab|tests|settings)$/.test(h)) {
+      const y = scrollY;
+      route();
+      scrollTo(0, y);
+    }
   }
 
   /* ------------------------------------------------------------ course model */
@@ -309,6 +514,7 @@
       $$('[data-tab]').forEach(a => a.classList.toggle('on', a.dataset.tab === tab));
       window.scrollTo(0, 0);
       fn(m);
+      cloudChanged();
       return;
     }
     location.replace('#/');
@@ -394,6 +600,7 @@
       <div class="upcoming">${next.map(l => `<div class="card row"><span class="dd">${fmtShort(dateOf(l.day))} · D${l.day}</span><span class="tt">${esc(l.title)}<small>${esc(l.title_en)}</small></span></div>`).join('')}</div></section>` : '';
 
     app.innerHTML = `<section class="hero">${hero}</section>
+      <div id="syncBanner"></div>
       <section class="section">${stats}</section>
       ${todoHTML ? `<section class="section"><div class="section-head"><h2>오늘 할 일</h2></div>${todoHTML}</section>` : ''}
       ${week}${upcoming}`;
@@ -564,12 +771,20 @@
     if (isDone(day)) {
       box.innerHTML = `<div style="font-size:32px">🚀</div><h2>Day ${day} 완료!</h2><p class="muted">${fmtDate(S.done[day])}에 완료했어요. 연속 학습 ${streak()}일째.</p>
         <div class="btn-row"><a class="btn primary" href="#/vocab/review">단어 복습하기</a><button type="button" class="btn ghost small" id="undoDone">완료 취소</button></div>`;
-      $('#undoDone').addEventListener('click', () => { delete S.done[day]; save(); renderComplete(day); });
+      $('#undoDone').addEventListener('click', () => {
+        delete S.done[day];
+        delete S.doneTs[day];
+        S.undone[day] = Date.now();
+        save();
+        renderComplete(day);
+      });
     } else {
       box.innerHTML = `<p class="muted">본문, 단어, 영어 지문, 확인 문제까지 마쳤다면</p>
         <button type="button" class="btn primary" id="markDone">✓ 오늘 학습 완료</button>`;
       $('#markDone').addEventListener('click', () => {
         S.done[day] = todayStr();
+        S.doneTs[day] = Date.now();
+        delete S.undone[day];
         touch();
         renderComplete(day);
         toast(`🎉 Day ${day} 완료! 연속 ${streak()}일째 공부 중`);
@@ -856,7 +1071,7 @@
         if (ok) score++;
         reveal(card, q, ok);
       });
-      S.tests.push({ id: t.id, title: t.title, date: todayStr(), score, total: qs.length });
+      S.tests.push({ id: t.id, title: t.title, date: todayStr(), score, total: qs.length, ts: Date.now() });
       touch();
       const p = pct(score, qs.length);
       const msg = p >= 90 ? '훌륭해요! 이 범위는 확실히 내 것이 됐어요.' : p >= 70 ? '잘했어요. 틀린 문제의 해설과 해당 Day를 다시 보면 완벽해질 거예요.' : '괜찮아요. 틀린 문제 옆의 Day 표시를 보고 그 강좌를 복습한 뒤 다시 도전해 보세요.';
@@ -880,6 +1095,7 @@
     const built = C.meta.built ? C.meta.built.replace('T', ' ').slice(0, 16) : '–';
     app.innerHTML = `<div class="page-head"><div class="eyebrow">Settings</div><h1>설정</h1></div>
       <div class="set-list">
+        ${Cloud.enabled ? `<div class="card set" id="syncBox">${syncBoxHTML()}</div>` : ''}
         <div class="card set"><h2>화면 모드</h2><div class="seg" id="theme">
           ${[['system', '시스템'], ['light', '라이트'], ['dark', '다크']].map(([v, k]) => `<button type="button" data-v="${v}" class="${S.settings.theme === v ? 'on' : ''}">${k}</button>`).join('')}</div></div>
         <div class="card set"><h2>영어 읽기 속도 <span class="muted" id="rateVal" style="font-weight:400">${S.settings.rate.toFixed(2)}×</span></h2>
@@ -887,7 +1103,8 @@
           <div><button type="button" class="btn small" id="rateTest">🔊 들어 보기</button></div>
           ${canSpeak ? '' : '<p>이 브라우저는 음성 읽기를 지원하지 않아요.</p>'}</div>
         <div class="card set"><h2>학습 기록 백업</h2>
-          <p>진도·점수·단어 암기 기록은 이 기기의 브라우저에만 저장돼요. 다른 기기로 옮기거나 브라우저 데이터를 지우기 전에 백업 파일을 저장해 두세요.</p>
+          <p>${Cloud.enabled ? '동기화를 켜지 않으면 기록은 이 기기의 브라우저에만 저장돼요. 혹시 모를 때를 대비해 가끔 백업 파일을 저장해 두면 좋아요.'
+            : '진도·점수·단어 암기 기록은 이 기기의 브라우저에만 저장돼요. 다른 기기로 옮기거나 브라우저 데이터를 지우기 전에 백업 파일을 저장해 두세요.'}</p>
           <div class="btn-row"><button type="button" class="btn small" id="exportBtn">백업 파일 저장</button>
           <label class="btn small">백업 불러오기<input type="file" id="importFile" accept="application/json,.json" hidden></label></div></div>
         <div class="card set"><h2>사이트 정보</h2>
@@ -925,8 +1142,7 @@
       try {
         const raw = JSON.parse(await f.text());
         if (!raw || typeof raw !== 'object' || !('done' in raw)) throw new Error('형식 오류');
-        const base = blank();
-        S = { ...base, ...raw, settings: { ...base.settings, ...(raw.settings || {}) } };
+        S = normalize(raw);
         save();
         applyTheme();
         toast('백업을 불러왔어요.');
@@ -936,10 +1152,11 @@
       }
     });
     $('#resetBtn').addEventListener('click', () => {
-      if (!confirm('정말 모든 학습 기록을 지울까요?')) return;
-      S = blank();
-      save();
-      applyTheme();
+      const msg = Cloud.user ? '정말 이 기기와 클라우드에 저장된 모든 학습 기록을 지울까요?' : '정말 모든 학습 기록을 지울까요?';
+      if (!confirm(msg)) return;
+      S = { ...blank(), settings: S.settings };
+      saveLocal();
+      if (Cloud.user) cloudSync({ overwrite: true });
       toast('기록을 초기화했어요.');
       settingsPage();
     });
@@ -949,6 +1166,16 @@
   document.addEventListener('click', e => {
     const s = e.target.closest('[data-say]');
     if (s) { e.preventDefault(); speak(s.dataset.say); return; }
+    if (e.target.closest('[data-cloud-login]')) { cloudLogin(); return; }
+    if (e.target.closest('[data-cloud-sync]')) { cloudSync(); return; }
+    if (e.target.closest('[data-cloud-logout]')) { cloudLogout(); return; }
+    if (e.target.closest('[data-hide-sync]')) {
+      S.settings.hideSync = true;
+      saveLocal();
+      cloudChanged();
+      toast('설정(⚙️)에서 언제든 로그인할 수 있어요.');
+      return;
+    }
     const j = e.target.closest('[data-jump]');
     if (j) { document.getElementById(j.dataset.jump)?.scrollIntoView({ behavior: 'smooth', block: 'start' }); return; }
     const m = e.target.closest('mark.vw');
@@ -959,11 +1186,14 @@
   function footer() {
     const built = C.meta.built ? fmtDate(C.meta.built.slice(0, 10), false) + ' ' + C.meta.built.slice(11, 16) : '';
     $('#foot').innerHTML = `<p>${esc(C.meta.title)} · ${esc(C.meta.subtitle)} — 새 강좌는 매일 새벽 자동으로 추가됩니다.</p>
-      <p>작성된 강좌 ${C.meta.written} / ${C.meta.total}${built ? ` · 마지막 업데이트 ${built}` : ''}</p>`;
+      <p>작성된 강좌 ${C.meta.written} / ${C.meta.total}${built ? ` · 마지막 업데이트 ${built}` : ''}</p><p id="syncStatus"></p>`;
   }
+
+  window.AeroDaily = { mergeState }; // 개발·점검용
 
   applyTheme();
   footer();
   addEventListener('hashchange', route);
   route();
+  cloudInit();
 })();
