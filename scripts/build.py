@@ -305,7 +305,7 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--check", action="store_true", help="검사만 하고 파일은 만들지 않음")
     ap.add_argument("--todo", action="store_true", help="작성이 필요한 Day 출력")
-    ap.add_argument("--ahead", type=int, default=2, help="--todo: 오늘로부터 며칠 앞까지 미리 작성할지 (기본 2)")
+    ap.add_argument("--ahead", type=int, default=4, help="--todo: 오늘로부터 며칠 앞까지 미리 작성할지 (기본 4 — 학습자가 미리 수강할 수 있도록)")
     ap.add_argument("--status", action="store_true", help="진행 현황 요약")
     args = ap.parse_args()
 

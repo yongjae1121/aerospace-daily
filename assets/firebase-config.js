@@ -10,3 +10,6 @@ window.FIREBASE_CONFIG = {
   appId: "1:625363765205:web:74ffc65168271401d75f5c",
   databaseId: "default", // Firestore 데이터베이스 ID (콘솔에서 '(default)'가 아닌 'default'라는 이름으로 만들어짐)
 };
+
+// 학습 알림(웹 푸시)용 VAPID 공개 키. 짝이 되는 비밀 키는 GitHub Actions secret VAPID_PRIVATE_KEY에만 있다.
+window.PUSH_PUBLIC_KEY = "BBIoK6fPyW_HyqEIHjIsyo-5tsHByT8HyTfG2GZGfCqacItCtcoQBHSfwa_7UBeJw14NbdIaxHd2THk1SvV8APE";

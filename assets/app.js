@@ -159,18 +159,22 @@
     const { doc, runTransaction, serverTimestamp } = Cloud.fs;
     const ref = doc(Cloud.db, 'users', Cloud.user.uid);
     const before = JSON.stringify(cloudState(S));
+    let remoteHour;
     try {
       const merged = await runTransaction(Cloud.db, async tx => {
         const snap = await tx.get(ref);
         let remote = null;
-        if (!overwrite && snap.exists()) {
-          try { remote = JSON.parse(snap.data().data); } catch (e) { remote = null; }
+        if (snap.exists()) {
+          remoteHour = (snap.data().remind || {}).hour;
+          if (!overwrite) { try { remote = JSON.parse(snap.data().data); } catch (e) { remote = null; } }
         }
         const m = remote ? mergeState(S, remote) : normalize(S);
-        tx.set(ref, { data: JSON.stringify(cloudState(m)), updatedAt: serverTimestamp() });
+        // merge: true — 같은 문서의 알림 구독(push)·알림 시각(remind) 필드는 건드리지 않는다
+        tx.set(ref, { data: JSON.stringify(cloudState(m)), updatedAt: serverTimestamp() }, { merge: true });
         return m;
       });
       S = overwrite ? normalize(S) : mergeState(S, merged); // 동기화 중에 생긴 이 기기의 변경도 살린다
+      if (remoteHour) S.settings.remindHour = remoteHour;
       saveLocal();
       Cloud.last = new Date();
       if (JSON.stringify(cloudState(S)) !== before) refreshView();
@@ -252,6 +256,135 @@
     }
     const st = document.getElementById('syncStatus');
     if (st) st.textContent = Cloud.user ? `☁️ 동기화 켜짐${Cloud.last ? ` · 마지막 동기화 ${fmtTime(Cloud.last)}` : ''}` : '';
+    const rb = document.getElementById('remindBox');
+    if (rb) rb.innerHTML = remindBoxHTML();
+  }
+
+  /* ------------------------------------------------------------ study reminders (Web Push)
+   * 이 기기의 푸시 구독은 Firestore users/{uid}.push.{기기ID}(JSON 문자열)에, 알림 시각은 users/{uid}.remind.hour에 저장.
+   * 발송은 GitHub Actions(.github/workflows/remind.yml → scripts/remind.py)가 매시간 확인해서 한다. */
+  const PUSH_KEY = window.PUSH_PUBLIC_KEY || '';
+  const IOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  const STANDALONE = (window.matchMedia && matchMedia('(display-mode: standalone)').matches) || navigator.standalone === true;
+  const PUSH_OK = 'serviceWorker' in navigator && 'PushManager' in window && 'Notification' in window && window.isSecureContext;
+  const REMIND_HOURS = [17, 18, 19, 20, 21, 22, 23];
+  const Push = { reg: null, sub: null, busy: false, error: '' };
+  const hourText = h => `${h < 12 ? '오전' : '오후'} ${h > 12 ? h - 12 : h}시`;
+  const b64uToBytes = s => {
+    const raw = atob((s + '='.repeat((4 - (s.length % 4)) % 4)).replace(/-/g, '+').replace(/_/g, '/'));
+    return Uint8Array.from(raw, c => c.charCodeAt(0));
+  };
+  function deviceId() {
+    if (!S.settings.deviceId) {
+      S.settings.deviceId = `d${Date.now().toString(36)}${Math.random().toString(36).slice(2, 8)}`;
+      saveLocal();
+    }
+    return S.settings.deviceId;
+  }
+
+  async function pushInit() {
+    if (!('serviceWorker' in navigator) || !window.isSecureContext) return;
+    try {
+      Push.reg = await navigator.serviceWorker.register('sw.js');
+      if (PUSH_OK) Push.sub = await Push.reg.pushManager.getSubscription();
+    } catch (e) { /* 서비스 워커를 쓸 수 없는 환경 */ }
+    cloudChanged();
+  }
+
+  async function savePushDoc(fields) {
+    const { doc, setDoc } = Cloud.fs;
+    await setDoc(doc(Cloud.db, 'users', Cloud.user.uid), fields, { merge: true });
+  }
+
+  async function pushOn() {
+    if (!Cloud.user) { toast('먼저 Google로 로그인해 주세요.'); return; }
+    if (!PUSH_OK || !Push.reg || !PUSH_KEY) { toast('이 브라우저에서는 알림을 받을 수 없어요.'); return; }
+    Push.busy = true;
+    Push.error = '';
+    cloudChanged();
+    try {
+      const perm = await Notification.requestPermission();
+      if (perm !== 'granted') throw new Error(perm === 'denied' ? '알림이 차단되어 있어요. 브라우저 설정에서 이 사이트의 알림을 허용해 주세요.' : '알림 권한을 허용해야 받을 수 있어요.');
+      Push.sub = (await Push.reg.pushManager.getSubscription()) ||
+        await Push.reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: b64uToBytes(PUSH_KEY) });
+      const hour = S.settings.remindHour || 21;
+      await savePushDoc({
+        push: { [deviceId()]: JSON.stringify({ ...Push.sub.toJSON(), ua: navigator.userAgent.slice(0, 150), at: Date.now() }) },
+        remind: { hour },
+      });
+      S.settings.remindHour = hour;
+      saveLocal();
+      toast(`알림을 켰어요. 매일 ${hourText(hour)}까지 그날 강좌를 안 들으면 알려 줄게요.`);
+    } catch (e) {
+      const m = (e && e.message) || String(e);
+      Push.error = /registration failed|permission denied|not supported|AbortError|push service/i.test(`${m} ${e && e.name}`)
+        ? '이 브라우저에서는 알림을 등록할 수 없어요. 시크릿(비공개) 모드라면 일반 창에서, 아이폰이라면 홈 화면에 추가한 아이콘으로 열어서 다시 시도해 주세요.'
+        : m;
+    } finally {
+      Push.busy = false;
+      cloudChanged();
+    }
+  }
+
+  async function pushOff() {
+    Push.busy = true;
+    cloudChanged();
+    try {
+      if (Push.sub) await Push.sub.unsubscribe();
+      Push.sub = null;
+      if (Cloud.user) await savePushDoc({ push: { [deviceId()]: Cloud.fs.deleteField() } });
+      toast('이 기기의 알림을 껐어요.');
+    } catch (e) {
+      Push.error = (e && e.message) || String(e);
+    } finally {
+      Push.busy = false;
+      cloudChanged();
+    }
+  }
+
+  async function setRemindHour(h) {
+    S.settings.remindHour = h;
+    saveLocal();
+    if (Cloud.user) {
+      try {
+        await savePushDoc({ remind: { hour: h } });
+        toast(`알림 시각을 ${hourText(h)}로 바꿨어요.`);
+      } catch (e) { Push.error = (e && e.message) || String(e); }
+    }
+    cloudChanged();
+  }
+
+  function pushTest() {
+    if (!Push.reg) return;
+    Push.reg.showNotification('🔔 알림 테스트', {
+      body: '알림이 이렇게 와요! 공부를 안 한 날에만 정해 둔 시각에 알려 줄게요.', icon: 'icons/icon-192.png', tag: 'test',
+    }).catch(e => { Push.error = (e && e.message) || String(e); cloudChanged(); });
+  }
+
+  function remindBoxHTML() {
+    const head = '<h2>🔔 학습 알림</h2>';
+    if (!Cloud.user) {
+      return `${head}<p>그날 강좌를 안 들었으면 정해 둔 시각에 폰으로 알려 줘요. 공부했는지 확인할 수 있게 먼저 위에서 <b>Google로 로그인</b>(동기화)을 켜 주세요.</p>`;
+    }
+    if (!PUSH_OK || !PUSH_KEY) {
+      if (IOS && !STANDALONE) {
+        return `${head}<p>아이폰은 사파리에서 <b>공유 버튼 → 홈 화면에 추가</b>를 한 뒤, 홈 화면에 생긴 <b>Aerospace Daily</b> 아이콘으로 열어야 알림을 받을 수 있어요(iOS 16.4 이상). 아이콘으로 연 다음 여기서 알림을 켜 주세요.</p>`;
+      }
+      return `${head}<p>이 브라우저는 알림을 지원하지 않아요. 안드로이드는 크롬, 아이폰은 사파리에서 홈 화면에 추가해서 써 주세요.</p>`;
+    }
+    const hour = S.settings.remindHour || 21;
+    const sel = `<label class="hour-pick">알림 시각 <select data-remind-hour>${REMIND_HOURS.map(h =>
+      `<option value="${h}" ${h === hour ? 'selected' : ''}>${hourText(h)}</option>`).join('')}</select></label>`;
+    const err = Push.error ? `<p class="sync-err">${esc(Push.error)}</p>` : '';
+    if (Push.sub) {
+      return `<h2>🔔 학습 알림 <span class="chip ok">이 기기 켜짐</span></h2>
+        <p>매일 <b>${hourText(hour)}</b>까지 그날 강좌를 완료하지 않았으면 이 기기로 알림이 와요. 미리 수강으로 오늘 강좌를 이미 끝냈다면 오지 않아요.</p>${err}
+        <div class="btn-row">${sel}<button type="button" class="btn small" data-push-test>테스트 알림</button><button type="button" class="btn small ghost" data-push-off>이 기기 알림 끄기</button></div>`;
+    }
+    const denied = Notification.permission === 'denied';
+    return `${head}<p>그날 강좌를 완료하지 않았으면 정해 둔 시각에 이 기기로 알림을 보내 줘요. 알림을 받을 기기(폰)마다 한 번씩 켜 주세요.</p>
+      ${denied ? '<p class="sync-err">이 사이트의 알림이 차단되어 있어요. 브라우저 설정 → 사이트 설정 → 알림에서 <b>허용</b>으로 바꾼 뒤 다시 눌러 주세요.</p>' : ''}${err}
+      <div class="btn-row">${sel}<button type="button" class="btn small primary" data-push-on ${Push.busy ? 'disabled' : ''}>이 기기에서 알림 받기</button></div>`;
   }
 
   // 다른 기기의 기록이 합쳐졌을 때 화면 갱신 (강좌·테스트·복습 중에는 풀던 내용이 날아가지 않게 건드리지 않음)
@@ -274,6 +407,11 @@
   const unlocked = day => day <= curDay();
   const data = day => C.lessons[String(day)] || null;
   const isDone = day => !!S.done[day];
+  // 공개일이 됐거나 미리 수강해서 완료한 강좌 → 단어장·테스트에 포함
+  const reached = day => unlocked(day) || isDone(day);
+  // 이미 작성된 강좌는 공개일 전이라도 '미리 수강'으로 열 수 있다
+  const canOpen = day => unlocked(day) || !!data(day);
+  const allDone = (from, to) => ALL.filter(l => l.day >= from && l.day <= to).every(l => isDone(l.day));
   const unitNo = u => parseInt(u.id.slice(1), 10);
   const unitChip = u => `<span class="chip accent">${u.icon} ${unitNo(u)}단원 · ${esc(u.title)}</span>`;
 
@@ -281,7 +419,7 @@
     const out = [], seen = new Set();
     for (let d = 1; d <= Math.min(to, TOTAL); d++) {
       const L = data(d);
-      if (!L) continue;
+      if (!L || !reached(d)) continue;
       for (const v of L.vocab) {
         const key = v.en.toLowerCase();
         if (seen.has(key)) continue;
@@ -291,7 +429,7 @@
     }
     return out;
   }
-  const openVocab = () => vocabRange(1, curDay());
+  const openVocab = () => vocabRange(1, TOTAL);
   const INTERVALS = [0, 1, 3, 7, 16, 35];
   const vst = w => S.vocab[w.key] || null;
   const isDue = w => { const s = vst(w); return !s || s.due <= todayStr(); };
@@ -533,8 +671,12 @@
       <h2>${esc(L.title)}</h2><p class="title-en">${esc(L.title_en)}</p>
       <p class="summary">${md(L.summary, true)}</p>
       <div class="meta"><span>⏱ ${L.minutes}분</span><span>난이도 ${level(L.level)}</span><span>단어 ${L.vocab.length}개</span><span>문제 ${L.quiz.length}개</span></div>
-      <div class="btn-row"><a class="btn primary" href="#/lesson/${day}">${isDone(day) ? '다시 보기' : '강좌 시작하기'} →</a></div></div>`;
+      <div class="btn-row">${isDone(day) && nextAhead()
+        ? `<a class="btn primary" href="#/lesson/${nextAhead()}">다음 강좌 미리 수강 → Day ${nextAhead()}</a><a class="btn" href="#/lesson/${day}">오늘 강좌 다시 보기</a>`
+        : `<a class="btn primary" href="#/lesson/${day}">${isDone(day) ? '다시 보기' : '강좌 시작하기'} →</a>`}</div></div>`;
   }
+  // 공개일 전이지만 이미 작성되어 미리 수강할 수 있는 가장 앞의 미완료 강좌
+  const nextAhead = () => (ALL.find(l => !unlocked(l.day) && data(l.day) && !isDone(l.day)) || {}).day;
 
   function home() {
     const cd = curDay();
@@ -545,7 +687,7 @@
     const mastered = words.filter(isMastered).length;
     const quizzes = Object.values(S.quiz);
     const qs = quizzes.reduce((a, q) => a + q.score, 0), qt = quizzes.reduce((a, q) => a + q.total, 0);
-    const avail = ALL.filter(l => unlocked(l.day) && data(l.day)).length;
+    const avail = ALL.filter(l => reached(l.day) && data(l.day)).length;
 
     let hero;
     if (cd < 1) {
@@ -583,9 +725,10 @@
       const w = Math.ceil(day / 7), from = (w - 1) * 7 + 1, to = Math.min(w * 7, TOTAL);
       const cells = [];
       for (let d = from; d <= to; d++) {
-        const ds = dateOf(d), open = unlocked(d), cls = [isDone(d) ? 'done' : '', d === cd ? 'today-cell' : '', open ? '' : 'locked'].join(' ');
+        const ds = dateOf(d), open = unlocked(d), ahead = !open && !!data(d);
+        const cls = [isDone(d) ? 'done' : '', d === cd ? 'today-cell' : '', open ? '' : ahead ? 'ahead' : 'locked'].join(' ');
         const inner = `<span class="d">D${d}</span><span class="w">${DOW[parseDate(ds).getDay()]} ${fmtShort(ds)}</span><span class="dot"></span>`;
-        cells.push(open && data(d) ? `<a class="${cls}" href="#/lesson/${d}" title="${esc(BY_DAY.get(d).title)}">${inner}</a>` : `<span class="cell ${cls}">${inner}</span>`);
+        cells.push(data(d) ? `<a class="${cls}" href="#/lesson/${d}" title="${esc(BY_DAY.get(d).title)}${ahead ? ' (미리 수강 가능)' : ''}">${inner}</a>` : `<span class="cell ${cls}">${inner}</span>`);
       }
       const wt = allTests().find(x => x.id === `w${w}`);
       if (wt) {
@@ -598,7 +741,12 @@
     // 다가오는 강좌
     const next = ALL.filter(l => l.day > cd).slice(0, 3);
     const upcoming = next.length ? `<section class="section"><div class="section-head"><h2>다가오는 강좌</h2><a class="more" href="#/roadmap">로드맵 보기</a></div>
-      <div class="upcoming">${next.map(l => `<div class="card row"><span class="dd">${fmtShort(dateOf(l.day))} · D${l.day}</span><span class="tt">${esc(l.title)}<small>${esc(l.title_en)}</small></span></div>`).join('')}</div></section>` : '';
+      <div class="upcoming">${next.map(l => {
+        const inner = `<span class="dd">${fmtShort(dateOf(l.day))} · D${l.day}</span><span class="tt">${esc(l.title)}<small>${esc(l.title_en)}</small></span>`;
+        return data(l.day)
+          ? `<a class="card row" href="#/lesson/${l.day}">${inner}<span class="chip ${isDone(l.day) ? 'ok' : 'orange'}">${isDone(l.day) ? '✓ 완료' : '미리 수강'}</span></a>`
+          : `<div class="card row">${inner}<span class="muted" style="font-size:13px">작성 예정</span></div>`;
+      }).join('')}</div></section>` : '';
 
     app.innerHTML = `<section class="hero">${hero}</section>
       <div id="syncBanner"></div>
@@ -617,27 +765,27 @@
     const l = BY_DAY.get(day);
     if (!l) { app.innerHTML = lockedBox('🛰️', '없는 강좌예요', `Day ${day}는 커리큘럼에 없어요.`); return; }
     const L = data(day);
-    if (!unlocked(day)) {
-      app.innerHTML = lockedBox('🔒', `Day ${day} — ${esc(l.title)}`, `${fmtDate(dateOf(day))}에 열려요. 하루에 한 걸음씩!`,
-        `<p class="muted">미리 보기: ${l.topics.map(esc).join(' · ')}</p>`);
-      return;
-    }
     if (!L) {
-      app.innerHTML = lockedBox('🛠️', `Day ${day} — ${esc(l.title)}`, '이 강좌는 아직 작성 중이에요. 보통 새벽에 자동으로 올라옵니다.');
+      app.innerHTML = unlocked(day)
+        ? lockedBox('🛠️', `Day ${day} — ${esc(l.title)}`, '이 강좌는 아직 작성 중이에요. 보통 새벽에 자동으로 올라옵니다.')
+        : lockedBox('🔒', `Day ${day} — ${esc(l.title)}`, `${fmtDate(dateOf(day))} 공개 예정이에요. 강좌는 공개 4일 전까지 자동으로 작성되고, 작성되면 바로 미리 수강할 수 있어요.`,
+          `<p class="muted">미리 보기: ${l.topics.map(esc).join(' · ')}</p>`);
       return;
     }
+    const early = !unlocked(day);
     const u = l.unit;
     const prev = BY_DAY.get(day - 1), next = BY_DAY.get(day + 1);
     const pagerCell = (x, cls, label) => {
       if (!x) return '<span></span>';
-      const ok = unlocked(x.day) && data(x.day);
-      const inner = `<small>${label} · Day ${x.day}</small><span>${esc(x.title)}</span>`;
+      const ok = !!data(x.day);
+      const inner = `<small>${label} · Day ${x.day}${ok && !unlocked(x.day) ? ' · 미리 수강' : ''}</small><span>${esc(x.title)}</span>`;
       return ok ? `<a class="card ${cls}" href="#/lesson/${x.day}">${inner}</a>` : `<span class="card ${cls}">${inner}</span>`;
     };
     const readingParas = paras(L.reading.en).map(p => `<p>${highlightVocab(p, L.vocab)}</p>`).join('');
 
     app.innerHTML = `<article class="lesson">
       <nav class="crumbs"><a href="#/roadmap">로드맵</a><span>›</span><span>${u.icon} ${unitNo(u)}단원 ${esc(u.title)}</span></nav>
+      ${early ? `<div class="ahead-note">🚀 <b>미리 수강 중</b> — ${fmtDate(dateOf(day))}에 공개될 강좌예요. 다 듣고 완료를 누르면 단어장과 테스트에도 바로 반영돼요.</div>` : ''}
       <header class="lesson-head">
         <div class="eyebrow">Day ${pad(day, 3)} · ${fmtDate(dateOf(day))}</div>
         <h1>${esc(L.title)}</h1>
@@ -811,11 +959,12 @@
         else if (l.day === cd) st = '<span class="chip accent">오늘</span>';
         else if (open && written) st = '<span class="chip warn">읽기 전</span>';
         else if (open) st = '<span class="chip">준비 중</span>';
+        else if (written) st = '<span class="chip orange">미리 수강 가능</span>';
         else st = `<span class="muted">🔒 ${fmtShort(dateOf(l.day))}</span>`;
-        const cls = `lrow ${open ? '' : 'locked'} ${l.day === cd ? 'is-today' : ''}`;
+        const cls = `lrow ${open || written ? '' : 'locked'} ${l.day === cd ? 'is-today' : ''}`;
         const inner = `<span class="dn">Day ${l.day}</span><span class="dt">${fmtShort(dateOf(l.day))} ${DOW[parseDate(dateOf(l.day)).getDay()]}</span>
           <span class="tt">${esc(l.title)}<small>${esc(l.title_en)}</small></span><span class="st">${st}</span>`;
-        return `<li>${open && written ? `<a class="${cls}" href="#/lesson/${l.day}">${inner}</a>` : `<div class="${cls}">${inner}</div>`}</li>`;
+        return `<li>${written ? `<a class="${cls}" href="#/lesson/${l.day}">${inner}</a>` : `<div class="${cls}">${inner}</div>`}</li>`;
       }).join('');
       return `<details class="card unit" ${isOpen ? 'open' : ''}>
         <summary><span class="u-ico">${u.icon}</span>
@@ -825,7 +974,7 @@
         <ol class="lrows">${rows}</ol></details>`;
     }).join('');
     app.innerHTML = `<div class="page-head"><div class="eyebrow">Curriculum</div><h1>로드맵</h1>
-      <p>기초 물리에서 시작해 로켓·공기역학·궤도역학·엔진·구조·우주선 시스템까지, ${TOTAL}일 동안 하루 한 강좌씩 열립니다.</p></div>
+      <p>기초 물리에서 시작해 로켓·공기역학·궤도역학·엔진·구조·우주선 시스템까지, ${TOTAL}일 동안 하루 한 강좌씩 열립니다. 이미 작성된 강좌는 공개일 전이라도 <b>미리 수강</b>할 수 있어요.</p></div>
       <div class="card overall"><div class="row"><span>열린 강좌 ${Math.max(0, opened)} / ${TOTAL}</span><span>완료 ${doneN}개 · ${pct(doneN, TOTAL)}%</span></div>${bar(pct(doneN, TOTAL), 'ok')}</div>
       ${units}`;
   }
@@ -943,7 +1092,7 @@
     const out = [];
     for (let d = from; d <= to; d++) {
       const L = data(d);
-      if (!L || !unlocked(d)) continue;
+      if (!L || !reached(d)) continue;
       keys.forEach(k => L[k].forEach(q => out.push({ ...q, src: d })));
     }
     return out;
@@ -964,7 +1113,7 @@
     }).filter(Boolean);
   }
 
-  const hasLessons = t => t.from && ALL.some(l => l.day >= t.from && l.day <= t.to && data(l.day) && unlocked(l.day));
+  const hasLessons = t => t.from && ALL.some(l => l.day >= t.from && l.day <= t.to && data(l.day) && reached(l.day));
 
   function allTests() {
     const tests = [];
@@ -972,7 +1121,7 @@
       const from = (w - 1) * 7 + 1, to = Math.min(w * 7, TOTAL);
       tests.push({
         id: `w${w}`, kind: 'weekly', title: `${w}주차 테스트`, from, to, sub: `Day ${from}–${to} · 약 25문제`,
-        open: () => unlocked(to),
+        open: () => unlocked(to) || allDone(from, to),
         build: () => {
           let qs = sample(qPool(from, to), 15).map(q => ({ ...q, kind: 'concept' }));
           if (qs.length < 15) qs = qs.concat(sample(qPool(from, to, ['quiz']), 15 - qs.length).map(q => ({ ...q, kind: 'concept' })));
@@ -986,7 +1135,7 @@
       const from = u.lessons[0].day, to = u.lessons[u.lessons.length - 1].day;
       tests.push({
         id: u.id.toLowerCase(), kind: 'unit', title: `${unitNo(u)}단원 평가`, unit: u, from, to, sub: `${u.icon} ${u.title} · 약 25문제`,
-        open: () => unlocked(to),
+        open: () => unlocked(to) || allDone(from, to),
         build: () => {
           const qs = sample(qPool(from, to, ['test', 'quiz']), 20).map(q => ({ ...q, kind: 'concept' }));
           return [...qs, ...vocabQs(vocabRange(from, to), 5, openVocab())];
@@ -996,7 +1145,7 @@
     tests.push({
       id: 'practice', kind: 'practice', title: '랜덤 연습', sub: '지금까지 배운 전체 범위에서 15문제', from: 1, to: TOTAL,
       open: () => true,
-      build: () => [...sample(qPool(1, curDay(), ['quiz', 'test']), 10).map(q => ({ ...q, kind: 'concept' })), ...vocabQs(openVocab(), 5, openVocab())],
+      build: () => [...sample(qPool(1, TOTAL, ['quiz', 'test']), 10).map(q => ({ ...q, kind: 'concept' })), ...vocabQs(openVocab(), 5, openVocab())],
     });
     tests.push({
       id: 'vocab', kind: 'practice', title: '영단어 테스트', sub: '배운 단어 중 20문제', from: 1, to: TOTAL,
@@ -1016,7 +1165,7 @@
     const tests = allTests();
     const card = t => {
       const open = t.open(), ready = open && hasLessons(t), best = bestScore(t.id);
-      const status = !open ? `<span class="muted">🔒 ${fmtDate(dateOf(t.to))} 공개</span>`
+      const status = !open ? `<span class="muted">🔒 ${fmtDate(dateOf(t.to))} 공개 · Day ${t.from}–${t.to}를 모두 완료하면 바로 열려요</span>`
         : best ? `<span class="best">최고 ${pct(best.score, best.total)}% (${best.score}/${best.total})</span>`
           : '<span class="chip orange">응시 가능</span>';
       return `<div class="card tcard ${open ? '' : 'locked'}"><h3>${esc(t.title)}</h3><div class="sub">${esc(t.sub)}</div>${status}
@@ -1040,7 +1189,7 @@
   function testPage(id) {
     const t = allTests().find(x => x.id === id);
     if (!t) { app.innerHTML = lockedBox('🛰️', '없는 테스트예요', '테스트 목록에서 다시 선택해 주세요.'); return; }
-    if (!t.open()) { app.innerHTML = lockedBox('🔒', esc(t.title), `${fmtDate(dateOf(t.to))}에 열려요.`); return; }
+    if (!t.open()) { app.innerHTML = lockedBox('🔒', esc(t.title), `${fmtDate(dateOf(t.to))}에 열려요. Day ${t.from}–${t.to}를 모두 완료하면 그 전에도 바로 열려요.`); return; }
     const qs = t.build().map(shuffledChoices);
     if (!qs.length) { app.innerHTML = lockedBox('📭', esc(t.title), '아직 출제할 문제가 없어요. 강좌가 더 열리면 다시 와 주세요.'); return; }
     const tagOf = q => (q.kind === 'vocab' ? '<span class="chip orange src">영단어</span>'
@@ -1097,6 +1246,7 @@
     app.innerHTML = `<div class="page-head"><div class="eyebrow">Settings</div><h1>설정</h1></div>
       <div class="set-list">
         ${Cloud.enabled ? `<div class="card set" id="syncBox">${syncBoxHTML()}</div>` : ''}
+        ${Cloud.enabled && PUSH_KEY ? `<div class="card set" id="remindBox">${remindBoxHTML()}</div>` : ''}
         <div class="card set"><h2>화면 모드</h2><div class="seg" id="theme">
           ${[['system', '시스템'], ['light', '라이트'], ['dark', '다크']].map(([v, k]) => `<button type="button" data-v="${v}" class="${S.settings.theme === v ? 'on' : ''}">${k}</button>`).join('')}</div></div>
         <div class="card set"><h2>영어 읽기 속도 <span class="muted" id="rateVal" style="font-weight:400">${S.settings.rate.toFixed(2)}×</span></h2>
@@ -1170,6 +1320,9 @@
     if (e.target.closest('[data-cloud-login]')) { cloudLogin(); return; }
     if (e.target.closest('[data-cloud-sync]')) { cloudSync(); return; }
     if (e.target.closest('[data-cloud-logout]')) { cloudLogout(); return; }
+    if (e.target.closest('[data-push-on]')) { pushOn(); return; }
+    if (e.target.closest('[data-push-off]')) { pushOff(); return; }
+    if (e.target.closest('[data-push-test]')) { pushTest(); return; }
     if (e.target.closest('[data-hide-sync]')) {
       S.settings.hideSync = true;
       saveLocal();
@@ -1190,6 +1343,11 @@
       <p>작성된 강좌 ${C.meta.written} / ${C.meta.total}${built ? ` · 마지막 업데이트 ${built}` : ''}</p><p id="syncStatus"></p>`;
   }
 
+  document.addEventListener('change', e => {
+    const s = e.target.closest('[data-remind-hour]');
+    if (s) setRemindHour(+s.value);
+  });
+
   window.AeroDaily = { mergeState }; // 개발·점검용
 
   applyTheme();
@@ -1197,4 +1355,5 @@
   addEventListener('hashchange', route);
   route();
   cloudInit();
+  pushInit();
 })();

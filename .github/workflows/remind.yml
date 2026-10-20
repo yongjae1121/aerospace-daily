@@ -1,0 +1,35 @@
+name: Study reminder
+
+# 저녁 17~23시(KST)에 매시간: 그날 강좌를 안 들은 사람에게 폰 알림(웹 푸시)을 보낸다.
+on:
+  schedule:
+    - cron: "3 8-14 * * *"   # UTC 08~14시 = KST 17~23시 (정각 혼잡을 피해 3분)
+  workflow_dispatch:
+    inputs:
+      test:
+        description: "알림을 켠 모든 기기에 테스트 알림 보내기"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: remind
+  cancel-in-progress: false
+
+jobs:
+  remind:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Install
+        run: |
+          python3 -m venv .venv
+          .venv/bin/pip install --quiet "pywebpush>=2,<3" "google-auth>=2.30,<3" "requests>=2.31,<3"
+      - name: Send reminders
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          VAPID_PRIVATE_KEY: ${{ secrets.VAPID_PRIVATE_KEY }}
+          REMIND_TEST: ${{ inputs.test && '1' || '' }}
+        run: .venv/bin/python scripts/remind.py

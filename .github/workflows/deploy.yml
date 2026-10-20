@@ -24,7 +24,7 @@ jobs:
       - name: Assemble site
         run: |
           mkdir -p _site/data
-          cp -r index.html assets _site/
+          cp -r index.html assets icons sw.js manifest.webmanifest _site/
           cp data/course.js _site/data/
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4

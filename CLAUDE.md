@@ -13,20 +13,24 @@ scripts/build.py                               검사 + data/course.js 생성 (�
 data/course.js                                 생성물 — 커밋하지 않음 (.gitignore)
 assets/firebase-config.js                      기기 간 동기화용 Firebase 웹 설정 (null이면 동기화 꺼짐, Firestore DB ID는 "default")
 firestore.rules                                Firestore 보안 규칙 (Firebase 콘솔에 붙여 넣은 것과 같게 유지)
+sw.js, manifest.webmanifest, icons/            홈 화면 앱(PWA) + 학습 알림용 서비스 워커 (오프라인 캐시는 일부러 안 함)
+scripts/remind.py                              학습 알림 발송: 알림 시각이 지났는데 오늘 강좌 미완료면 웹 푸시
+.github/workflows/remind.yml                   17~23시(KST) 매시간 remind.py 실행 (Actions secret: FIREBASE_SERVICE_ACCOUNT, VAPID_PRIVATE_KEY)
 .github/workflows/deploy.yml                   main에 push되면 검사 → GitHub Pages 배포
 .github/workflows/merge-lessons.yml            claude/** 브랜치의 강좌를 main에 자동 병합
 ```
 
-- Day N은 `curriculum.json`의 `start` 날짜 + (N−1)일에 사이트에서 열립니다(학습자 브라우저의 현지 날짜 기준).
+- Day N은 `curriculum.json`의 `start` 날짜 + (N−1)일에 사이트에서 열립니다(학습자 브라우저의 현지 날짜 기준). 이미 작성된 강좌는 그 전에도 '미리 수강'할 수 있고, 미리 완료한 강좌는 단어장·테스트에 바로 포함됩니다. 주간 테스트·단원 평가는 날짜가 되거나 범위의 강좌를 모두 완료하면 열립니다.
 - 7일마다 주간 테스트, 단원이 끝나면 단원 평가가 자동으로 생깁니다. 문제는 강좌 JSON의 `test`(+ `quiz`)와 `vocab`에서 뽑습니다.
 - 진도·점수·단어 암기 상태는 브라우저 localStorage(`aerodaily.v1`)에 저장되고, Google 로그인 시 Firestore `users/{uid}` 문서(`data` = settings를 뺀 상태의 JSON 문자열)와 동기화됩니다. 쓰기는 항상 트랜잭션 안에서 원격과 `mergeState`로 병합합니다(완료는 최근 동작 우선, 테스트·학습일은 합집합, 단어는 복습 횟수가 많은 쪽). 상태 구조를 바꿀 때는 `mergeState`도 함께 고칩니다.
+- 학습 알림: 같은 문서의 `push.{기기ID}`(구독 JSON 문자열), `remind.hour`(알림 시각), `remindSent`(오늘 보낸 날짜) 필드를 씁니다. 동기화 쓰기는 `merge: true`라 이 필드들을 지우지 않습니다. 웹 푸시 VAPID 공개 키는 `assets/firebase-config.js`의 `PUSH_PUBLIC_KEY`, 비밀 키는 Actions secret에만 있습니다. 수동 테스트: Actions → Study reminder → Run workflow(test 체크).
 
 명령어:
 
 ```bash
 python scripts/build.py           # 검사 + data/course.js 생성
 python scripts/build.py --check   # 검사만
-python scripts/build.py --todo    # 오늘(KST) + 2일까지 작성해야 할 Day 목록
+python scripts/build.py --todo    # 오늘(KST) + 4일까지 작성해야 할 Day 목록 (학습자가 미리 수강할 수 있게 4일 앞서 작성)
 python -m http.server 8000        # http://localhost:8000 에서 미리 보기
 ```
 
