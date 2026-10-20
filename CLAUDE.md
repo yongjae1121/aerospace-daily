@@ -147,6 +147,8 @@ python -m http.server 8000        # http://localhost:8000 에서 미리 보기
 - [ ] 모든 계산 문제의 정답을 Python으로 다시 계산했는가? 해설의 숫자와 `answer`가 일치하는가?
 - [ ] 객관식 정답이 하나뿐이고, 오답 보기도 그럴듯한가?
 - [ ] 본문이 커리큘럼의 `topics`를 모두 다루는가? 앞 강좌와 자연스럽게 이어지는가?
+- [ ] "Day N에서 배운 …"처럼 다른 강좌를 가리킬 때, 그 내용이 정말 Day N에 있는지 `content/lessons/NNN.md`나 `curriculum.json`으로 확인했는가?
+- [ ] 그림의 글자가 viewBox(가로 560) 밖으로 나가거나 선과 겹치지 않는가? (한글 13px 글자는 한 글자에 약 13px 폭)
 - [ ] 영어 지문에 그날 단어가 4개 이상 들어갔는가? 번역이 정확한가?
 - [ ] `python scripts/build.py --check` 통과.
 

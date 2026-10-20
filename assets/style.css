@@ -369,7 +369,7 @@ details.solution[open] > summary::before { transform: rotate(90deg); }
 details.solution > *:not(summary) { margin-top: .7em; }
 
 .fig { margin: 1.6em 0; text-align: center; }
-.fig svg { width: 100%; max-width: 620px; height: auto; color: var(--text); overflow: visible; }
+.fig svg { width: 100%; max-width: 620px; height: auto; color: var(--text); overflow: hidden; }
 .fig figcaption { font-size: 14px; color: var(--muted); margin-top: 8px; }
 .fig text { fill: currentColor; font-family: var(--font); font-size: 13px; }
 .fig .mut { color: var(--muted); }
