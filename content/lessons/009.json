@@ -1,0 +1,174 @@
+{
+ "day": 9,
+ "title": "미적분으로 운동 읽기",
+ "title_en": "Calculus for Motion",
+ "level": 2,
+ "minutes": 20,
+ "summary": "미분은 변화율, 적분은 누적이라는 두 생각으로 로켓의 운동을 읽고, 질량이 변하는 로켓을 오일러 수치 적분으로 계산해 봅니다.",
+ "objectives": [
+  "미분을 변화율(기울기), 적분을 누적(넓이)으로 해석할 수 있다.",
+  "속도 함수에서 가속도와 이동 거리를 미분과 적분으로 구할 수 있다.",
+  "질량이 변하는 로켓의 가속도를 설명하고 오일러 방법으로 속도를 근사할 수 있다."
+ ],
+ "vocab": [
+  {
+   "en": "derivative",
+   "pron": "dɪˈrɪvətɪv",
+   "pos": "n.",
+   "ko": "미분, 도함수",
+   "def": "A measure of how fast a quantity changes with respect to another quantity.",
+   "ex": "The derivative of position with respect to time is velocity.",
+   "ex_ko": "시간에 대한 위치의 미분은 속도이다."
+  },
+  {
+   "en": "integral",
+   "pron": "ˈɪntɪɡrəl",
+   "pos": "n.",
+   "ko": "적분",
+   "def": "A quantity found by adding up many tiny pieces, such as the area under a curve.",
+   "ex": "The integral of acceleration over time gives the change in velocity.",
+   "ex_ko": "시간에 대한 가속도의 적분은 속도의 변화를 준다."
+  },
+  {
+   "en": "rate of change",
+   "pron": "reɪt əv tʃeɪndʒ",
+   "pos": "n.",
+   "ko": "변화율",
+   "def": "How quickly one quantity changes compared with another, often with time.",
+   "ex": "Acceleration is the rate of change of velocity.",
+   "ex_ko": "가속도는 속도의 변화율이다."
+  },
+  {
+   "en": "slope",
+   "pron": "sloʊp",
+   "pos": "n.",
+   "ko": "기울기",
+   "def": "A number that tells how steeply a line or curve rises or falls.",
+   "ex": "The slope of the velocity graph tells us the acceleration.",
+   "ex_ko": "속도 그래프의 기울기는 가속도를 알려 준다."
+  },
+  {
+   "en": "propellant",
+   "pron": "prəˈpɛlənt",
+   "pos": "n.",
+   "ko": "추진제",
+   "def": "The fuel and oxidizer that a rocket burns and expels to produce thrust.",
+   "ex": "Most of a launch vehicle's mass at liftoff is propellant.",
+   "ex_ko": "발사체의 이륙 질량 대부분은 추진제이다."
+  },
+  {
+   "en": "numerical integration",
+   "pron": "nuːˈmɛrɪkəl ˌɪntɪˈɡreɪʃən",
+   "pos": "n.",
+   "ko": "수치 적분",
+   "def": "A way of finding an integral by computing many small steps instead of using a formula.",
+   "ex": "Flight simulators rely on numerical integration to update the aircraft's state.",
+   "ex_ko": "비행 시뮬레이터는 항공기의 상태를 갱신하기 위해 수치 적분에 의존한다."
+  },
+  {
+   "en": "time step",
+   "pron": "taɪm stɛp",
+   "pos": "n.",
+   "ko": "시간 간격",
+   "def": "The small interval of time used for each calculation in a simulation.",
+   "ex": "A smaller time step usually makes a simulation more accurate.",
+   "ex_ko": "시간 간격이 작을수록 보통 시뮬레이션이 더 정확해진다."
+  },
+  {
+   "en": "approximation",
+   "pron": "əˌprɒksɪˈmeɪʃən",
+   "pos": "n.",
+   "ko": "근사(값)",
+   "def": "A value or method that is close to the exact one but not perfectly correct.",
+   "ex": "Treating gravity as constant is a good approximation near the ground.",
+   "ex_ko": "중력을 일정하다고 보는 것은 지표면 근처에서 좋은 근사이다."
+  }
+ ],
+ "reading": {
+  "title": "Reading Motion with Calculus",
+  "en": "Calculus began as a language for describing motion. Imagine a rocket climbing from the launch pad. Its velocity tells us the rate of change of its position, and in mathematics this idea is called a derivative. On a graph, the derivative is simply the slope of the curve at one moment.\n\nThe opposite question is also important. If we know the acceleration at every moment, how fast is the rocket going? We must add up all the small changes in speed, and that sum is an integral. On a graph, it is the area under the curve.\n\nA rocket makes this problem more interesting because it constantly burns propellant. As its mass decreases, the same thrust produces a larger and larger acceleration, so simple formulas for constant acceleration no longer work. Engineers solve the problem with numerical integration. They divide the flight into many short intervals, each one called a time step, and treat the acceleration as constant inside each interval. This is only an approximation, but a smaller time step gives a more accurate answer. Modern flight simulators use this simple idea thousands of times per second.",
+  "ko": "미적분은 운동을 설명하는 언어로 시작되었습니다. 발사대에서 올라가는 로켓을 상상해 보세요. 로켓의 속도는 위치의 변화율을 알려 주며, 수학에서는 이 개념을 미분이라고 부릅니다. 그래프에서 미분은 한 순간의 곡선 기울기일 뿐입니다.\n\n반대 질문도 중요합니다. 모든 순간의 가속도를 안다면 로켓은 얼마나 빠르게 가고 있을까요? 속도의 작은 변화를 모두 더해야 하는데, 그 합이 적분입니다. 그래프에서는 곡선 아래의 넓이입니다.\n\n로켓은 추진제를 계속 태우기 때문에 이 문제가 더 흥미로워집니다. 질량이 줄어들면 같은 추력이 점점 더 큰 가속도를 만들기 때문에, 일정한 가속도에 대한 간단한 공식은 더 이상 통하지 않습니다. 공학자들은 수치 적분으로 이 문제를 풉니다. 비행을 많은 짧은 구간으로 나누고, 각 구간을 시간 간격이라고 부르며, 구간 안에서는 가속도가 일정하다고 봅니다. 이것은 근사에 불과하지만, 시간 간격이 작을수록 더 정확한 답을 얻습니다. 현대의 비행 시뮬레이터는 이 단순한 아이디어를 초당 수천 번 사용합니다."
+ },
+ "quiz": [
+  {
+   "type": "mc",
+   "q": "위치-시간 그래프에서 어떤 순간의 접선 기울기는 무엇을 나타낼까요?",
+   "choices": [
+    "그 순간의 가속도",
+    "그 순간의 속도",
+    "그때까지 이동한 총 거리",
+    "그 순간의 질량"
+   ],
+   "answer": 1,
+   "explain": "위치를 시간으로 미분한 $dx/dt$가 속도이고, 위치-시간 그래프의 기울기가 바로 속도예요. 가속도는 속도-시간 그래프의 기울기예요."
+  },
+  {
+   "type": "num",
+   "q": "어떤 로켓의 속도가 $v(t)=0.5\\,t^3$ (m/s, $t$는 초)일 때, $t=4$ s에서 가속도는 몇 $\\text{m/s}^2$일까요?",
+   "answer": 24,
+   "tol": 0.02,
+   "unit": "m/s²",
+   "explain": "$a=dv/dt=1.5\\,t^2$이므로 $t=4$ s에서 $a=1.5\\times16=24\\ \\text{m/s}^2$예요."
+  },
+  {
+   "type": "ox",
+   "q": "추력이 일정하더라도 추진제를 태우며 질량이 줄어드는 로켓은 가속도가 시간에 따라 커진다. (중력과 항력 변화는 무시)",
+   "answer": true,
+   "explain": "$a=T/m-g$에서 $m$이 줄어들면 $T/m$이 커져서 가속도가 커져요."
+  },
+  {
+   "type": "mc",
+   "q": "According to the passage, why can't engineers use simple constant-acceleration formulas for a rocket?",
+   "choices": [
+    "Because a rocket has no weight in space",
+    "Because the rocket's mass decreases as it burns propellant",
+    "Because a rocket never changes its velocity",
+    "Because integrals cannot be used for rockets"
+   ],
+   "answer": 1,
+   "explain": "*As its mass decreases, the same thrust produces a larger and larger acceleration.* 질량이 줄어 가속도가 계속 변하기 때문에 일정 가속도 공식이 맞지 않아요."
+  }
+ ],
+ "test": [
+  {
+   "type": "num",
+   "q": "로켓의 질량이 $m(t)=1200-4t$ (kg, $t$는 초)로 줄고 추력은 9000 N으로 일정해요. 중력을 무시할 때, $t=150$ s에서 가속도는 몇 $\\text{m/s}^2$일까요?",
+   "answer": 15,
+   "tol": 0.02,
+   "unit": "m/s²",
+   "explain": "$m(150)=1200-600=600$ kg이므로 $a=T/m=9000/600=15\\ \\text{m/s}^2$예요."
+  },
+  {
+   "type": "num",
+   "q": "정지해 있던 물체의 가속도가 $a(t)=6t$ ($\\text{m/s}^2$, $t$는 초)일 때, $t=5$ s까지 이동한 거리는 몇 m일까요?",
+   "answer": 125,
+   "tol": 0.02,
+   "unit": "m",
+   "explain": "$v=\\int 6t\\,dt=3t^2$, $x=\\int 3t^2\\,dt=t^3$이므로 $x(5)=125$ m예요."
+  },
+  {
+   "type": "mc",
+   "q": "오일러 방법으로 속도를 계산할 때 시간 간격 $\\Delta t$를 줄이면 일반적으로 어떻게 될까요?",
+   "choices": [
+    "정확도가 올라가고 계산량이 늘어난다",
+    "정확도가 내려가고 계산량이 늘어난다",
+    "정확도가 올라가고 계산량이 줄어든다",
+    "정확도와 계산량 모두 변하지 않는다"
+   ],
+   "answer": 0,
+   "explain": "간격이 작을수록 구간 안에서 가속도가 일정하다는 근사가 잘 맞아 정확해지지만, 반복 횟수가 늘어 계산량도 늘어요."
+  }
+ ],
+ "further": [
+  {
+   "title": "Khan Academy — Calculus 1",
+   "url": "https://www.khanacademy.org/math/calculus-1",
+   "lang": "en"
+  },
+  {
+   "title": "Wikipedia — Euler method",
+   "url": "https://en.wikipedia.org/wiki/Euler_method",
+   "lang": "en"
+  }
+ ]
+}
