@@ -1,0 +1,44 @@
+{
+  "day": 10,
+  "title": "공학적 추정과 페르미 문제",
+  "title_en": "Engineering Estimation and Fermi Problems",
+  "level": 2,
+  "minutes": 18,
+  "summary": "정보가 부족해도 가정을 쪼개고 곱해서 답의 자릿수를 맞히는 페르미 추정을 배우고, 여객기 한 번 비행의 연료량을 직접 어림해 봅니다.",
+  "objectives": [
+    "문제를 아는 양의 곱과 나눗셈으로 쪼개어 자릿수를 추정할 수 있다.",
+    "가정을 명시하고 결과를 알려진 값과 비교해 점검할 수 있다.",
+    "유효숫자 규칙에 맞게 계산 결과를 표현하고, 여객기의 연료량을 추정할 수 있다."
+  ],
+  "vocab": [
+    {"en": "order of magnitude", "pron": "ˈɔːrdər əv ˈmæɡnɪtuːd", "pos": "n.", "ko": "자릿수, 규모의 차수", "def": "A rough size of a number expressed as a power of ten.", "ex": "The fuel mass is correct to within an order of magnitude.", "ex_ko": "연료 질량은 자릿수까지는 맞다."},
+    {"en": "estimate", "pron": "ˈɛstɪmeɪt", "pos": "n. / v.", "ko": "추정(하다)", "def": "To calculate an approximate value, or the approximate value itself.", "ex": "Engineers estimate the weight before the design is finished.", "ex_ko": "엔지니어들은 설계가 끝나기 전에 무게를 추정한다."},
+    {"en": "assumption", "pron": "əˈsʌmpʃən", "pos": "n.", "ko": "가정", "def": "Something you accept as true without proof in order to continue a calculation.", "ex": "Every estimate depends on a few clear assumptions.", "ex_ko": "모든 추정은 몇 가지 명확한 가정에 달려 있다."},
+    {"en": "significant figure", "pron": "sɪɡˈnɪfɪkənt ˈfɪɡjər", "pos": "n.", "ko": "유효숫자", "def": "A digit in a number that carries real information about its precision.", "ex": "The result should have only two significant figures.", "ex_ko": "결과는 유효숫자를 두 자리만 가져야 한다."},
+    {"en": "uncertainty", "pron": "ʌnˈsɜːrtənti", "pos": "n.", "ko": "불확실성", "def": "The amount by which a measured or calculated value might be wrong.", "ex": "The uncertainty in the fuel estimate is about fifty percent.", "ex_ko": "연료 추정치의 불확실성은 약 50퍼센트이다."},
+    {"en": "sanity check", "pron": "ˈsænəti tʃɛk", "pos": "n.", "ko": "상식 점검", "def": "A quick test to see whether a result is reasonable.", "ex": "A sanity check showed that the answer was a thousand times too large.", "ex_ko": "상식 점검 결과 답이 천 배나 크다는 것을 알았다."},
+    {"en": "heating value", "pron": "ˈhiːtɪŋ ˈvæljuː", "pos": "n.", "ko": "발열량", "def": "The amount of heat released when a unit mass of fuel is burned.", "ex": "Jet fuel has a heating value of about 43 megajoules per kilogram.", "ex_ko": "제트 연료의 발열량은 킬로그램당 약 43메가줄이다."},
+    {"en": "plausible", "pron": "ˈplɔːzəbl", "pos": "adj.", "ko": "그럴듯한, 타당해 보이는", "def": "Seeming reasonable and likely to be true.", "ex": "A cruise speed of 250 meters per second is plausible for an airliner.", "ex_ko": "순항 속도 초속 250미터는 여객기에게 타당해 보인다."}
+  ],
+  "reading": {
+    "title": "The Art of the Rough Answer",
+    "en": "Before an aircraft is built, engineers must answer questions that no one can measure yet. How much fuel will a new airliner need? How heavy will the structure be? In the early stage of a design, there is no complete data, so engineers rely on an estimate rather than an exact calculation.\n\nA good estimate starts by breaking a hard problem into simpler pieces. Each piece requires an assumption, such as the cruise speed or the efficiency of the engines, and good engineers write every assumption down so that others can challenge it. The goal is not perfection but the right order of magnitude. If the answer is one hundred tonnes, it should not turn out to be one thousand.\n\nEngineers also respect uncertainty. Reporting a result with six significant figures when the inputs are known to only two would give a false impression of accuracy. Finally, they perform a sanity check by comparing the result with a similar aircraft that already exists. If the two numbers are close, the estimate is plausible. If they are not, an assumption must be wrong, and the search for the mistake begins.",
+    "ko": "항공기가 만들어지기 전에 엔지니어들은 아직 아무도 측정할 수 없는 질문에 답해야 합니다. 새 여객기는 연료가 얼마나 필요할까요? 구조물은 얼마나 무거울까요? 설계 초기에는 완전한 자료가 없기 때문에, 엔지니어들은 정확한 계산 대신 추정에 의존합니다.\n\n좋은 추정은 어려운 문제를 더 단순한 조각들로 나누는 것에서 시작합니다. 각 조각에는 순항 속도나 엔진 효율 같은 가정이 필요하며, 훌륭한 엔지니어는 다른 사람이 따져 볼 수 있도록 모든 가정을 적어 둡니다. 목표는 완벽함이 아니라 올바른 자릿수입니다. 답이 100톤이라면 1,000톤으로 밝혀져서는 안 됩니다.\n\n엔지니어들은 불확실성도 존중합니다. 입력값이 두 자리만 알려져 있는데 결과를 유효숫자 여섯 자리로 보고하면 정확하다는 잘못된 인상을 줍니다. 마지막으로 이미 존재하는 비슷한 항공기와 결과를 비교하는 상식 점검을 합니다. 두 숫자가 가까우면 추정은 타당합니다. 그렇지 않다면 어떤 가정이 틀렸다는 뜻이고, 실수를 찾는 일이 시작됩니다."
+  },
+  "quiz": [
+    {"type": "mc", "q": "페르미 추정에서 가장 먼저 해야 할 일은 무엇일까요?", "choices": ["정확한 값을 인터넷에서 찾아 그대로 쓴다", "구하려는 양을 아는 양의 곱과 나눗셈으로 쪼갠다", "계산기로 소수점 아래 여덟 자리까지 계산한다", "가장 큰 값 하나만 골라 어림한다"], "answer": 1, "explain": "페르미 추정은 모르는 양을 여러 개의 쉬운 양으로 쪼개어 곱하는 방법이에요. 쪼개면 각 조각의 오차가 서로 상쇄되어 자릿수가 잘 맞아요."},
+    {"type": "ox", "q": "입력값이 유효숫자 두 자리뿐이라면, 계산 결과를 소수점 아래 다섯 자리까지 쓰는 것이 더 정확한 보고이다.", "answer": false, "explain": "결과의 정밀도는 입력의 정밀도를 넘을 수 없어요. 두 자리 입력으로 다섯 자리를 쓰면 실제로는 모르는 자리를 아는 것처럼 보이게 해요."},
+    {"type": "num", "q": "수평 순항 중인 비행기의 추력이 $1.2\\times10^{5}$ N, 속도가 250 m/s, 연료 에너지 중 추진에 쓰이는 효율이 0.35, 연료 발열량이 43 MJ/kg일 때 연료 소모율은 몇 kg/s일까요? ($\\dot m_f = Tv/(\\eta q)$ 사용)", "answer": 1.99, "tol": 0.02, "unit": "kg/s", "explain": "$P=Tv=1.2\\times10^5\\times250=3.0\\times10^7$ W이고, $\\dot m_f = 3.0\\times10^7/(0.35\\times43\\times10^6)\\approx1.99$ kg/s예요."},
+    {"type": "mc", "q": "According to the passage, what should engineers do at the end of an estimate?", "choices": ["Report as many digits as the calculator shows", "Compare the result with a similar aircraft that already exists", "Hide the assumptions so no one can challenge them", "Replace the estimate with a measurement from space"], "answer": 1, "explain": "*Finally, they perform a sanity check by comparing the result with a similar aircraft that already exists.* 마지막에 이미 있는 비슷한 항공기와 비교해 상식 점검을 해요."}
+  ],
+  "test": [
+    {"type": "mc", "q": "정확한 값이 $4.7\\times10^{4}$ kg일 때, 자릿수 추정으로 가장 적절한 표현은 무엇일까요?", "choices": ["약 $10^{2}$ kg", "약 $10^{4}$ kg 또는 $10^{5}$ kg 근처", "약 $10^{8}$ kg", "약 $10^{-1}$ kg"], "answer": 1, "explain": "$4.7\\times10^4$은 $10^4$의 약 5배이고 $10^5$의 절반 정도라서, $10^4\\sim10^5$ 근처로 어림해요. 나머지 보기는 수십 배 이상 어긋나요."},
+    {"type": "num", "q": "여객기에 실은 제트 연료가 100 t($1.0\\times10^{5}$ kg)이고 밀도가 $800\\ \\text{kg/m}^3$일 때 연료의 부피는 몇 $\\text{m}^3$일까요?", "answer": 125, "tol": 0.02, "unit": "m³", "explain": "$V=m/\\rho = 1.0\\times10^5/800 = 125\\ \\text{m}^3$예요."},
+    {"type": "ox", "q": "여러 단계를 거치는 계산에서는 매 단계마다 유효숫자에 맞춰 반올림하는 것이 가장 정확하다.", "answer": false, "explain": "중간 계산에서 반올림하면 오차가 쌓여요. 중간에는 한두 자리를 더 남기고 마지막에만 반올림해요."}
+  ],
+  "further": [
+    {"title": "Wikipedia — Fermi problem", "url": "https://en.wikipedia.org/wiki/Fermi_problem", "lang": "en"},
+    {"title": "Wikipedia — Significant figures", "url": "https://en.wikipedia.org/wiki/Significant_figures", "lang": "en"},
+    {"title": "NASA Glenn — Aircraft Thrust", "url": "https://www.grc.nasa.gov/www/k-12/airplane/thrust1.html", "lang": "en"}
+  ]
+}
