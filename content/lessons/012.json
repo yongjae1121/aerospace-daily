@@ -1,0 +1,174 @@
+{
+  "day": 12,
+  "title": "추력 방정식",
+  "title_en": "The Thrust Equation",
+  "level": 2,
+  "minutes": 20,
+  "summary": "추력이 운동량 추력과 압력 추력의 합이라는 것을 배우고, 해면 추력과 진공 추력이 왜 다른지, 유효 배기 속도가 무엇인지 알아봅니다.",
+  "objectives": [
+    "운동량 추력과 압력 추력으로 추력 방정식을 설명할 수 있다.",
+    "해면 추력과 진공 추력을 계산하고 차이의 이유를 말할 수 있다.",
+    "유효 배기 속도를 정의하고 계산할 수 있다."
+  ],
+  "vocab": [
+    {
+      "en": "thrust equation",
+      "pron": "θrʌst ɪˈkweɪʒn",
+      "pos": "n.",
+      "ko": "추력 방정식",
+      "def": "The formula that gives the total force produced by an engine.",
+      "ex": "The thrust equation includes a term for pressure.",
+      "ex_ko": "추력 방정식에는 압력에 관한 항이 들어 있다."
+    },
+    {
+      "en": "ambient pressure",
+      "pron": "æmˈbiənt ˈprɛʃər",
+      "pos": "n.",
+      "ko": "주변(대기) 압력",
+      "def": "The pressure of the air or fluid surrounding an object.",
+      "ex": "Ambient pressure drops quickly as a rocket climbs.",
+      "ex_ko": "로켓이 올라갈수록 주변 압력은 빠르게 떨어진다."
+    },
+    {
+      "en": "exit area",
+      "pron": "ˈɛɡzɪt ˈɛriə",
+      "pos": "n.",
+      "ko": "출구 면적",
+      "def": "The size of the opening at the end of a nozzle.",
+      "ex": "A larger exit area lets the gas expand more.",
+      "ex_ko": "출구 면적이 넓을수록 가스가 더 팽창한다."
+    },
+    {
+      "en": "sea level",
+      "pron": "siː ˈlɛvl",
+      "pos": "n.",
+      "ko": "해면",
+      "def": "The average height of the ocean surface, used as zero altitude.",
+      "ex": "Engines are often rated at sea level and in a vacuum.",
+      "ex_ko": "엔진은 흔히 해면과 진공에서의 성능으로 표기된다."
+    },
+    {
+      "en": "expand",
+      "pron": "ɪkˈspænd",
+      "pos": "v.",
+      "ko": "팽창하다",
+      "def": "To become larger in volume or area.",
+      "ex": "The hot gas expands as it flows through the nozzle.",
+      "ex_ko": "뜨거운 가스는 노즐을 지나며 팽창한다."
+    },
+    {
+      "en": "separation",
+      "pron": "ˌsɛpəˈreɪʃn",
+      "pos": "n.",
+      "ko": "박리, 분리",
+      "def": "The act of splitting apart, such as a flow leaving a wall.",
+      "ex": "Flow separation can shake a nozzle.",
+      "ex_ko": "유동 박리는 노즐을 흔들 수 있다."
+    },
+    {
+      "en": "effective",
+      "pron": "ɪˈfɛktɪv",
+      "pos": "adj.",
+      "ko": "유효한, 실질적인",
+      "def": "Producing the intended result; used for an equivalent value.",
+      "ex": "The effective exhaust velocity includes the pressure term.",
+      "ex_ko": "유효 배기 속도는 압력 항을 포함한다."
+    },
+    {
+      "en": "rated",
+      "pron": "ˈreɪtɪd",
+      "pos": "adj.",
+      "ko": "정격의, 공칭의",
+      "def": "Given an official value for performance under stated conditions.",
+      "ex": "The engine is rated at 800 kilonewtons in a vacuum.",
+      "ex_ko": "이 엔진의 진공 추력은 800킬로뉴턴으로 공칭된다."
+    }
+  ],
+  "reading": {
+    "title": "One Engine, Two Thrusts",
+    "en": "Engine makers usually publish two thrust numbers for the same rocket engine: one at sea level and one in a vacuum. The reason lies in the thrust equation, which has two parts. The first is the momentum of the exhaust leaving the nozzle. The second depends on the difference between the pressure of the gas at the nozzle exit and the ambient pressure of the air outside.\n\nAt sea level the surrounding air pushes against the exhaust jet, so the pressure term is smaller, and it may even be negative. As the rocket climbs, the ambient pressure falls toward zero and the same engine produces more thrust. For this reason, a first-stage engine is rated at sea level and an upper-stage engine is rated in a vacuum.\n\nDesigners must also choose the exit area of the nozzle carefully. If it is too large for sea level, the gas expands too much and the flow may separate from the wall, shaking the whole engine. Because no single nozzle is perfect at every altitude, engineers accept a compromise that fits the main part of the flight.",
+    "ko": "엔진 제작사는 같은 로켓 엔진에 대해 보통 두 가지 추력 값을 발표합니다. 하나는 해면에서의 값이고, 다른 하나는 진공에서의 값입니다. 이유는 추력 방정식에 있습니다. 이 식은 두 부분으로 되어 있습니다. 첫째는 노즐을 떠나는 배기가스의 운동량입니다. 둘째는 노즐 출구에서의 가스 압력과 바깥 공기의 주변 압력 사이의 차이에 달려 있습니다.\n\n해면에서는 주변 공기가 배기 분류를 누르기 때문에 압력 항이 작아지고, 음수가 될 수도 있습니다. 로켓이 올라가면 주변 압력이 0에 가까워져서 같은 엔진이 더 큰 추력을 냅니다. 이런 이유로 1단 엔진은 해면 기준으로, 상단 엔진은 진공 기준으로 표기합니다.\n\n설계자는 노즐의 출구 면적도 신중하게 골라야 합니다. 해면에 비해 너무 크면 가스가 지나치게 팽창하고 흐름이 벽에서 떨어져 나가 엔진 전체를 흔들 수 있습니다. 모든 고도에서 완벽한 노즐은 없기 때문에, 엔지니어는 비행의 주된 구간에 맞춘 절충안을 받아들입니다."
+  },
+  "quiz": [
+    {
+      "type": "mc",
+      "q": "같은 로켓 엔진의 추력이 고도가 올라갈수록 커지는 주된 이유는?",
+      "choices": [
+        "질량 유량이 저절로 늘어나기 때문이다",
+        "대기압 $p_a$가 줄어 압력 추력 $(p_e-p_a)A_e$가 커지기 때문이다",
+        "중력이 약해지기 때문이다",
+        "연소실 온도가 올라가기 때문이다"
+      ],
+      "answer": 1,
+      "explain": "운동량 추력 $\\dot m v_e$는 거의 그대로이고, 대기압 $p_a$가 줄어 압력 추력 항이 커져요."
+    },
+    {
+      "type": "ox",
+      "q": "노즐 출구 압력이 대기압보다 낮으면(과팽창) 압력 추력은 음수가 된다.",
+      "answer": true,
+      "explain": "$p_e<p_a$이면 $(p_e-p_a)A_e<0$이라 추력을 깎아요."
+    },
+    {
+      "type": "num",
+      "q": "어떤 엔진이 진공에서 $\\dot m=200$ kg/s, $v_e=3{,}000$ m/s, $p_e=80$ kPa, $A_e=0.5\\ \\text{m}^2$이에요. 진공 추력은 몇 kN일까요? (숫자만 입력)",
+      "answer": 640,
+      "tol": 0.02,
+      "unit": "kN",
+      "explain": "$F=200\\times3000+(80{,}000-0)\\times0.5=600{,}000+40{,}000=640{,}000$ N $=640$ kN이에요."
+    },
+    {
+      "type": "mc",
+      "q": "According to the passage, why is a first-stage engine rated at sea level?",
+      "choices": [
+        "Because the rocket spends its whole flight at sea level",
+        "Because an upper-stage engine cannot work in air",
+        "Because the first stage begins its flight in thick air, where the pressure term is smaller",
+        "Because a vacuum has no momentum"
+      ],
+      "answer": 2,
+      "explain": "지문에 따르면 해면에서는 주변 공기가 배기 분류를 눌러 압력 항이 작아져요. 1단은 이 조건에서 출발하므로 해면 기준으로 표기해요."
+    }
+  ],
+  "test": [
+    {
+      "type": "mc",
+      "q": "적정 팽창($p_e=p_a$) 상태에 대한 설명으로 옳은 것은?",
+      "choices": [
+        "압력 추력이 0이다",
+        "운동량 추력이 0이다",
+        "질량 유량이 0이다",
+        "배기 속도가 0이다"
+      ],
+      "answer": 0,
+      "explain": "$p_e=p_a$이면 $(p_e-p_a)A_e=0$이라 압력 추력이 0이고, 추력은 $\\dot m v_e$만 남아요."
+    },
+    {
+      "type": "num",
+      "q": "$\\dot m=400$ kg/s, $v_e=2{,}800$ m/s, $p_e=50$ kPa, $A_e=1.0\\ \\text{m}^2$인 엔진의 해면 추력은 몇 kN일까요? (해면 대기압 101.325 kPa, 숫자만 입력)",
+      "answer": 1069,
+      "tol": 0.02,
+      "unit": "kN",
+      "explain": "$F=400\\times2800+(50{,}000-101{,}325)\\times1.0=1{,}120{,}000-51{,}325\\approx1{,}068{,}700$ N $\\approx1069$ kN이에요."
+    },
+    {
+      "type": "num",
+      "q": "추력이 600 kN이고 질량 유량이 200 kg/s인 엔진의 유효 배기 속도는 몇 m/s일까요? ($c=F/\\dot m$, 숫자만 입력)",
+      "answer": 3000,
+      "tol": 0.02,
+      "unit": "m/s",
+      "explain": "$c=600{,}000/200=3000$ m/s예요."
+    }
+  ],
+  "further": [
+    {
+      "title": "NASA Glenn — Rocket Thrust Equation",
+      "url": "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/rocket-thrust-equation/",
+      "lang": "en"
+    },
+    {
+      "title": "Wikipedia — Thrust",
+      "url": "https://en.wikipedia.org/wiki/Thrust",
+      "lang": "en"
+    }
+  ]
+}
