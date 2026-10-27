@@ -1,0 +1,170 @@
+{
+  "day": 13,
+  "title": "비추력",
+  "title_en": "Specific Impulse",
+  "level": 2,
+  "minutes": 20,
+  "summary": "비추력이 무엇이고 왜 단위가 '초'인지 알아보고, 추진제별 비추력을 비교하며 로켓 엔진의 '연비'를 계산해 봅니다.",
+  "objectives": [
+    "비추력을 추력과 질량 유량으로 정의하고 계산할 수 있다.",
+    "비추력의 단위가 초가 되는 이유를 설명할 수 있다.",
+    "추진제와 엔진 종류별 비추력을 비교하고 자동차 연비에 비유할 수 있다."
+  ],
+  "vocab": [
+    {
+      "en": "specific impulse",
+      "pron": "spəˈsɪfɪk ˈɪmpʌls",
+      "pos": "n.",
+      "ko": "비추력",
+      "def": "A measure of how efficiently an engine turns propellant into thrust.",
+      "ex": "Hydrogen engines have a high specific impulse.",
+      "ex_ko": "수소 엔진은 비추력이 높다."
+    },
+    {
+      "en": "fuel economy",
+      "pron": "fjuːəl ɪˈkɒnəmi",
+      "pos": "n.",
+      "ko": "연비",
+      "def": "How far a vehicle can travel using a certain amount of fuel.",
+      "ex": "Better fuel economy means a smaller tank can do the same job.",
+      "ex_ko": "연비가 좋으면 더 작은 탱크로 같은 일을 할 수 있다."
+    },
+    {
+      "en": "burn time",
+      "pron": "bɜːrn taɪm",
+      "pos": "n.",
+      "ko": "연소 시간",
+      "def": "The length of time an engine keeps firing.",
+      "ex": "The burn time of the upper stage was about ten minutes.",
+      "ex_ko": "상단의 연소 시간은 약 10분이었다."
+    },
+    {
+      "en": "liquid hydrogen",
+      "pron": "ˈlɪkwɪd ˈhaɪdrədʒən",
+      "pos": "n.",
+      "ko": "액체 수소",
+      "def": "Hydrogen cooled to a very low temperature so that it becomes a liquid.",
+      "ex": "Liquid hydrogen must be stored at about minus 253 degrees Celsius.",
+      "ex_ko": "액체 수소는 영하 약 253도로 보관해야 한다."
+    },
+    {
+      "en": "solid rocket motor",
+      "pron": "ˈsɒlɪd ˈrɒkɪt ˈmoʊtər",
+      "pos": "n.",
+      "ko": "고체 로켓 모터",
+      "def": "A rocket engine that burns propellant packed in solid form.",
+      "ex": "A solid rocket motor cannot be shut off once it is lit.",
+      "ex_ko": "고체 로켓 모터는 한번 점화되면 끌 수 없다."
+    },
+    {
+      "en": "ion thruster",
+      "pron": "ˈaɪən ˈθrʌstər",
+      "pos": "n.",
+      "ko": "이온 추력기",
+      "def": "An electric engine that pushes out charged particles at very high speed.",
+      "ex": "An ion thruster gives a tiny push but can run for years.",
+      "ex_ko": "이온 추력기는 힘은 작지만 몇 년 동안 작동할 수 있다."
+    },
+    {
+      "en": "consumption",
+      "pron": "kənˈsʌmpʃn",
+      "pos": "n.",
+      "ko": "소모(량)",
+      "def": "The amount of something that is used up.",
+      "ex": "Propellant consumption is measured in kilograms per second.",
+      "ex_ko": "추진제 소모량은 초당 킬로그램으로 측정한다."
+    },
+    {
+      "en": "gravitational acceleration",
+      "pron": "ˌɡrævɪˈteɪʃənl ækˌsɛləˈreɪʃn",
+      "pos": "n.",
+      "ko": "중력 가속도",
+      "def": "The acceleration an object gets because of gravity.",
+      "ex": "Standard gravitational acceleration is about 9.81 meters per second squared.",
+      "ex_ko": "표준 중력 가속도는 약 9.81 m/s²이다."
+    }
+  ],
+  "reading": {
+    "title": "The Fuel Economy of a Rocket",
+    "en": "When we buy a car, we ask about its fuel economy: how far can it travel on one tank? Rocket engineers ask a similar question, and the answer is a number called specific impulse. It tells us how long one unit of propellant can produce one unit of thrust. The higher the number, the less propellant the engine needs for the same job.\n\nSpecific impulse is measured in seconds, which surprises many students. The reason is simple. We divide the thrust by the weight of the propellant used each second, and the units of force cancel. The result is the same in every system of measurement, so engineers around the world can compare their engines easily.\n\nDifferent propellants give very different results. A solid rocket motor is simple and powerful, but its specific impulse is modest. Kerosene and liquid oxygen do better, and liquid hydrogen with liquid oxygen is among the best chemical combinations. An ion thruster reaches thousands of seconds, but it produces only a tiny push. For this reason, a launch vehicle uses powerful engines near the ground, while a spacecraft in deep space may prefer gentle engines with a very high specific impulse.",
+    "ko": "우리가 자동차를 살 때는 연비를 물어봅니다. 기름 한 탱크로 얼마나 멀리 갈 수 있느냐는 것이지요. 로켓 엔지니어도 비슷한 질문을 하는데, 그 답이 비추력이라는 수입니다. 비추력은 추진제 한 단위가 추력 한 단위를 얼마나 오래 낼 수 있는지를 알려 줍니다. 이 수가 클수록 같은 일을 하는 데 필요한 추진제가 적습니다.\n\n비추력은 초 단위로 재는데, 많은 학생이 이를 의아해합니다. 이유는 간단합니다. 추력을 매초 사용하는 추진제의 무게로 나누면 힘의 단위가 약분되기 때문입니다. 그 결과는 어떤 단위계에서도 같아서, 전 세계의 엔지니어가 엔진을 쉽게 비교할 수 있습니다.\n\n추진제에 따라 결과는 크게 달라집니다. 고체 로켓 모터는 단순하고 강력하지만 비추력은 그리 높지 않습니다. 케로신과 액체 산소는 더 낫고, 액체 수소와 액체 산소는 화학 조합 가운데 최고 수준입니다. 이온 추력기는 수천 초에 이르지만 아주 작은 힘만 냅니다. 이 때문에 발사체는 지상 가까이에서 강력한 엔진을 쓰고, 심우주의 우주선은 비추력이 매우 높은 부드러운 엔진을 선호할 수 있습니다."
+  },
+  "quiz": [
+    {
+      "type": "num",
+      "q": "어떤 엔진의 유효 배기 속도가 $c=2{,}500$ m/s예요. 비추력은 몇 초일까요? $g_0=9.80665\\ \\text{m/s}^2$로 계산하세요. (숫자만 입력)",
+      "answer": 254.93,
+      "tol": 0.02,
+      "unit": "s",
+      "explain": "$I_{sp}=c/g_0=2500/9.80665\\approx 254.9$ s예요."
+    },
+    {
+      "type": "ox",
+      "q": "비추력이 높은 엔진일수록, 같은 추력을 내는 데 매초 쓰는 추진제의 질량이 적다.",
+      "answer": true,
+      "explain": "$\\dot m=F/(I_{sp}g_0)$이므로 같은 $F$에서 $I_{sp}$가 클수록 $\\dot m$이 작아져요."
+    },
+    {
+      "type": "num",
+      "q": "비추력 320초, 추력 200 kN인 엔진이 있어요. 질량 유량은 몇 kg/s일까요? $g_0=9.80665\\ \\text{m/s}^2$로 계산하세요. (숫자만 입력)",
+      "answer": 63.73,
+      "tol": 0.02,
+      "unit": "kg/s",
+      "explain": "$\\dot m=F/(I_{sp}g_0)=200{,}000/(320\\times9.80665)\\approx 63.7$ kg/s예요."
+    },
+    {
+      "type": "mc",
+      "q": "According to the passage, why is specific impulse measured in seconds?",
+      "choices": [
+        "Because rockets burn propellant for only a few seconds",
+        "Because the units of force cancel when thrust is divided by propellant weight per second",
+        "Because time is the most important quantity in a launch",
+        "Because the result changes in each system of measurement"
+      ],
+      "answer": 1,
+      "explain": "지문에 따르면 추력을 매초 사용하는 추진제의 무게로 나누면 힘의 단위가 약분되어 초만 남아요. 그래서 어느 단위계에서도 값이 같아요."
+    }
+  ],
+  "test": [
+    {
+      "type": "num",
+      "q": "비추력 300초 엔진이 매초 500 kg의 추진제를 쓰고 있어요. 이때 추력은 몇 kN일까요? $g_0=9.80665\\ \\text{m/s}^2$로 계산하세요. (숫자만 입력)",
+      "answer": 1471,
+      "tol": 0.02,
+      "unit": "kN",
+      "explain": "$F=I_{sp}g_0\\dot m=300\\times9.80665\\times500\\approx1.471\\times10^6$ N $=1471$ kN이에요."
+    },
+    {
+      "type": "mc",
+      "q": "추력이 같은 두 엔진 A($I_{sp}=450$ s)와 B($I_{sp}=300$ s)가 같은 시간 동안 연소할 때 추진제 소모량의 관계는?",
+      "choices": [
+        "B가 A의 1.5배를 쓴다",
+        "A가 B의 1.5배를 쓴다",
+        "두 엔진의 소모량이 같다",
+        "B가 A의 3배를 쓴다"
+      ],
+      "answer": 0,
+      "explain": "$\\dot m\\propto1/I_{sp}$이므로 $\\dot m_B/\\dot m_A=450/300=1.5$예요."
+    },
+    {
+      "type": "num",
+      "q": "추진제 10 kg을 모두 태워 총 충격량 20,000 N·s를 얻었어요. 비추력은 몇 초일까요? $g_0=9.80665\\ \\text{m/s}^2$로 계산하세요. (숫자만 입력)",
+      "answer": 203.94,
+      "tol": 0.02,
+      "unit": "s",
+      "explain": "유효 배기 속도 $c=I_\\text{total}/m=20000/10=2000$ m/s이고, $I_{sp}=c/g_0\\approx203.9$ s예요."
+    }
+  ],
+  "further": [
+    {
+      "title": "NASA Glenn — Rocket Thrust Equation",
+      "url": "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/rocket-thrust-equation/",
+      "lang": "en"
+    },
+    {
+      "title": "Wikipedia — Specific impulse",
+      "url": "https://en.wikipedia.org/wiki/Specific_impulse",
+      "lang": "en"
+    }
+  ]
+}
