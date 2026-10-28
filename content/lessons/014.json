@@ -1,0 +1,174 @@
+{
+  "day": 14,
+  "title": "치올콥스키 로켓 방정식",
+  "title_en": "The Tsiolkovsky Rocket Equation",
+  "level": 2,
+  "minutes": 22,
+  "summary": "운동량 보존에서 로켓 방정식 Δv = v_e ln(m0/mf)를 유도하고, 왜 로켓이 거의 연료로 이루어져 있는지 숫자로 확인해요.",
+  "objectives": [
+    "운동량 보존으로부터 치올콥스키 로켓 방정식을 유도할 수 있다.",
+    "질량비와 비추력으로 Δv를, Δv로 필요한 질량비를 계산할 수 있다.",
+    "로켓 방정식의 횡포와 수확 체감을 설명할 수 있다."
+  ],
+  "vocab": [
+    {
+      "en": "delta-v",
+      "pron": "ˈdɛltə viː",
+      "pos": "n.",
+      "ko": "속도 변화량, 델타브이",
+      "def": "The total change in velocity a spacecraft can produce with its propellant.",
+      "ex": "The mission needs a delta-v of about 4 kilometers per second to reach the Moon.",
+      "ex_ko": "그 임무는 달에 가려면 초속 약 4 km의 델타브이가 필요해요."
+    },
+    {
+      "en": "mass ratio",
+      "pron": "mæs ˈreɪʃioʊ",
+      "pos": "n.",
+      "ko": "질량비",
+      "def": "The starting mass of a rocket divided by its mass after all propellant is used.",
+      "ex": "A higher mass ratio allows a rocket to reach a higher speed.",
+      "ex_ko": "질량비가 높을수록 로켓은 더 높은 속도에 도달할 수 있어요."
+    },
+    {
+      "en": "dry mass",
+      "pron": "draɪ mæs",
+      "pos": "n.",
+      "ko": "건조 질량",
+      "def": "The mass of a rocket without any propellant.",
+      "ex": "Engineers worked hard to reduce the dry mass of the upper stage.",
+      "ex_ko": "엔지니어들은 상단의 건조 질량을 줄이려고 애썼어요."
+    },
+    {
+      "en": "burnout",
+      "pron": "ˈbɜːrnaʊt",
+      "pos": "n.",
+      "ko": "연소 종료",
+      "def": "The moment when a rocket engine stops because its propellant is used up.",
+      "ex": "At burnout, the stage was already moving at over two kilometers per second.",
+      "ex_ko": "연소 종료 시점에 그 단은 이미 초속 2 km 넘게 움직이고 있었어요."
+    },
+    {
+      "en": "logarithm",
+      "pron": "ˈlɒɡərɪðəm",
+      "pos": "n.",
+      "ko": "로그",
+      "def": "A mathematical function that tells us what power a number must be raised to.",
+      "ex": "The rocket equation uses the natural logarithm of the mass ratio.",
+      "ex_ko": "로켓 방정식은 질량비의 자연로그를 써요."
+    },
+    {
+      "en": "exponential",
+      "pron": "ˌɛkspəˈnɛnʃl",
+      "pos": "adj.",
+      "ko": "지수적인",
+      "def": "Growing faster and faster, like a number multiplied again and again.",
+      "ex": "Fuel needs grow in an exponential way as the required speed increases.",
+      "ex_ko": "필요한 속도가 커지면 연료 요구량은 지수적으로 늘어요."
+    },
+    {
+      "en": "diminishing returns",
+      "pron": "dɪˈmɪnɪʃɪŋ rɪˈtɜːrnz",
+      "pos": "n.",
+      "ko": "수확 체감",
+      "def": "A situation where each extra effort gives a smaller benefit than the one before.",
+      "ex": "Adding more fuel eventually leads to diminishing returns because the extra fuel is heavy too.",
+      "ex_ko": "연료도 무겁기 때문에 연료를 더 실을수록 얻는 이득이 점점 줄어요."
+    },
+    {
+      "en": "tyranny",
+      "pron": "ˈtɪrəni",
+      "pos": "n.",
+      "ko": "횡포, 폭정",
+      "def": "A situation in which a strong rule or force limits what people can do.",
+      "ex": "Engineers call this problem the tyranny of the rocket equation.",
+      "ex_ko": "엔지니어들은 이 문제를 로켓 방정식의 횡포라고 불러요."
+    }
+  ],
+  "reading": {
+    "title": "The Tyranny of the Rocket Equation",
+    "en": "Every spacecraft engineer meets the same wall: the rocket equation. It links three things: the delta-v a mission needs, the speed of the exhaust, and the mass ratio of the vehicle. Because the equation contains a logarithm, extra propellant brings diminishing returns. Each time you double the mass ratio, the gain in speed is the same small amount.\n\nLooked at from the other side, the situation is harsher. To reach a higher speed, the required mass ratio grows in an exponential way. Adding fuel also adds weight, and that weight needs even more fuel to lift. This is why people speak of the tyranny of the rocket equation.\n\nIn practice, a rocket is mostly propellant. A launch vehicle may carry more than ninety percent of its liftoff mass as fuel and oxidizer, leaving only a few percent for tanks, engines, and payload. After burnout, the dry mass is all that remains. Designers therefore fight for every kilogram of structure and search for engines with higher exhaust speeds. The equation cannot be defeated, but clever design can make it much less cruel.",
+    "ko": "모든 우주선 엔지니어는 같은 벽을 만나요. 바로 로켓 방정식이에요. 이 식은 임무에 필요한 델타브이, 배기 속도, 그리고 비행체의 질량비를 하나로 묶어요. 식에 로그가 들어 있기 때문에 추진제를 더 실어도 얻는 이득은 점점 줄어요. 질량비를 두 배로 늘릴 때마다 속도 증가분은 똑같이 작은 양일 뿐이에요.\n\n반대쪽에서 보면 상황은 더 가혹해요. 더 높은 속도에 도달하려면 필요한 질량비가 지수적으로 커져요. 연료를 더 실으면 무게도 늘고, 그 무게를 들어 올리려면 연료가 또 필요해요. 사람들이 로켓 방정식의 횡포라고 말하는 이유예요.\n\n실제로 로켓은 대부분이 추진제예요. 발사체는 이륙 질량의 90%가 넘는 부분을 연료와 산화제로 싣기도 하고, 탱크와 엔진과 탑재체에 남는 몫은 몇 퍼센트뿐이에요. 연소가 끝난 뒤에 남는 것은 건조 질량이 전부예요. 그래서 설계자들은 구조물 1 kg까지 아끼려 애쓰고, 배기 속도가 더 빠른 엔진을 찾아요. 이 식을 이길 수는 없지만, 영리한 설계로 훨씬 덜 가혹하게 만들 수는 있어요."
+  },
+  "quiz": [
+    {
+      "type": "mc",
+      "q": "비추력이 두 배인 엔진으로 바꾸고 질량비는 그대로 둘 때, 치올콥스키 방정식에 따라 Δv는 어떻게 바뀌나요?",
+      "choices": [
+        "변하지 않는다",
+        "약 0.69배가 된다",
+        "정확히 2배가 된다",
+        "4배가 된다"
+      ],
+      "answer": 2,
+      "explain": "$\\Delta v=I_{sp}g_0\\ln(m_0/m_f)$에서 $\\Delta v$는 $I_{sp}$에 정비례해요. 비추력이 2배이고 질량비가 같으면 Δv도 정확히 2배예요."
+    },
+    {
+      "type": "num",
+      "q": "진공 비추력 300초인 상단의 시작 질량이 100 t, 연소 후 질량이 25 t예요. 얻는 Δv는 몇 m/s인가요? ($g_0=9.80665\\ \\text{m/s}^2$)",
+      "answer": 4078,
+      "tol": 0.02,
+      "unit": "m/s",
+      "explain": "$v_e=300\\times9.80665=2942$ m/s, 질량비 $=100/25=4$이므로 $\\Delta v=2942\\times\\ln4=2942\\times1.386\\approx4078$ m/s예요."
+    },
+    {
+      "type": "ox",
+      "q": "질량비를 2배로 늘리면 Δv도 2배가 된다.",
+      "answer": false,
+      "explain": "$\\Delta v=v_e\\ln(m_0/m_f)$이므로 질량비를 2배로 늘리면 Δv는 $v_e\\ln2\\approx0.69\\,v_e$만큼 늘어날 뿐이에요. 로그라서 수확 체감이 일어나요."
+    },
+    {
+      "type": "mc",
+      "q": "Read the passage in 'Reading'. Why do engineers speak of the 'tyranny' of the rocket equation?",
+      "choices": [
+        "Because the equation is too difficult for students to learn",
+        "Because the needed mass ratio grows exponentially as the required speed increases",
+        "Because exhaust speed cannot be measured",
+        "Because rockets must always carry the same amount of payload"
+      ],
+      "answer": 1,
+      "explain": "The passage says that to reach a higher speed, the required mass ratio grows in an exponential way, and extra fuel adds weight that needs even more fuel. That is the 'tyranny'."
+    }
+  ],
+  "test": [
+    {
+      "type": "num",
+      "q": "배기 속도가 3,000 m/s인 로켓이 Δv = 9,000 m/s를 내려면 필요한 질량비 $m_0/m_f$는 얼마인가요?",
+      "answer": 20.09,
+      "tol": 0.02,
+      "unit": "",
+      "explain": "$m_0/m_f=e^{\\Delta v/v_e}=e^{9000/3000}=e^3\\approx20.09$예요."
+    },
+    {
+      "type": "num",
+      "q": "평균 비추력이 350초인 로켓이 Δv = 9,400 m/s를 한 단으로 내려면 시작 질량 중 추진제가 차지하는 비율은 몇 %인가요? ($g_0=9.80665\\ \\text{m/s}^2$, 숫자만 입력)",
+      "answer": 93.5,
+      "tol": 0.01,
+      "unit": "%",
+      "explain": "$v_e=350\\times9.80665\\approx3432$ m/s, $m_0/m_f=e^{9400/3432}\\approx15.47$이에요. 추진제 비율은 $1-1/15.47\\approx0.935$, 즉 약 93.5%예요."
+    },
+    {
+      "type": "mc",
+      "q": "같은 Δv = 3,000 m/s를 내는 데 비추력 300초 엔진과 450초 엔진을 비교했어요. 옳은 설명은?",
+      "choices": [
+        "450초 엔진이 더 작은 질량비로도 가능하다",
+        "두 엔진의 필요 질량비는 같다",
+        "300초 엔진이 더 작은 질량비로도 가능하다",
+        "비추력은 질량비와 관계가 없다"
+      ],
+      "answer": 0,
+      "explain": "질량비는 $e^{\\Delta v/(I_{sp}g_0)}$이에요. 450초는 약 1.97, 300초는 약 2.77이라서 비추력이 높은 엔진이 더 작은 질량비로 같은 Δv를 내요."
+    }
+  ],
+  "further": [
+    {
+      "title": "NASA Glenn — Rocket Thrust Equations",
+      "url": "https://www.grc.nasa.gov/www/k-12/rocket/rktthsum.html",
+      "lang": "en"
+    },
+    {
+      "title": "Wikipedia — Tsiolkovsky rocket equation",
+      "url": "https://en.wikipedia.org/wiki/Tsiolkovsky_rocket_equation",
+      "lang": "en"
+    }
+  ]
+}
