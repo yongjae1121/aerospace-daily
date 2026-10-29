@@ -1,0 +1,178 @@
+{
+  "day": 15,
+  "title": "질량비와 구조 효율",
+  "title_en": "Mass Ratio and Structural Efficiency",
+  "level": 2,
+  "minutes": 22,
+  "summary": "로켓의 질량을 추진제·구조·탑재체로 나누고, 구조 계수와 탑재 비율이 질량비와 Δv를 어떻게 결정하는지 계산해요.",
+  "objectives": [
+    "추진제 질량 분율, 구조 계수, 탑재 비율을 정의하고 계산할 수 있다.",
+    "질량비를 구조 계수와 탑재 비율로 표현해 Δv를 구할 수 있다.",
+    "로켓의 90%가 추진제여야 하는 이유와 구조 질량의 민감성을 설명할 수 있다."
+  ],
+  "vocab": [
+    {
+      "en": "propellant fraction",
+      "pron": "ˈprɒpələnt ˈfrækʃn",
+      "pos": "n.",
+      "ko": "추진제 질량 분율",
+      "def": "The part of a rocket's starting mass that is propellant.",
+      "ex": "A launch vehicle needs a propellant fraction of about ninety percent.",
+      "ex_ko": "발사체는 추진제 질량 분율이 약 90%는 되어야 해요."
+    },
+    {
+      "en": "structural coefficient",
+      "pron": "ˈstrʌktʃərəl ˌkoʊɪˈfɪʃnt",
+      "pos": "n.",
+      "ko": "구조 계수",
+      "def": "The share of structure in the combined mass of structure and propellant.",
+      "ex": "Lighter tanks give the stage a lower structural coefficient.",
+      "ex_ko": "더 가벼운 탱크는 단의 구조 계수를 낮춰 줘요."
+    },
+    {
+      "en": "payload fraction",
+      "pron": "ˈpeɪloʊd ˈfrækʃn",
+      "pos": "n.",
+      "ko": "탑재 비율",
+      "def": "The mass of the payload compared with the mass of the whole rocket.",
+      "ex": "The payload fraction of a small rocket is often below two percent.",
+      "ex_ko": "작은 로켓의 탑재 비율은 종종 2% 미만이에요."
+    },
+    {
+      "en": "tank",
+      "pron": "tæŋk",
+      "pos": "n.",
+      "ko": "탱크",
+      "def": "A strong container that holds fuel or oxidizer.",
+      "ex": "The fuel tank makes up most of the rocket's length.",
+      "ex_ko": "연료 탱크가 로켓 길이의 대부분을 차지해요."
+    },
+    {
+      "en": "alloy",
+      "pron": "ˈælɔɪ",
+      "pos": "n.",
+      "ko": "합금",
+      "def": "A metal made by mixing two or more elements.",
+      "ex": "An aluminum-lithium alloy is lighter than ordinary aluminum.",
+      "ex_ko": "알루미늄-리튬 합금은 일반 알루미늄보다 가벼워요."
+    },
+    {
+      "en": "composite",
+      "pron": "kəmˈpɑːzɪt",
+      "pos": "n. / adj.",
+      "ko": "복합재(의)",
+      "def": "A material made from two or more parts, such as fibers held in resin.",
+      "ex": "The new fuel tank is made of a carbon-fiber composite.",
+      "ex_ko": "새 연료 탱크는 탄소섬유 복합재로 만들어요."
+    },
+    {
+      "en": "margin",
+      "pron": "ˈmɑːrdʒɪn",
+      "pos": "n.",
+      "ko": "여유, 안전 여유",
+      "def": "An extra amount of strength or capacity kept for safety.",
+      "ex": "Engineers add a safety margin so the structure does not break.",
+      "ex_ko": "엔지니어들은 구조가 부러지지 않도록 안전 여유를 둬요."
+    },
+    {
+      "en": "reusable",
+      "pron": "riːˈjuːzəbl",
+      "pos": "adj.",
+      "ko": "재사용 가능한",
+      "def": "Able to be used again after a flight.",
+      "ex": "A reusable booster must carry extra mass for landing.",
+      "ex_ko": "재사용 부스터는 착륙을 위해 추가 질량을 실어야 해요."
+    }
+  ],
+  "reading": {
+    "title": "Every Kilogram Counts",
+    "en": "A rocket designer lives with a harsh fact: almost everything on the launch pad is propellant. Nine kilograms of every ten are fuel and oxidizer, so the propellant fraction is very high. The remaining mass must cover the engines, the tanks, and the payload itself. Even a small mistake in the weight of the structure can leave no room for the satellite.\n\nFor this reason, engineers study the structural coefficient of every stage. A lower value means that the tank is lighter compared with the propellant it holds. To achieve this, they replace heavy steel with a modern alloy or with a carbon-fiber composite, and they make the walls as thin as the loads allow. Yet there is a limit. If a tank is too weak, it will break under pressure and vibration, so designers always keep a safety margin.\n\nThe result of all this effort is still modest. A large rocket may deliver four or five percent of its liftoff mass to orbit, and a small one often delivers less than two percent. That tiny payload fraction explains why every saved kilogram is so valuable in the aerospace industry.",
+    "ko": "로켓 설계자는 가혹한 사실과 함께 살아가요. 발사대 위에 있는 거의 모든 것이 추진제라는 사실이에요. 열 개 중 아홉 kg은 연료와 산화제이므로 추진제 질량 분율은 아주 높아요. 나머지 질량으로 엔진, 탱크, 그리고 탑재체까지 모두 감당해야 해요. 구조 무게를 조금만 잘못 잡아도 위성을 실을 자리가 남지 않을 수 있어요.\n\n그래서 엔지니어들은 모든 단의 구조 계수를 꼼꼼히 연구해요. 값이 낮을수록 탱크가 담고 있는 추진제에 비해 가볍다는 뜻이에요. 이를 위해 무거운 강철을 최신 합금이나 탄소섬유 복합재로 바꾸고, 하중이 허락하는 한 벽을 얇게 만들어요. 하지만 한계가 있어요. 탱크가 너무 약하면 압력과 진동에 부러지므로 설계자는 언제나 안전 여유를 둬요.\n\n이런 노력의 결과도 여전히 소박해요. 큰 로켓은 이륙 질량의 4~5%를 궤도에 보내고, 작은 로켓은 종종 2%도 안 보내요. 이 작은 탑재 비율이 항공우주 산업에서 1 kg을 줄이는 일이 왜 그렇게 값진지 설명해 줘요."
+  },
+  "quiz": [
+    {
+      "type": "mc",
+      "q": "이 강좌에서 구조 계수 $\\varepsilon$의 정의로 옳은 것은?",
+      "choices": [
+        "$m_s/m_0$ (구조 질량 / 시작 질량)",
+        "$m_s/(m_s+m_p)$ (구조 질량 / 구조+추진제 질량)",
+        "$m_{pl}/m_0$ (탑재체 질량 / 시작 질량)",
+        "$m_p/m_0$ (추진제 질량 / 시작 질량)"
+      ],
+      "answer": 1,
+      "explain": "이 강좌에서는 $\\varepsilon=m_s/(m_s+m_p)$로 정의해요. 탑재체를 빼고 구조와 추진제만 비교해서 탱크의 효율을 나타내요. ④는 추진제 질량 분율 $\\zeta$예요."
+    },
+    {
+      "type": "num",
+      "q": "추진제 70 t, 구조 10 t, 탑재체 4 t인 단이 있어요. 진공 비추력이 340초일 때 Δv는 몇 m/s인가요? ($g_0=9.80665\\ \\text{m/s}^2$)",
+      "answer": 5974,
+      "tol": 0.02,
+      "unit": "m/s",
+      "explain": "$m_0=84$ t, $m_f=10+4=14$ t이므로 질량비 $R=6$이에요. $v_e=340\\times9.80665\\approx3334$ m/s이고 $\\Delta v=3334\\times\\ln6\\approx5974$ m/s예요."
+    },
+    {
+      "type": "ox",
+      "q": "구조 계수가 일정하면, 추진제를 아무리 많이 실어도 한 단 로켓의 Δv에는 $v_e\\ln(1/\\varepsilon)$라는 한계가 있다.",
+      "answer": true,
+      "explain": "탑재체가 0일 때도 $R=1/\\varepsilon$이 최대 질량비이므로 $\\Delta v\\le v_e\\ln(1/\\varepsilon)$이에요. 추진제를 늘리면 탱크도 비례해서 커지므로 $\\varepsilon$이 변하지 않는 한 질량비가 더 커지지 않아요."
+    },
+    {
+      "type": "mc",
+      "q": "Read the passage in 'Reading'. Why must designers always keep a safety margin when they make a tank thinner?",
+      "choices": [
+        "Because a thinner tank holds less propellant",
+        "Because a very weak tank could break under pressure and vibration",
+        "Because the payload fraction is always above ten percent",
+        "Because alloys cannot be used for tanks"
+      ],
+      "answer": 1,
+      "explain": "The passage says that if a tank is too weak, it will break under pressure and vibration, so designers always keep a safety margin."
+    }
+  ],
+  "test": [
+    {
+      "type": "num",
+      "q": "한 단의 구조 계수가 $\\varepsilon=0.05$, 탑재 비율이 $\\lambda=0.02$이고 진공 비추력이 380초예요. 이 단의 Δv는 몇 m/s인가요? ($g_0=9.80665\\ \\text{m/s}^2$)",
+      "answer": 9984,
+      "tol": 0.02,
+      "unit": "m/s",
+      "explain": "$R=\\dfrac{1+\\lambda}{\\varepsilon+\\lambda}=\\dfrac{1.02}{0.07}\\approx14.57$이고 $v_e=380\\times9.80665\\approx3727$ m/s이므로 $\\Delta v=3727\\times\\ln14.57\\approx9984$ m/s예요."
+    },
+    {
+      "type": "mc",
+      "q": "로켓의 질량비가 10이라면 시작 질량 중 추진제가 차지하는 비율은 얼마인가요?",
+      "choices": [
+        "10%",
+        "50%",
+        "90%",
+        "99%"
+      ],
+      "answer": 2,
+      "explain": "$\\zeta=1-1/R=1-1/10=0.9$이므로 90%예요."
+    },
+    {
+      "type": "mc",
+      "q": "탑재체 질량이 이륙 질량의 몇 %에 불과한 작은 로켓이 탑재체 1 kg을 더 실으려 할 때 가장 정확한 설명은?",
+      "choices": [
+        "구조가 1 kg 가벼워지는 것과 같은 효과이다",
+        "탑재체는 구조에 거의 영향을 받지 않는다",
+        "같은 Δv를 유지하려면 구조 또는 추진제를 줄여야 한다",
+        "질량비가 커지므로 Δv가 항상 늘어난다"
+      ],
+      "answer": 2,
+      "explain": "탑재체는 건조 질량 $m_f$에 더해지므로 같은 추진제로는 질량비와 Δv가 줄어들어요. 같은 Δv를 지키려면 구조를 더 가볍게 하거나 추진제를 더 실어야 해요. 반대로 구조 1 kg을 줄이면 탑재체를 1 kg 더 실을 수 있다는 점이 핵심이에요."
+    }
+  ],
+  "further": [
+    {
+      "title": "Wikipedia — Multistage rocket",
+      "url": "https://en.wikipedia.org/wiki/Multistage_rocket",
+      "lang": "en"
+    },
+    {
+      "title": "Wikipedia — Mass ratio",
+      "url": "https://en.wikipedia.org/wiki/Mass_ratio",
+      "lang": "en"
+    }
+  ]
+}
