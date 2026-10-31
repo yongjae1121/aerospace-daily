@@ -1,0 +1,172 @@
+{
+  "day": 17,
+  "title": "델타-v 예산",
+  "title_en": "Delta-v Budgets",
+  "level": 2,
+  "minutes": 22,
+  "summary": "지상에서 저궤도, 달, 화성까지 가는 데 속도 변화가 얼마나 필요할까요? 중력·공기저항 손실을 합산하고 델타-v 지도로 임무의 연료 소요를 가늠해 봐요.",
+  "objectives": [
+    "지상에서 저궤도까지 약 9.4 km/s가 필요한 이유를 손실 항목별로 설명할 수 있다.",
+    "중력 손실을 $g\\,t$로 어림하고 델타-v 예산을 합산할 수 있다.",
+    "델타-v 지도를 읽고, 달·화성 임무의 추진제 양을 로켓 방정식으로 어림할 수 있다."
+  ],
+  "vocab": [
+    {
+      "en": "delta-v budget",
+      "pron": "ˈdeltə viː ˈbʌdʒɪt",
+      "pos": "n.",
+      "ko": "델타-v 예산",
+      "def": "The total change in speed that a mission needs, added up leg by leg.",
+      "ex": "The team wrote a delta-v budget before choosing the engine.",
+      "ex_ko": "팀은 엔진을 고르기 전에 델타-v 예산을 작성했어요."
+    },
+    {
+      "en": "gravity loss",
+      "pron": "ˈɡrævəti lɔːs",
+      "pos": "n.",
+      "ko": "중력 손실",
+      "def": "Speed that a rocket loses because gravity pulls on it while it climbs.",
+      "ex": "A long vertical climb increases the gravity loss.",
+      "ex_ko": "수직으로 오래 오르면 중력 손실이 커져요."
+    },
+    {
+      "en": "atmospheric drag",
+      "pron": "ˌætməsˈferɪk dræɡ",
+      "pos": "n.",
+      "ko": "대기 항력",
+      "def": "The force of air that slows down anything moving through it.",
+      "ex": "Atmospheric drag is small once the rocket is above the thick air.",
+      "ex_ko": "로켓이 짙은 대기를 벗어나면 대기 항력은 작아요."
+    },
+    {
+      "en": "escape velocity",
+      "pron": "ɪˈskeɪp vəˈlɑːsəti",
+      "pos": "n.",
+      "ko": "탈출 속도",
+      "def": "The minimum speed needed to leave a planet's gravity and not come back.",
+      "ex": "Escape velocity from Earth's surface is about 11.2 kilometers per second.",
+      "ex_ko": "지구 표면에서의 탈출 속도는 초속 약 11.2 km예요."
+    },
+    {
+      "en": "transfer orbit",
+      "pron": "ˈtrænsfɜːr ˈɔːrbɪt",
+      "pos": "n.",
+      "ko": "전이궤도",
+      "def": "An orbit used to move a spacecraft from one orbit to another.",
+      "ex": "The probe followed a transfer orbit toward the Moon.",
+      "ex_ko": "탐사선은 달을 향한 전이궤도를 따라갔어요."
+    },
+    {
+      "en": "lunar",
+      "pron": "ˈluːnər",
+      "pos": "adj.",
+      "ko": "달의",
+      "def": "Related to the Moon.",
+      "ex": "The lunar lander touched down near the south pole.",
+      "ex_ko": "달 착륙선이 남극 근처에 내려앉았어요."
+    },
+    {
+      "en": "orbit insertion",
+      "pron": "ˈɔːrbɪt ɪnˈsɜːrʃən",
+      "pos": "n.",
+      "ko": "궤도 진입",
+      "def": "An engine burn that places a spacecraft into orbit around a planet or moon.",
+      "ex": "The orbit insertion burn slowed the probe so Mars could capture it.",
+      "ex_ko": "궤도 진입 연소가 탐사선을 감속시켜 화성이 붙잡을 수 있게 했어요."
+    },
+    {
+      "en": "reserve",
+      "pron": "rɪˈzɜːrv",
+      "pos": "n.",
+      "ko": "예비량, 여유분",
+      "def": "An extra amount kept for unexpected needs.",
+      "ex": "The satellite keeps a fuel reserve for its final move.",
+      "ex_ko": "위성은 마지막 이동을 위해 연료 여유분을 남겨 둬요."
+    }
+  ],
+  "reading": {
+    "title": "Counting Every Meter per Second",
+    "en": "Before a spacecraft is built, its team writes a delta-v budget, a list of every change in speed the mission will need. The first and largest item is the climb from the ground to low Earth orbit. A satellite needs about 7.8 kilometers per second to stay in orbit, but the rocket must supply nearly 9.4, because gravity loss and atmospheric drag take away more than a kilometer per second during the climb.\n\nOnce in orbit, the cost of travel drops. A spacecraft that fires its engine along a transfer orbit can reach the Moon with roughly three kilometers per second more. Slowing down again for lunar orbit insertion adds another small burn, and a soft landing needs a larger one. Even escape velocity, the speed required to leave Earth for good, is only a few kilometers per second above that of low orbit.\n\nBecause nothing is perfectly predictable, engineers never plan exactly to the number. They add a reserve of fuel for corrections and unexpected problems. In the end, a good budget is like a good household budget: it spends carefully, and it still leaves something for emergencies.",
+    "ko": "우주선을 만들기 전에 팀은 델타-v 예산, 즉 임무에 필요한 모든 속도 변화의 목록을 작성해요. 가장 먼저 나오고 가장 큰 항목은 지상에서 저궤도까지 올라가는 구간이에요. 위성이 궤도에 머무르려면 초속 약 7.8 km가 필요하지만, 오르는 동안 중력 손실과 대기 항력 때문에 초속 1 km가 넘는 속도를 잃으므로 로켓은 거의 9.4 km/s를 내야 해요.\n\n일단 궤도에 오르면 이동 비용은 줄어들어요. 전이궤도를 따라 엔진을 점화한 우주선은 약 3 km/s만 더 내면 달에 도달할 수 있어요. 달 궤도 진입을 위해 다시 감속하는 데 작은 연소가 더 필요하고, 부드러운 착륙에는 더 큰 연소가 필요해요. 지구를 영원히 떠나는 데 필요한 속도인 탈출 속도조차 저궤도 속도보다 몇 km/s 높을 뿐이에요.\n\n어떤 것도 완벽하게 예측할 수 없기 때문에 엔지니어들은 계산된 값에 딱 맞추어 계획하지 않아요. 수정과 예상치 못한 문제에 대비해 연료 여유분을 더해요. 결국 좋은 예산은 좋은 가계부와 같아요. 알뜰하게 쓰되 비상시를 위해 조금 남겨 두는 거예요."
+  },
+  "quiz": [
+    {
+      "type": "mc",
+      "q": "지상에서 저궤도까지 필요한 $\\Delta v$(약 9.4 km/s)가 궤도 속도(약 7.8 km/s)보다 큰 가장 큰 이유는?",
+      "choices": [
+        "달의 중력이 로켓을 잡아당기기 때문",
+        "올라가는 동안 중력과 공기저항이 속도를 깎아 먹기 때문",
+        "궤도에서 속도가 계속 늘어나야 하기 때문",
+        "엔진의 배기속도가 점점 줄어들기 때문"
+      ],
+      "answer": 1,
+      "explain": "궤도 속도에 중력 손실(약 1.3~1.8 km/s)과 공기저항 손실(약 0.1~0.2 km/s)을 더하고 지구 자전 이득을 빼면 약 9.4 km/s가 돼요."
+    },
+    {
+      "type": "ox",
+      "q": "로켓을 동쪽으로 발사하면 지구 자전 덕분에 필요한 $\\Delta v$가 조금 줄어든다.",
+      "answer": true,
+      "explain": "지구는 적도에서 약 465 m/s로 동쪽으로 자전해요. 동쪽으로 쏘면 이 속도를 이미 가지고 출발하므로 그만큼 $\\Delta v$를 아낄 수 있어요."
+    },
+    {
+      "type": "num",
+      "q": "로켓이 100초 동안 수직으로 날아오른다고 가정할 때 중력 손실 $g\\,t$는 몇 m/s인가요? ($g=9.81\\ \\text{m/s}^2$, 숫자만 입력)",
+      "answer": 981,
+      "tol": 0.02,
+      "unit": "m/s",
+      "explain": "$\\Delta v_{gravity}\\approx g\\,t=9.81\\times100=981$ m/s예요."
+    },
+    {
+      "type": "mc",
+      "q": "Read the passage in 'Reading'. According to the passage, why do engineers add a reserve of fuel to the budget?",
+      "choices": [
+        "Because nothing is perfectly predictable, so corrections and problems may need extra fuel",
+        "Because the Moon's gravity is stronger than Earth's",
+        "Because a transfer orbit needs no fuel at all",
+        "Because the rocket is lighter when it carries extra fuel"
+      ],
+      "answer": 0,
+      "explain": "The last paragraph says that because nothing is perfectly predictable, engineers add a reserve of fuel for corrections and unexpected problems."
+    }
+  ],
+  "test": [
+    {
+      "type": "mc",
+      "q": "델타-v 지도에서 가장 큰 비용을 차지하는 구간은 어디인가요?",
+      "choices": [
+        "지상 → 저궤도(LEO)",
+        "LEO → 달 전이궤도",
+        "GTO → 정지궤도",
+        "달 궤도 → 달 착륙"
+      ],
+      "answer": 0,
+      "explain": "지상에서 LEO까지는 약 9.4 km/s로, 달 전이(약 3.1 km/s), GTO→GEO(약 1.5 km/s), 달 착륙(약 1.9 km/s)보다 훨씬 커요."
+    },
+    {
+      "type": "num",
+      "q": "반지름 6,778 km의 원궤도(속도 7.67 km/s)에서 달 거리(약 384,400 km)까지 가는 타원 전이궤도에 들어가려고 해요. 지구 중력 상수 $\\mu=398{,}600\\ \\text{km}^3/\\text{s}^2$일 때 근지점에서 더해야 하는 $\\Delta v$는 몇 km/s인가요? (소수 둘째 자리까지)",
+      "answer": 3.08,
+      "tol": 0.03,
+      "unit": "km/s",
+      "explain": "$a=(6778+384400)/2=195589$ km이고 $v_p=\\sqrt{\\mu(2/r-1/a)}\\approx10.75$ km/s예요. 따라서 $\\Delta v\\approx10.75-7.67=3.08$ km/s예요."
+    },
+    {
+      "type": "ox",
+      "q": "델타-v 예산은 계산한 필요량에 딱 맞춰 연료를 싣는 것이 좋다.",
+      "answer": false,
+      "explain": "실제 임무는 바람, 성능 편차, 궤도 수정 등에 대비해 여유(margin)와 예비량(reserve)을 더해서 추진제 양을 정해요."
+    }
+  ],
+  "further": [
+    {
+      "title": "Wikipedia — Delta-v budget",
+      "url": "https://en.wikipedia.org/wiki/Delta-v_budget",
+      "lang": "en"
+    },
+    {
+      "title": "Wikipedia — Tsiolkovsky rocket equation",
+      "url": "https://en.wikipedia.org/wiki/Tsiolkovsky_rocket_equation",
+      "lang": "en"
+    }
+  ]
+}
