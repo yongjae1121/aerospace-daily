@@ -1,0 +1,177 @@
+{
+ "day": 18,
+ "title": "로켓의 개척자들",
+ "title_en": "Pioneers of Rocketry",
+ "level": 2,
+ "minutes": 20,
+ "summary": "치올콥스키, 고다드, 오베르트, 폰 브라운, 코롤료프, 그리고 조선의 신기전까지. 이론이 실험을 거쳐 공학이 되기까지의 이야기를 따라가요.",
+ "objectives": [
+  "치올콥스키, 고다드, 오베르트의 업적을 구분해 설명할 수 있다.",
+  "폰 브라운과 코롤료프가 로켓을 대형 공학으로 발전시킨 과정을 말할 수 있다.",
+  "신기전이 고체 연료 로켓임을 이해하고 로켓 방정식으로 간단한 속도를 계산할 수 있다."
+ ],
+ "vocab": [
+  {
+   "en": "pioneer",
+   "pron": "ˌpaɪəˈnɪr",
+   "pos": "n.",
+   "ko": "개척자",
+   "def": "A person who is among the first to explore or develop a new area.",
+   "ex": "Robert Goddard was a pioneer of liquid-fueled rockets.",
+   "ex_ko": "로버트 고다드는 액체 연료 로켓의 개척자였다."
+  },
+  {
+   "en": "theorist",
+   "pron": "ˈθiːərɪst",
+   "pos": "n.",
+   "ko": "이론가",
+   "def": "A person who develops ideas to explain how something works.",
+   "ex": "Tsiolkovsky was a theorist who worked mostly with pencil and paper.",
+   "ex_ko": "치올콥스키는 주로 연필과 종이로 연구한 이론가였다."
+  },
+  {
+   "en": "patent",
+   "pron": "ˈpætənt",
+   "pos": "n.",
+   "ko": "특허",
+   "def": "An official right to be the only one who makes or sells an invention.",
+   "ex": "Goddard received many patents for his rocket designs.",
+   "ex_ko": "고다드는 로켓 설계로 많은 특허를 받았다."
+  },
+  {
+   "en": "gyroscope",
+   "pron": "ˈdʒaɪrəskoʊp",
+   "pos": "n.",
+   "ko": "자이로스코프",
+   "def": "A spinning device that helps measure or keep a direction.",
+   "ex": "A gyroscope helps a rocket keep its direction during flight.",
+   "ex_ko": "자이로스코프는 로켓이 비행 중 방향을 유지하도록 돕는다."
+  },
+  {
+   "en": "ballistic missile",
+   "pron": "bəˈlɪstɪk ˈmɪsl",
+   "pos": "n.",
+   "ko": "탄도 미사일",
+   "def": "A weapon rocket that flies up and then falls along a curved path.",
+   "ex": "The V-2 was the first large ballistic missile.",
+   "ex_ko": "V-2는 최초의 대형 탄도 미사일이었다."
+  },
+  {
+   "en": "prototype",
+   "pron": "ˈproʊtətaɪp",
+   "pos": "n.",
+   "ko": "시제품",
+   "def": "The first model of a machine, used for testing before final production.",
+   "ex": "The team tested a prototype of the engine on the ground.",
+   "ex_ko": "팀은 엔진 시제품을 지상에서 시험했다."
+  },
+  {
+   "en": "skeptic",
+   "pron": "ˈskeptɪk",
+   "pos": "n.",
+   "ko": "회의론자",
+   "def": "A person who doubts that a claim or idea is true.",
+   "ex": "Many skeptics laughed at the idea of space rockets.",
+   "ex_ko": "많은 회의론자가 우주 로켓 아이디어를 비웃었다."
+  },
+  {
+   "en": "milestone",
+   "pron": "ˈmaɪlstoʊn",
+   "pos": "n.",
+   "ko": "이정표",
+   "def": "An important event that marks a stage in progress.",
+   "ex": "The first Sputnik launch was a milestone of the space age.",
+   "ex_ko": "스푸트니크 발사는 우주 시대의 이정표였다."
+  }
+ ],
+ "reading": {
+  "title": "From Pencil to Launch Pad",
+  "en": "Early rocketry was a story of many people with different talents. Konstantin Tsiolkovsky was a theorist who proved with mathematics that rockets could reach space. He never built a large rocket himself, but his ideas guided those who came after him.\n\nRobert Goddard took the next step. He was a pioneer who tested real engines, and in 1926 he launched the first liquid-fueled rocket. Although some skeptics mocked his work, he kept building, and he filed many patents. He even used a gyroscope to help keep his rockets pointing in the right direction.\n\nLater, large teams turned these ideas into serious machines. Under Wernher von Braun, German engineers built the V-2, the first big ballistic missile, and he later led the team that built the Saturn V for the Moon landings. In the Soviet Union, Sergei Korolev built the rocket that launched Sputnik, a milestone that opened the space age. Each prototype taught engineers something new, and each failure made the next design better. Modern rocketry is still built the same way: with ideas, tests, and teamwork.",
+  "ko": "초기 로켓 공학은 서로 다른 재능을 가진 많은 사람의 이야기였습니다. 콘스탄틴 치올콥스키는 로켓이 우주에 도달할 수 있음을 수학으로 증명한 이론가였습니다. 그는 직접 큰 로켓을 만들지는 못했지만, 그의 아이디어는 뒤를 이은 사람들을 이끌었습니다.\n\n로버트 고다드가 다음 단계를 밟았습니다. 그는 실제 엔진을 시험한 개척자였고, 1926년에 최초의 액체 연료 로켓을 발사했습니다. 일부 회의론자들이 그의 연구를 조롱했지만 그는 계속 만들었고 많은 특허를 신청했습니다. 그는 자이로스코프를 사용해 로켓이 올바른 방향을 향하도록 돕기도 했습니다.\n\n나중에는 대규모 팀이 이 아이디어를 본격적인 기계로 만들었습니다. 베르너 폰 브라운의 지휘 아래 독일 기술자들은 최초의 대형 탄도 미사일인 V-2를 만들었고, 그는 훗날 달 착륙을 위한 새턴 V를 만든 팀을 이끌었습니다. 소련에서는 세르게이 코롤료프가 스푸트니크를 발사한 로켓을 만들었고, 이는 우주 시대를 연 이정표였습니다. 시제품 하나하나가 기술자들에게 새로운 것을 가르쳤고, 실패할 때마다 다음 설계는 더 좋아졌습니다. 현대 로켓 공학도 여전히 같은 방식, 즉 아이디어와 시험과 팀워크로 만들어집니다."
+ },
+ "quiz": [
+  {
+   "type": "mc",
+   "q": "1903년에 로켓 방정식을 유도한 사람은 누구일까요?",
+   "choices": [
+    "치올콥스키",
+    "고다드",
+    "폰 브라운",
+    "코롤료프"
+   ],
+   "answer": 0,
+   "explain": "러시아의 교사 치올콥스키가 1903년 논문에서 $\\Delta v = v_e \\ln(m_0/m_f)$를 유도했어요."
+  },
+  {
+   "type": "ox",
+   "q": "신기전은 화약을 연료로 쓰는 고체 연료 로켓이다.",
+   "answer": true,
+   "explain": "신기전은 약통의 화약이 타며 내뿜는 가스로 날아가는 고체 연료 로켓이에요."
+  },
+  {
+   "type": "num",
+   "q": "고다드의 1926년 비행에서 로켓이 약 2.5초 동안 약 56 m를 날아갔어요. 평균 속력은 몇 m/s일까요?",
+   "answer": 22.4,
+   "tol": 0.02,
+   "unit": "m/s",
+   "explain": "평균 속력 = 56 ÷ 2.5 = 22.4 m/s예요."
+  },
+  {
+   "type": "mc",
+   "q": "Read the passage in 'Reading'. According to the passage, what did Robert Goddard do in 1926?",
+   "choices": [
+    "He launched the first liquid-fueled rocket",
+    "He launched the first satellite",
+    "He built the Saturn V",
+    "He proved the rocket equation"
+   ],
+   "answer": 0,
+   "explain": "The second paragraph says that in 1926 Goddard launched the first liquid-fueled rocket."
+  }
+ ],
+ "test": [
+  {
+   "type": "mc",
+   "q": "최초의 인공위성 스푸트니크 1호를 쏘아 올린 R-7 로켓을 이끈 설계자는 누구일까요?",
+   "choices": [
+    "코롤료프",
+    "오베르트",
+    "고다드",
+    "치올콥스키"
+   ],
+   "answer": 0,
+   "explain": "소련의 수석 설계자 세르게이 코롤료프가 이끈 R-7이 1957년 스푸트니크 1호를 발사했어요."
+  },
+  {
+   "type": "ox",
+   "q": "고다드는 1926년에 세계 최초의 액체 연료 로켓을 발사했다.",
+   "answer": true,
+   "explain": "1926년 3월 16일 매사추세츠주 오번에서 휘발유와 액체산소를 쓴 로켓이 발사됐어요."
+  },
+  {
+   "type": "num",
+   "q": "배기 속도 4,400 m/s, 질량비 $m_0/m_f=3$인 로켓의 $\\Delta v$는 몇 m/s일까요? ($\\ln 3=1.0986$, 소수점 이하는 반올림)",
+   "answer": 4834,
+   "tol": 0.02,
+   "unit": "m/s",
+   "explain": "$\\Delta v = 4400\\ln 3 = 4400\\times1.0986\\approx 4{,}834\\ \\text{m/s}$예요."
+  }
+ ],
+ "further": [
+  {
+   "title": "Wikipedia — Robert H. Goddard",
+   "url": "https://en.wikipedia.org/wiki/Robert_H._Goddard",
+   "lang": "en"
+  },
+  {
+   "title": "Wikipedia — Konstantin Tsiolkovsky",
+   "url": "https://en.wikipedia.org/wiki/Konstantin_Tsiolkovsky",
+   "lang": "en"
+  },
+  {
+   "title": "Wikipedia — Sergei Korolev",
+   "url": "https://en.wikipedia.org/wiki/Sergei_Korolev",
+   "lang": "en"
+  }
+ ]
+}
