@@ -1,0 +1,183 @@
+{
+ "day": 19,
+ "title": "대기의 구조",
+ "title_en": "Structure of the Atmosphere",
+ "level": 2,
+ "minutes": 20,
+ "summary": "대류권·성층권·중간권·열권으로 나뉘는 대기의 구조와 고도별 온도 분포를 배우고, 비행기와 로켓이 어떤 층을 지나는지 알아봐요.",
+ "objectives": [
+  "대기를 네 개의 층으로 구분하고 각 층의 온도 변화를 설명할 수 있다.",
+  "표준대기에서 대류권의 온도를 기온 감률로 계산할 수 있다.",
+  "카르만 선과 비행기·로켓이 지나는 층을 설명할 수 있다."
+ ],
+ "vocab": [
+  {
+   "en": "atmosphere",
+   "pron": "ˈætməsfɪr",
+   "pos": "n.",
+   "ko": "대기",
+   "def": "The layer of gases that surrounds a planet.",
+   "ex": "Earth's atmosphere protects living things from harmful radiation.",
+   "ex_ko": "지구의 대기는 생명체를 해로운 방사선으로부터 보호한다."
+  },
+  {
+   "en": "troposphere",
+   "pron": "ˈtroʊpəsfɪr",
+   "pos": "n.",
+   "ko": "대류권",
+   "def": "The lowest layer of the atmosphere, where weather happens.",
+   "ex": "Most airliners cruise near the top of the troposphere.",
+   "ex_ko": "대부분의 여객기는 대류권 위쪽에서 순항한다."
+  },
+  {
+   "en": "stratosphere",
+   "pron": "ˈstrætəsfɪr",
+   "pos": "n.",
+   "ko": "성층권",
+   "def": "The atmospheric layer above the troposphere, where the ozone layer is found.",
+   "ex": "The air in the stratosphere is calm and stable.",
+   "ex_ko": "성층권의 공기는 고요하고 안정적이다."
+  },
+  {
+   "en": "lapse rate",
+   "pron": "læps reɪt",
+   "pos": "n.",
+   "ko": "기온 감률",
+   "def": "The rate at which air temperature falls as altitude increases.",
+   "ex": "The standard lapse rate in the troposphere is 6.5 kelvin per kilometer.",
+   "ex_ko": "대류권의 표준 기온 감률은 킬로미터당 6.5 켈빈이다."
+  },
+  {
+   "en": "ozone",
+   "pron": "ˈoʊzoʊn",
+   "pos": "n.",
+   "ko": "오존",
+   "def": "A form of oxygen that absorbs harmful ultraviolet light.",
+   "ex": "Ozone in the stratosphere absorbs most ultraviolet radiation.",
+   "ex_ko": "성층권의 오존은 대부분의 자외선을 흡수한다."
+  },
+  {
+   "en": "turbulence",
+   "pron": "ˈtɜːrbjələns",
+   "pos": "n.",
+   "ko": "난기류",
+   "def": "Irregular, violent movement of air.",
+   "ex": "The pilot warned the passengers about turbulence ahead.",
+   "ex_ko": "조종사는 승객들에게 앞쪽의 난기류를 경고했다."
+  },
+  {
+   "en": "thin",
+   "pron": "θɪn",
+   "pos": "adj.",
+   "ko": "희박한",
+   "def": "Having a low density; not thick.",
+   "ex": "At high altitude the air is too thin to breathe.",
+   "ex_ko": "높은 고도에서는 공기가 너무 희박해서 숨을 쉴 수 없다."
+  },
+  {
+   "en": "boundary",
+   "pron": "ˈbaʊndri",
+   "pos": "n.",
+   "ko": "경계",
+   "def": "A line or surface that separates two regions.",
+   "ex": "The Kármán line is a boundary between air and space.",
+   "ex_ko": "카르만 선은 대기와 우주 사이의 경계이다."
+  }
+ ],
+ "reading": {
+  "title": "Layers of the Sky",
+  "en": "The atmosphere is not a uniform blanket of air. It is divided into layers according to how temperature changes with height. The lowest layer, the troposphere, holds most of the air and all of our weather. In this layer the temperature falls steadily, at a lapse rate of about 6.5 kelvin for every kilometer, so the air at the cruising height of an airliner is far colder than the air on the ground.\n\nAbove it lies the stratosphere. Here the temperature rises with height because ozone absorbs ultraviolet light from the Sun and warms the air. Since warm air sits above cold air, the layer is stable, and turbulence is rare. Higher still, the mesosphere is the coldest region, and the thermosphere above it becomes very hot, although the air there is so thin that it would feel nearly empty.\n\nThere is no sharp boundary between the atmosphere and space. The air simply grows thinner and thinner. By convention, many organizations place the edge of space at 100 kilometers, a height known as the Kármán line.",
+  "ko": "대기는 균일한 공기 이불이 아니에요. 고도에 따라 온도가 변하는 방식에 따라 여러 층으로 나뉘어요. 가장 아래층인 대류권에는 공기의 대부분과 모든 날씨가 있어요. 이 층에서는 온도가 킬로미터당 약 6.5 켈빈의 기온 감률로 꾸준히 내려가기 때문에, 여객기가 순항하는 높이의 공기는 지상보다 훨씬 차가워요.\n\n그 위에는 성층권이 있어요. 여기서는 오존이 태양의 자외선을 흡수해 공기를 데우기 때문에 고도에 따라 온도가 올라가요. 따뜻한 공기가 차가운 공기 위에 있으므로 이 층은 안정적이고 난기류가 드물어요. 더 높은 곳에서 중간권은 가장 차가운 영역이고, 그 위의 열권은 매우 뜨거워지지만 공기가 너무 희박해서 거의 비어 있는 것처럼 느껴져요.\n\n대기와 우주 사이에 뚜렷한 경계는 없어요. 공기는 그저 점점 더 옅어질 뿐이에요. 관례적으로 많은 기관이 우주의 가장자리를 100킬로미터로 정하며, 이 높이를 카르만 선이라고 해요."
+ },
+ "quiz": [
+  {
+   "type": "mc",
+   "q": "날씨(구름, 비, 바람)가 일어나는 대기의 층은 어디일까요?",
+   "choices": [
+    "대류권",
+    "성층권",
+    "중간권",
+    "열권"
+   ],
+   "answer": 0,
+   "explain": "구름과 비 같은 날씨 현상은 대기 질량의 대부분이 있는 가장 아래층인 대류권에서 일어나요."
+  },
+  {
+   "type": "ox",
+   "q": "열권은 온도가 1,000도가 넘을 수 있지만, 공기가 매우 희박해서 사람이 그 안에서 뜨겁다고 느끼지 못한다.",
+   "answer": true,
+   "explain": "온도는 분자의 평균 운동 에너지인데, 열을 전달할 분자가 너무 적어서 실제 열 전달은 아주 작아요."
+  },
+  {
+   "type": "num",
+   "q": "표준대기에서 해수면 온도는 288.15 K이고 대류권의 기온 감률은 6.5 K/km예요. 고도 9 km의 온도는 몇 K일까요?",
+   "answer": 229.65,
+   "tol": 0.02,
+   "unit": "K",
+   "explain": "T = 288.15 − 6.5 × 9 = 229.65 K이에요."
+  },
+  {
+   "type": "mc",
+   "q": "Read the passage in 'Reading'. According to the passage, why is the stratosphere stable?",
+   "choices": [
+    "Warm air sits above cold air",
+    "It contains most of the clouds",
+    "The temperature falls with height",
+    "It is the thinnest layer"
+   ],
+   "answer": 0,
+   "explain": "The second paragraph says the temperature rises with height, so warm air sits above cold air and the layer is stable."
+  }
+ ],
+ "test": [
+  {
+   "type": "mc",
+   "q": "대기의 층을 낮은 곳에서 높은 곳 순서로 바르게 나열한 것은?",
+   "choices": [
+    "대류권 → 성층권 → 중간권 → 열권",
+    "성층권 → 대류권 → 열권 → 중간권",
+    "대류권 → 중간권 → 성층권 → 열권",
+    "열권 → 중간권 → 성층권 → 대류권"
+   ],
+   "answer": 0,
+   "explain": "낮은 곳부터 대류권, 성층권, 중간권, 열권 순서예요."
+  },
+  {
+   "type": "mc",
+   "q": "성층권에서 고도가 높아질수록 온도가 올라가는 가장 큰 이유는 무엇일까요?",
+   "choices": [
+    "오존이 태양의 자외선을 흡수하기 때문",
+    "지면에서 나오는 열이 더 강하기 때문",
+    "공기가 더 짙어지기 때문",
+    "구름이 열을 가두기 때문"
+   ],
+   "answer": 0,
+   "explain": "성층권에 있는 오존층이 자외선을 흡수하며 공기를 데워요."
+  },
+  {
+   "type": "num",
+   "q": "지상 온도가 15 °C이고 기온 감률이 6.5 K/km일 때, 온도가 −40 °C가 되는 고도는 몇 km일까요? (숫자만 입력, 소수 둘째 자리까지)",
+   "answer": 8.46,
+   "tol": 0.02,
+   "unit": "km",
+   "explain": "온도가 55 K 내려가야 하므로 고도 = 55 ÷ 6.5 ≈ 8.46 km예요."
+  }
+ ],
+ "further": [
+  {
+   "title": "Wikipedia — Atmosphere of Earth",
+   "url": "https://en.wikipedia.org/wiki/Atmosphere_of_Earth",
+   "lang": "en"
+  },
+  {
+   "title": "Wikipedia — Kármán line",
+   "url": "https://en.wikipedia.org/wiki/K%C3%A1rm%C3%A1n_line",
+   "lang": "en"
+  },
+  {
+   "title": "Wikipedia — International Standard Atmosphere",
+   "url": "https://en.wikipedia.org/wiki/International_Standard_Atmosphere",
+   "lang": "en"
+  }
+ ]
+}
