@@ -1,0 +1,172 @@
+{
+  "day": 20,
+  "title": "압력, 밀도, 온도와 이상기체",
+  "title_en": "Pressure, Density, Temperature, and the Ideal Gas Law",
+  "level": 2,
+  "minutes": 20,
+  "summary": "분자 충돌로 압력을 이해하고, 이상기체 상태 방정식 p = ρRT로 공기 밀도를 계산해 밀도가 비행에 왜 중요한지 알아봐요.",
+  "objectives": [
+    "압력을 분자 충돌의 평균 효과로 설명할 수 있다.",
+    "p = ρRT로 공기의 밀도·압력·온도 중 하나를 계산할 수 있다.",
+    "밀도 변화가 양력과 이륙 성능에 미치는 영향을 설명할 수 있다."
+  ],
+  "vocab": [
+    {
+      "en": "pressure",
+      "pron": "ˈprɛʃər",
+      "pos": "n.",
+      "ko": "압력",
+      "def": "The force that a gas or liquid pushes on each unit of area.",
+      "ex": "The pressure inside the tire rose after the long drive.",
+      "ex_ko": "긴 주행 후 타이어 안의 압력이 올랐다."
+    },
+    {
+      "en": "density",
+      "pron": "ˈdɛnsɪti",
+      "pos": "n.",
+      "ko": "밀도",
+      "def": "The amount of mass in a given volume.",
+      "ex": "The density of air falls as an airplane climbs.",
+      "ex_ko": "비행기가 상승하면 공기의 밀도가 줄어든다."
+    },
+    {
+      "en": "ideal gas",
+      "pron": "aɪˈdiːəl ɡæs",
+      "pos": "n.",
+      "ko": "이상기체",
+      "def": "A simple model of gas whose molecules only collide and do not attract each other.",
+      "ex": "Air at flight altitudes behaves almost like an ideal gas.",
+      "ex_ko": "비행 고도의 공기는 거의 이상기체처럼 행동한다."
+    },
+    {
+      "en": "gas constant",
+      "pron": "ɡæs ˈkɑːnstənt",
+      "pos": "n.",
+      "ko": "기체상수",
+      "def": "A fixed number that links pressure, density, and temperature of a gas.",
+      "ex": "The gas constant of air is 287 joules per kilogram per kelvin.",
+      "ex_ko": "공기의 기체상수는 킬로그램·켈빈당 287 줄이다."
+    },
+    {
+      "en": "molecule",
+      "pron": "ˈmɑːlɪkjuːl",
+      "pos": "n.",
+      "ko": "분자",
+      "def": "The smallest unit of a substance made of joined atoms.",
+      "ex": "A molecule of nitrogen has two atoms.",
+      "ex_ko": "질소 분자는 두 개의 원자로 이루어져 있다."
+    },
+    {
+      "en": "collision",
+      "pron": "kəˈlɪʒən",
+      "pos": "n.",
+      "ko": "충돌",
+      "def": "The moment when two moving things hit each other.",
+      "ex": "Each collision with the wall gives a tiny push.",
+      "ex_ko": "벽과의 충돌 하나하나가 아주 작은 힘을 준다."
+    },
+    {
+      "en": "kelvin",
+      "pron": "ˈkɛlvɪn",
+      "pos": "n.",
+      "ko": "켈빈(절대온도 단위)",
+      "def": "The SI unit of temperature that starts at absolute zero.",
+      "ex": "Engineers convert every temperature to kelvin before using the gas law.",
+      "ex_ko": "엔지니어는 기체 법칙을 쓰기 전에 모든 온도를 켈빈으로 바꾼다."
+    },
+    {
+      "en": "compress",
+      "pron": "kəmˈprɛs",
+      "pos": "v.",
+      "ko": "압축하다",
+      "def": "To press something into a smaller space.",
+      "ex": "A compressor squeezes air so that its pressure becomes higher.",
+      "ex_ko": "압축기는 공기를 눌러 압력을 높인다."
+    }
+  ],
+  "reading": {
+    "title": "Why Hot Air Is Weak Air",
+    "en": "On a very hot afternoon, a pilot may find that the airplane needs a longer runway than usual. The reason lies in the density of the air. According to the ideal gas law, pressure equals density times the gas constant times temperature. When the pressure stays almost the same and the temperature rises, the density must fall. Thinner air means fewer molecules to flow over the wings, so the lift becomes smaller at the same speed.\n\nTo understand pressure itself, imagine countless molecules moving in every direction inside a container. Each collision with the wall gives a tiny push, and the average of all these pushes is the pressure we measure. If we compress the gas into a smaller space, the collisions become more frequent and the pressure grows.\n\nBecause of this link, engineers always convert temperatures to kelvin before calculating. A mistake of only a few degrees in the wrong unit can change the answer completely. High-altitude airports and hot summer days are both common reasons why a flight crew checks the density carefully before every takeoff.",
+    "ko": "아주 더운 오후에는 조종사가 비행기가 평소보다 긴 활주로를 필요로 한다는 것을 알게 될 수 있어요. 이유는 공기의 밀도에 있어요. 이상기체 법칙에 따르면 압력은 밀도와 기체상수와 온도의 곱과 같아요. 압력이 거의 그대로인데 온도가 오르면 밀도는 줄어들 수밖에 없어요. 공기가 희박하면 날개 위를 흐르는 분자가 줄어들어 같은 속도에서 양력이 작아져요.\n\n압력 자체를 이해하려면 용기 안에서 셀 수 없이 많은 분자가 사방으로 움직이는 모습을 상상해 보세요. 벽과의 충돌 하나하나가 아주 작은 힘을 주고, 이 모든 힘의 평균이 우리가 측정하는 압력이에요. 기체를 더 작은 공간으로 압축하면 충돌이 더 잦아져서 압력이 커져요.\n\n이런 관계 때문에 엔지니어는 계산하기 전에 항상 온도를 켈빈으로 바꿔요. 단위를 잘못 쓴 몇 도의 실수가 답을 완전히 바꿔 놓을 수 있어요. 고지대 공항과 무더운 여름날은 승무원이 이륙 전마다 밀도를 꼼꼼히 확인하는 흔한 이유예요."
+  },
+  "quiz": [
+    {
+      "type": "mc",
+      "q": "해면 표준 대기에서 공기의 밀도는 약 얼마일까요?",
+      "choices": [
+        "0.364 kg/m³",
+        "1.225 kg/m³",
+        "12.25 kg/m³",
+        "101.3 kg/m³"
+      ],
+      "answer": 1,
+      "explain": "$\\rho = p/(RT) = 101325/(287\\times288.15)\\approx1.225$ kg/m³예요."
+    },
+    {
+      "type": "ox",
+      "q": "이상기체 상태 방정식 $p=\\rho R T$에서 온도는 섭씨로 넣어도 된다.",
+      "answer": false,
+      "explain": "온도는 반드시 켈빈(절대온도)으로 넣어야 해요. 섭씨 0도는 온도가 0이라는 뜻이 아니어서 계산이 틀려요."
+    },
+    {
+      "type": "num",
+      "q": "해면 기압 101,325 Pa, 기온 35 °C인 공기의 밀도는? 공기의 $R=287$ J/(kg·K), 0 °C = 273.15 K이에요.",
+      "answer": 1.146,
+      "tol": 0.02,
+      "unit": "kg/m³",
+      "explain": "$T=308.15$ K이므로 $\\rho=101325/(287\\times308.15)\\approx1.146$ kg/m³예요."
+    },
+    {
+      "type": "mc",
+      "q": "According to the reading, why does a plane need a longer runway on a very hot day?",
+      "choices": [
+        "The air becomes thinner, so the lift is smaller at the same speed.",
+        "The gas constant of air becomes negative.",
+        "The pressure of the air falls to zero.",
+        "The molecules of air become heavier."
+      ],
+      "answer": 0,
+      "explain": "본문에서 압력이 거의 같고 온도가 오르면 밀도가 줄어 양력이 작아진다고 했어요. 그래서 첫 번째 보기가 정답이에요."
+    }
+  ],
+  "test": [
+    {
+      "type": "mc",
+      "q": "온도가 일정할 때 용기 안 기체를 더 작은 부피로 압축하면 압력은 어떻게 되고 그 이유는?",
+      "choices": [
+        "분자 수 밀도가 커져 충돌이 잦아지므로 압력이 커진다.",
+        "분자가 느려지므로 압력이 작아진다.",
+        "분자 수가 줄어 압력이 작아진다.",
+        "압력은 변하지 않는다."
+      ],
+      "answer": 0,
+      "explain": "같은 분자 수가 더 작은 공간에 있으면 밀도가 커지고, $p=\\rho RT$에서 $T$가 같으므로 압력도 커져요."
+    },
+    {
+      "type": "num",
+      "q": "고도 5 km의 표준대기에서 압력은 54,020 Pa, 온도는 255.65 K예요. 이 높이의 공기 밀도는? ($R=287$ J/(kg·K))",
+      "answer": 0.736,
+      "tol": 0.02,
+      "unit": "kg/m³",
+      "explain": "$\\rho=54020/(287\\times255.65)\\approx0.736$ kg/m³예요."
+    },
+    {
+      "type": "ox",
+      "q": "압력이 같다면 공기 온도가 올라갈수록 밀도는 작아진다.",
+      "answer": true,
+      "explain": "$\\rho=p/(RT)$이므로 $p$가 같을 때 $T$가 커지면 $\\rho$는 작아져요."
+    }
+  ],
+  "further": [
+    {
+      "title": "NASA Glenn — Equation of State",
+      "url": "https://www.grc.nasa.gov/www/k-12/airplane/eqstat.html",
+      "lang": "en"
+    },
+    {
+      "title": "Wikipedia — Ideal gas law",
+      "url": "https://en.wikipedia.org/wiki/Ideal_gas_law",
+      "lang": "en"
+    }
+  ]
+}
