@@ -1,0 +1,174 @@
+{
+  "day": 21,
+  "title": "국제 표준 대기",
+  "title_en": "The International Standard Atmosphere",
+  "level": 2,
+  "minutes": 20,
+  "summary": "모든 비행기가 함께 쓰는 '표준 하늘' ISA의 값과 감률, 압력·밀도의 지수적 감소, 기압 고도와 밀도 고도를 배워요.",
+  "objectives": [
+    "ISA의 해면 기준값과 대류권 감률을 말할 수 있다.",
+    "ISA 고도의 온도·압력·밀도를 계산할 수 있다.",
+    "기압 고도와 밀도 고도의 차이를 설명할 수 있다."
+  ],
+  "vocab": [
+    {
+      "en": "standard atmosphere",
+      "pron": "ˈstændərd ˈætməsfɪr",
+      "pos": "n.",
+      "ko": "표준 대기",
+      "def": "An agreed model of how air temperature, pressure, and density change with height.",
+      "ex": "Engineers compare aircraft performance using the standard atmosphere.",
+      "ex_ko": "엔지니어들은 표준 대기를 이용해 항공기 성능을 비교한다."
+    },
+    {
+      "en": "tropopause",
+      "pron": "ˈtrɒpəpɔːz",
+      "pos": "n.",
+      "ko": "대류권계면",
+      "def": "The boundary between the troposphere and the stratosphere.",
+      "ex": "Airliners cruise close to the tropopause.",
+      "ex_ko": "여객기는 대류권계면 근처에서 순항한다."
+    },
+    {
+      "en": "isothermal",
+      "pron": "ˌaɪsəˈθɜːrməl",
+      "pos": "adj.",
+      "ko": "등온의",
+      "def": "Having the same temperature everywhere or at every height.",
+      "ex": "The isothermal layer above the tropopause keeps a constant temperature.",
+      "ex_ko": "대류권계면 위의 등온층은 온도가 일정하다."
+    },
+    {
+      "en": "pressure altitude",
+      "pron": "ˈprɛʃər ˈæltɪtuːd",
+      "pos": "n.",
+      "ko": "기압 고도",
+      "def": "The height in the standard atmosphere that has the same pressure as the air around you.",
+      "ex": "The altimeter shows pressure altitude when it is set to the standard value.",
+      "ex_ko": "고도계를 표준값에 맞추면 기압 고도를 보여 준다."
+    },
+    {
+      "en": "density altitude",
+      "pron": "ˈdɛnsəti ˈæltɪtuːd",
+      "pos": "n.",
+      "ko": "밀도 고도",
+      "def": "The height in the standard atmosphere that has the same air density as the real air.",
+      "ex": "On a hot day the density altitude can be far above the runway elevation.",
+      "ex_ko": "더운 날에는 밀도 고도가 활주로 해발고도보다 훨씬 높을 수 있다."
+    },
+    {
+      "en": "scale height",
+      "pron": "skeɪl haɪt",
+      "pos": "n.",
+      "ko": "축척 높이",
+      "def": "The height over which air pressure falls by a factor of e.",
+      "ex": "The scale height of Earth's air is about eight kilometers.",
+      "ex_ko": "지구 공기의 축척 높이는 약 8 km이다."
+    },
+    {
+      "en": "humidity",
+      "pron": "hjuːˈmɪdəti",
+      "pos": "n.",
+      "ko": "습도",
+      "def": "The amount of water vapor in the air.",
+      "ex": "High humidity slightly lowers the density of air.",
+      "ex_ko": "높은 습도는 공기 밀도를 약간 낮춘다."
+    },
+    {
+      "en": "gradient",
+      "pron": "ˈɡreɪdiənt",
+      "pos": "n.",
+      "ko": "기울기, 변화율",
+      "def": "The rate at which a quantity changes with distance.",
+      "ex": "The temperature gradient in the troposphere is about 6.5 K per kilometer.",
+      "ex_ko": "대류권의 온도 변화율은 1 km당 약 6.5 K이다."
+    }
+  ],
+  "reading": {
+    "title": "A Common Yardstick for the Sky",
+    "en": "The real atmosphere changes every hour, but engineers need a common yardstick. For this reason they use the International Standard Atmosphere, a fixed table of temperature, pressure, and density at every height. In this standard atmosphere, the sea-level temperature is 15 °C, and the temperature falls steadily with height until the tropopause, near 11 kilometers. Above that, the temperature stays constant for a while, so this layer is called isothermal.\n\nPilots meet the standard in a practical way. An altimeter does not measure height directly. It measures air pressure and converts it into the height that the standard table assigns to that pressure. This value is called pressure altitude. On a hot day, however, the air is thinner than the table predicts, and the wings and engines behave as if the airport were higher. The height that matches the real air density is called density altitude. A runway at a modest elevation can therefore feel like a mountain airfield in summer.\n\nPressure and density do not fall in a straight line. They drop by the same fraction over each equal step in height. Engineers describe this with a scale height, roughly eight kilometers near the ground. The table also ignores humidity, which is a simplification, but a useful one.",
+    "ko": "실제 대기는 매시간 변하지만, 엔지니어에게는 공통의 잣대가 필요해요. 이런 이유로 그들은 모든 높이의 온도, 압력, 밀도를 정해 놓은 표인 국제 표준 대기를 사용해요. 이 표준 대기에서 해면의 온도는 15 °C이고, 온도는 11 km 근처의 대류권계면까지 고도에 따라 꾸준히 내려가요. 그 위에서는 한동안 온도가 일정하게 유지되기 때문에 이 층을 등온층이라고 불러요.\n\n조종사들은 표준을 실용적인 방식으로 만나요. 고도계는 높이를 직접 재지 않아요. 공기의 압력을 재서, 표준 표가 그 압력에 대응시킨 높이로 바꿔 줘요. 이 값을 기압 고도라고 해요. 하지만 더운 날에는 공기가 표의 예상보다 희박해서, 날개와 엔진은 마치 공항이 더 높은 곳에 있는 것처럼 행동해요. 실제 공기 밀도와 일치하는 높이를 밀도 고도라고 해요. 그래서 해발고도가 그리 높지 않은 활주로도 여름에는 산악 공항처럼 느껴질 수 있어요.\n\n압력과 밀도는 직선으로 줄어들지 않아요. 같은 높이만큼 올라갈 때마다 같은 비율로 줄어들어요. 엔지니어들은 이것을 지표 근처에서 약 8 km인 축척 높이로 나타내요. 이 표는 습도도 무시하는데, 이는 단순화이지만 쓸모 있는 단순화예요."
+  },
+  "quiz": [
+    {
+      "type": "mc",
+      "q": "ISA의 대류권(0~11 km)에서 기온 감률은 얼마일까요?",
+      "choices": [
+        "약 6.5 K/km",
+        "약 0.65 K/km",
+        "약 65 K/km",
+        "0 K/km (일정)"
+      ],
+      "answer": 0,
+      "explain": "ISA는 대류권에서 고도 1 km당 6.5 K씩 온도가 내려간다고 정해요. 0 K/km는 11~20 km의 등온층에 해당해요."
+    },
+    {
+      "type": "ox",
+      "q": "국제 표준 대기(ISA)는 특정한 날 실제 하늘의 온도·압력·밀도를 그대로 나타낸 값이다.",
+      "answer": false,
+      "explain": "ISA는 모두가 같은 기준으로 비교하려고 정한 평균적인 약속 모형이에요. 실제 날씨와는 달라서 ISA와의 차이를 따로 보정해요."
+    },
+    {
+      "type": "num",
+      "q": "ISA에서 고도 9 km의 온도는 몇 K일까요? 해면 온도 288.15 K, 감률 6.5 K/km를 쓰세요.",
+      "answer": 229.65,
+      "tol": 0.02,
+      "unit": "K",
+      "explain": "$T = 288.15 - 6.5\\times 9 = 229.65$ K예요. 섭씨로는 약 −43.5 °C예요."
+    },
+    {
+      "type": "mc",
+      "q": "According to the reading, why can a runway at a modest elevation feel like a mountain airfield on a hot day?",
+      "choices": [
+        "The air is thinner than the standard table predicts, so the airport behaves as if it were higher.",
+        "The altimeter measures height directly and reads too high.",
+        "The standard atmosphere has no pressure on hot days.",
+        "The tropopause moves down to the runway."
+      ],
+      "answer": 0,
+      "explain": "지문에서 더운 날에는 공기가 표준 표의 예상보다 희박해서 날개와 엔진이 공항이 더 높은 곳에 있는 것처럼 행동한다고 했어요. 이것이 밀도 고도예요."
+    }
+  ],
+  "test": [
+    {
+      "type": "num",
+      "q": "ISA 대류권에서 압력은 $p = p_0 (T/T_0)^{5.256}$이에요. $p_0=101325$ Pa, $T_0=288.15$ K, 감률 6.5 K/km일 때 고도 5 km의 압력은 해면 압력의 몇 %일까요? (숫자만 입력)",
+      "answer": 53.3,
+      "tol": 0.02,
+      "unit": "%",
+      "explain": "$T = 288.15-6.5\\times5 = 255.65$ K이므로 $p/p_0 = (255.65/288.15)^{5.256} \\approx 0.533$, 곧 약 53.3%예요."
+    },
+    {
+      "type": "mc",
+      "q": "기압 고도가 같은데 기온이 ISA보다 훨씬 높은 날, 밀도 고도는 기압 고도와 비교해 어떻게 될까요?",
+      "choices": [
+        "더 높다",
+        "더 낮다",
+        "항상 같다",
+        "0이 된다"
+      ],
+      "answer": 0,
+      "explain": "기온이 높으면 $\\rho = p/RT$에서 같은 압력에서도 밀도가 작아져요. 작은 밀도는 ISA에서 더 높은 고도에 해당하므로 밀도 고도가 기압 고도보다 높아요."
+    },
+    {
+      "type": "num",
+      "q": "ISA에서 고도 9 km의 밀도는 해면 밀도(1.225 kg/m³)의 몇 %일까요? $p=p_0(T/T_0)^{5.256}$, $p_0=101325$ Pa, $T_0=288.15$ K, 감률 6.5 K/km, $R=287$ J/(kg·K)를 쓰세요. (숫자만 입력)",
+      "answer": 38.1,
+      "tol": 0.02,
+      "unit": "%",
+      "explain": "$T=229.65$ K, $p\\approx 30{,}740$ Pa이고 $\\rho = p/RT \\approx 0.4663$ kg/m³예요. $0.4663/1.225\\approx 0.381$, 곧 약 38.1%예요."
+    }
+  ],
+  "further": [
+    {
+      "title": "NASA Glenn — Earth Atmosphere Model",
+      "url": "https://www.grc.nasa.gov/www/k-12/airplane/atmosmet.html",
+      "lang": "en"
+    },
+    {
+      "title": "Wikipedia — International Standard Atmosphere",
+      "url": "https://en.wikipedia.org/wiki/International_Standard_Atmosphere",
+      "lang": "en"
+    }
+  ]
+}
