@@ -1,0 +1,172 @@
+{
+  "day": 22,
+  "title": "유체 정역학과 부력",
+  "title_en": "Hydrostatics and Buoyancy",
+  "level": 2,
+  "minutes": 20,
+  "summary": "정지한 유체의 압력 식 dp/dz = −ρg에서 아르키메데스의 원리를 이끌어 내고, 헬륨 기구·비행선·성층권 풍선이 뜨는 원리를 숫자로 계산해요.",
+  "objectives": [
+    "정지한 유체에서 압력이 깊이(높이)에 따라 변하는 이유를 설명할 수 있다.",
+    "아르키메데스의 원리로 부력과 기구의 양력을 계산할 수 있다.",
+    "고도가 높아질수록 풍선에 큰 부피가 필요한 이유를 설명할 수 있다."
+  ],
+  "vocab": [
+    {
+      "en": "buoyancy",
+      "pron": "ˈbɔɪənsi",
+      "pos": "n.",
+      "ko": "부력",
+      "def": "The upward force that a fluid exerts on an object placed in it.",
+      "ex": "Buoyancy keeps a helium balloon floating in the air.",
+      "ex_ko": "부력은 헬륨 풍선이 공기 중에 떠 있게 한다."
+    },
+    {
+      "en": "hydrostatic equilibrium",
+      "pron": "ˌhaɪdrəˈstætɪk ˌiːkwəˈlɪbriəm",
+      "pos": "n.",
+      "ko": "정수압 평형",
+      "def": "A state in which a fluid is at rest because pressure forces balance its weight.",
+      "ex": "The atmosphere is nearly in hydrostatic equilibrium on a calm day.",
+      "ex_ko": "바람이 없는 날 대기는 거의 정수압 평형 상태에 있다."
+    },
+    {
+      "en": "fluid",
+      "pron": "ˈfluːɪd",
+      "pos": "n.",
+      "ko": "유체",
+      "def": "A substance, such as a liquid or gas, that can flow.",
+      "ex": "Air is a fluid, so aircraft move through it like ships move through water.",
+      "ex_ko": "공기는 유체여서 항공기는 배가 물속을 가듯 그 속을 움직인다."
+    },
+    {
+      "en": "displace",
+      "pron": "dɪsˈpleɪs",
+      "pos": "v.",
+      "ko": "밀어내다",
+      "def": "To push aside a volume of fluid by taking its place.",
+      "ex": "A balloon displaces a large volume of air.",
+      "ex_ko": "풍선은 많은 부피의 공기를 밀어낸다."
+    },
+    {
+      "en": "helium",
+      "pron": "ˈhiːliəm",
+      "pos": "n.",
+      "ko": "헬륨",
+      "def": "A very light, non-flammable gas used to fill balloons and airships.",
+      "ex": "Modern airships use helium instead of hydrogen because it cannot burn.",
+      "ex_ko": "현대 비행선은 불이 붙지 않기 때문에 수소 대신 헬륨을 쓴다."
+    },
+    {
+      "en": "envelope",
+      "pron": "ˈenvəloʊp",
+      "pos": "n.",
+      "ko": "(기구의) 외피",
+      "def": "The large outer bag of a balloon or airship that holds the lifting gas.",
+      "ex": "The envelope of the balloon is made of thin, strong plastic film.",
+      "ex_ko": "풍선의 외피는 얇고 튼튼한 플라스틱 필름으로 만든다."
+    },
+    {
+      "en": "airship",
+      "pron": "ˈerʃɪp",
+      "pos": "n.",
+      "ko": "비행선",
+      "def": "A powered, steerable aircraft that floats because it is filled with a light gas.",
+      "ex": "An airship can stay in the air for a long time using little power.",
+      "ex_ko": "비행선은 적은 동력으로 오래 공중에 머물 수 있다."
+    },
+    {
+      "en": "ballast",
+      "pron": "ˈbæləst",
+      "pos": "n.",
+      "ko": "밸러스트(무게추)",
+      "def": "Heavy material carried on purpose and dropped to make a vehicle lighter.",
+      "ex": "The pilot dropped sandbags of ballast to climb higher.",
+      "ex_ko": "조종사는 더 높이 오르려고 밸러스트인 모래주머니를 버렸다."
+    }
+  ],
+  "reading": {
+    "title": "The Balloon That Rises Forever?",
+    "en": "A helium balloon rises because the air around it pushes harder on its bottom than on its top. This difference in pressure creates buoyancy, and its size equals the weight of the air that the balloon displaces. Engineers call the idea Archimedes' principle, and it works in any fluid, from the sea to the sky.\n\nWhy does the balloon stop climbing? The answer is hydrostatic equilibrium: in still air, pressure falls with height because less air sits above. As the balloon rises, the envelope expands, since the outside pressure is smaller. The air also becomes thinner, so each cubic meter of helium lifts less and less. A research team that wants to reach thirty kilometers must therefore build a very large balloon, which looks almost empty on the ground.\n\nAn airship uses the same principle, but it adds engines and a rudder so that it can travel where the crew chooses. To rise higher, a pilot can release ballast. To come down, the crew lets out a little gas. These simple controls show that flight does not always need wings.",
+    "ko": "헬륨 풍선이 떠오르는 까닭은 주변 공기가 풍선의 윗면보다 아랫면을 더 세게 밀기 때문이다. 이 압력 차이가 부력을 만들고, 그 크기는 풍선이 밀어낸 공기의 무게와 같다. 공학자들은 이 생각을 아르키메데스의 원리라고 부르며, 바다에서 하늘까지 어떤 유체에서나 성립한다.\n\n그렇다면 풍선은 왜 올라가다 멈출까? 답은 정수압 평형이다. 바람이 없는 공기에서는 위에 놓인 공기가 적어지므로 높이 올라갈수록 압력이 떨어진다. 풍선이 올라가면 바깥 압력이 작아서 외피가 팽창한다. 공기도 희박해져서 헬륨 1세제곱미터가 들어 올리는 힘이 점점 작아진다. 따라서 30킬로미터에 닿고 싶은 연구팀은 지상에서는 거의 비어 보이는 매우 큰 풍선을 만들어야 한다.\n\n비행선도 같은 원리를 쓰지만, 엔진과 방향타를 달아 승무원이 원하는 곳으로 갈 수 있게 한다. 더 높이 오르려면 조종사가 밸러스트를 버리고, 내려오려면 기체를 조금 뺀다. 이런 간단한 조작은 비행에 항상 날개가 필요한 것은 아님을 보여 준다."
+  },
+  "quiz": [
+    {
+      "type": "mc",
+      "q": "정지한 공기에서 $dp/dz = -\\rho g$가 뜻하는 것으로 옳은 것은?",
+      "choices": [
+        "높이 올라갈수록 압력이 줄어든다.",
+        "높이 올라갈수록 압력이 늘어난다.",
+        "압력은 높이와 무관하다.",
+        "압력은 밀도와 무관하다."
+      ],
+      "answer": 0,
+      "explain": "음수 부호는 $z$가 커질수록 $p$가 작아진다는 뜻이에요. 줄어드는 비율은 $\\rho g$로, 위에 쌓인 공기의 무게 때문이에요."
+    },
+    {
+      "type": "ox",
+      "q": "물체가 받는 부력의 크기는 물체 자신의 무게와 같다.",
+      "answer": false,
+      "explain": "부력은 물체가 밀어낸 유체의 무게와 같아요. 물체 자신의 무게와는 무관하며, 둘을 비교해서 뜨는지 가라앉는지가 정해져요."
+    },
+    {
+      "type": "num",
+      "q": "바닷물(밀도 1025 kg/m³) 속 깊이 20 m에서의 게이지 압력(대기압을 뺀 압력)은 몇 kPa일까요? $g = 9.81$ m/s²를 쓰세요.",
+      "answer": 201.1,
+      "tol": 0.02,
+      "unit": "kPa",
+      "explain": "$p = \\rho g h = 1025\\times 9.81\\times 20 = 201{,}105$ Pa $\\approx 201.1$ kPa예요."
+    },
+    {
+      "type": "mc",
+      "q": "According to the reading, why must a balloon that reaches thirty kilometers be very large?",
+      "choices": [
+        "The thin air makes each cubic meter of helium lift much less.",
+        "The helium becomes heavier at high altitude.",
+        "The pressure outside becomes larger.",
+        "The balloon must carry engines and a rudder."
+      ],
+      "answer": 0,
+      "explain": "지문에서 올라갈수록 공기가 희박해져 헬륨 1 m³가 들어 올리는 힘이 점점 작아진다고 했어요. 그래서 같은 짐을 띄우려면 매우 큰 풍선이 필요해요."
+    }
+  ],
+  "test": [
+    {
+      "type": "num",
+      "q": "해면에서 부피 200 m³인 헬륨 기구가 있어요. 공기 밀도 1.225 kg/m³, 헬륨 밀도 0.1786 kg/m³이고 외피와 장비의 질량이 합쳐 100 kg일 때, 추가로 실을 수 있는 짐은 몇 kg일까요?",
+      "answer": 109.3,
+      "tol": 0.02,
+      "unit": "kg",
+      "explain": "총 양력은 $200\\times(1.225-0.1786)=209.28$ kg이에요. 여기서 외피·장비 100 kg을 빼면 약 109.3 kg이에요."
+    },
+    {
+      "type": "mc",
+      "q": "열기구가 헬륨 기구보다 같은 짐을 띄우는 데 더 큰 외피가 필요한 가장 큰 이유는?",
+      "choices": [
+        "가열한 공기는 헬륨보다 밀도가 높아 1 m³당 양력이 더 작기 때문이다.",
+        "가열한 공기는 헬륨보다 훨씬 무겁기 때문이다.",
+        "열기구에는 부력이 작용하지 않기 때문이다.",
+        "열기구는 압력이 없는 곳에서 날기 때문이다."
+      ],
+      "answer": 0,
+      "explain": "100 °C 공기의 밀도는 약 0.946 kg/m³로 헬륨(0.179)보다 커서 1 m³당 양력이 약 0.28 kg에 그쳐요. 같은 짐을 띄우려면 부피가 더 커야 해요."
+    },
+    {
+      "type": "ox",
+      "q": "해면에서 헬륨 풍선이 30 km까지 올라가는 동안, 같은 짐을 띄우는 데 필요한 풍선의 부피는 점점 커진다.",
+      "answer": true,
+      "explain": "올라갈수록 공기 밀도가 줄어 1 m³당 양력이 작아져요. 30 km에서는 해면의 약 66배의 부피가 필요해요."
+    }
+  ],
+  "further": [
+    {
+      "title": "Wikipedia — Buoyancy",
+      "url": "https://en.wikipedia.org/wiki/Buoyancy",
+      "lang": "en"
+    },
+    {
+      "title": "Wikipedia — Archimedes' principle",
+      "url": "https://en.wikipedia.org/wiki/Archimedes%27_principle",
+      "lang": "en"
+    }
+  ]
+}
