@@ -1,0 +1,172 @@
+{
+  "day": 23,
+  "title": "연속 방정식",
+  "title_en": "The Continuity Equation",
+  "level": 2,
+  "minutes": 20,
+  "summary": "유관 안에서 질량이 보존된다는 사실로 ρAV = 일정을 이끌어 내고, 비압축성 가정이 통하는 조건을 마하수로 알아봐요.",
+  "objectives": [
+    "유선과 유관의 의미를 설명할 수 있다.",
+    "연속 방정식으로 단면적 변화에 따른 속도를 계산할 수 있다.",
+    "비압축성 가정이 타당한 조건을 마하수로 판단할 수 있다."
+  ],
+  "vocab": [
+    {
+      "en": "continuity equation",
+      "pron": "ˌkɒntɪˈnjuːəti ɪˈkweɪʒən",
+      "pos": "n.",
+      "ko": "연속 방정식",
+      "def": "An equation stating that mass is neither created nor destroyed in a flow.",
+      "ex": "The continuity equation tells us the air speeds up in a narrow duct.",
+      "ex_ko": "연속 방정식은 좁은 덕트에서 공기가 빨라진다는 것을 알려 준다."
+    },
+    {
+      "en": "streamline",
+      "pron": "ˈstriːmlaɪn",
+      "pos": "n.",
+      "ko": "유선",
+      "def": "A line whose tangent at every point shows the direction of the flow.",
+      "ex": "Smoke in a wind tunnel makes each streamline visible.",
+      "ex_ko": "풍동 속의 연기는 각 유선을 눈에 보이게 한다."
+    },
+    {
+      "en": "streamtube",
+      "pron": "ˈstriːmtjuːb",
+      "pos": "n.",
+      "ko": "유관",
+      "def": "A tube-shaped bundle of streamlines through whose sides no fluid passes.",
+      "ex": "We can treat a streamtube like an invisible pipe.",
+      "ex_ko": "유관은 보이지 않는 파이프처럼 다룰 수 있다."
+    },
+    {
+      "en": "steady flow",
+      "pron": "ˈstedi fləʊ",
+      "pos": "n.",
+      "ko": "정상 유동",
+      "def": "A flow whose properties at each point do not change with time.",
+      "ex": "In steady flow, a particle follows the same path as the one before it.",
+      "ex_ko": "정상 유동에서는 입자가 앞선 입자와 같은 경로를 따른다."
+    },
+    {
+      "en": "mass flow rate",
+      "pron": "mæs fləʊ reɪt",
+      "pos": "n.",
+      "ko": "질량 유량",
+      "def": "The mass of fluid passing a section each second.",
+      "ex": "The engine swallows about sixty kilograms of air per second, so its mass flow rate is large.",
+      "ex_ko": "그 엔진은 초당 약 60 kg의 공기를 삼키므로 질량 유량이 크다."
+    },
+    {
+      "en": "incompressible",
+      "pron": "ˌɪnkəmˈpresəbl",
+      "pos": "adj.",
+      "ko": "비압축성의",
+      "def": "Having a density that stays practically constant.",
+      "ex": "Water is nearly incompressible, so its density hardly changes.",
+      "ex_ko": "물은 거의 압축되지 않아서 밀도가 거의 변하지 않는다."
+    },
+    {
+      "en": "Mach number",
+      "pron": "mɑːk ˈnʌmbə",
+      "pos": "n.",
+      "ko": "마하수",
+      "def": "The ratio of a speed to the speed of sound.",
+      "ex": "At a Mach number of 0.85, an airliner flies just below the speed of sound.",
+      "ex_ko": "마하수 0.85에서 여객기는 음속보다 약간 낮은 속도로 난다."
+    },
+    {
+      "en": "wind tunnel",
+      "pron": "wɪnd ˈtʌnl",
+      "pos": "n.",
+      "ko": "풍동",
+      "def": "A device that blows air past a model to study how air flows around it.",
+      "ex": "Engineers tested the wing model in a wind tunnel.",
+      "ex_ko": "엔지니어들은 풍동에서 날개 모형을 시험했다."
+    }
+  ],
+  "reading": {
+    "title": "Why Air Speeds Up in Narrow Places",
+    "en": "Anyone who has pinched a garden hose knows the effect: the water leaves faster. The explanation is the continuity equation, which says that mass cannot disappear inside a flow. In steady flow, the same mass must pass every section of a pipe each second. If the section becomes narrower, the fluid has to move faster to keep the same mass flow rate.\n\nEngineers picture a complicated flow as a bundle of streamlines. When these lines are collected into a streamtube, nothing crosses its sides, so the tube behaves like an invisible pipe. This simple idea makes it possible to analyze the air in a wind tunnel, an engine inlet, or a nozzle.\n\nThere is one important condition. For water, the density hardly changes, so we may call it incompressible. For air, the same assumption is acceptable only when the Mach number is below about 0.3. A wind-tunnel test at eighty meters per second is safe, but an airliner at cruise speed is not, because its air is compressed noticeably. In that case, the density must stay inside the equation, and the calculation becomes more demanding.",
+    "ko": "정원 호스를 눌러 본 사람이라면 그 효과를 알 거예요. 물이 더 빠르게 나가요. 설명은 연속 방정식이에요. 이 식은 흐름 속에서 질량이 사라질 수 없다고 말해요. 정상 유동에서는 파이프의 모든 단면을 매초 같은 질량이 지나가야 해요. 단면이 좁아지면 같은 질량 유량을 유지하기 위해 유체가 더 빨리 움직여야 해요.\n\n엔지니어는 복잡한 흐름을 유선 다발로 그려 봐요. 이 선들을 모아 유관을 만들면 그 옆면으로는 아무것도 지나가지 않아서, 유관은 보이지 않는 파이프처럼 행동해요. 이 단순한 생각 덕분에 풍동, 엔진 흡입구, 노즐 속 공기를 분석할 수 있어요.\n\n중요한 조건이 하나 있어요. 물은 밀도가 거의 변하지 않아서 비압축성이라고 부를 수 있어요. 공기에서는 마하수가 약 0.3보다 작을 때만 같은 가정이 받아들여져요. 초속 80 m의 풍동 시험은 안전하지만, 순항 속도의 여객기는 공기가 눈에 띄게 압축되므로 그렇지 않아요. 그런 경우에는 밀도를 식 안에 남겨 두어야 하고, 계산이 더 까다로워져요."
+  },
+  "quiz": [
+    {
+      "type": "mc",
+      "q": "밀도가 일정한 정상 유동에서 유관의 단면적이 절반으로 줄면 속도는 어떻게 될까요?",
+      "choices": [
+        "절반이 된다.",
+        "변하지 않는다.",
+        "두 배가 된다.",
+        "네 배가 된다."
+      ],
+      "answer": 2,
+      "explain": "$A_1V_1=A_2V_2$에서 $A_2=A_1/2$이면 $V_2=2V_1$이에요."
+    },
+    {
+      "type": "ox",
+      "q": "정상 유동에서 유체는 유관의 옆면을 통해 드나들 수 있다.",
+      "answer": false,
+      "explain": "유선은 속도 방향과 나란하므로 유관의 옆면으로는 유체가 지나가지 못해요. 양쪽 끝으로만 드나들어요."
+    },
+    {
+      "type": "num",
+      "q": "지름 2 cm인 호스에서 물이 1.5 m/s로 흘러요. 끝의 노즐 지름이 0.5 cm일 때 노즐 출구 속도는 몇 m/s일까요? (물은 비압축성으로 봐요.)",
+      "answer": 24,
+      "tol": 0.02,
+      "unit": "m/s",
+      "explain": "단면적은 지름의 제곱에 비례하므로 $A_1/A_2=(2/0.5)^2=16$이에요. $V_2=16\\times1.5=24$ m/s예요."
+    },
+    {
+      "type": "mc",
+      "q": "According to the reading, when is it acceptable to treat air as incompressible?",
+      "choices": [
+        "When the Mach number is below about 0.3.",
+        "When the air is hotter than the water.",
+        "When the Mach number is above 1.",
+        "When the pipe has a circular section."
+      ],
+      "answer": 0,
+      "explain": "지문에서 공기에 대해 같은 가정이 받아들여지는 것은 마하수가 약 0.3보다 작을 때라고 했어요."
+    }
+  ],
+  "test": [
+    {
+      "type": "mc",
+      "q": "압축성 공기가 흐르는 덕트에서 단면적이 줄고 밀도가 커졌어요. 비압축성으로 계산한 속도와 비교하면 실제 속도는 어떨까요?",
+      "choices": [
+        "더 작다.",
+        "같다.",
+        "더 크다.",
+        "알 수 없다."
+      ],
+      "answer": 0,
+      "explain": "$V_2=\\dot m/(\\rho_2A_2)$에서 $\\rho_2$가 커졌으므로 $V_2$는 밀도가 같다고 본 값보다 작아요."
+    },
+    {
+      "type": "ox",
+      "q": "해면 높이에서 속도 200 m/s의 공기 흐름은 마하수가 0.3보다 크므로 압축성을 고려하는 것이 좋다.",
+      "answer": true,
+      "explain": "음속이 약 340 m/s이므로 $M=200/340\\approx0.59>0.3$이에요."
+    },
+    {
+      "type": "num",
+      "q": "유량이 0.05 m³/s인 물이 지름 20 cm인 둥근 파이프를 흘러요. 파이프 속 물의 속도는 몇 m/s일까요? (소수 둘째 자리까지)",
+      "answer": 1.59,
+      "tol": 0.02,
+      "unit": "m/s",
+      "explain": "$A=\\pi(0.1)^2=0.0314$ m²이고 $V=Q/A=0.05/0.0314\\approx1.59$ m/s예요."
+    }
+  ],
+  "further": [
+    {
+      "title": "NASA Glenn — Conservation of Mass",
+      "url": "https://www.grc.nasa.gov/www/k-12/airplane/mass.html",
+      "lang": "en"
+    },
+    {
+      "title": "Wikipedia — Continuity equation",
+      "url": "https://en.wikipedia.org/wiki/Continuity_equation",
+      "lang": "en"
+    }
+  ]
+}
