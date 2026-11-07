@@ -1,0 +1,177 @@
+{
+  "day": 24,
+  "title": "베르누이 방정식",
+  "title_en": "Bernoulli's Equation",
+  "level": 2,
+  "minutes": 20,
+  "summary": "에너지 보존에서 나온 베르누이 방정식으로 정압·동압·전압을 구분하고, 피토관이 대기속도를 재는 원리와 흔한 오해를 알아봐요.",
+  "objectives": [
+    "정압, 동압, 전압의 의미를 구분할 수 있다.",
+    "피토관의 압력 차로 대기속도를 계산할 수 있다.",
+    "베르누이 방정식의 적용 조건과 흔한 오해를 설명할 수 있다."
+  ],
+  "vocab": [
+    {
+      "en": "static pressure",
+      "pron": "ˈstætɪk ˈpreʃə",
+      "pos": "n.",
+      "ko": "정압",
+      "def": "The pressure felt by a fluid that moves along with the flow.",
+      "ex": "A barometer measures the static pressure of the air.",
+      "ex_ko": "기압계는 공기의 정압을 잰다."
+    },
+    {
+      "en": "dynamic pressure",
+      "pron": "daɪˈnæmɪk ˈpreʃə",
+      "pos": "n.",
+      "ko": "동압",
+      "def": "The pressure equal to half the density times the speed squared.",
+      "ex": "Dynamic pressure grows with the square of the airspeed.",
+      "ex_ko": "동압은 대기속도의 제곱에 비례해 커진다."
+    },
+    {
+      "en": "total pressure",
+      "pron": "ˈtəʊtl ˈpreʃə",
+      "pos": "n.",
+      "ko": "전압",
+      "def": "The sum of static pressure and dynamic pressure.",
+      "ex": "The pitot tube senses the total pressure at its tip.",
+      "ex_ko": "피토관은 끝에서 전압을 감지한다."
+    },
+    {
+      "en": "stagnation point",
+      "pron": "stægˈneɪʃn pɔɪnt",
+      "pos": "n.",
+      "ko": "정체점",
+      "def": "A point in a flow where the fluid speed becomes zero.",
+      "ex": "At the stagnation point, the air stops completely.",
+      "ex_ko": "정체점에서 공기는 완전히 멈춘다."
+    },
+    {
+      "en": "pitot tube",
+      "pron": "ˈpiːtəʊ tjuːb",
+      "pos": "n.",
+      "ko": "피토관",
+      "def": "A small tube that measures airspeed from a pressure difference.",
+      "ex": "Ice can block a pitot tube and give a false speed.",
+      "ex_ko": "얼음이 피토관을 막아 잘못된 속도를 줄 수 있다."
+    },
+    {
+      "en": "airspeed",
+      "pron": "ˈeəspiːd",
+      "pos": "n.",
+      "ko": "대기속도",
+      "def": "The speed of an aircraft relative to the air around it.",
+      "ex": "The pilot checked the airspeed before landing.",
+      "ex_ko": "조종사는 착륙 전에 대기속도를 확인했다."
+    },
+    {
+      "en": "venturi",
+      "pron": "venˈtjʊəri",
+      "pos": "n.",
+      "ko": "벤츄리 관",
+      "def": "A tube with a narrow middle section where the flow speeds up.",
+      "ex": "The pressure drops in the narrow part of a venturi.",
+      "ex_ko": "벤츄리 관의 좁은 부분에서 압력이 떨어진다."
+    },
+    {
+      "en": "misconception",
+      "pron": "ˌmɪskənˈsepʃn",
+      "pos": "n.",
+      "ko": "오개념",
+      "def": "A wrong idea that many people believe is true.",
+      "ex": "The equal-transit-time story is a common misconception.",
+      "ex_ko": "동시 도착 이야기는 흔한 오개념이다."
+    }
+  ],
+  "reading": {
+    "title": "How Does an Airplane Measure Its Speed?",
+    "en": "Every airplane needs to know how fast it moves through the air. The simplest instrument for this job is the pitot tube, a small open tube that points into the wind. Air entering the tube slows down and finally stops at the stagnation point, where all of its motion has turned into extra pressure. This is the total pressure. A second sensor on the side of the aircraft measures only the static pressure of the surrounding air. The difference between the two is the dynamic pressure, and it grows with the square of the airspeed.\n\nPilots trust this reading, but it can fail. Ice may block the tube, and then the instrument shows a wrong speed. For that reason, most modern aircraft carry several pitot tubes and heat them with electricity.\n\nA popular misconception says that air must travel faster over the top of a wing because the path is longer and the air has to catch up. In fact, no such rule exists. Bernoulli's equation only links speed and pressure along one streamline. It does not explain why the flow speeds up in the first place.",
+    "ko": "모든 비행기는 공기 속을 얼마나 빠르게 움직이는지 알아야 해요. 이 일을 위한 가장 단순한 계기는 바람 쪽을 향한 작은 열린 관인 피토관이에요. 관에 들어온 공기는 느려지다가 정체점에서 마침내 멈추고, 그곳에서 공기의 운동은 모두 추가적인 압력으로 바뀌어요. 이것이 전압이에요. 기체 옆면의 두 번째 센서는 주변 공기의 정압만 재요. 둘의 차이가 동압이며, 동압은 대기속도의 제곱에 비례해 커져요.\n\n조종사들은 이 값을 믿지만 고장 날 수도 있어요. 얼음이 관을 막으면 계기가 틀린 속도를 보여 주죠. 그래서 대부분의 현대 항공기는 피토관을 여러 개 달고 전기로 가열해요.\n\n널리 퍼진 오개념은 날개 윗면의 경로가 더 길어서 공기가 따라잡아야 하므로 더 빠르게 흘러야 한다고 말해요. 하지만 그런 규칙은 없어요. 베르누이 방정식은 한 유선을 따라 속도와 압력을 연결할 뿐, 애초에 흐름이 왜 빨라지는지는 설명하지 않아요."
+  },
+  "quiz": [
+    {
+      "type": "mc",
+      "q": "비점성·비압축성 정상 유동의 한 유선에서 속도가 빨라지는 곳의 정압은 어떻게 될까요? (높이 변화는 무시해요.)",
+      "choices": [
+        "커진다.",
+        "작아진다.",
+        "변하지 않는다.",
+        "속도와 상관없다."
+      ],
+      "answer": 1,
+      "explain": "$p+\\tfrac12\\rho V^2$가 일정하므로 $V$가 커지면 동압이 커지고 정압 $p$는 작아져요."
+    },
+    {
+      "type": "ox",
+      "q": "피토관의 앞쪽 구멍(정체점)에서 느끼는 압력은 정압과 같다.",
+      "answer": false,
+      "explain": "정체점에서는 속도가 0이 되어 동압이 압력으로 바뀌므로 전압 $p_0=p+\\tfrac12\\rho V^2$를 느껴요. 정압은 옆구멍이 재요."
+    },
+    {
+      "type": "num",
+      "q": "해면 높이(공기 밀도 1.225 kg/m³)에서 피토관이 전압과 정압의 차이로 2450 Pa을 가리켜요. 대기속도는 몇 m/s일까요? (소수 첫째 자리까지)",
+      "answer": 63.2,
+      "tol": 0.02,
+      "unit": "m/s",
+      "explain": "$V=\\sqrt{2\\times2450/1.225}=\\sqrt{4000}\\approx63.2$ m/s예요."
+    },
+    {
+      "type": "mc",
+      "q": "According to the reading, what does Bernoulli's equation NOT explain?",
+      "choices": [
+        "How speed and pressure are linked along a streamline.",
+        "Why the flow speeds up over the top of a wing in the first place.",
+        "How the dynamic pressure changes with airspeed.",
+        "How a pitot tube measures the total pressure."
+      ],
+      "answer": 1,
+      "explain": "지문 마지막 문장에서 베르누이 방정식은 흐름이 애초에 왜 빨라지는지는 설명하지 않는다고 했어요."
+    }
+  ],
+  "test": [
+    {
+      "type": "mc",
+      "q": "항공기의 대기속도를 두 배로 올리면 동압은 몇 배가 될까요?",
+      "choices": [
+        "2배",
+        "4배",
+        "8배",
+        "변하지 않는다."
+      ],
+      "answer": 1,
+      "explain": "$q=\\tfrac12\\rho V^2$이므로 $V$가 2배면 $q$는 $2^2=4$배예요."
+    },
+    {
+      "type": "ox",
+      "q": "베르누이 방정식은 서로 다른 유선 위의 두 점에도 항상 그대로 적용된다.",
+      "answer": false,
+      "explain": "기본 형태는 같은 유선 위의 두 점을 비교할 때 쓰는 식이에요. 조건을 따로 확인하지 않고 다른 유선에 적용하면 안 돼요."
+    },
+    {
+      "type": "num",
+      "q": "해면 높이(공기 밀도 1.225 kg/m³)에서 한 유선을 따라 공기 속도가 50 m/s에서 70 m/s로 빨라졌어요. 높이 변화는 무시할 때 정압은 몇 Pa 줄어들까요? (숫자만 입력)",
+      "answer": 1470,
+      "tol": 0.02,
+      "unit": "Pa",
+      "explain": "$\\Delta p=\\tfrac12\\rho(V_2^2-V_1^2)=\\tfrac12\\times1.225\\times(4900-2500)=1470$ Pa예요."
+    }
+  ],
+  "further": [
+    {
+      "title": "NASA Glenn — Bernoulli's Equation",
+      "url": "https://www.grc.nasa.gov/www/k-12/airplane/bern.html",
+      "lang": "en"
+    },
+    {
+      "title": "Wikipedia — Pitot tube",
+      "url": "https://en.wikipedia.org/wiki/Pitot_tube",
+      "lang": "en"
+    },
+    {
+      "title": "Wikipedia — Bernoulli's principle",
+      "url": "https://en.wikipedia.org/wiki/Bernoulli%27s_principle",
+      "lang": "en"
+    }
+  ]
+}
