@@ -1,0 +1,177 @@
+{
+  "day": 25,
+  "title": "점성과 레이놀즈 수",
+  "title_en": "Viscosity and Reynolds Number",
+  "level": 2,
+  "minutes": 20,
+  "summary": "유체의 끈적임인 점성과 관성 대 점성의 비 레이놀즈 수를 배우고, 층류·난류의 차이와 축소 모형 시험의 상사 법칙을 알아봐요.",
+  "objectives": [
+    "점성과 전단 응력의 의미를 설명할 수 있다.",
+    "레이놀즈 수를 계산하고 층류와 난류를 구분할 수 있다.",
+    "상사 법칙으로 모형 시험의 조건을 설명할 수 있다."
+  ],
+  "vocab": [
+    {
+      "en": "viscosity",
+      "pron": "vɪˈskɒsəti",
+      "pos": "n.",
+      "ko": "점성",
+      "def": "A fluid's resistance to flowing, like the thickness of honey.",
+      "ex": "Honey has a much higher viscosity than water.",
+      "ex_ko": "꿀은 물보다 점성이 훨씬 높다."
+    },
+    {
+      "en": "shear stress",
+      "pron": "ʃɪə stres",
+      "pos": "n.",
+      "ko": "전단 응력",
+      "def": "A force per unit area that acts along a surface.",
+      "ex": "Shear stress appears when one layer of fluid slides over another.",
+      "ex_ko": "유체의 한 층이 다른 층 위를 미끄러질 때 전단 응력이 생긴다."
+    },
+    {
+      "en": "Reynolds number",
+      "pron": "ˈrenəldz ˈnʌmbə",
+      "pos": "n.",
+      "ko": "레이놀즈 수",
+      "def": "A number that compares inertial forces with viscous forces in a flow.",
+      "ex": "A large Reynolds number often means the flow is turbulent.",
+      "ex_ko": "레이놀즈 수가 크면 흔히 흐름이 난류라는 뜻이다."
+    },
+    {
+      "en": "laminar",
+      "pron": "ˈlæmɪnə",
+      "pos": "adj.",
+      "ko": "층류의",
+      "def": "Describing a smooth flow in which layers slide past each other.",
+      "ex": "The smoke rose in a laminar stream before it broke up.",
+      "ex_ko": "연기는 흩어지기 전에 층류로 올라갔다."
+    },
+    {
+      "en": "turbulent",
+      "pron": "ˈtɜːbjələnt",
+      "pos": "adj.",
+      "ko": "난류의",
+      "def": "Describing a flow that is irregular and full of swirling motion.",
+      "ex": "The flow behind the truck is turbulent.",
+      "ex_ko": "트럭 뒤의 흐름은 난류이다."
+    },
+    {
+      "en": "eddy",
+      "pron": "ˈedi",
+      "pos": "n.",
+      "ko": "소용돌이",
+      "def": "A small swirling motion of fluid inside a flow.",
+      "ex": "Eddies form behind a stone in a fast river.",
+      "ex_ko": "빠른 강에서는 돌 뒤에 소용돌이가 생긴다."
+    },
+    {
+      "en": "similarity",
+      "pron": "ˌsɪməˈlærəti",
+      "pos": "n.",
+      "ko": "상사",
+      "def": "The condition in which two flows behave the same in dimensionless form.",
+      "ex": "Similarity lets engineers apply model results to a real aircraft.",
+      "ex_ko": "상사 덕분에 엔지니어들은 모형 결과를 실제 항공기에 적용할 수 있다."
+    },
+    {
+      "en": "scale model",
+      "pron": "skeɪl ˈmɒdl",
+      "pos": "n.",
+      "ko": "축소 모형",
+      "def": "A smaller copy of an object with the same shape.",
+      "ex": "The team tested a scale model of the wing in a wind tunnel.",
+      "ex_ko": "팀은 풍동에서 날개의 축소 모형을 시험했다."
+    }
+  ],
+  "reading": {
+    "title": "Why Do Engineers Test Small Models?",
+    "en": "Building a full-size aircraft just to test an idea would be very expensive, so engineers often use a scale model in a wind tunnel. But a small wing moving slowly does not behave like a large wing moving fast. The key quantity is the Reynolds number, which compares the inertial forces of the air with its viscosity. When two flows have the same shape and the same Reynolds number, we say that they show similarity, and results from one can be applied to the other.\n\nThe Reynolds number also predicts the character of the flow. At a low value the flow is laminar, with smooth layers sliding past each other. At a high value it becomes turbulent, full of eddies that mix the air. Turbulent flow usually creates more friction, but it can also help the air stay attached to a surface.\n\nThe difficulty is that a model is smaller, so its Reynolds number is usually lower. To make up for this, engineers may compress the air or cool it to very low temperatures. Both changes increase the Reynolds number without raising the speed to a dangerous level.",
+    "ko": "아이디어 하나를 시험하려고 실물 크기의 항공기를 만드는 것은 너무 비싸서, 엔지니어들은 흔히 풍동에서 축소 모형을 써요. 하지만 작은 날개가 느리게 움직이는 것은 큰 날개가 빠르게 움직이는 것과 다르게 행동해요. 핵심 양은 레이놀즈 수로, 공기의 관성력과 점성을 비교해요. 두 흐름의 형상과 레이놀즈 수가 같으면 상사가 성립한다고 하며, 한쪽의 결과를 다른 쪽에 적용할 수 있어요.\n\n레이놀즈 수는 흐름의 성격도 예측해요. 값이 낮으면 흐름은 층들이 매끄럽게 미끄러지는 층류예요. 값이 높으면 공기를 섞는 소용돌이로 가득한 난류가 돼요. 난류는 보통 마찰을 더 만들지만, 공기가 표면에 붙어 있도록 도울 수도 있어요.\n\n어려운 점은 모형이 더 작아서 레이놀즈 수가 보통 더 낮다는 거예요. 이를 보완하려고 엔지니어들은 공기를 압축하거나 매우 낮은 온도로 식혀요. 두 방법 모두 속도를 위험한 수준까지 올리지 않고도 레이놀즈 수를 키워요."
+  },
+  "quiz": [
+    {
+      "type": "mc",
+      "q": "레이놀즈 수 $\\text{Re}=\\rho VL/\\mu$가 나타내는 것은 무엇일까요?",
+      "choices": [
+        "중력과 압력의 비",
+        "관성력과 점성력의 비",
+        "양력과 항력의 비",
+        "속도와 음속의 비"
+      ],
+      "answer": 1,
+      "explain": "분자 $\\rho VL$은 관성 효과, 분모 $\\mu$는 점성 효과를 대표해서 관성력 대 점성력의 비예요. 속도와 음속의 비는 마하수예요."
+    },
+    {
+      "type": "ox",
+      "q": "공기는 온도가 올라가면 점성 계수가 작아진다.",
+      "answer": false,
+      "explain": "기체는 온도가 올라가면 점성이 커져요. 액체(꿀, 기름)가 온도가 오를 때 점성이 줄어드는 것과 반대예요."
+    },
+    {
+      "type": "num",
+      "q": "해면 높이 공기($\\rho=1.225$ kg/m³, $\\mu=1.79\\times10^{-5}$ Pa·s)에서 지름 0.043 m 골프공이 40 m/s로 날아요. 레이놀즈 수를 구하세요. (정수로 입력)",
+      "answer": 117700,
+      "tol": 0.02,
+      "unit": "",
+      "explain": "$\\text{Re}=\\frac{1.225\\times40\\times0.043}{1.79\\times10^{-5}}\\approx1.18\\times10^5$ 이에요. 즉 약 117,700이에요."
+    },
+    {
+      "type": "mc",
+      "q": "According to the reading, why do engineers sometimes compress or cool the air in a wind tunnel?",
+      "choices": [
+        "To make the model look larger.",
+        "To increase the Reynolds number without raising the speed too much.",
+        "To make the flow turn from turbulent to laminar.",
+        "To reduce the cost of the model."
+      ],
+      "answer": 1,
+      "explain": "지문 마지막 문장에서 공기를 압축하거나 냉각하면 속도를 위험한 수준까지 올리지 않고 레이놀즈 수를 키울 수 있다고 했어요."
+    }
+  ],
+  "test": [
+    {
+      "type": "mc",
+      "q": "같은 공기에서 물체의 크기를 2배로 키우고 속도는 그대로 두면 레이놀즈 수는 어떻게 될까요?",
+      "choices": [
+        "절반이 된다.",
+        "변하지 않는다.",
+        "2배가 된다.",
+        "4배가 된다."
+      ],
+      "answer": 2,
+      "explain": "$\\text{Re}\\propto L$이고 다른 값은 그대로이므로 $L$이 2배면 Re도 2배예요."
+    },
+    {
+      "type": "ox",
+      "q": "형상이 같은 모형과 실물에서 레이놀즈 수가 같으면 흐름은 무차원 형태로 상사이다.",
+      "answer": true,
+      "explain": "형상과 레이놀즈 수(필요한 경우 마하수 등)가 같으면 두 흐름은 무차원 형태로 같아져서 모형 결과를 실물에 쓸 수 있어요."
+    },
+    {
+      "type": "num",
+      "q": "해면 높이 공기($\\rho=1.225$ kg/m³, $\\mu=1.79\\times10^{-5}$ Pa·s)에서 시위 길이 0.2 m의 드론 날개가 10 m/s로 날아요. 레이놀즈 수는 얼마일까요? (정수로 입력)",
+      "answer": 136900,
+      "tol": 0.02,
+      "unit": "",
+      "explain": "$\\text{Re}=\\frac{1.225\\times10\\times0.2}{1.79\\times10^{-5}}\\approx1.37\\times10^5$ 이에요. 약 136,900이에요."
+    }
+  ],
+  "further": [
+    {
+      "title": "Wikipedia — Laminar flow",
+      "url": "https://en.wikipedia.org/wiki/Laminar_flow",
+      "lang": "en"
+    },
+    {
+      "title": "Wikipedia — Reynolds number",
+      "url": "https://en.wikipedia.org/wiki/Reynolds_number",
+      "lang": "en"
+    },
+    {
+      "title": "Wikipedia — Viscosity",
+      "url": "https://en.wikipedia.org/wiki/Viscosity",
+      "lang": "en"
+    }
+  ]
+}
