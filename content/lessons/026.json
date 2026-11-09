@@ -1,0 +1,40 @@
+{
+  "day": 26,
+  "title": "경계층과 유동 박리",
+  "title_en": "Boundary Layers and Flow Separation",
+  "level": 3,
+  "minutes": 20,
+  "summary": "표면에서 공기가 멈추는 이유와 얇은 경계층의 정체, 그리고 흐름이 표면에서 떨어져 나가 실속과 항력을 만드는 과정을 골프공 딤플까지 연결해 배워요.",
+  "objectives": ["점착 조건과 경계층의 의미를 설명할 수 있다.", "층류 경계층 두께를 $\\delta\\approx5x/\\sqrt{\\text{Re}_x}$로 계산할 수 있다.", "역압력 구배가 유동 박리와 실속, 항력 증가를 일으키는 과정을 설명할 수 있다."],
+  "vocab": [
+    {"en": "boundary layer", "pron": "ˈbaʊndri ˈleɪər", "pos": "n.", "ko": "경계층", "def": "The thin layer of fluid next to a surface where the speed changes from zero to the free-stream value.", "ex": "The boundary layer on a wing is only a few millimeters thick.", "ex_ko": "날개 위 경계층은 두께가 몇 밀리미터에 불과하다."},
+    {"en": "no-slip condition", "pron": "noʊ slɪp kənˈdɪʃən", "pos": "n.", "ko": "점착 조건", "def": "The rule that fluid touching a solid surface moves with that surface.", "ex": "Because of the no-slip condition, the air touching the wing has zero relative speed.", "ex_ko": "점착 조건 때문에 날개에 닿은 공기의 상대 속도는 0이다."},
+    {"en": "skin friction", "pron": "skɪn ˈfrɪkʃən", "pos": "n.", "ko": "표면 마찰", "def": "The drag caused by the fluid rubbing along a surface.", "ex": "A smooth coating can reduce skin friction on an airplane.", "ex_ko": "매끈한 코팅은 비행기의 표면 마찰을 줄일 수 있다."},
+    {"en": "adverse pressure gradient", "pron": "ˈædvɜːrs ˈpreʃər ˈɡreɪdiənt", "pos": "n.", "ko": "역압력 구배", "def": "A pressure that rises in the direction of the flow, which slows the fluid.", "ex": "An adverse pressure gradient behind the thickest point of a wing can stop the air near the surface.", "ex_ko": "날개의 최대 두께 뒤쪽의 역압력 구배는 표면 근처 공기를 멈추게 할 수 있다."},
+    {"en": "detach", "pron": "dɪˈtætʃ", "pos": "v.", "ko": "떨어지다, 박리하다", "def": "To come away from something it was joined to.", "ex": "At a high angle of attack, the flow can detach from the upper surface.", "ex_ko": "받음각이 크면 흐름이 윗면에서 떨어져 나갈 수 있다."},
+    {"en": "wake", "pron": "weɪk", "pos": "n.", "ko": "후류", "def": "The disturbed, slow, swirling flow left behind a moving object.", "ex": "A large wake behind a ball means high drag.", "ex_ko": "공 뒤의 큰 후류는 높은 항력을 뜻한다."},
+    {"en": "stall", "pron": "stɔːl", "pos": "n. / v.", "ko": "실속(하다)", "def": "A sudden loss of lift when the flow over a wing separates.", "ex": "The pilot lowered the nose to recover from the stall.", "ex_ko": "조종사는 실속에서 회복하려고 기수를 내렸다."},
+    {"en": "dimple", "pron": "ˈdɪmpəl", "pos": "n.", "ko": "딤플, 보조개 모양 홈", "def": "A small round hollow in a surface.", "ex": "Each dimple on a golf ball helps the flow stay attached longer.", "ex_ko": "골프공의 딤플 하나하나가 흐름이 더 오래 붙어 있게 돕는다."}
+  ],
+  "reading": {
+    "title": "Why Golf Balls Have Dimples",
+    "en": "When a smooth ball flies through the air, the thin boundary layer on its surface is smooth and orderly. Unfortunately, this kind of layer has little energy. As the air moves around the curved back of the ball, it meets an adverse pressure gradient and cannot keep going. The flow detaches early, and a wide wake forms behind the ball. The low pressure inside this wake pulls the ball backward, so the drag is large.\n\nThe dimples on a golf ball solve this problem in a surprising way. They stir the boundary layer and make it turbulent. A turbulent layer mixes fast air from outside into the slow air near the surface, which gives it more energy. As a result, the air can follow the ball farther around its back before it detaches. The wake becomes narrower, and the drag drops sharply.\n\nSkin friction is actually higher in a turbulent layer, but for a blunt shape like a ball, the gain from a smaller wake is far larger than the loss. Designers of aircraft wings use the same idea. Small vortex generators on the upper surface help delay stall at high angles of attack.",
+    "ko": "매끈한 공이 공기 중을 날아갈 때, 표면의 얇은 경계층은 매끄럽고 규칙적이에요. 그런데 이런 층은 에너지가 적어요. 공기가 공의 곡면 뒤쪽을 돌아 나갈 때 역압력 구배를 만나면 더 나아가지 못해요. 흐름은 일찍 떨어져 나가고, 공 뒤에는 넓은 후류가 생겨요. 이 후류 속의 낮은 압력이 공을 뒤로 끌어당기므로 항력이 커요.\n\n골프공의 딤플은 놀라운 방식으로 이 문제를 풀어요. 딤플은 경계층을 휘저어서 난류로 만들어요. 난류 경계층은 바깥의 빠른 공기를 표면 근처의 느린 공기에 섞어서 에너지를 더 줘요. 그 결과 공기는 공의 뒤쪽을 더 멀리까지 따라가고 나서야 떨어져 나가요. 후류가 좁아지고 항력은 크게 줄어요.\n\n사실 표면 마찰은 난류 경계층에서 더 커요. 하지만 공처럼 뭉툭한 형상에서는 후류가 작아져서 얻는 이득이 손실보다 훨씬 커요. 항공기 날개 설계자도 같은 아이디어를 써요. 윗면의 작은 와류 발생기는 큰 받음각에서 실속을 늦춰 줘요."
+  },
+  "quiz": [
+    {"type": "mc", "q": "점착 조건(no-slip condition)이 말하는 것은 무엇일까요?", "choices": ["고체 표면에 닿은 유체의 표면에 대한 상대 속도는 0이다.", "유체는 압축되지 않는다.", "표면 위의 압력은 항상 일정하다.", "유체는 마찰 없이 미끄러진다."], "answer": 0, "explain": "점성 때문에 표면에 닿은 유체는 표면과 같이 움직여요. 그래서 표면에서 속도가 0이고 바깥으로 갈수록 커지는 경계층이 생겨요."},
+    {"type": "ox", "q": "경계층 바깥에서도 점성 효과가 가장 중요해서 베르누이 방정식을 쓸 수 없다.", "answer": false, "explain": "점성 효과는 얇은 경계층 안에 집중되어 있어요. 바깥 영역은 점성을 거의 무시할 수 있어서 베르누이 방정식을 쓸 수 있어요."},
+    {"type": "num", "q": "매끈한 평판이 15 m/s 바람 속에 있어요. 앞전에서 0.4 m 지점의 층류 경계층 두께를 $\\delta\\approx5x/\\sqrt{\\text{Re}_x}$로 구하세요. 동점성 계수 $\\nu=1.46\\times10^{-5}\\ \\text{m}^2/\\text{s}$예요.", "answer": 3.12, "tol": 0.02, "unit": "mm", "explain": "$\\text{Re}_x=15\\times0.4/(1.46\\times10^{-5})\\approx4.11\\times10^{5}$이에요. $\\delta=5\\times0.4/\\sqrt{4.11\\times10^{5}}\\approx3.12\\times10^{-3}\\ \\text{m}=3.12\\ \\text{mm}$예요."},
+    {"type": "mc", "q": "According to the reading, why does a turbulent boundary layer help a golf ball?", "choices": ["It removes skin friction completely.", "It lets the air follow the ball farther before it detaches, so the wake is narrower.", "It makes the ball heavier.", "It keeps the boundary layer laminar."], "answer": 1, "explain": "지문에서 난류 경계층은 에너지가 많아 공기가 공의 뒤쪽까지 따라가고, 후류가 좁아져 항력이 줄어든다고 했어요. 표면 마찰은 오히려 커진다고 했으니 첫째 보기는 틀려요."}
+  ],
+  "test": [
+    {"type": "num", "q": "매끈한 평판 위 경계층이 $\\text{Re}_x=5\\times10^{5}$에서 난류로 바뀐다고 해요. 풍속이 25 m/s, $\\nu=1.46\\times10^{-5}\\ \\text{m}^2/\\text{s}$일 때 앞전에서 천이가 일어나는 지점까지의 거리는 몇 m일까요?", "answer": 0.292, "tol": 0.02, "unit": "m", "explain": "$x=\\text{Re}_x\\,\\nu/U=5\\times10^{5}\\times1.46\\times10^{-5}/25=0.292\\ \\text{m}$예요."},
+    {"type": "mc", "q": "날개의 받음각을 너무 크게 키우면 양력이 급격히 줄어드는 가장 직접적인 이유는 무엇일까요?", "choices": ["엔진 추력이 줄어서", "윗면의 역압력 구배가 커져 경계층이 박리되어서", "공기 밀도가 높아져서", "점착 조건이 사라져서"], "answer": 1, "explain": "받음각이 크면 윗면의 역압력 구배가 가팔라져 흐름이 박리되고 양력이 급감해요. 이것이 실속이에요."},
+    {"type": "ox", "q": "층류 경계층 두께는 앞전에서 거리가 4배가 되면 약 2배가 된다.", "answer": true, "explain": "$\\delta\\approx5x/\\sqrt{\\text{Re}_x}\\propto\\sqrt{x}$이므로 $x$가 4배면 $\\delta$는 $\\sqrt{4}=2$배예요."}
+  ],
+  "further": [
+    {"title": "Wikipedia — Boundary layer", "url": "https://en.wikipedia.org/wiki/Boundary_layer", "lang": "en"},
+    {"title": "Wikipedia — Flow separation", "url": "https://en.wikipedia.org/wiki/Flow_separation", "lang": "en"},
+    {"title": "Wikipedia — Ludwig Prandtl", "url": "https://en.wikipedia.org/wiki/Ludwig_Prandtl", "lang": "en"}
+  ]
+}
