@@ -1,0 +1,188 @@
+{
+  "day": 28,
+  "title": "에어포일의 해부학",
+  "title_en": "Anatomy of an Airfoil",
+  "level": 3,
+  "minutes": 18,
+  "summary": "날개 단면(에어포일)의 앞전·뒷전·시위선·캠버·두께와 받음각의 정의, NACA 4자리 숫자를 읽는 법을 배워요.",
+  "objectives": [
+    "에어포일의 각 부분 이름과 뜻을 설명할 수 있다.",
+    "캠버와 두께가 날개 성능에 주는 영향을 설명할 수 있다.",
+    "NACA 4자리 번호에서 캠버와 두께를 읽을 수 있다."
+  ],
+  "vocab": [
+    {
+      "en": "airfoil",
+      "pron": "ˈɛrfɔɪl",
+      "pos": "n.",
+      "ko": "에어포일, 날개 단면",
+      "def": "The cross-section shape of a wing, blade, or sail that produces lift.",
+      "ex": "The engineers tested a new airfoil in the wind tunnel.",
+      "ex_ko": "기술자들은 풍동에서 새 에어포일을 시험했다."
+    },
+    {
+      "en": "chord",
+      "pron": "kɔːrd",
+      "pos": "n.",
+      "ko": "시위(길이)",
+      "def": "The straight line distance from the leading edge to the trailing edge of an airfoil.",
+      "ex": "The wing has a chord of two meters at its root.",
+      "ex_ko": "그 날개의 뿌리 부분 시위 길이는 2미터이다."
+    },
+    {
+      "en": "camber",
+      "pron": "ˈkæmbər",
+      "pos": "n.",
+      "ko": "캠버, 날개 단면의 휨",
+      "def": "The curvature of an airfoil's mean line away from its chord line.",
+      "ex": "More camber lets a wing make lift at a small angle of attack.",
+      "ex_ko": "캠버가 크면 작은 받음각에서도 양력을 만들 수 있다."
+    },
+    {
+      "en": "leading edge",
+      "pron": "ˈliːdɪŋ ɛdʒ",
+      "pos": "n.",
+      "ko": "앞전",
+      "def": "The front edge of a wing that first meets the air.",
+      "ex": "Ice on the leading edge can ruin the lift of a wing.",
+      "ex_ko": "앞전에 낀 얼음은 날개의 양력을 망칠 수 있다."
+    },
+    {
+      "en": "trailing edge",
+      "pron": "ˈtreɪlɪŋ ɛdʒ",
+      "pos": "n.",
+      "ko": "뒷전",
+      "def": "The rear edge of a wing where the air leaves the surface.",
+      "ex": "The flaps are mounted along the trailing edge of the wing.",
+      "ex_ko": "플랩은 날개의 뒷전을 따라 달려 있다."
+    },
+    {
+      "en": "thickness",
+      "pron": "ˈθɪknəs",
+      "pos": "n.",
+      "ko": "두께",
+      "def": "The distance between the upper and lower surfaces of an airfoil.",
+      "ex": "A greater thickness leaves more room for fuel inside the wing.",
+      "ex_ko": "두께가 클수록 날개 안에 연료를 넣을 공간이 많다."
+    },
+    {
+      "en": "symmetric",
+      "pron": "sɪˈmɛtrɪk",
+      "pos": "adj.",
+      "ko": "대칭의",
+      "def": "Having the same shape on both sides of a center line.",
+      "ex": "A symmetric airfoil produces no lift at zero angle of attack.",
+      "ex_ko": "대칭 에어포일은 받음각 0도에서 양력이 없다."
+    },
+    {
+      "en": "relative wind",
+      "pron": "ˈrɛlətɪv wɪnd",
+      "pos": "n.",
+      "ko": "상대풍",
+      "def": "The flow of air that an aircraft meets, opposite to its flight path.",
+      "ex": "The angle of attack is measured from the relative wind.",
+      "ex_ko": "받음각은 상대풍을 기준으로 잰다."
+    },
+    {
+      "en": "curvature",
+      "pron": "ˈkɜːrvətʃər",
+      "pos": "n.",
+      "ko": "곡률, 굽은 정도",
+      "def": "The amount by which a line or surface bends away from being straight.",
+      "ex": "The curvature of the upper surface guides the air smoothly.",
+      "ex_ko": "윗면의 곡률은 공기를 부드럽게 안내한다."
+    }
+  ],
+  "reading": {
+    "title": "Why Wings Have Their Shape",
+    "en": "If you cut through an airplane wing, you would see a smooth, curved shape called an airfoil. Its rounded front is the leading edge, and its sharp rear end is the trailing edge. The straight line connecting them is the chord, which engineers use as the basic length of the wing section.\n\nTwo features decide how an airfoil behaves. The first is camber, the curvature of the shape. A wing with camber can produce lift even when it is almost level with the air, while a symmetric airfoil produces none at zero angle of attack. The second is thickness. A thick wing is strong and has room for fuel, but a thin wing makes less drag at high speed.\n\nBecause the relative wind meets the wing at an angle, designers must think about the angle of attack as well. In the 1930s, the American agency NACA tested hundreds of shapes in wind tunnels and gave each a number code. Even today, engineers often begin a new design by choosing one of these famous airfoils.",
+    "ko": "비행기 날개를 잘라 보면 에어포일이라 불리는 매끄럽고 굽은 모양이 보일 거예요. 둥근 앞부분이 앞전이고 뾰족한 뒤쪽 끝이 뒷전이에요. 둘을 잇는 직선이 시위로, 기술자들은 이것을 날개 단면의 기본 길이로 써요.\n\n두 가지 특징이 에어포일의 성질을 결정해요. 첫째는 모양의 굽은 정도인 캠버예요. 캠버가 있는 날개는 공기와 거의 수평일 때도 양력을 만들 수 있지만, 대칭 에어포일은 받음각 0도에서 양력이 전혀 없어요. 둘째는 두께예요. 두꺼운 날개는 튼튼하고 연료를 넣을 공간이 있지만, 얇은 날개는 고속에서 항력이 더 작아요.\n\n상대풍이 날개에 비스듬히 부딪히므로 설계자는 받음각도 함께 생각해야 해요. 1930년대에 미국의 NACA는 수백 가지 모양을 풍동에서 시험하고 각각에 번호를 붙였어요. 지금도 기술자들은 새 설계를 이 유명한 에어포일 중 하나를 고르는 것으로 시작하는 경우가 많아요."
+  },
+  "quiz": [
+    {
+      "type": "mc",
+      "q": "시위선(chord line)은 무엇을 이은 선일까요?",
+      "choices": [
+        "앞전과 뒷전",
+        "윗면의 가장 높은 점과 아랫면의 가장 낮은 점",
+        "날개 뿌리와 날개 끝",
+        "캠버선의 양 끝과 최대 두께 위치"
+      ],
+      "answer": 0,
+      "explain": "시위선은 앞전과 뒷전을 잇는 직선이에요."
+    },
+    {
+      "type": "ox",
+      "q": "위아래가 대칭인 에어포일은 받음각이 0°일 때 양력이 0이다.",
+      "answer": true,
+      "explain": "캠버가 없으면 받음각 0°에서 공기를 위아래로 똑같이 흘려 보내 양력이 생기지 않아요."
+    },
+    {
+      "type": "num",
+      "q": "시위 길이가 2.0 m인 날개가 NACA 2415 단면이에요. 최대 두께는 몇 m일까요?",
+      "answer": 0.3,
+      "tol": 0.02,
+      "unit": "m",
+      "explain": "끝 두 자리 15는 최대 두께 15%를 뜻해요. $0.15\\times2.0=0.30$ m예요."
+    },
+    {
+      "type": "mc",
+      "q": "Read the passage: \"A wing with camber can produce lift even when it is almost level with the air, while a symmetric airfoil produces none at zero angle of attack.\" What does a symmetric airfoil need in order to produce lift?",
+      "choices": [
+        "A non-zero angle of attack",
+        "A thinner trailing edge",
+        "A longer chord",
+        "A lower airspeed"
+      ],
+      "answer": 0,
+      "explain": "대칭 에어포일은 받음각이 0이 아니어야 양력이 생겨요. 그래서 정답은 A non-zero angle of attack이에요."
+    }
+  ],
+  "test": [
+    {
+      "type": "mc",
+      "q": "NACA 4412 에어포일의 최대 캠버 위치는 앞전에서 시위 길이의 몇 %일까요?",
+      "choices": [
+        "4%",
+        "40%",
+        "12%",
+        "44%"
+      ],
+      "answer": 1,
+      "explain": "둘째 숫자 4는 십 % 단위라서 40% 지점이에요. 첫째 숫자 4는 최대 캠버 4%이고 12는 두께 12%예요."
+    },
+    {
+      "type": "num",
+      "q": "피치각이 10°이고 비행경로각이 4°(상승)일 때 받음각은 몇 도일까요? (숫자만 입력)",
+      "answer": 6,
+      "tol": 0.02,
+      "unit": "°",
+      "explain": "$\\alpha=\\theta-\\gamma=10^\\circ-4^\\circ=6^\\circ$예요."
+    },
+    {
+      "type": "num",
+      "q": "시위 길이가 3.2 m인 대칭 날개 NACA 0012의 최대 두께는 몇 m일까요?",
+      "answer": 0.384,
+      "tol": 0.02,
+      "unit": "m",
+      "explain": "끝 두 자리 12는 12%이므로 $0.12\\times3.2=0.384$ m예요."
+    }
+  ],
+  "further": [
+    {
+      "title": "NASA Glenn — Airfoil Terminology",
+      "url": "https://www.grc.nasa.gov/www/k-12/airplane/airfoil.html",
+      "lang": "en"
+    },
+    {
+      "title": "Wikipedia — Airfoil",
+      "url": "https://en.wikipedia.org/wiki/Airfoil",
+      "lang": "en"
+    },
+    {
+      "title": "Wikipedia — NACA airfoil",
+      "url": "https://en.wikipedia.org/wiki/NACA_airfoil",
+      "lang": "en"
+    }
+  ]
+}
