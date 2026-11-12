@@ -1,0 +1,188 @@
+{
+  "day": 29,
+  "title": "양력은 어떻게 생기는가",
+  "title_en": "How Lift Really Works",
+  "level": 3,
+  "minutes": 20,
+  "summary": "'동일 통과 시간' 설명이 왜 틀렸는지 알아보고, 공기의 방향 전환·압력 차·순환이라는 양력의 세 가지 관점을 하나로 이어 봐요.",
+  "objectives": [
+    "동일 통과 시간 설명이 틀린 이유를 말할 수 있다.",
+    "$L=\\dot m\\,w$ 와 $L\\approx\\overline{\\Delta p}\\,S$ 로 양력의 크기를 어림할 수 있다.",
+    "쿠타 조건과 순환이 양력과 어떻게 이어지는지 설명할 수 있다."
+  ],
+  "vocab": [
+    {
+      "en": "circulation",
+      "pron": "ˌsɜːrkjəˈleɪʃən",
+      "pos": "n.",
+      "ko": "순환",
+      "def": "The rotating flow around a wing, measured as a single number that sets the lift.",
+      "ex": "The circulation around the wing grows as the angle of attack increases.",
+      "ex_ko": "받음각이 커지면 날개 주위의 순환도 커진다."
+    },
+    {
+      "en": "downwash",
+      "pron": "ˈdaʊnwɒʃ",
+      "pos": "n.",
+      "ko": "다운워시, 아래로 꺾인 공기 흐름",
+      "def": "The air that a wing pushes downward as it makes lift.",
+      "ex": "The downwash behind a large airliner can disturb a small plane.",
+      "ex_ko": "대형 여객기 뒤의 다운워시는 소형기를 흔들 수 있다."
+    },
+    {
+      "en": "pressure difference",
+      "pron": "ˈprɛʃər ˈdɪfərəns",
+      "pos": "n.",
+      "ko": "압력 차이",
+      "def": "The gap between the higher pressure below a wing and the lower pressure above it.",
+      "ex": "A small pressure difference over a large area gives a large force.",
+      "ex_ko": "넓은 면적에 걸친 작은 압력 차이는 큰 힘을 만든다."
+    },
+    {
+      "en": "deflect",
+      "pron": "dɪˈflɛkt",
+      "pos": "v.",
+      "ko": "방향을 꺾다",
+      "def": "To make something change direction by pushing against it.",
+      "ex": "A wing deflects the oncoming air downward.",
+      "ex_ko": "날개는 다가오는 공기를 아래로 꺾는다."
+    },
+    {
+      "en": "Kutta condition",
+      "pron": "ˈkʊtɑː kənˈdɪʃən",
+      "pos": "n.",
+      "ko": "쿠타 조건",
+      "def": "The rule that air leaves a sharp trailing edge smoothly instead of curling around it.",
+      "ex": "The Kutta condition fixes the circulation of a wing with a sharp trailing edge.",
+      "ex_ko": "쿠타 조건은 뾰족한 뒷전을 가진 날개의 순환을 정한다."
+    },
+    {
+      "en": "equal transit time",
+      "pron": "ˈiːkwəl ˈtrænzɪt taɪm",
+      "pos": "n.",
+      "ko": "동일 통과 시간(설명)",
+      "def": "The false idea that air above and below a wing must reach the rear edge together.",
+      "ex": "The equal transit time story is popular but wrong.",
+      "ex_ko": "동일 통과 시간 이야기는 흔하지만 틀렸다."
+    },
+    {
+      "en": "reaction",
+      "pron": "riˈækʃən",
+      "pos": "n.",
+      "ko": "반작용",
+      "def": "A force that pushes back with the same strength as the force that caused it.",
+      "ex": "Lift is the reaction to the air being pushed down.",
+      "ex_ko": "양력은 공기를 아래로 민 것에 대한 반작용이다."
+    },
+    {
+      "en": "vortex",
+      "pron": "ˈvɔːrtɛks",
+      "pos": "n.",
+      "ko": "소용돌이",
+      "def": "A region where fluid spins around a central line.",
+      "ex": "A vortex forms at each wingtip of an airplane.",
+      "ex_ko": "비행기의 양쪽 날개 끝에는 소용돌이가 생긴다."
+    },
+    {
+      "en": "inverted flight",
+      "pron": "ɪnˈvɜːrtɪd flaɪt",
+      "pos": "n.",
+      "ko": "배면비행",
+      "def": "Flying with the aircraft upside down.",
+      "ex": "Aerobatic planes are able to hold inverted flight for a long time.",
+      "ex_ko": "곡예비행기는 배면비행을 오래 유지할 수 있다."
+    }
+  ],
+  "reading": {
+    "title": "The Myth of Equal Transit Time",
+    "en": "Many textbooks still claim that air must travel faster over the top of a wing because it has a longer path to cover. According to this equal transit time story, the two streams must meet at the trailing edge. The story sounds neat, but it is wrong. Experiments show that the air above the wing arrives first, long before the air below it.\n\nA better explanation starts with the way a wing deflects the oncoming air downward. By Newton's third law, the downward push has an equal and opposite reaction: lift. At the same time, the shape of the wing and its Kutta condition create circulation, a gentle spin of the flow around the wing. This circulation speeds up the air on top and creates a lower pressure there.\n\nThese ideas are not rivals. They describe one physical event from different points of view. Even an aerobatic plane in inverted flight can stay in the air, because a flat or symmetric wing tilted to the wind deflects the air just as well.",
+    "ko": "많은 교과서가 여전히 날개 윗면은 가야 할 경로가 더 길어서 공기가 더 빨리 지나가야 한다고 주장해요. 이 동일 통과 시간 이야기에 따르면 두 흐름은 뒷전에서 만나야 해요. 이야기는 깔끔하게 들리지만 틀렸어요. 실험을 보면 날개 윗면의 공기가 아랫면의 공기보다 훨씬 먼저 도착해요.\n\n더 나은 설명은 날개가 다가오는 공기를 아래로 꺾는 방식에서 출발해요. 뉴턴의 제3법칙에 따라 아래로 미는 힘에는 크기가 같고 방향이 반대인 반작용, 즉 양력이 생겨요. 동시에 날개의 모양과 쿠타 조건이 순환, 곧 날개 주위를 도는 완만한 흐름의 회전을 만들어요. 이 순환이 윗면 공기를 빠르게 하고 그곳의 압력을 낮춰요.\n\n이 설명들은 경쟁 관계가 아니에요. 하나의 물리적 사건을 서로 다른 관점에서 설명한 거예요. 배면비행을 하는 곡예비행기도 하늘에 머물 수 있는데, 평평하거나 대칭인 날개가 바람에 기울어져 있으면 공기를 똑같이 잘 꺾어 주기 때문이에요."
+  },
+  "quiz": [
+    {
+      "type": "ox",
+      "q": "날개 윗면과 아랫면의 공기는 뒷전에서 동시에 만나야 하므로 윗면의 공기가 더 빨리 흐른다.",
+      "answer": false,
+      "explain": "동일 통과 시간 설명은 틀렸어요. 실제로는 윗면 공기가 아랫면 공기보다 먼저 뒷전에 도착하고, 두 공기가 동시에 만날 이유도 없어요."
+    },
+    {
+      "type": "mc",
+      "q": "수평 비행하는 비행기가 날개로 공기를 아래로 꺾어 양력을 얻는 것을 설명하는 법칙은 무엇일까요?",
+      "choices": [
+        "뉴턴의 제3법칙(작용-반작용)",
+        "케플러의 제3법칙",
+        "보일의 법칙",
+        "옴의 법칙"
+      ],
+      "answer": 0,
+      "explain": "날개가 공기를 아래로 밀면 공기가 날개를 위로 미는 반작용이 양력이에요. 이것은 뉴턴의 제3법칙이에요."
+    },
+    {
+      "type": "num",
+      "q": "질량 1,100 kg인 비행기가 수평 비행하고 있고 날개가 처리하는 공기의 질량 유량은 5,821 kg/s예요. 공기가 아래로 꺾이는 속도는 몇 m/s일까요? ($g=9.81$ m/s²)",
+      "answer": 1.85,
+      "tol": 0.02,
+      "unit": "m/s",
+      "explain": "$L=mg=1100\\times9.81=10{,}791$ N이고 $w=L/\\dot m=10{,}791/5{,}821\\approx1.85$ m/s예요."
+    },
+    {
+      "type": "mc",
+      "q": "Read the passage: \"The shape of the wing and its Kutta condition create circulation, a gentle spin of the flow around the wing. This circulation speeds up the air on top and creates a lower pressure there.\" According to the passage, what does circulation do?",
+      "choices": [
+        "It speeds up the air on top and lowers the pressure there",
+        "It makes the air below the wing move faster than the air above",
+        "It removes the downwash behind the wing",
+        "It makes the trailing edge round"
+      ],
+      "answer": 0,
+      "explain": "지문에 따르면 순환은 윗면 공기를 빠르게 하고 그곳 압력을 낮춰요. 그래서 정답은 첫째 보기예요."
+    }
+  ],
+  "test": [
+    {
+      "type": "num",
+      "q": "공기 밀도 1.225 kg/m³인 곳에서 속도 60 m/s로 나는 날개의 순환이 $\\Gamma=8\\ \\text{m}^2/\\text{s}$예요. 폭 1 m당 양력은 몇 N/m일까요?",
+      "answer": 588,
+      "tol": 0.02,
+      "unit": "N/m",
+      "explain": "$L'=\\rho V\\Gamma=1.225\\times60\\times8=588$ N/m예요."
+    },
+    {
+      "type": "mc",
+      "q": "위아래가 대칭인 날개로 배면비행이 가능한 이유로 가장 알맞은 것은?",
+      "choices": [
+        "받음각이 있으면 대칭 날개도 공기를 꺾고 압력 차이를 만들 수 있다",
+        "대칭 날개는 윗면 경로가 항상 더 길다",
+        "배면비행에서는 양력이 필요 없다",
+        "대칭 날개는 순환이 항상 0이다"
+      ],
+      "answer": 0,
+      "explain": "양력은 윗면이 볼록해서 생기는 것이 아니라 받음각 때문에 공기가 꺾이고 순환이 생겨서 나와요. 대칭 날개도 받음각이 있으면 양력을 만들어요."
+    },
+    {
+      "type": "num",
+      "q": "수평 비행하는 비행기의 무게가 23,544 N이고 날개 면적이 20 m²예요. 평균 압력 차이는 몇 Pa일까요?",
+      "answer": 1177,
+      "tol": 0.02,
+      "unit": "Pa",
+      "explain": "수평 비행에서 $L=W$이므로 $\\overline{\\Delta p}=L/S=23{,}544/20=1{,}177.2$ Pa예요."
+    }
+  ],
+  "further": [
+    {
+      "title": "NASA Glenn — Incorrect Lift Theory: Equal Transit",
+      "url": "https://www.grc.nasa.gov/www/k-12/airplane/wrong1.html",
+      "lang": "en"
+    },
+    {
+      "title": "Wikipedia — Lift (force)",
+      "url": "https://en.wikipedia.org/wiki/Lift_(force)",
+      "lang": "en"
+    },
+    {
+      "title": "Wikipedia — Kutta–Joukowski theorem",
+      "url": "https://en.wikipedia.org/wiki/Kutta%E2%80%93Joukowski_theorem",
+      "lang": "en"
+    }
+  ]
+}
