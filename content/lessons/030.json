@@ -1,0 +1,179 @@
+{
+  "day": 30,
+  "title": "양력 계수와 받음각",
+  "title_en": "Lift Coefficient and Angle of Attack",
+  "level": 3,
+  "minutes": 20,
+  "summary": "양력을 L = ½ρV²S·C_L 하나의 식으로 정리하고, 무차원 양력 계수가 받음각에 따라 직선으로 변하는 이유를 숫자로 확인해요.",
+  "objectives": [
+    "$L=\\tfrac12\\rho V^2SC_L$ 로 양력과 필요한 $C_L$을 계산할 수 있다.",
+    "무차원화가 모형 실험과 비행기 비교에 왜 유용한지 설명할 수 있다.",
+    "$C_L=2\\pi(\\alpha-\\alpha_{L=0})$ 로 받음각과 $C_L$의 관계를 어림할 수 있다."
+  ],
+  "vocab": [
+    {
+      "en": "lift coefficient",
+      "pron": "lɪft ˌkoʊɪˈfɪʃənt",
+      "pos": "n.",
+      "ko": "양력 계수",
+      "def": "A number with no unit that shows how much lift a wing makes compared with a reference force.",
+      "ex": "The lift coefficient of the wing grew steadily as the pilot raised the nose.",
+      "ex_ko": "조종사가 기수를 들자 날개의 양력 계수가 꾸준히 커졌다."
+    },
+    {
+      "en": "wing area",
+      "pron": "wɪŋ ˈɛriə",
+      "pos": "n.",
+      "ko": "날개 면적",
+      "def": "The size of the wing surface seen from above.",
+      "ex": "A glider needs a large wing area to fly slowly.",
+      "ex_ko": "글라이더가 느리게 날려면 넓은 날개 면적이 필요하다."
+    },
+    {
+      "en": "wing loading",
+      "pron": "wɪŋ ˈloʊdɪŋ",
+      "pos": "n.",
+      "ko": "날개 하중",
+      "def": "The weight of an aircraft divided by its wing area.",
+      "ex": "A fighter has a higher wing loading than a small training plane.",
+      "ex_ko": "전투기는 소형 훈련기보다 날개 하중이 크다."
+    },
+    {
+      "en": "proportional",
+      "pron": "prəˈpɔːrʃənl",
+      "pos": "adj.",
+      "ko": "비례하는",
+      "def": "Changing at the same rate as another quantity.",
+      "ex": "In the straight part of the curve, lift is proportional to the angle of attack.",
+      "ex_ko": "곡선의 직선 구간에서 양력은 받음각에 비례한다."
+    },
+    {
+      "en": "linear",
+      "pron": "ˈlɪniər",
+      "pos": "adj.",
+      "ko": "선형의, 직선적인",
+      "def": "Following a straight line when drawn on a graph.",
+      "ex": "The linear region of the graph is easy to use for quick estimates.",
+      "ex_ko": "그래프의 선형 구간은 빠른 어림 계산에 쓰기 쉽다."
+    },
+    {
+      "en": "zero-lift angle",
+      "pron": "ˈzɪroʊ lɪft ˈæŋɡl",
+      "pos": "n.",
+      "ko": "영양력 받음각",
+      "def": "The angle of attack at which an airfoil produces no lift.",
+      "ex": "A cambered airfoil has a negative zero-lift angle.",
+      "ex_ko": "캠버가 있는 에어포일은 영양력 받음각이 음수이다."
+    },
+    {
+      "en": "lift curve",
+      "pron": "lɪft kɜːrv",
+      "pos": "n.",
+      "ko": "양력 곡선",
+      "def": "A graph that shows how the lift coefficient changes with the angle of attack.",
+      "ex": "Engineers measure the lift curve in a wind tunnel.",
+      "ex_ko": "엔지니어들은 풍동에서 양력 곡선을 측정한다."
+    },
+    {
+      "en": "scaling",
+      "pron": "ˈskeɪlɪŋ",
+      "pos": "n.",
+      "ko": "비례 축소·확대, 스케일링",
+      "def": "Changing the size of a design or test while keeping the important relationships the same.",
+      "ex": "Careful scaling lets a small model predict the force on a large wing.",
+      "ex_ko": "신중한 스케일링 덕분에 작은 모형으로 큰 날개의 힘을 예측할 수 있다."
+    }
+  ],
+  "reading": {
+    "title": "One Number for Every Wing",
+    "en": "A small paper glider and a large airliner look completely different, yet engineers describe the lift of both with the same simple idea. They divide the lift by a reference force, which depends on the density of the air, the speed, and the wing area. The result is the lift coefficient, a number with no unit.\n\nThis trick is useful because the lift coefficient mostly depends on the shape of the wing and its angle of attack. In the linear part of the lift curve, the coefficient is proportional to the angle: each extra degree adds a similar amount of lift. A pilot flying slowly must raise the nose, because the wing needs a larger coefficient to carry the same weight.\n\nThe idea also supports scaling. A team can test a small model in a wind tunnel, measure the coefficient, and then predict the force on the real aircraft. Of course, the prediction is only reliable when the flow conditions are similar, and the curve does not rise forever. At a large angle the air separates from the wing, and the lift suddenly falls.",
+    "ko": "작은 종이 글라이더와 커다란 여객기는 겉모습이 전혀 다르지만, 엔지니어들은 둘 다 같은 간단한 아이디어로 양력을 설명해요. 양력을 기준이 되는 힘으로 나누는데, 이 기준 힘은 공기 밀도, 속도, 날개 면적으로 정해져요. 그 결과가 단위 없는 숫자인 양력 계수예요.\n\n이 방법이 유용한 까닭은 양력 계수가 주로 날개 모양과 받음각에 의해 정해지기 때문이에요. 양력 곡선의 선형 구간에서는 계수가 각도에 비례해서, 1도가 늘 때마다 비슷한 양의 양력이 더해져요. 느리게 나는 조종사가 기수를 들어야 하는 것은 같은 무게를 받치려면 날개가 더 큰 계수를 필요로 하기 때문이에요.\n\n이 아이디어는 스케일링도 뒷받침해요. 팀은 작은 모형을 풍동에서 시험해 계수를 측정한 뒤 실제 항공기에 작용할 힘을 예측할 수 있어요. 물론 이 예측은 흐름 조건이 비슷할 때만 믿을 수 있고, 곡선도 영원히 오르지는 않아요. 받음각이 크면 공기가 날개에서 떨어져 나가고 양력이 갑자기 줄어들어요."
+  },
+  "quiz": [
+    {
+      "type": "ox",
+      "q": "양력 계수 $C_L$은 힘을 힘으로 나눈 값이므로 단위가 없다.",
+      "answer": true,
+      "explain": "$C_L=L/(\\tfrac12\\rho V^2S)$에서 분자와 분모 모두 힘(N)이라 단위가 사라지는 무차원 수예요."
+    },
+    {
+      "type": "mc",
+      "q": "수평 비행 중인 비행기가 같은 고도에서 속도를 절반으로 줄이면서 고도를 유지하려면 필요한 $C_L$은 어떻게 변할까요?",
+      "choices": [
+        "4배가 된다",
+        "2배가 된다",
+        "그대로이다",
+        "절반이 된다"
+      ],
+      "answer": 0,
+      "explain": "$C_L=2W/(\\rho V^2S)$이므로 $V$가 절반이면 $V^2$이 $1/4$이 되어 $C_L$은 4배가 필요해요."
+    },
+    {
+      "type": "num",
+      "q": "날개 면적 20 m²인 비행기가 해수면($\\rho=1.225$ kg/m³)에서 70 m/s로 날고 $C_L=0.4$일 때 양력은 몇 N일까요?",
+      "answer": 24010,
+      "tol": 0.02,
+      "unit": "N",
+      "explain": "$L=\\tfrac12\\times1.225\\times70^2\\times20\\times0.4=24{,}010$ N이에요."
+    },
+    {
+      "type": "mc",
+      "q": "Read the passage: \"In the linear part of the lift curve, the coefficient is proportional to the angle of attack. At a large angle, however, the air separates from the wing and the lift falls.\" What happens to the lift at a large angle of attack?",
+      "choices": [
+        "It falls because the air separates from the wing",
+        "It keeps rising along the same straight line",
+        "It stays exactly the same",
+        "It becomes proportional to the speed"
+      ],
+      "answer": 0,
+      "explain": "지문에 따르면 큰 받음각에서는 공기가 날개에서 떨어져 나가 양력이 줄어들어요. 따라서 첫째 보기가 정답이에요."
+    }
+  ],
+  "test": [
+    {
+      "type": "num",
+      "q": "질량 800 kg, 날개 면적 10 m²인 비행기가 해수면($\\rho=1.225$ kg/m³)에서 40 m/s로 수평 비행해요. 필요한 $C_L$은? ($g=9.81$ m/s², 숫자만 입력)",
+      "answer": 0.8,
+      "tol": 0.02,
+      "unit": "",
+      "explain": "$W=800\\times9.81=7{,}848$ N이고 $C_L=2W/(\\rho V^2S)=15{,}696/(1.225\\times1600\\times10)\\approx0.80$이에요."
+    },
+    {
+      "type": "num",
+      "q": "얇은 에어포일의 $C_L=2\\pi(\\alpha-\\alpha_{L=0})$에서 $\\alpha_{L=0}=-2^\\circ$일 때, $C_L=0.88$이 되는 받음각은 몇 도일까요? (숫자만 입력)",
+      "answer": 6.02,
+      "tol": 0.03,
+      "unit": "°",
+      "explain": "$\\alpha-\\alpha_{L=0}=0.88/(2\\pi)\\text{ rad}\\approx8.02^\\circ$이므로 $\\alpha\\approx8.02-2=6.02^\\circ$예요."
+    },
+    {
+      "type": "mc",
+      "q": "캠버가 있는 에어포일이 대칭 에어포일과 비교해 가지는 특징은 무엇일까요?",
+      "choices": [
+        "영양력 받음각이 음수여서 같은 받음각에서 더 큰 $C_L$을 낸다",
+        "양력 곡선 기울기가 0이다",
+        "받음각이 0일 때 항상 $C_L=0$이다",
+        "양력 계수에 단위가 생긴다"
+      ],
+      "answer": 0,
+      "explain": "캠버는 양력 곡선을 위로 평행 이동시켜 영양력 받음각이 음수가 돼요. 그래서 같은 받음각에서 더 큰 $C_L$이 나와요."
+    }
+  ],
+  "further": [
+    {
+      "title": "NASA Glenn — The Lift Equation",
+      "url": "https://www.grc.nasa.gov/www/k-12/airplane/lifteq.html",
+      "lang": "en"
+    },
+    {
+      "title": "Wikipedia — Lift coefficient",
+      "url": "https://en.wikipedia.org/wiki/Lift_coefficient",
+      "lang": "en"
+    },
+    {
+      "title": "Wikipedia — Wing loading",
+      "url": "https://en.wikipedia.org/wiki/Wing_loading",
+      "lang": "en"
+    }
+  ]
+}
