@@ -1,0 +1,187 @@
+{
+ "day": 31,
+ "title": "실속",
+ "title_en": "Stall",
+ "level": 3,
+ "minutes": 20,
+ "summary": "받음각이 임계값을 넘으면 왜 양력이 갑자기 줄어드는지, 실속 속도는 어떻게 계산하는지, 스핀은 왜 위험한지 알아봐요.",
+ "objectives": [
+  "임계 받음각과 유동 박리로 실속이 일어나는 이유를 설명할 수 있다.",
+  "$V_s=\\sqrt{2W/(\\rho SC_{L,\\max})}$ 로 실속 속도를 계산할 수 있다.",
+  "하중 배수가 실속 속도에 주는 영향과 스핀 회복 원리를 설명할 수 있다."
+ ],
+ "vocab": [
+  {
+   "en": "critical angle",
+   "pron": "ˈkrɪtɪkl ˈæŋɡl",
+   "pos": "n.",
+   "ko": "임계 각도",
+   "def": "The angle of attack at which a wing makes its largest lift.",
+   "ex": "The pilot kept the nose below the critical angle.",
+   "ex_ko": "조종사는 기수를 임계 각도 아래로 유지했다."
+  },
+  {
+   "en": "stall speed",
+   "pron": "stɔːl spiːd",
+   "pos": "n.",
+   "ko": "실속 속도",
+   "def": "The lowest speed at which an aircraft can keep level flight.",
+   "ex": "The stall speed rises when the plane carries more weight.",
+   "ex_ko": "비행기가 더 무거울수록 실속 속도는 올라간다."
+  },
+  {
+   "en": "spin",
+   "pron": "spɪn",
+   "pos": "n. / v.",
+   "ko": "스핀, 회전하며 추락하다",
+   "def": "A falling and turning motion that follows a stall on one wing.",
+   "ex": "The trainee learned how to recover from a spin.",
+   "ex_ko": "훈련생은 스핀에서 회복하는 법을 배웠다."
+  },
+  {
+   "en": "buffet",
+   "pron": "ˈbʌfɪt",
+   "pos": "n. / v.",
+   "ko": "버핏, 진동하다",
+   "def": "A shaking of the aircraft caused by unsteady air near the wing.",
+   "ex": "A light buffet warned the pilot that the wing was near a stall.",
+   "ex_ko": "가벼운 버핏이 날개가 실속에 가깝다고 조종사에게 알려 주었다."
+  },
+  {
+   "en": "abrupt",
+   "pron": "əˈbrʌpt",
+   "pos": "adj.",
+   "ko": "갑작스러운",
+   "def": "Sudden and unexpected.",
+   "ex": "A thin airfoil can show an abrupt loss of lift.",
+   "ex_ko": "얇은 에어포일은 양력이 갑자기 사라질 수 있다."
+  },
+  {
+   "en": "recovery",
+   "pron": "rɪˈkʌvəri",
+   "pos": "n.",
+   "ko": "회복",
+   "def": "The return of an aircraft to safe, controlled flight.",
+   "ex": "Quick recovery from a stall needs a lower angle of attack.",
+   "ex_ko": "실속에서 빨리 회복하려면 받음각을 낮춰야 한다."
+  },
+  {
+   "en": "load factor",
+   "pron": "loʊd ˈfæktər",
+   "pos": "n.",
+   "ko": "하중 배수",
+   "def": "The lift of an aircraft divided by its weight.",
+   "ex": "In a steep turn the load factor rises above one.",
+   "ex_ko": "급선회에서는 하중 배수가 1보다 커진다."
+  },
+  {
+   "en": "hazard",
+   "pron": "ˈhæzərd",
+   "pos": "n.",
+   "ko": "위험 요소",
+   "def": "Something that may cause harm or an accident.",
+   "ex": "Ice on the wings is a serious hazard for small aircraft.",
+   "ex_ko": "날개 위의 얼음은 소형 항공기에 심각한 위험 요소이다."
+  },
+  {
+   "en": "maneuver",
+   "pron": "məˈnuːvər",
+   "pos": "n. / v.",
+   "ko": "기동, 조종하다",
+   "def": "A planned movement of an aircraft, such as a turn or a climb.",
+   "ex": "The pilot performed the maneuver at a safe height.",
+   "ex_ko": "조종사는 안전한 고도에서 기동을 수행했다."
+  }
+ ],
+ "reading": {
+  "title": "When a Wing Lets Go",
+  "en": "Every wing has a critical angle. If the nose rises beyond it, the air can no longer follow the upper surface, and the lift drops. Pilots call this event a stall, although the engine may still be running well. Many people think a stall means that the plane is too slow, but the real cause is an angle of attack that is too large.\n\nA stall often gives a warning. A light buffet shakes the controls, and an alarm may sound. Some wings show a more abrupt loss of lift, so engineers study them carefully in wind tunnels. The stall speed depends on weight: a heavier aircraft needs a higher speed to stay above the critical angle. It also grows during a steep maneuver because the load factor is higher.\n\nIf one wing stalls first, the aircraft may enter a spin. Recovery is simple in theory but difficult in fear: the pilot must push the nose down to reduce the angle of attack. Because a stall near the ground is a serious hazard, pilots practice it at high altitude until the correct response becomes automatic.",
+  "ko": "모든 날개에는 임계 각도가 있어요. 기수가 그 각도를 넘어 올라가면 공기가 더 이상 윗면을 따라 흐르지 못하고 양력이 떨어져요. 조종사들은 이 현상을 실속이라고 불러요. 엔진은 여전히 잘 돌고 있을 수 있어요. 많은 사람이 실속을 비행기가 너무 느린 것이라고 생각하지만, 진짜 원인은 지나치게 큰 받음각이에요.\n\n실속은 흔히 경고를 줘요. 가벼운 버핏이 조종 장치를 흔들고 경보음이 울릴 수도 있어요. 어떤 날개는 양력이 더 갑작스럽게 사라지기 때문에 엔지니어들은 풍동에서 그런 날개를 주의 깊게 연구해요. 실속 속도는 무게에 따라 달라져요. 무거운 항공기일수록 임계 각도를 넘지 않으려면 더 높은 속도가 필요해요. 급한 기동 중에도 하중 배수가 커지므로 실속 속도가 올라가요.\n\n한쪽 날개가 먼저 실속하면 항공기는 스핀에 들어갈 수 있어요. 회복은 이론상 간단하지만 두려움 속에서는 어려워요. 조종사는 받음각을 줄이기 위해 기수를 내려야 해요. 지면 근처의 실속은 심각한 위험 요소이기 때문에, 조종사들은 올바른 반응이 몸에 밸 때까지 높은 고도에서 연습해요."
+ },
+ "quiz": [
+  {
+   "type": "mc",
+   "q": "실속이 일어나는 직접적인 조건은 무엇일까요?",
+   "choices": [
+    "받음각이 임계 받음각을 넘는 것",
+    "엔진 출력이 0이 되는 것",
+    "속도가 음속에 가까워지는 것",
+    "날개 면적이 줄어드는 것"
+   ],
+   "answer": 0,
+   "explain": "실속은 속도가 아니라 받음각이 임계값을 넘어 유동 박리가 커질 때 생겨요. 속도가 빨라도 받음각이 크면 실속할 수 있어요."
+  },
+  {
+   "type": "ox",
+   "q": "실속하면 날개 윗면의 흐름이 박리되어 양력은 줄고 항력은 늘어난다.",
+   "answer": true,
+   "explain": "박리된 영역에서는 흡입력이 사라져 양력이 줄고, 큰 후류가 생겨 항력이 커져요."
+  },
+  {
+   "type": "num",
+   "q": "질량 1,100 kg, 날개 면적 16.2 m²인 비행기가 해수면($\\rho=1.225$ kg/m³)에서 $C_{L,\\max}=1.3$일 때 실속 속도는 몇 m/s일까요? ($g=9.81$ m/s²)",
+   "answer": 28.9,
+   "tol": 0.02,
+   "unit": "m/s",
+   "explain": "$W=1100\\times9.81=10{,}791$ N이에요. $V_s=\\sqrt{2\\times10{,}791/(1.225\\times16.2\\times1.3)}\\approx28.9$ m/s예요."
+  },
+  {
+   "type": "mc",
+   "q": "Read the passage: \"The stall speed depends on weight: a heavier aircraft needs a higher speed to stay above the critical angle.\" What does the passage say about a heavier aircraft?",
+   "choices": [
+    "It needs a higher speed to avoid a stall",
+    "It has a lower stall speed",
+    "It never stalls",
+    "Its critical angle becomes zero"
+   ],
+   "answer": 0,
+   "explain": "지문은 무거운 항공기가 임계 각도를 넘지 않으려면 더 높은 속도가 필요하다고 말해요. 따라서 첫째 보기가 정답이에요."
+  }
+ ],
+ "test": [
+  {
+   "type": "num",
+   "q": "직선 수평 비행 실속 속도가 30 m/s인 비행기가 하중 배수 2로 선회할 때 실속 속도는 몇 m/s일까요?",
+   "answer": 42.4,
+   "tol": 0.02,
+   "unit": "m/s",
+   "explain": "$V_s(n)=V_s\\sqrt{n}=30\\sqrt2\\approx42.4$ m/s예요."
+  },
+  {
+   "type": "mc",
+   "q": "스핀에서 벗어나기 위해 가장 먼저 해야 할 일은 무엇일까요?",
+   "choices": [
+    "받음각을 줄이기 위해 기수를 내린다",
+    "조종간을 끝까지 당긴다",
+    "속도를 줄이려고 엔진을 끈다",
+    "기수를 더 들어 올린다"
+   ],
+   "answer": 0,
+   "explain": "스핀은 날개의 받음각이 임계값을 넘어서 생기므로, 받음각을 줄여야 회복돼요. 당기면 실속이 더 깊어져요."
+  },
+  {
+   "type": "mc",
+   "q": "플랩을 내려 $C_{L,\\max}$를 키우면 실속 속도는 어떻게 될까요?",
+   "choices": [
+    "작아진다",
+    "커진다",
+    "변하지 않는다",
+    "0이 된다"
+   ],
+   "answer": 0,
+   "explain": "$V_s=\\sqrt{2W/(\\rho SC_{L,\\max})}$이므로 $C_{L,\\max}$가 커지면 $V_s$는 작아져요."
+  }
+ ],
+ "further": [
+  {
+   "title": "Wikipedia — Stall (fluid dynamics)",
+   "url": "https://en.wikipedia.org/wiki/Stall_(fluid_dynamics)",
+   "lang": "en"
+  },
+  {
+   "title": "Wikipedia — Spin (aerodynamics)",
+   "url": "https://en.wikipedia.org/wiki/Spin_(aerodynamics)",
+   "lang": "en"
+  }
+ ]
+}
