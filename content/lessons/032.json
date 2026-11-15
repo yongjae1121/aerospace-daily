@@ -1,0 +1,172 @@
+{
+  "day": 32,
+  "title": "항력의 종류",
+  "title_en": "Types of Drag",
+  "level": 3,
+  "minutes": 20,
+  "summary": "항력은 마찰·형상·유도·조파 항력으로 이루어져요. 각각이 어디서 생기는지, 속도에 따라 어떻게 달라지는지 알아봐요.",
+  "objectives": [
+    "마찰 항력, 형상 항력, 유도 항력, 조파 항력의 원인을 구분할 수 있다.",
+    "$D=\\tfrac12\\rho V^2SC_D$로 항력과 필요 동력을 계산할 수 있다.",
+    "속도에 따른 기생 항력과 유도 항력의 변화를 설명할 수 있다."
+  ],
+  "vocab": [
+    {
+      "en": "form drag",
+      "pron": "fɔːrm dræɡ",
+      "pos": "n.",
+      "ko": "형상 항력",
+      "def": "Drag caused by the shape of a body, mainly from pressure differences.",
+      "ex": "The thick strut produced a lot of form drag.",
+      "ex_ko": "두꺼운 지지대는 형상 항력을 많이 만들어 냈다."
+    },
+    {
+      "en": "induced drag",
+      "pron": "ɪnˈduːst dræɡ",
+      "pos": "n.",
+      "ko": "유도 항력",
+      "def": "Drag that is created as a wing produces lift.",
+      "ex": "Induced drag is highest at low speed.",
+      "ex_ko": "유도 항력은 저속에서 가장 크다."
+    },
+    {
+      "en": "parasite drag",
+      "pron": "ˈpærəsaɪt dræɡ",
+      "pos": "n.",
+      "ko": "기생 항력",
+      "def": "All drag that does not come from producing lift.",
+      "ex": "Parasite drag rises quickly as the airplane speeds up.",
+      "ex_ko": "기생 항력은 비행기가 빨라지면 빠르게 증가한다."
+    },
+    {
+      "en": "wave drag",
+      "pron": "weɪv dræɡ",
+      "pos": "n.",
+      "ko": "조파 항력",
+      "def": "Drag caused by shock waves near or above the speed of sound.",
+      "ex": "Swept wings delay the rise of wave drag.",
+      "ex_ko": "뒤젖힘 날개는 조파 항력의 증가를 늦춘다."
+    },
+    {
+      "en": "bluff body",
+      "pron": "blʌf ˈbɑːdi",
+      "pos": "n.",
+      "ko": "둔체",
+      "def": "A blunt shape that cannot keep the flow attached.",
+      "ex": "A sphere is a classic bluff body.",
+      "ex_ko": "구는 대표적인 둔체이다."
+    },
+    {
+      "en": "wetted area",
+      "pron": "ˈwetɪd ˈeriə",
+      "pos": "n.",
+      "ko": "젖은 면적",
+      "def": "The surface area that touches the flowing fluid.",
+      "ex": "Skin friction is proportional to the wetted area.",
+      "ex_ko": "마찰 항력은 젖은 면적에 비례한다."
+    },
+    {
+      "en": "frontal area",
+      "pron": "ˈfrʌntl ˈeriə",
+      "pos": "n.",
+      "ko": "정면 면적",
+      "def": "The area of a body seen from the front, facing the flow.",
+      "ex": "The car with a smaller frontal area used less fuel.",
+      "ex_ko": "정면 면적이 더 작은 자동차가 연료를 덜 썼다."
+    },
+    {
+      "en": "fairing",
+      "pron": "ˈferɪŋ",
+      "pos": "n.",
+      "ko": "페어링(유선형 덮개)",
+      "def": "A smooth cover that reduces drag around a part that sticks out.",
+      "ex": "The engineers added a fairing over the antenna.",
+      "ex_ko": "엔지니어들은 안테나 위에 페어링을 달았다."
+    }
+  ],
+  "reading": {
+    "title": "Where Drag Comes From",
+    "en": "A moving object must push air out of its way, and the air pushes back. Engineers split this resistance into parts. Skin friction comes from the thin layer of air stuck to the surface, so it grows with the wetted area. Form drag appears when the flow separates behind a body and leaves a wide wake of low pressure. A flat plate or a sphere is a bluff body, and most of its drag is form drag. A smooth, teardrop-shaped body keeps the flow attached, so its drag can be many times smaller.\n\nDesigners fight drag in practical ways. A fairing covers a landing gear leg or an antenna so that the air can slide past it. Wings are polished to keep the boundary layer laminar for longer. Near the speed of sound, shock waves add wave drag, which is why airliners use thin, swept wings.\n\nA wing that makes lift also pays a price, called induced drag. It is large at low speed and small at high speed. In contrast, parasite drag grows with the square of speed. Add the two together and the total has a minimum at one speed. Pilots and engineers use this fact to plan efficient flights.",
+    "ko": "움직이는 물체는 길을 막는 공기를 밀어내야 하고, 공기는 그만큼 되밀어요. 엔지니어는 이 저항을 여러 부분으로 나눠요. 마찰 항력은 표면에 붙어 있는 얇은 공기층에서 생기므로 젖은 면적이 클수록 커져요. 형상 항력은 물체 뒤에서 흐름이 떨어져 나가 압력이 낮은 넓은 후류가 남을 때 생겨요. 납작한 판이나 구는 둔체이고, 항력의 대부분이 형상 항력이에요. 매끈한 눈물방울 모양은 흐름을 붙여 주므로 항력이 몇 배나 작을 수 있어요.\n\n설계자들은 현실적인 방법으로 항력과 싸워요. 페어링은 바퀴 다리나 안테나를 덮어서 공기가 미끄러져 지나가게 해요. 날개는 경계층이 더 오래 층류로 남도록 매끄럽게 닦아요. 음속 근처에서는 충격파가 조파 항력을 더하기 때문에 여객기는 얇고 뒤로 젖힌 날개를 써요.\n\n양력을 만드는 날개는 유도 항력이라는 대가도 치러요. 유도 항력은 느릴 때 크고 빠를 때 작아요. 반대로 기생 항력은 속도의 제곱에 따라 커져요. 둘을 더하면 전체 항력은 어떤 속도에서 최솟값을 가져요. 조종사와 엔지니어는 이 사실을 이용해 효율적인 비행을 계획해요."
+  },
+  "quiz": [
+    {
+      "type": "mc",
+      "q": "항력 중 '표면에 붙은 경계층의 점성 때문에 생기고 젖은 면적에 비례하는' 것은 무엇일까요?",
+      "choices": [
+        "마찰 항력",
+        "형상 항력",
+        "유도 항력",
+        "조파 항력"
+      ],
+      "answer": 0,
+      "explain": "점성 때문에 표면을 따라 전단 응력이 생기고, 이를 표면 전체에 더한 것이 마찰 항력이에요. 젖은 면적에 비례해요."
+    },
+    {
+      "type": "ox",
+      "q": "유도 항력은 양력을 만들 때 따라 생기므로, 같은 무게를 지탱할 때 느리게 날수록 더 커져요.",
+      "answer": true,
+      "explain": "느릴수록 같은 양력을 위해 $C_L$을 키워야 하고, 유도 항력은 대략 $C_L^2$에 비례하므로 저속에서 커져요."
+    },
+    {
+      "type": "num",
+      "q": "$S=20\\ \\text{m}^2$, $C_D=0.025$인 비행기가 해수면($\\rho=1.225\\ \\text{kg/m}^3$)에서 $V=60$ m/s로 날 때 항력은 몇 N일까요?",
+      "answer": 1102.5,
+      "tol": 0.02,
+      "unit": "N",
+      "explain": "$D=\\tfrac12\\rho V^2SC_D=0.5\\times1.225\\times60^2\\times20\\times0.025=1102.5$ N이에요."
+    },
+    {
+      "type": "mc",
+      "q": "Read the passage and choose the best answer.\n\n\"A flat plate and a sphere are bluff bodies. The flow separates behind them and leaves a wide wake of low pressure, so most of their drag is form drag. A teardrop shape keeps the flow attached, so its drag is much smaller.\"\n\nWhy is the drag of a teardrop shape smaller than that of a sphere?",
+      "choices": [
+        "It keeps the flow attached and leaves a narrow wake.",
+        "It has no skin friction at all.",
+        "It produces more lift than a sphere.",
+        "It travels faster than the speed of sound."
+      ],
+      "answer": 0,
+      "explain": "지문에 따르면 유선형 물체는 흐름을 붙여 주어 후류가 좁고, 그래서 형상 항력이 작아요. 마찰이 전혀 없는 것은 아니고, 양력이나 음속과는 관계가 없어요."
+    }
+  ],
+  "test": [
+    {
+      "type": "mc",
+      "q": "정면 면적이 같을 때 항력 계수가 가장 작은 모양은?",
+      "choices": [
+        "유선형(눈물방울 단면) 물체",
+        "구",
+        "정면으로 세운 납작한 판",
+        "각진 상자"
+      ],
+      "answer": 0,
+      "explain": "유선형 물체는 흐름이 뒤까지 붙어 후류가 좁으므로 $C_D$가 약 0.05로 가장 작아요. 판은 약 1.2, 구는 약 0.5예요."
+    },
+    {
+      "type": "ox",
+      "q": "기생 항력은 속도가 두 배가 되면 대략 네 배가 돼요.",
+      "answer": true,
+      "explain": "$D\\propto V^2$이므로 속도가 2배면 항력은 4배예요."
+    },
+    {
+      "type": "num",
+      "q": "$S=25\\ \\text{m}^2$, $C_D=0.028$인 비행기가 해수면($\\rho=1.225\\ \\text{kg/m}^3$)에서 $V=80$ m/s로 날 때, 항력을 이기는 데 필요한 동력은 몇 kW일까요? ($P=DV$, 숫자만 입력)",
+      "answer": 219.5,
+      "tol": 0.02,
+      "unit": "kW",
+      "explain": "$D=0.5\\times1.225\\times80^2\\times25\\times0.028=2744$ N이고, $P=DV=2744\\times80=219{,}520$ W $\\approx219.5$ kW예요."
+    }
+  ],
+  "further": [
+    {
+      "title": "NASA Glenn — What is Drag?",
+      "url": "https://www.grc.nasa.gov/www/k-12/airplane/drag1.html",
+      "lang": "en"
+    },
+    {
+      "title": "Wikipedia — Parasitic drag",
+      "url": "https://en.wikipedia.org/wiki/Parasitic_drag",
+      "lang": "en"
+    }
+  ]
+}
