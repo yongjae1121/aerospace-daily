@@ -1,0 +1,177 @@
+{
+ "day": 34,
+ "title": "날개 평면형과 가로세로비",
+ "title_en": "Wing Planform and Aspect Ratio",
+ "level": 3,
+ "minutes": 20,
+ "summary": "가로세로비 AR=b²/S가 유도 항력과 어떤 관계인지, 테이퍼·타원 날개·후퇴각이 무엇을 얻고 내주는지, 글라이더와 전투기의 날개가 왜 다른지 알아봐요.",
+ "objectives": [
+  "$AR=b^2/S$로 가로세로비를 계산할 수 있다.",
+  "가로세로비가 유도 항력에 미치는 영향을 설명할 수 있다.",
+  "테이퍼와 타원 날개, 후퇴각의 장단점을 설명할 수 있다."
+ ],
+ "vocab": [
+  {
+   "en": "planform",
+   "pron": "ˈplænfɔːrm",
+   "pos": "n.",
+   "ko": "평면형",
+   "def": "The shape of a wing seen from above.",
+   "ex": "The planform of a glider wing is long and narrow.",
+   "ex_ko": "글라이더 날개의 평면형은 길고 좁다."
+  },
+  {
+   "en": "taper",
+   "pron": "ˈteɪpər",
+   "pos": "n. / v.",
+   "ko": "테이퍼, 점점 가늘어지다",
+   "def": "A gradual decrease in width toward one end.",
+   "ex": "The wing has a taper from root to tip.",
+   "ex_ko": "그 날개는 뿌리에서 끝으로 갈수록 가늘어진다."
+  },
+  {
+   "en": "glider",
+   "pron": "ˈɡlaɪdər",
+   "pos": "n.",
+   "ko": "글라이더",
+   "def": "An aircraft without an engine that flies by using rising air.",
+   "ex": "The glider stayed in the air for five hours.",
+   "ex_ko": "글라이더는 다섯 시간 동안 하늘에 머물렀다."
+  },
+  {
+   "en": "sweepback",
+   "pron": "ˈswiːpbæk",
+   "pos": "n.",
+   "ko": "후퇴각",
+   "def": "The angle at which a wing is bent backward from the fuselage.",
+   "ex": "Sweepback delays the drag rise near the speed of sound.",
+   "ex_ko": "후퇴각은 음속 근처의 항력 증가를 늦춘다."
+  },
+  {
+   "en": "wing root",
+   "pron": "wɪŋ ruːt",
+   "pos": "n.",
+   "ko": "날개 뿌리",
+   "def": "The part of the wing that joins the fuselage.",
+   "ex": "The bending load is greatest at the wing root.",
+   "ex_ko": "굽힘 하중은 날개 뿌리에서 가장 크다."
+  },
+  {
+   "en": "maneuverability",
+   "pron": "məˌnuːvərəˈbɪləti",
+   "pos": "n.",
+   "ko": "기동성",
+   "def": "The ability of a vehicle to change direction quickly.",
+   "ex": "A fighter needs high maneuverability.",
+   "ex_ko": "전투기는 높은 기동성이 필요하다."
+  },
+  {
+   "en": "slender",
+   "pron": "ˈslendər",
+   "pos": "adj.",
+   "ko": "가늘고 긴",
+   "def": "Long and thin in shape.",
+   "ex": "A slender wing produces less induced drag.",
+   "ex_ko": "가늘고 긴 날개는 유도 항력이 작다."
+  },
+  {
+   "en": "compromise",
+   "pron": "ˈkɒmprəmaɪz",
+   "pos": "n. / v.",
+   "ko": "절충(하다)",
+   "def": "An agreement in which each side gives up something.",
+   "ex": "Every wing is a compromise between several goals.",
+   "ex_ko": "모든 날개는 여러 목표 사이의 절충이다."
+  }
+ ],
+ "reading": {
+  "title": "Why Wings Look Different",
+  "en": "If you look at a glider and a fighter jet from above, you will see two very different wing shapes. The planform of a glider is long and slender, with a high aspect ratio. This shape keeps induced drag low, so the glider can travel a long way without an engine. A fighter jet has a short, strong wing with a much smaller aspect ratio. It cannot glide as far, but it can turn quickly, and its structure is light and stiff.\n\nDesigners also choose the taper of a wing. A wing that is wide at the wing root and narrow at the tip is lighter, because the root carries the largest bending load. A gentle taper also helps the lift spread along the span in an efficient way. Many fast aircraft add sweepback as well, which delays the drag rise near the speed of sound.\n\nNo design is perfect for every task. A longer wing saves fuel, but it is heavier and harder to fit at an airport. A shorter wing improves maneuverability, but it wastes energy at low speed. For this reason, a wing is always a compromise, and engineers must decide which qualities matter most for the mission.",
+  "ko": "위에서 글라이더와 전투기를 내려다보면 매우 다른 두 가지 날개 모양을 볼 수 있어요. 글라이더의 평면형은 가늘고 길며 가로세로비가 커요. 이 모양은 유도 항력을 낮게 유지해서, 글라이더가 엔진 없이도 멀리 갈 수 있게 해 줘요. 전투기는 짧고 튼튼한 날개를 가지며 가로세로비가 훨씬 작아요. 그만큼 멀리 활공하지는 못하지만 빠르게 선회할 수 있고, 구조가 가볍고 단단해요.\n\n설계자는 날개의 테이퍼도 정해요. 날개 뿌리에서는 넓고 끝에서는 좁은 날개는 더 가벼운데, 뿌리가 가장 큰 굽힘 하중을 받기 때문이에요. 완만한 테이퍼는 양력이 날개 길이를 따라 효율적으로 퍼지게 돕기도 해요. 빠른 항공기 중 다수는 후퇴각도 더하는데, 이는 음속 근처에서 항력이 급증하는 것을 늦춰 줘요.\n\n모든 임무에 완벽한 설계는 없어요. 더 긴 날개는 연료를 아끼지만 더 무겁고 공항에 맞추기도 어려워요. 더 짧은 날개는 기동성을 높이지만 저속에서 에너지를 낭비해요. 그래서 날개는 언제나 절충이고, 엔지니어는 임무에서 어떤 성질이 가장 중요한지 정해야 해요."
+ },
+ "quiz": [
+  {
+   "type": "mc",
+   "q": "날개 면적이 같을 때 날개 길이(span)를 늘리면 일반적으로 어떻게 될까요?",
+   "choices": [
+    "가로세로비가 커지고 유도 항력이 줄어든다",
+    "가로세로비가 작아지고 유도 항력이 줄어든다",
+    "가로세로비는 그대로이고 유도 항력만 줄어든다",
+    "가로세로비가 커지고 유도 항력도 커진다"
+   ],
+   "answer": 0,
+   "explain": "$AR=b^2/S$이므로 $S$가 같을 때 $b$가 커지면 $AR$이 커져요. $C_{D,i}\\propto1/AR$이므로 유도 항력 계수는 줄어요."
+  },
+  {
+   "type": "ox",
+   "q": "직사각형 날개의 가로세로비는 날개 길이를 코드로 나눈 값 $b/c$와 같다.",
+   "answer": true,
+   "explain": "직사각형 날개는 $S=bc$이므로 $AR=b^2/S=b^2/(bc)=b/c$예요."
+  },
+  {
+   "type": "num",
+   "q": "날개 길이 $b=12$ m, 날개 면적 $S=18\\ \\text{m}^2$인 날개의 가로세로비는 얼마일까요?",
+   "answer": 8,
+   "tol": 0.02,
+   "unit": "",
+   "explain": "$AR=b^2/S=12^2/18=144/18=8$이에요."
+  },
+  {
+   "type": "mc",
+   "q": "Read the passage and choose the best answer.\n\n\"A long, slender wing produces less induced drag, so it is good for a glider. However, the same wing is heavier because it must resist a large bending load at the root. A short wing is lighter and turns faster, but it uses more energy to stay in the air.\"\n\nWhat does the passage mainly say about wing design?",
+   "choices": [
+    "A wing shape involves a trade-off between several qualities.",
+    "A long wing is always better than a short wing.",
+    "A short wing produces no induced drag at all.",
+    "Only the weight of a wing matters in design."
+   ],
+   "answer": 0,
+   "explain": "지문은 길고 가는 날개가 유도 항력은 작지만 무겁고, 짧은 날개는 가볍고 기동성이 좋지만 에너지를 더 쓴다고 말해요. 즉 평면형은 여러 성질 사이의 절충이에요."
+  }
+ ],
+ "test": [
+  {
+   "type": "num",
+   "q": "가로세로비 $AR=6$인 날개가 $e=0.8$, $C_L=1.2$로 날아요. 유도 항력 계수 $C_{D,i}$는 얼마일까요? (소수로 입력)",
+   "answer": 0.0955,
+   "tol": 0.02,
+   "unit": "",
+   "explain": "$C_{D,i}=\\dfrac{C_L^2}{\\pi e AR}=\\dfrac{1.2^2}{\\pi\\times0.8\\times6}\\approx0.0955$예요."
+  },
+  {
+   "type": "mc",
+   "q": "테이퍼 비 $\\lambda=c_\\text{tip}/c_\\text{root}$에 대한 설명으로 옳은 것은 무엇일까요?",
+   "choices": [
+    "직사각형 날개는 $\\lambda=1$이고 삼각형 날개는 $\\lambda=0$이다",
+    "직사각형 날개는 $\\lambda=0$이고 삼각형 날개는 $\\lambda=1$이다",
+    "모든 날개의 $\\lambda$는 항상 $1$보다 크다",
+    "$\\lambda$는 날개 길이를 코드로 나눈 값이다"
+   ],
+   "answer": 0,
+   "explain": "직사각형은 끝과 뿌리의 코드가 같아 $\\lambda=1$, 삼각형은 끝의 코드가 $0$이라 $\\lambda=0$이에요. 날개 길이를 코드로 나눈 것은 가로세로비예요."
+  },
+  {
+   "type": "ox",
+   "q": "같은 $C_L$과 $e$에서 가로세로비를 두 배로 키우면 유도 항력 계수는 절반이 된다.",
+   "answer": true,
+   "explain": "$C_{D,i}=C_L^2/(\\pi eAR)$이므로 $AR$이 두 배이면 $C_{D,i}$는 $\\tfrac12$이 돼요."
+  }
+ ],
+ "further": [
+  {
+   "title": "NASA Glenn — Wing Geometry Definitions",
+   "url": "https://www.grc.nasa.gov/www/k-12/airplane/geom.html",
+   "lang": "en"
+  },
+  {
+   "title": "Wikipedia — Aspect ratio (aeronautics)",
+   "url": "https://en.wikipedia.org/wiki/Aspect_ratio_(aeronautics)",
+   "lang": "en"
+  },
+  {
+   "title": "Wikipedia — Wing configuration",
+   "url": "https://en.wikipedia.org/wiki/Wing_configuration",
+   "lang": "en"
+  }
+ ]
+}
