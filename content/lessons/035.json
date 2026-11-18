@@ -1,0 +1,183 @@
+{
+  "day": 35,
+  "title": "양항비와 항력 극곡선",
+  "title_en": "Lift-to-Drag Ratio and the Drag Polar",
+  "level": 3,
+  "minutes": 22,
+  "summary": "항력 극곡선 C_D = C_D0 + K·C_L²로 양항비가 최대가 되는 조건을 구하고, 활공 거리와 순항 효율이 L/D로 어떻게 결정되는지 알아봐요.",
+  "objectives": [
+    "항력 극곡선 $C_D=C_{D0}+KC_L^2$의 각 항이 무엇을 뜻하는지 설명할 수 있다.",
+    "최대 $L/D$가 되는 $C_L$과 $(L/D)_{\\max}$를 계산할 수 있다.",
+    "$L/D$로 활공 거리를 추정하고 비행체별 $L/D$를 비교할 수 있다."
+  ],
+  "vocab": [
+    {
+      "en": "lift-to-drag ratio",
+      "pron": "lɪft tuː dræɡ ˈreɪʃioʊ",
+      "pos": "n.",
+      "ko": "양항비",
+      "def": "The lift of a wing divided by its drag.",
+      "ex": "A high lift-to-drag ratio means the aircraft flies efficiently.",
+      "ex_ko": "양항비가 높다는 것은 항공기가 효율적으로 난다는 뜻이다."
+    },
+    {
+      "en": "drag polar",
+      "pron": "dræɡ ˈpoʊlər",
+      "pos": "n.",
+      "ko": "항력 극곡선",
+      "def": "A curve or equation that shows how drag coefficient depends on lift coefficient.",
+      "ex": "Engineers use the drag polar to estimate cruise performance.",
+      "ex_ko": "공학자들은 항력 극곡선으로 순항 성능을 추정한다."
+    },
+    {
+      "en": "glide ratio",
+      "pron": "ɡlaɪd ˈreɪʃioʊ",
+      "pos": "n.",
+      "ko": "활공비",
+      "def": "The distance an aircraft travels forward for each unit of height it loses.",
+      "ex": "The glider has a glide ratio of forty to one.",
+      "ex_ko": "그 글라이더의 활공비는 40 대 1이다."
+    },
+    {
+      "en": "cruise",
+      "pron": "kruːz",
+      "pos": "n. / v.",
+      "ko": "순항, 순항하다",
+      "def": "To fly steadily at a constant speed and altitude for a long time.",
+      "ex": "The airliner will cruise at eleven kilometers.",
+      "ex_ko": "그 여객기는 11km 고도에서 순항할 것이다."
+    },
+    {
+      "en": "endurance",
+      "pron": "ɪnˈdʊrəns",
+      "pos": "n.",
+      "ko": "체공 시간, 지구력",
+      "def": "The length of time an aircraft can stay in the air.",
+      "ex": "The drone has an endurance of twelve hours.",
+      "ex_ko": "그 드론의 체공 시간은 12시간이다."
+    },
+    {
+      "en": "optimum",
+      "pron": "ˈɑːptɪməm",
+      "pos": "adj. / n.",
+      "ko": "최적의",
+      "def": "The best possible; giving the most favorable result.",
+      "ex": "The pilot flew at the optimum speed to save fuel.",
+      "ex_ko": "조종사는 연료를 아끼려고 최적의 속도로 날았다."
+    },
+    {
+      "en": "parabola",
+      "pron": "pəˈræbələ",
+      "pos": "n.",
+      "ko": "포물선",
+      "def": "A smooth curve shaped like the path of a thrown ball.",
+      "ex": "The drag polar is a parabola when plotted against lift coefficient.",
+      "ex_ko": "항력 극곡선은 양력 계수에 대해 그리면 포물선이다."
+    },
+    {
+      "en": "minimum",
+      "pron": "ˈmɪnɪməm",
+      "pos": "n. / adj.",
+      "ko": "최소(의)",
+      "def": "The smallest amount or value possible.",
+      "ex": "Total drag reaches a minimum at one particular speed.",
+      "ex_ko": "전체 항력은 어떤 특정한 속도에서 최소가 된다."
+    }
+  ],
+  "reading": {
+    "title": "Why Gliders Fly So Far",
+    "en": "A glider has no engine, yet it can travel more than one hundred kilometers from a single launch. The secret is its lift-to-drag ratio. If the ratio is forty, the glider moves forward forty meters for every meter of height it loses. Pilots call this the glide ratio, and they try to fly at the speed that gives the best value.\n\nEngineers describe this behavior with a drag polar. The total drag of a wing has two parts: one is the friction and pressure drag that exists even without lift, and the other is the extra drag created by lift itself. At low speed the lift-related drag is large, while at high speed the friction drag dominates. Somewhere between these extremes there is an optimum point where the sum is at a minimum, and the wing is most efficient there.\n\nAirliners use the same idea. During cruise, a higher lift-to-drag ratio means less thrust is needed, so the airplane burns less fuel. That is why designers work so hard on smooth surfaces and long, slender wings.",
+    "ko": "글라이더는 엔진이 없지만 한 번 이륙하면 100킬로미터가 넘게 날 수 있어요. 비밀은 양항비에 있어요. 양항비가 40이면 글라이더는 높이를 1미터 잃을 때마다 앞으로 40미터를 나아가요. 조종사들은 이것을 활공비라고 부르고, 가장 좋은 값을 주는 속도로 날려고 해요.\n\n공학자들은 이런 행동을 항력 극곡선으로 설명해요. 날개의 전체 항력은 두 부분으로 이루어져요. 하나는 양력이 없어도 존재하는 마찰 및 압력 항력이고, 다른 하나는 양력 자체가 만들어 내는 추가 항력이에요. 속도가 낮을 때는 양력과 관련된 항력이 크고, 속도가 높을 때는 마찰 항력이 지배적이에요. 이 두 극단 사이 어딘가에 합이 최소가 되는 최적점이 있고, 날개는 그곳에서 가장 효율적이에요.\n\n여객기도 같은 원리를 써요. 순항하는 동안 양항비가 높을수록 필요한 추력이 줄어서 연료를 덜 태워요. 그래서 설계자들은 매끄러운 표면과 길고 가는 날개에 많은 공을 들여요."
+  },
+  "quiz": [
+    {
+      "type": "mc",
+      "q": "항력 극곡선 $C_D=C_{D0}+KC_L^2$에서 $C_{D0}$가 나타내는 것은?",
+      "choices": [
+        "양력이 0일 때의 항력 계수(기생 항력)",
+        "양력 때문에 생기는 유도 항력",
+        "최대 양항비",
+        "날개의 가로세로비"
+      ],
+      "answer": 0,
+      "explain": "$C_{D0}$는 $C_L=0$일 때 남는 항력 계수로, 마찰 항력과 형상 항력 같은 기생 항력을 나타내요. 유도 항력은 $KC_L^2$ 항이에요."
+    },
+    {
+      "type": "ox",
+      "q": "항력 극곡선에서 $L/D$가 최대인 점에서는 기생 항력과 유도 항력이 서로 같다.",
+      "answer": true,
+      "explain": "$C_L^*=\\sqrt{C_{D0}/K}$를 대입하면 $KC_L^{*2}=C_{D0}$가 되어 두 항이 같아요. 그래서 $C_D^*=2C_{D0}$예요."
+    },
+    {
+      "type": "num",
+      "q": "항력 극곡선이 $C_D=0.025+0.05\\,C_L^2$인 비행기의 최대 양항비 $(L/D)_{\\max}$는 얼마일까요? (소수로 입력)",
+      "answer": 14.14,
+      "tol": 0.02,
+      "unit": "",
+      "explain": "$(L/D)_{\\max}=\\dfrac{1}{2\\sqrt{C_{D0}K}}=\\dfrac{1}{2\\sqrt{0.025\\times0.05}}\\approx14.14$예요. 이때 $C_L^*=\\sqrt{0.025/0.05}\\approx0.707$, $C_D^*=0.05$이고 $0.707/0.05=14.14$로 확인돼요."
+    },
+    {
+      "type": "mc",
+      "q": "Read the passage and choose the best answer.\n\n\"An airplane flying at a very low speed needs a large lift coefficient, so its lift-related drag is high. At a very high speed, friction drag becomes large. The best efficiency lies between these two extremes.\"\n\nWhich statement agrees with the passage?",
+      "choices": [
+        "The most efficient flight happens at a speed between very low and very high speed.",
+        "The slowest speed always gives the lowest drag.",
+        "Friction drag disappears at high speed.",
+        "Lift-related drag is largest at high speed."
+      ],
+      "answer": 0,
+      "explain": "지문은 저속에서는 양력 관련 항력이, 고속에서는 마찰 항력이 크므로 가장 효율적인 점은 그 사이에 있다고 말해요."
+    }
+  ],
+  "test": [
+    {
+      "type": "mc",
+      "q": "활공비 30인 글라이더가 고도 1,500 m에서 최적 속도로 활공할 때, 바람이 없다면 이론상 갈 수 있는 수평 거리는?",
+      "choices": [
+        "약 45 km",
+        "약 5 km",
+        "약 450 km",
+        "약 4.5 km"
+      ],
+      "answer": 0,
+      "explain": "활공 거리 $\\approx h\\times L/D=1500\\times30=45{,}000$ m $=45$ km예요."
+    },
+    {
+      "type": "num",
+      "q": "항력 극곡선이 $C_D=0.020+0.045\\,C_L^2$인 비행기가 $C_L=0.3$으로 날고 있어요. 이때 양항비 $L/D$는 얼마일까요? (소수로 입력)",
+      "answer": 12.47,
+      "tol": 0.02,
+      "unit": "",
+      "explain": "$C_D=0.020+0.045\\times0.3^2=0.02405$이에요. $L/D=0.3/0.02405\\approx12.47$로, 최대값 16.7보다 작아요. $C_L^*\\approx0.667$에서 날아야 가장 효율적이에요."
+    },
+    {
+      "type": "mc",
+      "q": "가로세로비를 키우면 항력 극곡선의 $K=1/(\\pi e AR)$이 작아져요. 다른 조건이 같다면 $(L/D)_{\\max}$와 최적 $C_L^*=\\sqrt{C_{D0}/K}$는 어떻게 변할까요?",
+      "choices": [
+        "$(L/D)_{\\max}$와 $C_L^*$ 모두 커진다",
+        "$(L/D)_{\\max}$는 커지고 $C_L^*$는 작아진다",
+        "$(L/D)_{\\max}$는 작아지고 $C_L^*$는 커진다",
+        "$(L/D)_{\\max}$와 $C_L^*$ 모두 변하지 않는다"
+      ],
+      "answer": 0,
+      "explain": "$(L/D)_{\\max}=1/(2\\sqrt{C_{D0}K})$는 $K$가 작아지면 커져요. $C_L^*=\\sqrt{C_{D0}/K}$도 $K$가 작아지면 커져요."
+    }
+  ],
+  "further": [
+    {
+      "title": "Wikipedia — Glide ratio",
+      "url": "https://en.wikipedia.org/wiki/Glide_ratio",
+      "lang": "en"
+    },
+    {
+      "title": "Wikipedia — Lift-to-drag ratio",
+      "url": "https://en.wikipedia.org/wiki/Lift-to-drag_ratio",
+      "lang": "en"
+    },
+    {
+      "title": "Wikipedia — Drag curve",
+      "url": "https://en.wikipedia.org/wiki/Drag_curve",
+      "lang": "en"
+    }
+  ]
+}
