@@ -1,0 +1,172 @@
+{
+ "day": 36,
+ "title": "압력 계수와 압력 분포",
+ "title_en": "Pressure Coefficient and Distribution",
+ "level": 3,
+ "minutes": 20,
+ "summary": "압력을 동압으로 나눈 압력 계수로 날개 표면의 흡입과 압력을 읽고, 압력 분포 그래프에서 양력과 압력 중심을 이해해요.",
+ "objectives": [
+  "압력 계수 $C_p$의 정의를 쓰고 값의 부호를 해석할 수 있다.",
+  "$C_p=1-(V/V_\\infty)^2$로 속도와 압력을 서로 바꿔 계산할 수 있다.",
+  "압력 분포 그래프에서 흡입 피크와 양력을 읽을 수 있다."
+ ],
+ "vocab": [
+  {
+   "en": "pressure coefficient",
+   "pron": "ˈpreʃər ˌkoʊɪˈfɪʃənt",
+   "pos": "n.",
+   "ko": "압력 계수",
+   "def": "A number that compares local pressure with freestream pressure, using dynamic pressure as the scale.",
+   "ex": "The pressure coefficient lets engineers compare wind tunnel data at different speeds.",
+   "ex_ko": "압력 계수 덕분에 엔지니어들은 서로 다른 속도의 풍동 데이터를 비교할 수 있다."
+  },
+  {
+   "en": "freestream",
+   "pron": "ˈfriːstriːm",
+   "pos": "n. / adj.",
+   "ko": "자유류",
+   "def": "The air far from the body, which is not yet disturbed by it.",
+   "ex": "The freestream speed in the test was fifty meters per second.",
+   "ex_ko": "시험에서 자유류 속도는 초속 50미터였다."
+  },
+  {
+   "en": "suction peak",
+   "pron": "ˈsʌkʃən piːk",
+   "pos": "n.",
+   "ko": "흡입 피크",
+   "def": "The point of lowest pressure on the upper surface, usually near the leading edge.",
+   "ex": "A higher angle of attack makes the suction peak deeper and sharper.",
+   "ex_ko": "받음각이 커지면 흡입 피크가 더 깊고 뾰족해진다."
+  },
+  {
+   "en": "center of pressure",
+   "pron": "ˈsentər əv ˈpreʃər",
+   "pos": "n.",
+   "ko": "압력 중심",
+   "def": "The point where the total pressure force can be considered to act.",
+   "ex": "The center of pressure moves forward as the angle of attack increases.",
+   "ex_ko": "받음각이 커지면 압력 중심이 앞으로 움직인다."
+  },
+  {
+   "en": "upper surface",
+   "pron": "ˈʌpər ˈsɜːrfɪs",
+   "pos": "n.",
+   "ko": "윗면",
+   "def": "The top side of a wing, where the pressure is usually lower.",
+   "ex": "The upper surface of the wing carries most of the suction.",
+   "ex_ko": "날개 윗면이 흡입의 대부분을 담당한다."
+  },
+  {
+   "en": "lower surface",
+   "pron": "ˈloʊər ˈsɜːrfɪs",
+   "pos": "n.",
+   "ko": "아랫면",
+   "def": "The bottom side of a wing, where the pressure is usually higher.",
+   "ex": "Pressure on the lower surface is slightly above the ambient value.",
+   "ex_ko": "아랫면의 압력은 주변 값보다 약간 높다."
+  },
+  {
+   "en": "distribution",
+   "pron": "ˌdɪstrɪˈbjuːʃən",
+   "pos": "n.",
+   "ko": "분포",
+   "def": "The way a quantity is spread over a surface or a region.",
+   "ex": "The pressure distribution shows how the load is spread along the chord.",
+   "ex_ko": "압력 분포는 하중이 시위선을 따라 어떻게 퍼져 있는지 보여 준다."
+  },
+  {
+   "en": "contour",
+   "pron": "ˈkɑːntʊr",
+   "pos": "n.",
+   "ko": "윤곽",
+   "def": "The outline or shape of an object.",
+   "ex": "Engineers adjusted the contour of the wing to soften the suction peak.",
+   "ex_ko": "엔지니어들은 흡입 피크를 완화하려고 날개의 윤곽을 조정했다."
+  }
+ ],
+ "reading": {
+  "title": "Reading the Pressure on a Wing",
+  "en": "When a wind tunnel team tests a new wing, they drill small holes in the surface and connect each one to a pressure sensor. The numbers are hard to compare, because each test runs at a different speed. To solve this problem, engineers convert every reading into a pressure coefficient. This value tells them how far the local pressure is from the freestream pressure, measured in units of dynamic pressure.\n\nA plot of the coefficient along the chord is called a pressure distribution. On the upper surface, the air accelerates around the leading edge, so the pressure drops and forms a suction peak. On the lower surface, the pressure stays slightly above the ambient value. The area between the two curves represents the lift, which is why designers study the plot so carefully.\n\nThe same plot also hides some warnings. If the suction peak becomes too sharp, the flow behind it may separate from the wing, and the pilot may face a stall. By adjusting the contour of the airfoil, engineers can spread the load more gently along the surface and move the center of pressure to a safer position. A small change in shape can therefore make an aircraft both more efficient and more forgiving.",
+  "ko": "풍동 팀이 새 날개를 시험할 때는 표면에 작은 구멍을 뚫고, 구멍마다 압력 센서를 연결해요. 시험마다 속도가 다르기 때문에 이 숫자들은 서로 비교하기가 어려워요. 이 문제를 해결하려고 엔지니어들은 모든 측정값을 압력 계수로 바꿔요. 이 값은 국소 압력이 자유류 압력에서 얼마나 떨어져 있는지를 동압 단위로 알려 줘요.\n\n시위선을 따라 이 계수를 그린 그래프를 압력 분포라고 해요. 윗면에서는 공기가 앞전을 돌며 가속되어 압력이 떨어지고 흡입 피크가 생겨요. 아랫면의 압력은 주변 값보다 약간 높게 유지돼요. 두 곡선 사이의 넓이가 양력을 나타내기 때문에 설계자들은 이 그래프를 아주 꼼꼼히 살펴요.\n\n이 그래프에는 경고도 숨어 있어요. 흡입 피크가 너무 뾰족해지면 그 뒤의 흐름이 날개에서 떨어져 나가고, 조종사는 실속에 직면할 수 있어요. 에어포일의 윤곽을 조정하면 하중을 표면을 따라 더 부드럽게 퍼뜨리고 압력 중심을 더 안전한 위치로 옮길 수 있어요. 그래서 작은 형상 변화가 항공기를 더 효율적이고 더 너그럽게 만들 수 있어요."
+ },
+ "quiz": [
+  {
+   "type": "mc",
+   "q": "저속(비압축성) 흐름에서 날개 앞전의 정체점에서 압력 계수 $C_p$의 값은?",
+   "choices": [
+    "1",
+    "0",
+    "−1",
+    "2"
+   ],
+   "answer": 0,
+   "explain": "정체점에서는 $V=0$이므로 $C_p=1-(V/V_\\infty)^2=1$이에요. 비압축성 흐름에서 $C_p$의 최댓값이에요."
+  },
+  {
+   "type": "ox",
+   "q": "날개 윗면에서 $C_p<0$이라면 그 점의 압력은 자유류 압력보다 낮다.",
+   "answer": true,
+   "explain": "$C_p=(p-p_\\infty)/q_\\infty$이므로 $C_p<0$이면 $p<p_\\infty$예요. 이것이 윗면의 흡입이에요."
+  },
+  {
+   "type": "num",
+   "q": "해수면($\\rho=1.225$ kg/m³)에서 $V_\\infty=60$ m/s로 나는 비행기 날개의 한 점에서 $C_p=-0.8$이에요. 이 점의 압력은 자유류 압력보다 몇 Pa 낮을까요? (양수로, 숫자만 입력)",
+   "answer": 1764,
+   "tol": 0.02,
+   "unit": "Pa",
+   "explain": "$q_\\infty=\\tfrac12(1.225)(60)^2=2205$ Pa이고, $|p-p_\\infty|=0.8\\times2205=1764$ Pa이에요."
+  },
+  {
+   "type": "mc",
+   "q": "Read the passage and choose the best answer.\n\n\"On the upper surface of a wing, the pressure coefficient is negative, which means the pressure is lower than that of the freestream. On the lower surface, the coefficient is usually positive. The area between the two curves tells engineers how much lift the wing produces.\"\n\nWhich statement agrees with the passage?",
+   "choices": [
+    "The area between the two curves is related to lift.",
+    "The pressure coefficient is always positive on the upper surface.",
+    "The lower surface has lower pressure than the freestream.",
+    "The two curves have no connection with lift."
+   ],
+   "answer": 0,
+   "explain": "지문은 두 곡선 사이의 넓이가 날개가 만드는 양력과 관련 있다고 말해요."
+  }
+ ],
+ "test": [
+  {
+   "type": "num",
+   "q": "저속 흐름에서 $V_\\infty=40$ m/s인 날개 위의 한 점에서 $C_p=-3$이에요. 이 점의 공기 속도는 몇 m/s일까요? (숫자만 입력)",
+   "answer": 80,
+   "tol": 0.02,
+   "unit": "m/s",
+   "explain": "$V/V_\\infty=\\sqrt{1-C_p}=\\sqrt{4}=2$이니 $V=2\\times40=80$ m/s예요."
+  },
+  {
+   "type": "mc",
+   "q": "양력 분포가 앞전에서 가장 크고 뒤로 갈수록 직선으로 줄어드는 삼각형 모양이에요. 시위선 길이가 1.5 m라면 압력 중심은 앞전에서 대략 얼마나 떨어져 있을까요?",
+   "choices": [
+    "0.5 m",
+    "0.75 m",
+    "1.0 m",
+    "0.375 m"
+   ],
+   "answer": 0,
+   "explain": "삼각형의 도심은 큰 쪽 끝에서 밑변의 $\\tfrac13$ 지점이에요. $1.5\\times\\tfrac13=0.5$ m예요."
+  },
+  {
+   "type": "ox",
+   "q": "비압축성 흐름에서 날개 표면 어디에서도 $C_p$는 1보다 클 수 없다.",
+   "answer": true,
+   "explain": "$C_p=1-(V/V_\\infty)^2\\le1$이고, 같음은 $V=0$인 정체점에서만 성립해요."
+  }
+ ],
+ "further": [
+  {
+   "title": "Wikipedia — Pressure coefficient",
+   "url": "https://en.wikipedia.org/wiki/Pressure_coefficient",
+   "lang": "en"
+  },
+  {
+   "title": "Wikipedia — Center of pressure (fluid mechanics)",
+   "url": "https://en.wikipedia.org/wiki/Center_of_pressure_(fluid_mechanics)",
+   "lang": "en"
+  }
+ ]
+}
