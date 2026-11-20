@@ -1,0 +1,177 @@
+{
+  "day": 37,
+  "title": "고양력 장치",
+  "title_en": "High-Lift Devices",
+  "level": 3,
+  "minutes": 20,
+  "summary": "플랩, 슬랫, 와류 발생기가 어떻게 $C_{L,\\max}$를 키워 이착륙 속도를 낮추는지 실속 속도 식으로 이해해요.",
+  "objectives": [
+    "고양력 장치가 필요한 이유를 실속 속도 식으로 설명할 수 있다.",
+    "플랩과 슬랫이 양력 곡선을 어떻게 바꾸는지 구분할 수 있다.",
+    "플랩 사용 전후의 실속 속도를 계산할 수 있다."
+  ],
+  "vocab": [
+    {
+      "en": "flap",
+      "pron": "flæp",
+      "pos": "n.",
+      "ko": "플랩",
+      "def": "A movable part on the rear of a wing that increases lift when it is lowered.",
+      "ex": "The pilot lowered the flaps before landing.",
+      "ex_ko": "조종사는 착륙 전에 플랩을 내렸다."
+    },
+    {
+      "en": "slat",
+      "pron": "slæt",
+      "pos": "n.",
+      "ko": "슬랫",
+      "def": "A small movable wing in front of the main wing that delays stall.",
+      "ex": "The slat opens a gap that guides air over the upper surface.",
+      "ex_ko": "슬랫은 공기를 윗면으로 이끄는 틈을 만든다."
+    },
+    {
+      "en": "slot",
+      "pron": "slɑːt",
+      "pos": "n.",
+      "ko": "슬롯, 틈",
+      "def": "A narrow opening that lets air pass through.",
+      "ex": "Air flows through the slot and re-energizes the boundary layer.",
+      "ex_ko": "공기가 틈을 통과하며 경계층에 에너지를 다시 준다."
+    },
+    {
+      "en": "high-lift device",
+      "pron": "haɪ lɪft dɪˈvaɪs",
+      "pos": "n.",
+      "ko": "고양력 장치",
+      "def": "A part of a wing that raises the lift coefficient at low speed.",
+      "ex": "Every airliner carries a high-lift device on each wing.",
+      "ex_ko": "모든 여객기는 날개마다 고양력 장치를 갖추고 있다."
+    },
+    {
+      "en": "deploy",
+      "pron": "dɪˈplɔɪ",
+      "pos": "v.",
+      "ko": "펼치다, 전개하다",
+      "def": "To put something into use or into position.",
+      "ex": "The crew deployed the slats during the approach.",
+      "ex_ko": "승무원들은 접근 중에 슬랫을 펼쳤다."
+    },
+    {
+      "en": "retract",
+      "pron": "rɪˈtrækt",
+      "pos": "v.",
+      "ko": "접어 넣다",
+      "def": "To pull something back into the body of the aircraft.",
+      "ex": "After takeoff, the pilot retracts the flaps to reduce drag.",
+      "ex_ko": "이륙 후 조종사는 항력을 줄이려고 플랩을 접어 넣는다."
+    },
+    {
+      "en": "approach",
+      "pron": "əˈproʊtʃ",
+      "pos": "n. / v.",
+      "ko": "접근(하다)",
+      "def": "The final part of a flight before landing.",
+      "ex": "The approach speed is about thirty percent above the stall speed.",
+      "ex_ko": "접근 속도는 실속 속도보다 약 30% 높다."
+    },
+    {
+      "en": "runway",
+      "pron": "ˈrʌnweɪ",
+      "pos": "n.",
+      "ko": "활주로",
+      "def": "A long strip of ground where aircraft take off and land.",
+      "ex": "A short runway needs a low landing speed.",
+      "ex_ko": "짧은 활주로에서는 착륙 속도가 낮아야 한다."
+    }
+  ],
+  "reading": {
+    "title": "Changing the Shape of a Wing",
+    "en": "A wing that is perfect for cruising is not perfect for landing. At high speed, a small, smooth wing gives low drag. At low speed, however, the same wing cannot make enough lift, and the pilot would need a very long runway. Engineers solve this problem with a high-lift device, a part that changes the shape of the wing only when it is needed.\n\nThe most familiar example is the flap. During the approach, the crew deploys the flaps, and the wing becomes more curved and sometimes larger. At the front, a slat opens a narrow slot that sends fast air over the upper surface, so the flow stays attached at a higher angle of attack. Together, these parts let the aircraft fly slowly without a stall.\n\nThere is a price to pay. Extended flaps create a lot of drag, which is why the crew must retract them soon after takeoff. Each device also adds weight and mechanical complexity, and it must work reliably every single flight. Still, the trade is worth it: a modern airliner could not use many airports without these moving parts.",
+    "ko": "순항에 완벽한 날개가 착륙에도 완벽한 것은 아니에요. 고속에서는 작고 매끈한 날개가 항력이 낮아요. 하지만 저속에서는 같은 날개가 충분한 양력을 만들지 못해서, 조종사는 아주 긴 활주로가 필요하게 돼요. 엔지니어들은 필요할 때만 날개 모양을 바꾸는 부품, 즉 고양력 장치로 이 문제를 풀어요.\n\n가장 익숙한 예는 플랩이에요. 접근 중에 승무원이 플랩을 펼치면 날개가 더 휘어지고 때로는 더 커져요. 앞쪽에서는 슬랫이 좁은 틈을 열어 빠른 공기를 윗면으로 보내서, 더 큰 받음각에서도 흐름이 붙어 있게 해요. 이 부품들이 함께 있어서 비행기는 실속 없이 천천히 날 수 있어요.\n\n대가도 있어요. 펼친 플랩은 항력을 많이 만들기 때문에 승무원은 이륙 직후 곧 접어 넣어야 해요. 장치마다 무게와 기계적 복잡성도 늘고, 매 비행마다 믿을 수 있게 작동해야 해요. 그래도 이 거래는 그만한 가치가 있어요. 현대 여객기는 이런 움직이는 부품 없이는 많은 공항을 쓸 수 없을 거예요."
+  },
+  "quiz": [
+    {
+      "type": "mc",
+      "q": "플랩을 아래로 내렸을 때 일어나는 일로 가장 알맞은 것은?",
+      "choices": [
+        "캠버가 커져 같은 받음각에서 양력이 늘어난다",
+        "날개 항력이 줄어든다",
+        "실속 속도가 커진다",
+        "양력 곡선이 오른쪽으로 길게 늘어나기만 한다"
+      ],
+      "answer": 0,
+      "explain": "플랩은 뒷전의 캠버를 키워 양력 곡선을 위로 올려요. 항력도 늘고, $C_{L,\\max}$가 커져서 실속 속도는 작아져요."
+    },
+    {
+      "type": "ox",
+      "q": "슬랫은 슬롯으로 윗면 경계층에 에너지를 주어 실속 받음각을 크게 만든다.",
+      "answer": true,
+      "explain": "슬롯을 통과한 빠른 공기가 경계층을 건강하게 해서 박리를 늦춰요."
+    },
+    {
+      "type": "num",
+      "q": "무게 $W=15{,}000$ N, 날개 면적 $S=25$ m²인 비행기가 해수면($\\rho=1.225$ kg/m³)에서 플랩을 내려 $C_{L,\\max}=2.2$가 됐어요. 실속 속도는 몇 m/s일까요? (숫자만 입력)",
+      "answer": 21.1,
+      "tol": 0.02,
+      "unit": "m/s",
+      "explain": "$V_s=\\sqrt{2(15000)/(1.225\\times25\\times2.2)}=\\sqrt{445.3}\\approx21.1$ m/s예요."
+    },
+    {
+      "type": "mc",
+      "q": "Read the passage and choose the best answer.\n\n\"Extended flaps create a lot of drag. For this reason, the crew retracts them soon after takeoff, once the aircraft has enough speed.\"\n\nWhy do pilots retract the flaps after takeoff?",
+      "choices": [
+        "To reduce drag at higher speed",
+        "To make the wing more curved",
+        "To increase the stall speed on purpose",
+        "To prepare for the final approach"
+      ],
+      "answer": 0,
+      "explain": "지문은 펼친 플랩이 큰 항력을 만들기 때문에 이륙 후 접어 넣는다고 말해요."
+    }
+  ],
+  "test": [
+    {
+      "type": "num",
+      "q": "깨끗한 날개의 $C_{L,\\max}=1.5$인 비행기가 플랩을 내려 $C_{L,\\max}=2.4$가 됐어요. 무게와 날개 면적, 공기 밀도가 같다면 실속 속도는 몇 % 줄어들까요? (숫자만 입력)",
+      "answer": 20.9,
+      "tol": 0.03,
+      "unit": "%",
+      "explain": "$V_s\\propto1/\\sqrt{C_{L,\\max}}$이므로 $V_{s,\\text{flap}}/V_{s,\\text{clean}}=\\sqrt{1.5/2.4}\\approx0.791$이에요. 따라서 약 $1-0.791=0.209$, 즉 20.9% 줄어요."
+    },
+    {
+      "type": "mc",
+      "q": "날개 윗면의 박리를 늦추려고 날개 윗면에 작은 판을 줄지어 붙여 작은 와류를 만들어요. 이 장치의 이름은?",
+      "choices": [
+        "와류 발생기",
+        "파울러 플랩",
+        "에일러론",
+        "스포일러"
+      ],
+      "answer": 0,
+      "explain": "와류 발생기는 빠른 바깥 공기를 표면 쪽으로 끌어내려 경계층에 에너지를 줘요."
+    },
+    {
+      "type": "ox",
+      "q": "플랩은 착륙할 때 항력도 늘려서 속도를 줄이고 가파르게 내려오는 데 도움이 된다.",
+      "answer": true,
+      "explain": "플랩을 내리면 양력과 함께 항력도 커져요. 착륙에서는 이 항력이 감속과 가파른 접근에 오히려 도움이 돼요."
+    }
+  ],
+  "further": [
+    {
+      "title": "Wikipedia — Flap (aeronautics)",
+      "url": "https://en.wikipedia.org/wiki/Flap_(aeronautics)",
+      "lang": "en"
+    },
+    {
+      "title": "Wikipedia — Leading-edge slat",
+      "url": "https://en.wikipedia.org/wiki/Leading-edge_slat",
+      "lang": "en"
+    },
+    {
+      "title": "Wikipedia — Vortex generator",
+      "url": "https://en.wikipedia.org/wiki/Vortex_generator",
+      "lang": "en"
+    }
+  ]
+}
