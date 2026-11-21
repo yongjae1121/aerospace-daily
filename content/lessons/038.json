@@ -1,0 +1,172 @@
+{
+  "day": 38,
+  "title": "풍동과 전산유체역학",
+  "title_en": "Wind Tunnels and CFD",
+  "level": 3,
+  "minutes": 20,
+  "summary": "풍동의 구조와 종류, 가압 풍동으로 Re를 맞추는 방법, CFD의 기본 단계와 풍동 데이터로 계산을 검증하는 과정을 배워요.",
+  "objectives": [
+    "풍동의 구성 요소와 종류를 설명할 수 있다.",
+    "가압 풍동에서 모형과 실물의 Re를 맞추는 조건을 계산할 수 있다.",
+    "CFD의 기본 단계와 검증의 의미를 설명할 수 있다."
+  ],
+  "vocab": [
+    {
+      "en": "test section",
+      "pron": "test ˈsekʃən",
+      "pos": "n.",
+      "ko": "시험부",
+      "def": "The part of a wind tunnel where the model is placed and measured.",
+      "ex": "The model was mounted in the test section before the fan started.",
+      "ex_ko": "팬이 돌기 전에 모형을 시험부에 설치했다."
+    },
+    {
+      "en": "balance",
+      "pron": "ˈbæləns",
+      "pos": "n.",
+      "ko": "밸런스(힘 측정 장치)",
+      "def": "A sensor that measures the forces and moments on a model.",
+      "ex": "A balance under the model recorded the lift and drag.",
+      "ex_ko": "모형 아래의 밸런스가 양력과 항력을 기록했다."
+    },
+    {
+      "en": "mesh",
+      "pron": "meʃ",
+      "pos": "n.",
+      "ko": "격자",
+      "def": "A set of small cells that divide the space around a body for computer calculation.",
+      "ex": "The mesh is very fine near the wing surface.",
+      "ex_ko": "격자는 날개 표면 근처에서 매우 촘촘하다."
+    },
+    {
+      "en": "simulation",
+      "pron": "ˌsɪmjuˈleɪʃən",
+      "pos": "n.",
+      "ko": "모의 계산",
+      "def": "A computer model that imitates how something behaves in the real world.",
+      "ex": "The simulation predicted where the flow would separate.",
+      "ex_ko": "모의 계산은 흐름이 어디서 박리될지 예측했다."
+    },
+    {
+      "en": "validation",
+      "pron": "ˌvælɪˈdeɪʃən",
+      "pos": "n.",
+      "ko": "타당성 확인",
+      "def": "The process of checking that a model or calculation matches reality.",
+      "ex": "Validation with tunnel data showed the code was reliable.",
+      "ex_ko": "풍동 데이터로 확인해 보니 이 코드는 믿을 만했다."
+    },
+    {
+      "en": "boundary condition",
+      "pron": "ˈbaʊndri kənˈdɪʃən",
+      "pos": "n.",
+      "ko": "경계 조건",
+      "def": "A rule that sets the flow values at the edges of a calculation.",
+      "ex": "The boundary condition at the wall sets the air speed to zero.",
+      "ex_ko": "벽면의 경계 조건은 공기 속도를 0으로 정한다."
+    },
+    {
+      "en": "turbulence model",
+      "pron": "ˈtɜːrbjələns ˈmɑːdl",
+      "pos": "n.",
+      "ko": "난류 모델",
+      "def": "A set of equations that estimates the average effect of turbulence.",
+      "ex": "The choice of turbulence model changed the predicted drag.",
+      "ex_ko": "난류 모델을 무엇으로 고르느냐에 따라 예측된 항력이 달라졌다."
+    },
+    {
+      "en": "convergence",
+      "pron": "kənˈvɜːrdʒəns",
+      "pos": "n.",
+      "ko": "수렴",
+      "def": "The point at which repeated calculations stop changing the answer.",
+      "ex": "The team waited for convergence before reading the lift value.",
+      "ex_ko": "팀은 양력 값을 읽기 전에 수렴을 기다렸다."
+    }
+  ],
+  "reading": {
+    "title": "Two Ways to Test a Wing",
+    "en": "Before an airplane is built, engineers test its wing in two very different places. In the first, a wind tunnel, a small model is mounted in the test section and a fan drives air past it. A balance under the model measures lift and drag, and small holes in the surface record the pressure. The method is reliable, but building and running a tunnel is expensive.\n\nThe second place is inside a computer. A simulation divides the air around the wing into millions of tiny cells called a mesh. The program solves the flow equations in each cell, using a boundary condition at the wall and a turbulence model for the chaotic motion of the air. When the numbers stop changing, the calculation has reached convergence, and the engineer can read the forces.\n\nNeither method is perfect, so engineers compare them. If the simulation matches the tunnel data, the validation gives them confidence to explore many designs quickly. If the two disagree, they look for the cause, which may be a poor mesh, a weak model, or the walls of the tunnel itself. Together, the two methods form a powerful and economical way to design an aircraft.",
+    "ko": "비행기를 만들기 전에 엔지니어들은 아주 다른 두 곳에서 날개를 시험해요. 첫째는 풍동으로, 작은 모형을 시험부에 설치하고 팬으로 공기를 흘려 보내요. 모형 아래의 밸런스가 양력과 항력을 재고, 표면의 작은 구멍들이 압력을 기록해요. 이 방법은 믿을 만하지만 풍동을 짓고 운영하는 데는 돈이 많이 들어요.\n\n둘째 장소는 컴퓨터 속이에요. 모의 계산은 날개 주변 공기를 격자라고 부르는 수백만 개의 작은 칸으로 나눠요. 프로그램은 벽의 경계 조건과, 공기의 혼란스러운 움직임을 나타내는 난류 모델을 써서 각 칸의 흐름 방정식을 풀어요. 숫자가 더 이상 변하지 않으면 계산이 수렴에 도달한 것이고, 엔지니어는 힘을 읽을 수 있어요.\n\n어느 방법도 완벽하지 않아서 엔지니어들은 둘을 비교해요. 모의 계산이 풍동 데이터와 맞으면, 타당성 확인이 여러 설계를 빠르게 탐색할 자신감을 줘요. 둘이 다르면 그 원인을 찾아요. 격자가 좋지 않거나, 모델이 약하거나, 풍동의 벽 자체 때문일 수 있어요. 이 두 방법이 함께 비행기를 설계하는 강력하고 경제적인 방법을 이뤄요."
+  },
+  "quiz": [
+    {
+      "type": "mc",
+      "q": "풍동에서 공기가 한 번 시험부를 지나간 뒤 밖으로 나가고, 새 공기가 계속 들어오는 형태는?",
+      "choices": [
+        "개회로 풍동",
+        "폐회로 풍동",
+        "극저온 풍동",
+        "초음속 풍동"
+      ],
+      "answer": 0,
+      "explain": "바깥 공기를 빨아들여 한 번 통과시키고 내보내는 형태가 개회로 풍동이에요. 폐회로는 공기가 고리 모양 관을 계속 돌아요."
+    },
+    {
+      "type": "ox",
+      "q": "CFD 결과가 풍동 데이터와 비교한 적이 없어도, 격자만 충분히 촘촘하면 그 결과는 항상 실제 흐름과 일치한다.",
+      "answer": false,
+      "explain": "격자를 촘촘하게 하면 방정식을 더 정확히 푸는 것(verification)일 뿐이에요. 난류 모델 등 방정식 자체의 한계는 풍동이나 비행 데이터와 비교(validation)해야 알 수 있어요."
+    },
+    {
+      "type": "num",
+      "q": "실물 날개의 Re를 $1/5$ 크기 모형으로 맞추려고 해요. 풍속과 온도를 실물 비행과 똑같게 두고 점성 계수도 같다고 하면, 시험부 공기 압력은 해수면 압력의 몇 배여야 할까요? (숫자만 입력)",
+      "answer": 5,
+      "tol": 0.02,
+      "unit": "배",
+      "explain": "$\\rho_m L_m=\\rho_p L_p$이므로 $\\rho_m=5\\rho_p$이고, 온도가 같으면 $p\\propto\\rho$라서 압력도 5배예요."
+    },
+    {
+      "type": "mc",
+      "q": "Read the passage and choose the best answer.\n\n\"A wind tunnel gives engineers real measurements, but a large tunnel is costly to build. A computer simulation is cheaper and faster, but its results depend on the models inside the program. For this reason, designers usually use both: the simulation narrows down the choices, and the tunnel checks the best ones.\"\n\nWhy do designers usually use both methods?",
+      "choices": [
+        "Each method covers the weakness of the other.",
+        "Simulations are always more accurate than tunnels.",
+        "Tunnels cannot measure lift or drag.",
+        "Computers cannot be used for design."
+      ],
+      "answer": 0,
+      "explain": "지문은 시뮬레이션이 선택지를 좁히고 풍동이 최선의 설계를 확인한다고 말해요. 즉 서로의 약점을 보완하기 때문이에요."
+    }
+  ],
+  "test": [
+    {
+      "type": "num",
+      "q": "풍동에서 $C_L=1.20$을 얻은 날개를 CFD로 계산했더니 $C_L=1.26$이 나왔어요. 풍동값을 기준으로 한 상대 오차는 몇 %일까요? (숫자만 입력)",
+      "answer": 5,
+      "tol": 0.02,
+      "unit": "%",
+      "explain": "$(1.26-1.20)/1.20\\times100=5\\%$예요."
+    },
+    {
+      "type": "mc",
+      "q": "CFD의 \"타당성 확인(validation)\"에 가장 알맞은 설명은?",
+      "choices": [
+        "계산 결과를 풍동 시험이나 비행 데이터와 비교하는 것",
+        "격자 칸의 수를 가능한 한 늘리는 것",
+        "계산이 끝날 때까지 기다리는 것",
+        "풍동 시험부의 크기를 줄이는 것"
+      ],
+      "answer": 0,
+      "explain": "타당성 확인은 \"올바른 방정식을 풀었는가\"를 실제 데이터와 비교해 확인하는 일이에요. 격자 수렴 확인은 verification에 가까워요."
+    },
+    {
+      "type": "ox",
+      "q": "모형이 풍동 시험부 단면에 비해 너무 크면 시험부 벽의 막힘 효과 때문에 모형 주변 공기 속도가 실제보다 빨라질 수 있다.",
+      "answer": true,
+      "explain": "모형이 흐름 통로를 많이 막으면 그 부분을 지나는 공기가 더 빨라져요. 그래서 모형 크기를 제한하고 막힘 보정을 해요."
+    }
+  ],
+  "further": [
+    {
+      "title": "Wikipedia — Wind tunnel",
+      "url": "https://en.wikipedia.org/wiki/Wind_tunnel",
+      "lang": "en"
+    },
+    {
+      "title": "Wikipedia — Computational fluid dynamics",
+      "url": "https://en.wikipedia.org/wiki/Computational_fluid_dynamics",
+      "lang": "en"
+    }
+  ]
+}
