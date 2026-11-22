@@ -1,0 +1,177 @@
+{
+  "day": 39,
+  "title": "천음속 비행과 후퇴익",
+  "title_en": "Transonic Flight and Swept Wings",
+  "level": 3,
+  "minutes": 20,
+  "summary": "임계 마하수와 항력 발산이 무엇인지, 후퇴각이 날개가 느끼는 마하수를 $M\\cos\\Lambda$로 줄여 천음속의 벽을 미루는 원리를 배워요.",
+  "objectives": [
+    "임계 마하수와 항력 발산을 구분해 설명할 수 있다.",
+    "후퇴각이 날개가 느끼는 마하수를 줄이는 원리를 식으로 계산할 수 있다.",
+    "후퇴익과 초임계 에어포일의 장점과 대가를 말할 수 있다."
+  ],
+  "vocab": [
+    {
+      "en": "critical Mach number",
+      "pron": "ˈkrɪtɪkəl mɑːk ˈnʌmbər",
+      "pos": "n.",
+      "ko": "임계 마하수",
+      "def": "The flight Mach number at which air somewhere on the wing first reaches the speed of sound.",
+      "ex": "The critical Mach number of this thin wing is higher than that of a thick one.",
+      "ex_ko": "이 얇은 날개의 임계 마하수는 두꺼운 날개보다 높다."
+    },
+    {
+      "en": "drag divergence",
+      "pron": "dræɡ daɪˈvɜːrdʒəns",
+      "pos": "n.",
+      "ko": "항력 발산",
+      "def": "A sudden, steep rise in drag as an aircraft nears the speed of sound.",
+      "ex": "Drag divergence limits the cruise speed of most airliners.",
+      "ex_ko": "항력 발산은 대부분 여객기의 순항 속도를 제한한다."
+    },
+    {
+      "en": "swept wing",
+      "pron": "swept wɪŋ",
+      "pos": "n.",
+      "ko": "후퇴익",
+      "def": "A wing angled backward from the root to the tip.",
+      "ex": "A swept wing delays the rise in drag near Mach 1.",
+      "ex_ko": "후퇴익은 마하 1 근처의 항력 증가를 늦춘다."
+    },
+    {
+      "en": "sweep angle",
+      "pron": "swiːp ˈæŋɡəl",
+      "pos": "n.",
+      "ko": "후퇴각",
+      "def": "The angle between the wing's leading edge and a line across the fuselage.",
+      "ex": "A sweep angle of thirty degrees is common on airliners.",
+      "ex_ko": "30도의 후퇴각은 여객기에서 흔하다."
+    },
+    {
+      "en": "supercritical airfoil",
+      "pron": "ˌsuːpərˈkrɪtɪkəl ˈeərfɔɪl",
+      "pos": "n.",
+      "ko": "초임계 에어포일",
+      "def": "A wing section with a flat upper surface that weakens shock waves.",
+      "ex": "A supercritical airfoil lets a wing be thicker at the same cruise speed.",
+      "ex_ko": "초임계 에어포일은 같은 순항 속도에서 날개를 더 두껍게 만들 수 있게 해 준다."
+    },
+    {
+      "en": "spanwise",
+      "pron": "ˈspænwaɪz",
+      "pos": "adj.",
+      "ko": "날개 폭 방향의",
+      "def": "Along the length of the wing from root to tip.",
+      "ex": "Spanwise flow moves along the leading edge of a swept wing.",
+      "ex_ko": "폭 방향 흐름은 후퇴익의 앞전을 따라 움직인다."
+    },
+    {
+      "en": "onset",
+      "pron": "ˈɑːnset",
+      "pos": "n.",
+      "ko": "시작, 발생",
+      "def": "The beginning of something, especially something unpleasant.",
+      "ex": "The onset of shock waves is felt as a light shaking of the aircraft.",
+      "ex_ko": "충격파가 생기기 시작하면 기체가 가볍게 흔들리는 것으로 느껴진다."
+    },
+    {
+      "en": "flatten",
+      "pron": "ˈflætn",
+      "pos": "v.",
+      "ko": "평평하게 하다",
+      "def": "To make a surface less curved.",
+      "ex": "Designers flatten the upper surface to reduce the peak speed.",
+      "ex_ko": "설계자들은 최고 속도를 줄이려고 윗면을 평평하게 만든다."
+    }
+  ],
+  "reading": {
+    "title": "Why Airliners Have Swept Wings",
+    "en": "When an airplane approaches the speed of sound, the air over its wing speeds up even more than the aircraft itself. The flight Mach number at which the fastest point first reaches the speed of sound is called the critical Mach number. Beyond it, a small shock wave appears, and soon after that comes drag divergence: the drag rises so steeply that extra engine power buys almost no extra speed. The onset of this effect is the reason most airliners cruise at about Mach 0.85.\n\nEngineers use a simple trick to push the limit higher. A swept wing is angled backward, so the air meets the leading edge at a slant. Only the part of the flow that is perpendicular to the edge matters much for the pressure, and it is smaller than the true flight speed. The wing therefore behaves as if it were flying more slowly. The air that moves in a spanwise direction does little harm.\n\nShape matters too. A supercritical airfoil has an upper surface that engineers flatten, so the fast air does not reach a high peak, and any shock wave that forms is weak. Of course, there is a price: a swept wing makes less lift and needs larger flaps at low speed. As always in aircraft design, every gain brings a cost.",
+    "ko": "비행기가 음속에 가까워지면 날개 위의 공기는 기체 자체보다도 더 빨라져요. 가장 빠른 점이 처음으로 음속에 닿을 때의 비행 마하수를 임계 마하수라고 해요. 이를 넘으면 작은 충격파가 생기고, 곧이어 항력 발산이 와요. 항력이 너무 가파르게 올라서 엔진 출력을 더 늘려도 속도는 거의 늘지 않아요. 이 현상의 시작이 대부분의 여객기가 마하 0.85쯤에서 순항하는 이유예요.\n\n엔지니어들은 한계를 높이려고 간단한 요령을 써요. 후퇴익은 뒤로 젖혀져 있어서 공기가 앞전에 비스듬히 부딪혀요. 압력에는 앞전에 수직인 흐름만 크게 영향을 주는데, 이 성분은 실제 비행 속도보다 작아요. 그래서 날개는 더 느리게 나는 것처럼 행동해요. 날개 폭 방향으로 움직이는 공기는 해를 거의 주지 않아요.\n\n모양도 중요해요. 초임계 에어포일은 윗면을 평평하게 만들어서 빠른 공기가 높은 최고점에 이르지 않고, 생기는 충격파도 약해요. 물론 대가도 있어요. 후퇴익은 양력이 덜 나오고 저속에서 더 큰 플랩이 필요해요. 항공기 설계에서는 늘 이득마다 비용이 따라와요."
+  },
+  "quiz": [
+    {
+      "type": "mc",
+      "q": "임계 마하수($M_{cr}$)의 정의로 가장 알맞은 것은?",
+      "choices": [
+        "날개 표면의 가장 빠른 점이 처음 마하 1에 도달하는 비행 마하수",
+        "비행기 전체가 마하 1이 되는 속도",
+        "항력이 최소가 되는 마하수",
+        "충격파가 날개 뒤로 완전히 사라지는 마하수"
+      ],
+      "answer": 0,
+      "explain": "비행 속도가 마하 1보다 낮아도 윗면 공기는 더 빨라서, 그 최고 속도점이 마하 1에 닿는 순간의 비행 마하수가 $M_{cr}$예요."
+    },
+    {
+      "type": "ox",
+      "q": "후퇴각을 주면 날개 양력은 대략 $\\cos^2\\Lambda$배가 되므로 같은 면적에서 양력이 줄어든다.",
+      "answer": true,
+      "explain": "앞전에 수직인 속도 성분이 $V\\cos\\Lambda$이고 양력은 속도의 제곱에 비례하므로 대략 $\\cos^2\\Lambda$배예요."
+    },
+    {
+      "type": "num",
+      "q": "마하 0.85로 순항하는 비행기의 날개 후퇴각이 $35^\\circ$예요. 날개가 느끼는 마하수 $M\\cos\\Lambda$는 얼마일까요? (소수 둘째 자리까지 구해 숫자만 입력)",
+      "answer": 0.7,
+      "tol": 0.02,
+      "unit": "",
+      "explain": "$0.85\\times\\cos35^\\circ=0.85\\times0.819\\approx0.70$이에요."
+    },
+    {
+      "type": "mc",
+      "q": "Read the passage and choose the best answer.\n\n\"A supercritical airfoil has a flatter upper surface. The fast air does not reach a high peak, so any shock wave that forms is weaker and appears farther back.\"\n\nWhat is the main benefit of this design?",
+      "choices": [
+        "It weakens the shock wave and delays drag divergence.",
+        "It increases the sweep angle of the wing.",
+        "It makes the wing produce more lift at low speed.",
+        "It removes the need for engines at high speed."
+      ],
+      "answer": 0,
+      "explain": "지문은 윗면이 평평하면 충격파가 약하고 뒤쪽에 생긴다고 말해요. 이는 항력 발산을 늦추는 효과예요."
+    }
+  ],
+  "test": [
+    {
+      "type": "num",
+      "q": "날개의 임계 마하수가 후퇴각 없이 0.72예요. 후퇴각 $30^\\circ$를 주면 $M_{cr}\\approx M_{cr,0}/\\cos\\Lambda$로 어림할 때 임계 마하수는 얼마일까요? (소수 둘째 자리까지 구해 숫자만 입력)",
+      "answer": 0.83,
+      "tol": 0.02,
+      "unit": "",
+      "explain": "$0.72/\\cos30^\\circ=0.72/0.866\\approx0.83$이에요."
+    },
+    {
+      "type": "mc",
+      "q": "후퇴익의 단점이 아닌 것은?",
+      "choices": [
+        "같은 면적에서 양력이 줄어든다",
+        "이착륙 속도가 낮아져 활주로가 짧아진다",
+        "저속에서 날개 끝 박리가 쉽다",
+        "구조에 비틀림 하중이 늘어난다"
+      ],
+      "answer": 1,
+      "explain": "후퇴익은 양력이 줄고 저속 성능이 나빠 오히려 이착륙 속도가 높아지기 쉬워요. 그래서 큰 고양력 장치가 필요해요."
+    },
+    {
+      "type": "ox",
+      "q": "항력 발산 마하수 $M_{dd}$는 보통 임계 마하수 $M_{cr}$보다 약간 높다.",
+      "answer": true,
+      "explain": "$M_{cr}$에서는 충격파가 약해 항력이 아직 크게 늘지 않고, 조금 더 빨라져 충격파가 강해져야 항력이 급증해요."
+    }
+  ],
+  "further": [
+    {
+      "title": "Wikipedia — Supercritical airfoil",
+      "url": "https://en.wikipedia.org/wiki/Supercritical_airfoil",
+      "lang": "en"
+    },
+    {
+      "title": "Wikipedia — Swept wing",
+      "url": "https://en.wikipedia.org/wiki/Swept_wing",
+      "lang": "en"
+    },
+    {
+      "title": "Wikipedia — Drag divergence Mach number",
+      "url": "https://en.wikipedia.org/wiki/Drag_divergence_Mach_number",
+      "lang": "en"
+    }
+  ]
+}
