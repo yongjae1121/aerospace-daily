@@ -1,0 +1,183 @@
+{
+ "day": 40,
+ "title": "충격파와 초음속 비행",
+ "title_en": "Shock Waves and Supersonic Flight",
+ "level": 3,
+ "minutes": 22,
+ "summary": "수직·경사 충격파를 숫자로 다루고, 소닉붐과 콩코드, 그리고 조파 항력을 줄이는 면적 법칙까지 초음속 비행의 핵심을 배워요.",
+ "objectives": [
+  "수직 충격파 앞뒤의 압력비·온도비·마하수를 식으로 계산할 수 있다.",
+  "경사 충격파가 수직 충격파보다 약한 이유를 설명할 수 있다.",
+  "소닉붐, 콩코드의 설계, 면적 법칙의 원리를 설명할 수 있다."
+ ],
+ "vocab": [
+  {
+   "en": "normal shock",
+   "pron": "ˈnɔːrml ʃɑːk",
+   "pos": "n.",
+   "ko": "수직 충격파",
+   "def": "A shock wave that stands at a right angle to the flow, after which the flow is subsonic.",
+   "ex": "Behind a normal shock, the air is slower, hotter and denser.",
+   "ex_ko": "수직 충격파 뒤에서 공기는 더 느리고, 더 뜨겁고, 더 조밀합니다."
+  },
+  {
+   "en": "oblique shock",
+   "pron": "əˈbliːk ʃɑːk",
+   "pos": "n.",
+   "ko": "경사 충격파",
+   "def": "A shock wave that is slanted to the flow, usually weaker than a normal shock.",
+   "ex": "A sharp nose produces an oblique shock instead of a strong normal shock.",
+   "ex_ko": "뾰족한 앞부분은 강한 수직 충격파 대신 경사 충격파를 만듭니다."
+  },
+  {
+   "en": "wedge",
+   "pron": "wedʒ",
+   "pos": "n.",
+   "ko": "쐐기",
+   "def": "A solid shape with a sharp edge that gets thicker in one direction.",
+   "ex": "The test model was a thin wedge placed in the supersonic wind tunnel.",
+   "ex_ko": "시험 모형은 초음속 풍동에 놓인 얇은 쐐기였습니다."
+  },
+  {
+   "en": "overpressure",
+   "pron": "ˌoʊvərˈpreʃər",
+   "pos": "n.",
+   "ko": "과압",
+   "def": "The amount by which pressure rises above normal atmospheric pressure.",
+   "ex": "The overpressure of a sonic boom is only a few tens of pascals.",
+   "ex_ko": "소닉붐의 과압은 수십 파스칼에 불과합니다."
+  },
+  {
+   "en": "delta wing",
+   "pron": "ˈdeltə wɪŋ",
+   "pos": "n.",
+   "ko": "델타 날개",
+   "def": "A wing shaped like a triangle, often used on fast aircraft.",
+   "ex": "Concorde used a delta wing to fly efficiently at Mach 2.",
+   "ex_ko": "콩코드는 마하 2에서 효율적으로 날기 위해 델타 날개를 썼습니다."
+  },
+  {
+   "en": "area rule",
+   "pron": "ˈeriə ruːl",
+   "pos": "n.",
+   "ko": "면적 법칙",
+   "def": "A design rule that keeps the cross-sectional area of an aircraft smooth to reduce wave drag.",
+   "ex": "The area rule gave the fighter a narrow waist near the wings.",
+   "ex_ko": "면적 법칙 덕분에 그 전투기는 날개 근처에서 잘록한 허리를 갖게 되었습니다."
+  },
+  {
+   "en": "fuselage",
+   "pron": "ˈfjuːsəlɑːʒ",
+   "pos": "n.",
+   "ko": "동체",
+   "def": "The main body of an aircraft that holds the crew, passengers or cargo.",
+   "ex": "The wing is attached to the middle of the fuselage.",
+   "ex_ko": "날개는 동체의 가운데에 붙어 있습니다."
+  },
+  {
+   "en": "afterburner",
+   "pron": "ˈæftərbɜːrnər",
+   "pos": "n.",
+   "ko": "애프터버너 (재연소기)",
+   "def": "A part at the back of a jet engine that burns extra fuel to give more thrust.",
+   "ex": "The pilot turned on the afterburner to accelerate through Mach 1.",
+   "ex_ko": "조종사는 마하 1을 넘어 가속하려고 애프터버너를 켰습니다."
+  }
+ ],
+ "reading": {
+  "title": "Shocks in Supersonic Flight",
+  "en": "A supersonic aircraft meets the air in a very different way from a slow one. When a wedge-shaped nose cuts through air faster than sound, the flow cannot move out of the way in advance, so a thin oblique shock forms at the tip. Behind it, the air is compressed and hotter, but it often stays supersonic. A blunt nose, by contrast, creates a strong normal shock, after which the air slows below the speed of sound and the drag becomes much larger.\n\nDesigners also shape the whole body. According to the area rule, the cross-sectional area of the aircraft should change smoothly from nose to tail. Where the wings join the fuselage, the area suddenly grows, so engineers make the body narrower at that point. A delta wing, which looks like a flat triangle, adds strength and works well at high speed. To fly faster still, a military jet can burn extra fuel in an afterburner behind the engine.\n\nAll of this has a side effect on the ground. The shock waves reach the ground as a short rise in pressure, called overpressure, and people hear it as a sonic boom. Quiet supersonic designs try to spread the shocks apart, so that the sound becomes a soft thump instead of a loud bang.",
+  "ko": "초음속 항공기는 느린 항공기와는 아주 다르게 공기를 만납니다. 쐐기 모양의 앞부분이 음속보다 빠르게 공기를 가르면, 공기가 미리 비켜설 수 없기 때문에 앞 끝에서 얇은 경사 충격파가 생깁니다. 그 뒤의 공기는 압축되고 뜨거워지지만, 대개 여전히 초음속으로 흐릅니다. 반면 뭉툭한 앞부분은 강한 수직 충격파를 만들고, 그 뒤에서 공기는 음속 아래로 느려지며 항력이 훨씬 커집니다.\n\n설계자는 기체 전체의 모양도 다듬습니다. 면적 법칙에 따르면 항공기의 단면적은 앞에서 뒤까지 매끄럽게 변해야 합니다. 날개가 동체에 붙는 곳에서는 단면적이 갑자기 커지므로, 기술자들은 그 부분의 몸통을 더 가늘게 만듭니다. 납작한 삼각형처럼 생긴 델타 날개는 튼튼하고 고속에서 잘 작동합니다. 더 빨리 날기 위해 군용 제트기는 엔진 뒤의 애프터버너에서 연료를 추가로 태우기도 합니다.\n\n이 모든 것은 지상에 부수 효과를 남깁니다. 충격파는 짧은 압력 상승, 즉 과압으로 지상에 닿고, 사람들은 그것을 소닉붐으로 듣습니다. 조용한 초음속 설계는 충격파들을 서로 떨어뜨려서, 소리가 큰 폭음 대신 부드러운 \"쿵\" 소리가 되도록 합니다."
+ },
+ "quiz": [
+  {
+   "type": "mc",
+   "q": "수직 충격파를 지난 뒤 흐름에 대한 설명으로 옳은 것은?",
+   "choices": [
+    "압력은 올라가고 흐름은 아음속이 된다.",
+    "압력은 내려가고 흐름은 더 빨라진다.",
+    "압력은 그대로이고 온도만 올라간다.",
+    "흐름이 초음속으로 유지되고 밀도만 줄어든다."
+   ],
+   "answer": 0,
+   "explain": "수직 충격파를 지나면 압력·밀도·온도가 모두 올라가고 속도는 줄어서 항상 $M_2<1$인 아음속 흐름이 돼요."
+  },
+  {
+   "type": "num",
+   "q": "$\\gamma=1.4$인 공기가 $M_1=3$으로 수직 충격파를 지나요. 충격파 뒤 압력은 앞의 몇 배일까요? (숫자만 입력)",
+   "answer": 10.33,
+   "tol": 0.02,
+   "unit": "배",
+   "explain": "$\\dfrac{p_2}{p_1}=1+\\dfrac{2(1.4)}{2.4}(3^2-1)=1+1.1667\\times 8=10.33$이에요."
+  },
+  {
+   "type": "ox",
+   "q": "같은 마하수의 흐름에서 경사 충격파는 일반적으로 수직 충격파보다 약하고, 그 뒤에서도 흐름이 초음속으로 남을 수 있다.",
+   "answer": true,
+   "explain": "경사 충격파는 충격파 면에 수직인 속도 성분 $M_1\\sin\\beta$만 압축에 쓰이므로 더 약해요. 그래서 약한 경사 충격파 뒤의 흐름은 대개 초음속이에요."
+  },
+  {
+   "type": "mc",
+   "q": "According to the passage, why do engineers make the fuselage narrower where the wings join it?",
+   "choices": [
+    "To keep the cross-sectional area of the aircraft smooth and reduce wave drag",
+    "To make room for a larger afterburner behind the engine",
+    "To lower the overpressure of the sonic boom on the ground",
+    "To turn a normal shock into a stronger oblique shock"
+   ],
+   "answer": 0,
+   "explain": "본문에 따르면 면적 법칙에 따라 단면적이 앞에서 뒤까지 매끄럽게 변해야 해요. 날개가 붙는 곳에서 단면적이 갑자기 커지므로 그곳의 동체를 가늘게 만들어요."
+  }
+ ],
+ "test": [
+  {
+   "type": "num",
+   "q": "$M_1=2$ 공기 흐름이 반각 $10^\\circ$ 쐐기를 만나 $\\beta=39.3^\\circ$의 경사 충격파가 생겼어요. 충격파 앞뒤의 압력비 $p_2/p_1$은? ($\\gamma=1.4$, 소수 둘째 자리까지)",
+   "answer": 1.71,
+   "tol": 0.02,
+   "unit": "",
+   "explain": "$M_{n1}=2\\sin 39.3^\\circ=1.266$이고 $\\dfrac{p_2}{p_1}=1+1.1667(1.266^2-1)\\approx 1.70$이에요. (정확한 $\\beta$를 쓰면 1.71)"
+  },
+  {
+   "type": "mc",
+   "q": "면적 법칙(area rule)에 따라 설계한 초음속기의 동체는 날개가 붙는 부분에서 어떤 모양이 되는가?",
+   "choices": [
+    "잘록하게 들어간다.",
+    "더 두꺼워진다.",
+    "뒤로 길게 늘어난다.",
+    "원통에서 납작한 판 모양으로 바뀐다."
+   ],
+   "answer": 0,
+   "explain": "날개가 붙는 곳에서 단면적이 튀어나오지 않도록 동체를 잘록하게 깎아서 길이 방향의 총 단면적 분포를 매끄럽게 만들어요."
+  },
+  {
+   "type": "mc",
+   "q": "콩코드가 마하 2.04로 날 때의 마하각 $\\mu$에 가장 가까운 값은? ($\\sin\\mu=1/M$)",
+   "choices": [
+    "약 29°",
+    "약 61°",
+    "약 45°",
+    "약 15°"
+   ],
+   "answer": 0,
+   "explain": "$\\sin\\mu=1/2.04=0.49$이므로 $\\mu=\\arcsin(0.49)\\approx 29.4^\\circ$예요."
+  }
+ ],
+ "further": [
+  {
+   "title": "NASA — Normal Shock Waves",
+   "url": "https://www.grc.nasa.gov/www/k-12/airplane/normal.html",
+   "lang": "en"
+  },
+  {
+   "title": "Wikipedia — Area rule",
+   "url": "https://en.wikipedia.org/wiki/Area_rule",
+   "lang": "en"
+  },
+  {
+   "title": "Wikipedia — Concorde",
+   "url": "https://en.wikipedia.org/wiki/Concorde",
+   "lang": "en"
+  }
+ ]
+}
