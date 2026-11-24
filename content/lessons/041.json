@@ -1,0 +1,170 @@
+{
+ "day": 41,
+ "title": "케플러의 법칙",
+ "title_en": "Kepler's Laws",
+ "level": 3,
+ "minutes": 20,
+ "summary": "행성은 왜 타원으로 돌고, 가까울수록 왜 빨라질까요? 케플러의 세 법칙을 식과 숫자로 익혀요.",
+ "objectives": [
+  "타원 궤도의 긴반지름과 이심률로 근일점·원일점 거리를 구할 수 있다.",
+  "면적 속도 일정 법칙으로 근일점과 원일점의 속도 비를 구할 수 있다.",
+  "$T=2\\pi\\sqrt{a^3/\\mu}$로 궤도 주기와 긴반지름을 서로 계산할 수 있다."
+ ],
+ "vocab": [
+  {
+   "en": "eccentricity",
+   "pron": "ˌeksenˈtrɪsəti",
+   "pos": "n.",
+   "ko": "이심률",
+   "def": "A number that tells how much an orbit differs from a perfect circle.",
+   "ex": "A circular orbit has an eccentricity of zero.",
+   "ex_ko": "원궤도의 이심률은 0이에요."
+  },
+  {
+   "en": "focus",
+   "pron": "ˈfoʊkəs",
+   "pos": "n.",
+   "ko": "초점",
+   "def": "One of the two special points inside an ellipse that define its shape.",
+   "ex": "The Sun sits at one focus of each planet's orbit.",
+   "ex_ko": "태양은 각 행성 궤도의 한 초점에 있어요."
+  },
+  {
+   "en": "semi-major axis",
+   "pron": "ˌsemi ˈmeɪdʒər ˈæksɪs",
+   "pos": "n.",
+   "ko": "긴반지름",
+   "def": "Half of the longest diameter of an ellipse.",
+   "ex": "The orbital period depends only on the semi-major axis.",
+   "ex_ko": "궤도 주기는 긴반지름에만 좌우돼요."
+  },
+  {
+   "en": "perihelion",
+   "pron": "ˌperɪˈhiːliən",
+   "pos": "n.",
+   "ko": "근일점",
+   "def": "The point in an orbit around the Sun that is closest to the Sun.",
+   "ex": "Earth reaches perihelion in early January.",
+   "ex_ko": "지구는 1월 초에 근일점에 도달해요."
+  },
+  {
+   "en": "aphelion",
+   "pron": "əˈfiːliən",
+   "pos": "n.",
+   "ko": "원일점",
+   "def": "The point in an orbit around the Sun that is farthest from the Sun.",
+   "ex": "A comet moves slowest at aphelion.",
+   "ex_ko": "혜성은 원일점에서 가장 느리게 움직여요."
+  },
+  {
+   "en": "empirical",
+   "pron": "ɪmˈpɪrɪkl",
+   "pos": "adj.",
+   "ko": "경험적인",
+   "def": "Based on observation and experiment rather than on pure theory.",
+   "ex": "Kepler's laws were empirical results from careful measurements.",
+   "ex_ko": "케플러의 법칙은 정밀한 측정에서 얻은 경험적 결과였어요."
+  },
+  {
+   "en": "heliocentric",
+   "pron": "ˌhiːliəˈsentrɪk",
+   "pos": "adj.",
+   "ko": "태양 중심의",
+   "def": "Having the Sun at the center.",
+   "ex": "Copernicus proposed a heliocentric model of the solar system.",
+   "ex_ko": "코페르니쿠스는 태양 중심의 태양계 모형을 제안했어요."
+  },
+  {
+   "en": "sweep out",
+   "pron": "swiːp aʊt",
+   "pos": "v.",
+   "ko": "(넓이를) 쓸고 지나가다",
+   "def": "To cover an area by moving across it.",
+   "ex": "The line to the planet sweeps out equal areas in equal times.",
+   "ex_ko": "행성으로 가는 선은 같은 시간에 같은 넓이를 쓸고 지나가요."
+  }
+ ],
+ "reading": {
+  "title": "Why Planets Speed Up and Slow Down",
+  "en": "For centuries, astronomers believed that planets move in perfect circles. Johannes Kepler broke this idea. Using the careful measurements of Tycho Brahe, he found three empirical rules, and the first one says that each planet follows an ellipse with the Sun at one focus. In a heliocentric picture, the Sun is not at the center of the path, but a little to the side.\\n\\nThe second rule explains why speed changes. The line from the Sun to a planet sweeps out equal areas in equal times. Near perihelion, this line is short, so the planet must travel a long arc to cover the same area, and it moves fast. Near aphelion the line is long, so the planet moves slowly. Earth's orbit has a very small eccentricity, so its speed changes by only about three percent during the year. A comet, however, may speed up dramatically.\\n\\nThe third rule links size and time. A planet with a larger semi-major axis takes a much longer time to complete one orbit. Engineers still use this rule today to design the orbit of every satellite.",
+  "ko": "수백 년 동안 천문학자들은 행성이 완벽한 원을 그리며 움직인다고 믿었어요. 요하네스 케플러가 이 생각을 깨뜨렸어요. 그는 티코 브라헤의 정밀한 관측 자료를 이용해 경험적인 규칙 세 가지를 찾았고, 그중 첫 번째는 모든 행성이 태양을 한 초점에 둔 타원을 따라 움직인다는 것이에요. 태양 중심 그림에서도 태양은 궤도의 한가운데가 아니라 약간 옆쪽에 있어요.\\n\\n두 번째 법칙은 속도가 왜 변하는지 설명해요. 태양에서 행성까지의 선은 같은 시간 동안 같은 넓이를 쓸고 지나가요. 근일점 근처에서는 이 선이 짧아서, 같은 넓이를 쓸려면 행성이 긴 호를 이동해야 하므로 빠르게 움직여요. 원일점 근처에서는 선이 길어서 행성이 느리게 움직여요. 지구 궤도는 이심률이 아주 작아서 1년 동안 속도가 약 3퍼센트밖에 변하지 않아요. 하지만 혜성은 속도가 극적으로 빨라질 수 있어요.\\n\\n세 번째 법칙은 크기와 시간을 이어 줘요. 긴반지름이 큰 행성일수록 한 바퀴를 도는 데 훨씬 오래 걸려요. 엔지니어들은 오늘날에도 이 법칙을 이용해 모든 인공위성의 궤도를 설계해요."
+ },
+ "quiz": [
+  {
+   "type": "mc",
+   "q": "케플러 제1법칙에 따르면 행성 궤도에서 태양은 어디에 있을까요?",
+   "choices": [
+    "타원의 한 초점",
+    "타원의 정중앙",
+    "짧은반지름의 끝점",
+    "근일점과 원일점의 한가운데"
+   ],
+   "answer": 0,
+   "explain": "제1법칙: 행성은 태양을 한 초점에 둔 타원 궤도를 돌아요. 정중앙이 아니라 중심에서 벗어난 초점에 있어요."
+  },
+  {
+   "type": "ox",
+   "q": "행성은 근일점에서 원일점보다 더 빠르게 움직인다.",
+   "answer": true,
+   "explain": "면적 속도가 일정하므로 태양에 가까울수록(반지름이 짧을수록) 빨라요. $v_p/v_a=r_a/r_p>1$이에요."
+  },
+  {
+   "type": "num",
+   "q": "화성의 긴반지름은 1.524 AU예요. 케플러 제3법칙($T^2=a^3$, 단위는 AU와 년)으로 화성의 공전 주기를 구하세요. (년, 소수 둘째 자리까지)",
+   "answer": 1.88,
+   "tol": 0.02,
+   "unit": "년",
+   "explain": "$T=a^{3/2}=1.524^{1.5}\\approx 1.88$년이에요."
+  },
+  {
+   "type": "mc",
+   "q": "According to the passage, why does a planet move faster near perihelion?",
+   "choices": [
+    "The line to the Sun is short, so the planet must cover a longer arc to sweep out the same area.",
+    "The Sun's gravity becomes weaker there.",
+    "The planet's mass becomes smaller there.",
+    "The orbit turns into a perfect circle there."
+   ],
+   "answer": 0,
+   "explain": "지문: 근일점에서는 태양까지의 선이 짧아서 같은 넓이를 쓸려면 긴 호를 이동해야 하므로 빨라져요. 중력은 가까울수록 오히려 강해요."
+  }
+ ],
+ "test": [
+  {
+   "type": "num",
+   "q": "핼리 혜성의 공전 주기는 약 75.3년이에요. 케플러 제3법칙($T^2=a^3$, AU와 년)으로 긴반지름을 구하세요. (AU, 소수 첫째 자리까지)",
+   "answer": 17.8,
+   "tol": 0.02,
+   "unit": "AU",
+   "explain": "$a=T^{2/3}=75.3^{2/3}\\approx 17.8$ AU예요."
+  },
+  {
+   "type": "num",
+   "q": "근일점 거리가 0.587 AU, 원일점 거리가 35.0 AU인 혜성이 있어요. 근일점 속도는 원일점 속도의 몇 배일까요? (소수 첫째 자리까지)",
+   "answer": 59.6,
+   "tol": 0.02,
+   "unit": "배",
+   "explain": "$r_pv_p=r_av_a$이므로 $v_p/v_a=r_a/r_p=35.0/0.587\\approx 59.6$배예요."
+  },
+  {
+   "type": "num",
+   "q": "한 위성이 지구를 100분(6000초)에 한 바퀴 도는 원궤도를 돌아요. 궤도 반지름은 몇 km일까요? ($\\mu=3.986\\times10^{14}\\ \\text{m}^3/\\text{s}^2$, 정수로)",
+   "answer": 7137,
+   "tol": 0.02,
+   "unit": "km",
+   "explain": "$a=\\left(\\dfrac{\\mu T^2}{4\\pi^2}\\right)^{1/3}=\\left(\\dfrac{3.986\\times10^{14}\\times6000^2}{4\\pi^2}\\right)^{1/3}\\approx 7.137\\times10^6$ m, 즉 약 7,137 km예요. 지구 반지름을 빼면 고도 약 760 km예요."
+  }
+ ],
+ "further": [
+  {
+   "title": "Wikipedia — Kepler's laws of planetary motion",
+   "url": "https://en.wikipedia.org/wiki/Kepler%27s_laws_of_planetary_motion",
+   "lang": "en"
+  },
+  {
+   "title": "Wikipedia — Halley's Comet",
+   "url": "https://en.wikipedia.org/wiki/Halley%27s_Comet",
+   "lang": "en"
+  }
+ ]
+}
