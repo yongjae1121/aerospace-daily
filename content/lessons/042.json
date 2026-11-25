@@ -1,0 +1,39 @@
+{
+  "day": 42,
+  "title": "이체 문제",
+  "title_en": "The Two-Body Problem",
+  "level": 3,
+  "minutes": 22,
+  "summary": "중력이 중심력이라는 사실에서 각운동량 보존과 궤도 방정식이 어떻게 나오는지 따라가 봐요.",
+  "objectives": ["이체 문제의 가정과 운동 방정식을 설명할 수 있다.", "비각운동량 h = r × v의 보존이 궤도면과 면적 속도 일정을 뜻함을 설명할 수 있다.", "궤도 방정식으로 근지점·원지점 거리와 속도를 계산할 수 있다."],
+  "vocab": [
+    {"en": "two-body problem", "pron": "tuː ˈbɑːdi ˈprɑːbləm", "pos": "n.", "ko": "이체 문제", "def": "A model that studies two masses that attract each other and nothing else.", "ex": "The two-body problem is the starting point for almost every orbit calculation.", "ex_ko": "이체 문제는 거의 모든 궤도 계산의 출발점이에요."},
+    {"en": "point mass", "pron": "pɔɪnt mæs", "pos": "n.", "ko": "점질량", "def": "An object treated as having all its mass at one single point.", "ex": "For orbit design, a planet can be treated as a point mass.", "ex_ko": "궤도 설계에서는 행성을 점질량으로 다룰 수 있어요."},
+    {"en": "central force", "pron": "ˈsentrəl fɔːrs", "pos": "n.", "ko": "중심력", "def": "A force that always points toward or away from one fixed center.", "ex": "Gravity from a planet is a central force acting on its satellite.", "ex_ko": "행성의 중력은 위성에 작용하는 중심력이에요."},
+    {"en": "inverse-square law", "pron": "ɪnˈvɜːrs skwer lɔː", "pos": "n.", "ko": "역제곱 법칙", "def": "A rule in which a quantity becomes four times smaller when the distance doubles.", "ex": "Gravity follows an inverse-square law, so it weakens quickly with distance.", "ex_ko": "중력은 역제곱 법칙을 따라서 거리에 따라 빠르게 약해져요."},
+    {"en": "angular momentum", "pron": "ˈæŋɡjələr moʊˈmentəm", "pos": "n.", "ko": "각운동량", "def": "A quantity that measures how much rotational motion an object has around a point.", "ex": "A satellite keeps its angular momentum while it moves in orbit.", "ex_ko": "위성은 궤도를 도는 동안 각운동량을 유지해요."},
+    {"en": "torque", "pron": "tɔːrk", "pos": "n.", "ko": "토크, 돌림힘", "def": "A turning effect produced by a force acting at a distance from a point.", "ex": "A force that points straight at the center produces no torque.", "ex_ko": "중심을 곧장 향하는 힘은 토크를 만들지 않아요."},
+    {"en": "orbital plane", "pron": "ˈɔːrbɪtl pleɪn", "pos": "n.", "ko": "궤도면", "def": "The flat surface that contains an entire orbit.", "ex": "The satellite stays in its orbital plane unless a force pushes it out.", "ex_ko": "위성은 힘이 밀어내지 않는 한 궤도면 안에 머물러요."},
+    {"en": "true anomaly", "pron": "truː əˈnɑːməli", "pos": "n.", "ko": "진근점이각", "def": "The angle from the closest point of an orbit to the satellite's position.", "ex": "At perigee, the true anomaly is zero degrees.", "ex_ko": "근지점에서 진근점이각은 0도예요."}
+  ],
+  "reading": {
+    "title": "Why Orbits Stay Flat",
+    "en": "Engineers often begin an orbit calculation with the two-body problem. They imagine only two objects in the universe, such as the Earth and a satellite, and treat each one as a point mass. This is a strong simplification, but it works surprisingly well, and it lets us solve the equations by hand.\n\nThe key fact is that gravity is a central force. It always pulls the satellite straight toward the center of the Earth, so it creates no torque around that point. As a result, the angular momentum of the satellite does not change. This single conservation law explains two things at once. First, the satellite never leaves its orbital plane, which is why a ground track repeats a regular pattern. Second, the satellite moves faster when it is close to the Earth and slower when it is far away.\n\nOf course, the real world adds small disturbances such as air drag and the pull of the Moon. Still, the two-body solution remains the reference path, and engineers correct it step by step.",
+    "ko": "엔지니어들은 흔히 이체 문제로 궤도 계산을 시작해요. 우주에 지구와 위성 같은 두 물체만 있다고 상상하고, 각각을 점질량으로 다루는 거예요. 이것은 강한 단순화지만 놀랄 만큼 잘 맞고, 덕분에 방정식을 손으로 풀 수 있어요.\n\n핵심 사실은 중력이 중심력이라는 거예요. 중력은 언제나 위성을 지구 중심으로 곧장 끌어당기므로, 그 점을 기준으로 토크를 만들지 않아요. 그 결과 위성의 각운동량은 변하지 않아요. 이 보존 법칙 하나가 두 가지를 한꺼번에 설명해요. 첫째, 위성은 궤도면을 벗어나지 않아요. 그래서 지상 궤적이 규칙적인 무늬를 되풀이해요. 둘째, 위성은 지구에 가까울 때 더 빠르게, 멀 때 더 느리게 움직여요.\n\n물론 실제 세계에는 공기 저항이나 달의 끌어당김 같은 작은 교란이 있어요. 그래도 이체 문제의 해는 기준 경로로 남고, 엔지니어들은 그것을 차근차근 보정해요."
+  },
+  "quiz": [
+    {"type": "mc", "q": "이체 문제에서 위성의 비각운동량 $\\vec h=\\vec r\\times\\vec v$가 일정하게 유지되는 가장 직접적인 이유는 무엇일까요?", "choices": ["중력이 항상 중심을 향하는 중심력이라서 토크가 0이다", "위성의 속력이 언제나 일정하다", "위성의 질량이 지구보다 훨씬 작다", "궤도가 항상 완전한 원이다"], "answer": 0, "explain": "중력은 $\\vec r$ 방향의 힘이라 $\\vec r\\times\\ddot{\\vec r}=0$이고, 따라서 $d\\vec h/dt=0$이에요. 속력은 타원 궤도에서 변하고, 질량 비나 궤도 모양과는 무관하게 보존돼요."},
+    {"type": "ox", "q": "이체 문제에서 위성의 질량이 지구 질량에 비해 매우 작으면, 같은 고도의 원궤도를 도는 위성은 질량이 달라도 궤도 속도가 같다.", "answer": true, "explain": "운동 방정식 $\\ddot{\\vec r}=-\\mu\\hat r/r^2$에는 위성 질량 $m$이 없어요. 그래서 $v=\\sqrt{\\mu/r}$는 위성 질량과 무관해요."},
+    {"type": "num", "q": "고도 400 km의 원궤도를 도는 위성의 비각운동량 $h=rv$를 구하세요. 지구 반지름 6,378 km, $\\mu=3.986\\times10^{14}\\ \\text{m}^3/\\text{s}^2$로 계산하고, 단위 $\\text{km}^2/\\text{s}$로 답하세요. (숫자만 입력)", "answer": 51978, "tol": 0.02, "unit": "km²/s", "explain": "$r=6778$ km, $v=\\sqrt{\\mu/r}\\approx7.669$ km/s이므로 $h=rv\\approx6778\\times7.669\\approx51{,}978\\ \\text{km}^2/\\text{s}$예요."},
+    {"type": "mc", "q": "According to the passage, why does a satellite never leave its orbital plane?", "choices": ["Gravity creates no torque about the center, so angular momentum does not change.", "Air drag keeps pushing the satellite back into the plane.", "The Moon's pull holds the satellite in one plane.", "The satellite always moves at the same speed."], "answer": 0, "explain": "지문: 중력은 중심력이라 토크를 만들지 않고, 각운동량이 변하지 않아서 위성은 궤도면을 벗어나지 않아요. 공기 저항과 달의 끌어당김은 오히려 교란이에요."}
+  ],
+  "test": [
+    {"type": "num", "q": "지구 둘레 궤도의 반직현이 $p=12{,}000$ km, 이심률이 $e=0.4$예요. 궤도 방정식 $r=p/(1+e\\cos\\nu)$로 원지점 반지름 $r_a$를 구하세요. (km, 숫자만 입력)", "answer": 20000, "tol": 0.02, "unit": "km", "explain": "원지점은 $\\nu=180^\\circ$이므로 $r_a=\\dfrac{p}{1-e}=\\dfrac{12000}{0.6}=20{,}000$ km예요."},
+    {"type": "mc", "q": "이심률 $e=0.5$인 궤도에서 진근점이각이 $\\nu=90^\\circ$일 때 위성의 지구 중심 거리 $r$는 얼마일까요?", "choices": ["$r=p$", "$r=p/1.5$", "$r=p/0.5$", "$r=2p$"], "answer": 0, "explain": "$\\cos90^\\circ=0$이므로 $r=\\dfrac{p}{1+e\\cdot0}=p$예요. 이심률과 상관없이 같아요."},
+    {"type": "mc", "q": "다음 중 위성의 비각운동량이 보존되지 않는 경우는?", "choices": ["엔진을 켜서 추력을 내는 동안", "엔진이 꺼진 뒤 관성 비행하는 동안", "중력만 받으며 타원 궤도를 도는 동안", "중력만 받으며 원궤도를 도는 동안"], "answer": 0, "explain": "추력은 중심력이 아니라서 토크를 만들 수 있고, 그러면 각운동량이 변해요. 중력만 받는 비행은 이체 문제이므로 각운동량이 보존돼요."}
+  ],
+  "further": [
+    {"title": "Wikipedia — Two-body problem", "url": "https://en.wikipedia.org/wiki/Two-body_problem", "lang": "en"},
+    {"title": "Wikipedia — Specific angular momentum", "url": "https://en.wikipedia.org/wiki/Specific_angular_momentum", "lang": "en"}
+  ]
+}
