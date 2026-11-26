@@ -1,0 +1,183 @@
+{
+  "day": 43,
+  "title": "원뿔 곡선 궤도",
+  "title_en": "Conic Section Orbits",
+  "level": 3,
+  "minutes": 20,
+  "summary": "이심률 하나로 원·타원·포물선·쌍곡선 궤도를 구분하고, 근지점·원지점 거리와 궤도의 운명을 읽어 봐요.",
+  "objectives": [
+    "이심률 값으로 궤도의 종류(원·타원·포물선·쌍곡선)와 닫힘 여부를 판단할 수 있다.",
+    "근지점·원지점 반지름에서 긴반지름과 이심률을 계산할 수 있다.",
+    "쌍곡선 궤도의 근지점 반지름과 점근선 각도를 구할 수 있다."
+  ],
+  "vocab": [
+    {
+      "en": "conic section",
+      "pron": "ˈkɑːnɪk ˈsekʃn",
+      "pos": "n.",
+      "ko": "원뿔 곡선",
+      "def": "A curve made when a flat plane cuts through a cone.",
+      "ex": "Every orbit in the two-body problem is a conic section.",
+      "ex_ko": "이체 문제의 모든 궤도는 원뿔 곡선이에요."
+    },
+    {
+      "en": "ellipse",
+      "pron": "ɪˈlɪps",
+      "pos": "n.",
+      "ko": "타원",
+      "def": "A closed oval curve with two foci.",
+      "ex": "The satellite moves along an ellipse around the Earth.",
+      "ex_ko": "위성은 지구 둘레의 타원을 따라 움직여요."
+    },
+    {
+      "en": "hyperbola",
+      "pron": "haɪˈpɜːrbələ",
+      "pos": "n.",
+      "ko": "쌍곡선",
+      "def": "An open curve with two branches that goes off to infinity.",
+      "ex": "A probe on a hyperbola passes the planet once and never returns.",
+      "ex_ko": "쌍곡선을 따르는 탐사선은 행성을 한 번 지나가고 돌아오지 않아요."
+    },
+    {
+      "en": "periapsis",
+      "pron": "ˌperiˈæpsɪs",
+      "pos": "n.",
+      "ko": "근점",
+      "def": "The point in an orbit that is closest to the body being orbited.",
+      "ex": "The engine fired at periapsis to raise the other side of the orbit.",
+      "ex_ko": "엔진은 근점에서 점화되어 궤도 반대편을 높였어요."
+    },
+    {
+      "en": "apoapsis",
+      "pron": "əˈpɑːpsɪs",
+      "pos": "n.",
+      "ko": "원점",
+      "def": "The point in an orbit that is farthest from the body being orbited.",
+      "ex": "The spacecraft moves slowest at apoapsis.",
+      "ex_ko": "우주선은 원점에서 가장 느리게 움직여요."
+    },
+    {
+      "en": "perigee",
+      "pron": "ˈperɪdʒiː",
+      "pos": "n.",
+      "ko": "근지점",
+      "def": "The point in an orbit around the Earth that is closest to the Earth.",
+      "ex": "At perigee, the satellite is only a few hundred kilometers above the ground.",
+      "ex_ko": "근지점에서 위성은 지상 몇백 km 위에 있어요."
+    },
+    {
+      "en": "apogee",
+      "pron": "ˈæpədʒiː",
+      "pos": "n.",
+      "ko": "원지점",
+      "def": "The point in an orbit around the Earth that is farthest from the Earth.",
+      "ex": "A communications satellite reaches apogee at geostationary altitude.",
+      "ex_ko": "통신 위성은 정지궤도 고도에서 원지점에 도달해요."
+    },
+    {
+      "en": "bound orbit",
+      "pron": "baʊnd ˈɔːrbɪt",
+      "pos": "n.",
+      "ko": "속박 궤도",
+      "def": "A closed orbit in which an object stays held by the gravity of a body.",
+      "ex": "Any orbit with an eccentricity below one is a bound orbit.",
+      "ex_ko": "이심률이 1보다 작은 모든 궤도는 속박 궤도예요."
+    },
+    {
+      "en": "asymptote",
+      "pron": "ˈæsɪmptoʊt",
+      "pos": "n.",
+      "ko": "점근선",
+      "def": "A straight line that a curve gets closer to but never touches.",
+      "ex": "The probe leaves the planet along the asymptote of its hyperbola.",
+      "ex_ko": "탐사선은 쌍곡선의 점근선을 따라 행성을 떠나요."
+    }
+  ],
+  "reading": {
+    "title": "Four Shapes, One Equation",
+    "en": "Every path that a spacecraft can follow around a planet is a conic section. The shape depends on one number, the eccentricity. If it is zero, the orbit is a circle. If it lies between zero and one, the orbit is an ellipse, and the spacecraft is held by gravity in a bound orbit. In such an orbit, the point closest to the planet is called periapsis, and the farthest point is called apoapsis.\n\nWhen the eccentricity reaches one, the path becomes a parabola, and the spacecraft just barely escapes. Above one, the path is a hyperbola. A probe on a hyperbola passes close to the planet, bends its path, and then leaves along an asymptote. It never comes back.\n\nEngineers often read an orbit at a glance from this single number. A nearly circular orbit suits a space station, while a long ellipse is a common first step for a satellite that must reach a high altitude. A hyperbola, on the other hand, is the signature of a mission that is leaving.",
+    "ko": "우주선이 행성 둘레에서 따를 수 있는 모든 경로는 원뿔 곡선이에요. 모양은 이심률이라는 숫자 하나에 달려 있어요. 0이면 원이에요. 0과 1 사이이면 타원이고, 우주선은 중력에 붙잡힌 속박 궤도에 있어요. 이런 궤도에서 행성에 가장 가까운 점을 근점, 가장 먼 점을 원점이라고 해요.\n\n이심률이 1에 이르면 경로는 포물선이 되고, 우주선은 간신히 탈출해요. 1보다 크면 경로는 쌍곡선이에요. 쌍곡선을 따르는 탐사선은 행성에 가까이 지나가며 경로가 휘고, 그 뒤 점근선을 따라 떠나요. 다시는 돌아오지 않아요.\n\n엔지니어들은 이 숫자 하나로 궤도를 한눈에 읽는 경우가 많아요. 거의 원에 가까운 궤도는 우주정거장에 어울리고, 긴 타원은 높은 고도에 도달해야 하는 위성의 흔한 첫 단계예요. 반면 쌍곡선은 떠나는 임무의 표식이에요."
+  },
+  "quiz": [
+    {
+      "type": "mc",
+      "q": "궤도 방정식 $r=p/(1+e\\cos\\nu)$에서 이심률이 $e=1$인 궤도는 무엇일까요?",
+      "choices": [
+        "포물선",
+        "원",
+        "타원",
+        "쌍곡선"
+      ],
+      "answer": 0,
+      "explain": "$e=0$ 원, $0<e<1$ 타원, $e=1$ 포물선, $e>1$ 쌍곡선이에요. $e=1$은 닫힌 궤도와 열린 궤도의 경계예요."
+    },
+    {
+      "type": "ox",
+      "q": "이심률이 1보다 큰 궤도의 우주선은 중심 천체에 가까이 지나간 뒤 같은 궤도를 따라 다시 돌아온다.",
+      "answer": false,
+      "explain": "$e>1$은 쌍곡선으로 열린 궤도예요. 분모 $1+e\\cos\\nu$가 0이 되는 방향으로 한없이 멀어지고 돌아오지 않아요."
+    },
+    {
+      "type": "num",
+      "q": "지구 둘레 타원 궤도의 근지점 반지름이 7,000 km, 원지점 반지름이 10,000 km예요(둘 다 지구 중심에서 잰 거리). 이심률 $e$를 구하세요. (소수로, 숫자만 입력)",
+      "answer": 0.1765,
+      "tol": 0.02,
+      "unit": "",
+      "explain": "$e=\\dfrac{r_a-r_p}{r_a+r_p}=\\dfrac{3000}{17000}\\approx0.1765$예요."
+    },
+    {
+      "type": "mc",
+      "q": "According to the passage, what happens to a probe on a hyperbolic path?",
+      "choices": [
+        "It leaves along an asymptote and never comes back.",
+        "It circles the planet forever at the same distance.",
+        "It falls straight into the planet.",
+        "It returns to periapsis after one orbit."
+      ],
+      "answer": 0,
+      "explain": "지문: 쌍곡선을 따르는 탐사선은 행성에 가까이 지나가며 경로가 휘고 점근선을 따라 떠나며, 다시 돌아오지 않아요."
+    }
+  ],
+  "test": [
+    {
+      "type": "num",
+      "q": "이심률 $e=0.5$인 지구 둘레 타원 궤도에서 근지점 속도는 원지점 속도의 몇 배일까요? $v_p/v_a=(1+e)/(1-e)$를 쓰세요. (숫자만 입력)",
+      "answer": 3,
+      "tol": 0.02,
+      "unit": "배",
+      "explain": "$\\dfrac{v_p}{v_a}=\\dfrac{1+0.5}{1-0.5}=3$배예요."
+    },
+    {
+      "type": "num",
+      "q": "쌍곡선 궤도의 이심률이 $e=2$예요. 점근선의 진근점이각 $\\nu_\\infty=\\cos^{-1}(-1/e)$를 도(°) 단위로 구하세요. (숫자만 입력)",
+      "answer": 120,
+      "tol": 0.02,
+      "unit": "°",
+      "explain": "$\\cos\\nu_\\infty=-1/2$이므로 $\\nu_\\infty=120^\\circ$예요."
+    },
+    {
+      "type": "mc",
+      "q": "긴반지름 $a=15{,}000$ km, 이심률 $e=0.5$인 지구 둘레 궤도의 근지점 고도는 얼마일까요? (지구 반지름 6,378 km)",
+      "choices": [
+        "약 1,122 km",
+        "약 7,500 km",
+        "약 16,122 km",
+        "약 22,500 km"
+      ],
+      "answer": 0,
+      "explain": "$r_p=a(1-e)=7500$ km는 중심에서 잰 거리예요. 고도는 반지름을 빼서 $7500-6378=1122$ km예요. 7,500 km와 22,500 km는 중심 거리이고, 22,500−6,378≈16,122 km는 원지점 고도예요."
+    }
+  ],
+  "further": [
+    {
+      "title": "Wikipedia — Kepler orbit",
+      "url": "https://en.wikipedia.org/wiki/Kepler_orbit",
+      "lang": "en"
+    },
+    {
+      "title": "Wikipedia — Conic section",
+      "url": "https://en.wikipedia.org/wiki/Conic_section",
+      "lang": "en"
+    }
+  ]
+}
