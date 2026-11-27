@@ -1,0 +1,174 @@
+{
+  "day": 44,
+  "title": "활력 방정식",
+  "title_en": "The Vis-Viva Equation",
+  "level": 3,
+  "minutes": 20,
+  "summary": "에너지 보존에서 활력 방정식을 이끌어 내고, 원·타원 궤도의 어느 점에서든 속력을 계산해 봐요.",
+  "objectives": [
+    "에너지 보존으로 비궤도에너지 $-\\mu/2a$를 설명할 수 있다.",
+    "활력 방정식으로 궤도의 한 점에서 속력을 계산할 수 있다.",
+    "원궤도 속도와 근지점·원지점 속도를 비교할 수 있다."
+  ],
+  "vocab": [
+    {
+      "en": "vis-viva equation",
+      "pron": "ˈvaɪs ˈvaɪvə ɪˈkweɪʒn",
+      "pos": "n.",
+      "ko": "활력 방정식",
+      "def": "An equation that gives the speed of an orbiting body at any distance.",
+      "ex": "The vis-viva equation gives the speed at every point of an orbit.",
+      "ex_ko": "활력 방정식은 궤도의 모든 점에서 속력을 알려 줘요."
+    },
+    {
+      "en": "total energy",
+      "pron": "ˈtoʊtl ˈenərdʒi",
+      "pos": "n.",
+      "ko": "총 에너지",
+      "def": "The sum of kinetic and potential energy of a body.",
+      "ex": "The total energy of the satellite stays the same along its orbit.",
+      "ex_ko": "위성의 총 에너지는 궤도를 따라 변하지 않아요."
+    },
+    {
+      "en": "circular velocity",
+      "pron": "ˈsɜːrkjələr vəˈlɑːsəti",
+      "pos": "n.",
+      "ko": "원궤도 속도",
+      "def": "The speed needed to stay on a circular orbit at a given distance.",
+      "ex": "The circular velocity at low Earth orbit is about 7.7 km/s.",
+      "ex_ko": "저궤도에서의 원궤도 속도는 약 7.7 km/s예요."
+    },
+    {
+      "en": "per unit mass",
+      "pron": "pɜːr ˈjuːnɪt mæs",
+      "pos": "adv.",
+      "ko": "단위 질량당",
+      "def": "For each kilogram of the object.",
+      "ex": "Energy per unit mass lets us ignore the weight of the satellite.",
+      "ex_ko": "단위 질량당 에너지를 쓰면 위성의 무게를 신경 쓰지 않아도 돼요."
+    },
+    {
+      "en": "constant",
+      "pron": "ˈkɑːnstənt",
+      "pos": "adj.",
+      "ko": "일정한",
+      "def": "Not changing over time.",
+      "ex": "Angular momentum stays constant in a central force field.",
+      "ex_ko": "중심력장에서 각운동량은 일정해요."
+    },
+    {
+      "en": "burn",
+      "pron": "bɜːrn",
+      "pos": "n. / v.",
+      "ko": "연소; 연소시키다",
+      "def": "A period when a rocket engine fires to change the velocity.",
+      "ex": "A short burn at perigee raised the apogee of the orbit.",
+      "ex_ko": "근지점에서의 짧은 연소가 궤도의 원지점을 높였어요."
+    },
+    {
+      "en": "tangential",
+      "pron": "tænˈdʒenʃl",
+      "pos": "adj.",
+      "ko": "접선 방향의",
+      "def": "Along the direction that touches a curve at one point.",
+      "ex": "At perigee the velocity is tangential to the orbit.",
+      "ex_ko": "근지점에서 속도는 궤도에 접선 방향이에요."
+    },
+    {
+      "en": "negative",
+      "pron": "ˈnegətɪv",
+      "pos": "adj.",
+      "ko": "음수의",
+      "def": "Less than zero.",
+      "ex": "A bound orbit has a negative orbital energy.",
+      "ex_ko": "속박 궤도는 궤도에너지가 음수예요."
+    }
+  ],
+  "reading": {
+    "title": "Energy Tells the Speed",
+    "en": "Imagine that you throw a ball upward. It slows as it rises and speeds up as it falls, yet the sum of its kinetic and potential energy never changes. A satellite follows the same rule. Its total energy is constant along the whole orbit, so when it moves closer to the Earth, it must move faster.\n\nEngineers turn this idea into the vis-viva equation. It connects the speed of a satellite with only two numbers: the distance from the center of the Earth and the semi-major axis of the orbit. Interestingly, the total energy depends only on the semi-major axis, and it is negative for a bound orbit. A larger orbit has less negative energy, which means that the satellite holds more energy.\n\nThe equation also helps to plan a burn. If a spacecraft fires its engine along its direction of motion, its speed rises at that point and the orbit on the opposite side becomes higher. For a circular orbit at low altitude, the circular velocity is about seven and a half kilometers per second, and a satellite must gain more speed to reach a higher orbit.",
+    "ko": "공을 위로 던진다고 생각해 보세요. 공은 올라갈수록 느려지고 떨어질 때 빨라지지만, 운동에너지와 위치에너지의 합은 변하지 않아요. 인공위성도 같은 규칙을 따라요. 위성의 총 에너지는 궤도 전체에서 일정하므로, 지구에 가까워지면 더 빨라져야 해요.\n\n엔지니어들은 이 생각을 활력 방정식으로 만들었어요. 이 식은 위성의 속력을 단 두 수, 곧 지구 중심에서의 거리와 궤도의 긴반지름에만 연결해요. 흥미롭게도 총 에너지는 긴반지름에만 달려 있고, 속박 궤도에서는 음수예요. 궤도가 클수록 에너지는 덜 음수가 되는데, 이는 위성이 더 많은 에너지를 가지고 있다는 뜻이에요.\n\n이 식은 연소를 계획하는 데도 도움이 돼요. 우주선이 진행 방향으로 엔진을 점화하면 그 지점에서 속력이 올라가고 반대편 궤도가 높아져요. 저고도의 원 궤도에서 원궤도 속도는 초속 약 7.5킬로미터이고, 위성이 더 높은 궤도에 도달하려면 속도를 더 얻어야 해요."
+  },
+  "quiz": [
+    {
+      "type": "mc",
+      "q": "지구 둘레 타원 궤도의 비궤도에너지 $\\varepsilon=-\\mu/2a$에 대한 설명으로 옳은 것은?",
+      "choices": [
+        "속박 궤도라서 값이 음수이고, 긴반지름이 커질수록 0에 가까워져요.",
+        "값이 항상 양수이고 이심률이 클수록 커져요.",
+        "이심률이 커질수록 더 음수가 돼요.",
+        "근지점에서 재면 원지점에서 잴 때보다 작아요."
+      ],
+      "answer": 0,
+      "explain": "$\\varepsilon=-\\mu/2a$는 $a$로만 정해지는 음수예요. $a$가 커지면 0에 가까워지고, 이심률과 관계없으며 궤도 어디서나 같아요."
+    },
+    {
+      "type": "num",
+      "q": "정지궤도 반지름 $r=42{,}164$ km의 원 궤도 속도를 $v=\\sqrt{\\mu/r}$로 구하세요. ($\\mu=398{,}600\\ \\text{km}^3/\\text{s}^2$, 숫자만 입력)",
+      "answer": 3.07,
+      "tol": 0.02,
+      "unit": "km/s",
+      "explain": "$v=\\sqrt{398600/42164}=\\sqrt{9.4534}\\approx3.07$ km/s예요. 저궤도(7.7 km/s)보다 훨씬 느려요."
+    },
+    {
+      "type": "ox",
+      "q": "활력 방정식에 따르면, 위치 $r$와 긴반지름 $a$가 같은 두 위성은 이심률이 달라도 그 지점에서 속력이 같다.",
+      "answer": true,
+      "explain": "$v^2=\\mu(2/r-1/a)$에는 $r$와 $a$만 들어 있어서 이심률이 직접 나타나지 않아요."
+    },
+    {
+      "type": "mc",
+      "q": "According to the passage, what happens to a satellite when it moves closer to the Earth?",
+      "choices": [
+        "It must move faster because its total energy is constant.",
+        "It must move slower because gravity is weaker.",
+        "Its total energy becomes positive.",
+        "Its orbit becomes a hyperbola."
+      ],
+      "answer": 0,
+      "explain": "지문: 위성의 총 에너지는 궤도 전체에서 일정하므로 지구에 가까워지면 더 빨라져야 해요."
+    }
+  ],
+  "test": [
+    {
+      "type": "num",
+      "q": "근지점 반지름 6,678 km, 원지점 반지름 12,378 km인 타원 궤도에서 근지점 속력을 구하세요. ($\\mu=398{,}600\\ \\text{km}^3/\\text{s}^2$, 숫자만 입력)",
+      "answer": 8.81,
+      "tol": 0.02,
+      "unit": "km/s",
+      "explain": "$a=(6678+12378)/2=9528$ km예요. $v_p=\\sqrt{398600(2/6678-1/9528)}\\approx8.81$ km/s예요."
+    },
+    {
+      "type": "num",
+      "q": "지구 중심에서 7,000 km 떨어진 점에서 위성의 속력이 9.0 km/s예요. 이 궤도의 긴반지름을 구하세요. ($\\mu=398{,}600\\ \\text{km}^3/\\text{s}^2$, 활력 방정식 사용, 숫자만 입력)",
+      "answer": 12121,
+      "tol": 0.02,
+      "unit": "km",
+      "explain": "$1/a=2/r-v^2/\\mu=2/7000-81/398600=2.8571\\times10^{-4}-2.0323\\times10^{-4}=8.248\\times10^{-5}$이라서 $a\\approx12{,}121$ km예요."
+    },
+    {
+      "type": "mc",
+      "q": "긴반지름이 각각 10,000 km와 20,000 km인 지구 둘레 타원 궤도 A, B가 있어요. 비궤도에너지에 대해 옳은 것은?",
+      "choices": [
+        "B가 A보다 에너지가 높아요(덜 음수).",
+        "A가 B보다 에너지가 높아요.",
+        "두 궤도의 에너지가 같아요.",
+        "이심률을 알아야 비교할 수 있어요."
+      ],
+      "answer": 0,
+      "explain": "$\\varepsilon=-\\mu/2a$이므로 A는 약 $-19.9$, B는 약 $-10.0$ km²/s²예요. $a$가 큰 B의 에너지가 더 커요."
+    }
+  ],
+  "further": [
+    {
+      "title": "Wikipedia — Vis-viva equation",
+      "url": "https://en.wikipedia.org/wiki/Vis-viva_equation",
+      "lang": "en"
+    },
+    {
+      "title": "Wikipedia — Specific orbital energy",
+      "url": "https://en.wikipedia.org/wiki/Specific_orbital_energy",
+      "lang": "en"
+    }
+  ]
+}
